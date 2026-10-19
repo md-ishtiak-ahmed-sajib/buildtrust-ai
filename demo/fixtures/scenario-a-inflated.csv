@@ -1,0 +1,2 @@
+document_type,invoice_number,invoice_date,supplier_code,po_number,currency,beneficiary_fingerprint,subtotal,grand_total,notes,item_code,description,quantity,unit,unit_rate,amount
+INVOICE,INV-STEEL-095,2026-10-18,DEMO-STEEL,PO-STEEL-001,BDT,c395dab415a447111eb8e14c3e3bf693a7e3ab8c272c754065d33781876a724f,6650000,6650000,Fictional demonstration document. No real banking information.,REBAR-500,Reinforcement Steel 500 MPa,95,tonnes,70000,6650000

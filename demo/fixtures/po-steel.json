@@ -1,0 +1,16 @@
+{
+  "document_type": "PO",
+  "supplier_code": "DEMO-STEEL",
+  "po_number": "PO-STEEL-001",
+  "currency": "BDT",
+  "items": [
+    {
+      "item_code": "REBAR-500",
+      "description": "Reinforcement Steel 500 MPa",
+      "quantity": "80",
+      "unit": "tonnes",
+      "unit_rate": "70000",
+      "amount": "5600000"
+    }
+  ]
+}

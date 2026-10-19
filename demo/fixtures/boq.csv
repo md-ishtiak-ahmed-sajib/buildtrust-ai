@@ -1,0 +1,3 @@
+document_type,item_code,description,quantity,unit,unit_rate,amount
+BOQ,REBAR-500,Reinforcement Steel 500 MPa,80,tonnes,70000,5600000
+BOQ,CEMENT-50KG,Portland Cement 50 kg bag,100,bag,700,70000

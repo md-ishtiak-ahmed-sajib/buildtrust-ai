@@ -1,0 +1,16 @@
+{
+  "document_type": "PO",
+  "supplier_code": "DEMO-CEMENT",
+  "po_number": "PO-CEMENT-001",
+  "currency": "BDT",
+  "items": [
+    {
+      "item_code": "CEMENT-50KG",
+      "description": "Portland Cement 50 kg bag",
+      "quantity": "100",
+      "unit": "bag",
+      "unit_rate": "700",
+      "amount": "70000"
+    }
+  ]
+}

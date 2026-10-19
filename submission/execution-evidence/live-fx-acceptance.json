@@ -1,0 +1,31 @@
+{
+  "checked_at": "2026-10-19T11:48:39.689957+00:00",
+  "status": 201,
+  "response": {
+    "id": 1,
+    "project_id": 1,
+    "base": "USD",
+    "quote": "BDT",
+    "factor": "123.27",
+    "source": "https://api.frankfurter.dev/v2/rate/usd/bdt; providers=BDI@2026-10-16,CBKKW@2026-10-19,CBM@2026-10-16,CBO@2026-10-19,CBR@2026-10-16,CBSL@2026-10-09,CBU@2026-10-17,NB@2026-10-16,NBP@2026-10-14,NBU@2026-10-19",
+    "observed_date": "2026-10-19"
+  },
+  "database": "D:\\Project\\buildtrust-ai\\data\\live-fx-923c0799\\buildtrust.db",
+  "provider": "Frankfurter v2 free API",
+  "paid_requests": false,
+  "persisted": {
+    "id": 1,
+    "base": "USD",
+    "quote": "BDT",
+    "factor": "123.27",
+    "observed_date": "2026-10-19",
+    "source": "https://api.frankfurter.dev/v2/rate/usd/bdt; providers=BDI@2026-10-16,CBKKW@2026-10-19,CBM@2026-10-16,CBO@2026-10-19,CBR@2026-10-16,CBSL@2026-10-09,CBU@2026-10-17,NB@2026-10-16,NBP@2026-10-14,NBU@2026-10-19"
+  },
+  "audit_integrity": {
+    "valid": true,
+    "checked_events": 52,
+    "failed_event_id": null,
+    "head_hash": "487af8011a0b5ad796b5445323c81dab8396f1c3761b391d44e10aae0767e5ae",
+    "limitation": "Local hash chain; an unrestricted database administrator can rewrite the complete chain."
+  }
+}

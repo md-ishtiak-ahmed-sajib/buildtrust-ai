@@ -1,0 +1,29 @@
+
+> buildtrust-ai-ui@0.2.0 test:e2e
+> playwright test
+
+
+Running 16 tests using 1 worker
+
+  ok  1 e2e\00-archives.spec.ts:6:1 › archived runs retain evidence and are read only; register filters survive navigation (1.2s)
+  ok  2 e2e\accessibility.spec.ts:6:1 › automated accessibility checks across application screens and review forms (9.2s)
+  ok  3 e2e\accounting.spec.ts:53:1 › accounting controls, independent review, revenue margin and accessible forecast (7.1s)
+  ok  4 e2e\advanced.spec.ts:29:1 › BOQ price comparison, forecast, independent checking and approval (2.9s)
+  ok  5 e2e\advanced.spec.ts:137:1 › mobile quantity takeoff calculates and saves actual geometry (944ms)
+  ok  6 e2e\commercial.spec.ts:33:1 › commercial contract and cumulative certificate use independent browser approval (4.7s)
+  ok  7 e2e\commercial.spec.ts:100:1 › Admin creates a local reviewer and assigns project access through the UI (1.2s)
+  ok  8 e2e\completion.spec.ts:57:1 › component contract forecast preserves labour and shows separate tax and retention (2.7s)
+  ok  9 e2e\completion.spec.ts:88:1 › PO authorization and unreceived amendment retain original purchase evidence (3.9s)
+  ok 10 e2e\completion.spec.ts:116:1 › customer certificate correction changes revenue without refunding cash (2.3s)
+  ok 11 e2e\completion.spec.ts:134:1 › sensitivity and maturity compare saved historical estimates in the browser (4.0s)
+  ok 12 e2e\stabilization.spec.ts:18:1 › failed register loading retries without leaving the current workspace (1.9s)
+  ok 13 e2e\stabilization.spec.ts:34:1 › takeoff inputs invalidate old results and recalculate (660ms)
+  ok 14 e2e\stabilization.spec.ts:53:1 › unsaved estimate Save Discard Stay and printable BOQ content (2.5s)
+  ok 15 e2e\workflow.spec.ts:40:1 › review, approve, settle, receipt, and verify integrity (4.2s)
+  ok 16 e2e\workflow.spec.ts:119:1 › upload content and responsive document review (1.9s)
+
+  16 passed (52.4s)
+(node:9656) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+Actual browser artifacts: D:\Project\buildtrust-ai\data\advanced-browser-1c4d6920

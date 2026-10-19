@@ -1,0 +1,2 @@
+document_type,po_number,receipt_number,item_code,description,quantity,unit,unit_rate,amount
+GRN,PO-STEEL-001,GRN-STEEL-001,REBAR-500,Reinforcement Steel 500 MPa,80,tonnes,70000,5600000

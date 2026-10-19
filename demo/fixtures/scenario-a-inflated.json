@@ -1,0 +1,22 @@
+{
+  "document_type": "INVOICE",
+  "invoice_number": "INV-STEEL-095",
+  "invoice_date": "2026-10-18",
+  "supplier_code": "DEMO-STEEL",
+  "po_number": "PO-STEEL-001",
+  "currency": "BDT",
+  "beneficiary_fingerprint": "c395dab415a447111eb8e14c3e3bf693a7e3ab8c272c754065d33781876a724f",
+  "subtotal": "6650000",
+  "grand_total": "6650000",
+  "notes": "Fictional demonstration document. No real banking information.",
+  "items": [
+    {
+      "item_code": "REBAR-500",
+      "description": "Reinforcement Steel 500 MPa",
+      "quantity": "95",
+      "unit": "tonnes",
+      "unit_rate": "70000",
+      "amount": "6650000"
+    }
+  ]
+}

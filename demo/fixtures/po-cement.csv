@@ -1,0 +1,2 @@
+document_type,supplier_code,po_number,currency,item_code,description,quantity,unit,unit_rate,amount
+PO,DEMO-CEMENT,PO-CEMENT-001,BDT,CEMENT-50KG,Portland Cement 50 kg bag,100,bag,700,70000

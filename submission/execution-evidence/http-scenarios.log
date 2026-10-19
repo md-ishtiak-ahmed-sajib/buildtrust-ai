@@ -1,0 +1,9 @@
+Scenario A: PASS — BLOCKED
+Scenario B: PASS — SETTLED
+Scenario C: PASS — DUPLICATE_HELD
+Scenario D: PASS — BLOCKED
+Scenario E: PASS — BLOCKED
+Scenario F: PASS — BLOCKED
+Scenario G: PASS — UNAUTHORIZED_APPROVAL_DENIED
+Scenario H: PASS — SETTLED
+All 8 scenarios passed against the running sandbox API.

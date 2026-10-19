@@ -1,0 +1,2 @@
+document_type,invoice_number,invoice_date,supplier_code,po_number,currency,beneficiary_fingerprint,subtotal,grand_total,item_code,description,quantity,unit,unit_rate,amount
+INVOICE,INV-BENEFICIARY-CHANGE,2026-10-18,DEMO-CEMENT,PO-CEMENT-001,BDT,0f5c7984bee44ae4a7d87af3627c0134f553c9c2ad5b5e58d1ff2b2740554454,70000,70000,CEMENT-50KG,Portland Cement 50 kg bag,100,bag,700,70000

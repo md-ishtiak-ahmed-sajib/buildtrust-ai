@@ -1,0 +1,21 @@
+{
+  "document_type": "INVOICE",
+  "invoice_number": "INV-CEMENT-070",
+  "invoice_date": "2026-10-18",
+  "supplier_code": "DEMO-CEMENT",
+  "po_number": "PO-CEMENT-001",
+  "currency": "BDT",
+  "beneficiary_fingerprint": "d9413b828e4752e3c57c4bfbd09203f9ff2866e56a6096550d36f70bc0ce984d",
+  "subtotal": "70000",
+  "grand_total": "70000",
+  "items": [
+    {
+      "item_code": "CEMENT-50KG",
+      "description": "Portland Cement 50 kg bag",
+      "quantity": "100",
+      "unit": "bag",
+      "unit_rate": "700",
+      "amount": "70000"
+    }
+  ]
+}

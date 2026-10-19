@@ -1,0 +1,18 @@
+services:
+  buildtrust:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - buildtrust-data:/source/data
+    environment:
+      BUILDTRUST_DEMO_MODE: "true"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/api/v1/health')"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+volumes:
+  buildtrust-data:

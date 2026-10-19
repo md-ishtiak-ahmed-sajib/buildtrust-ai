@@ -1,0 +1,401 @@
+{
+  "scenario_id": "C",
+  "executed_at": "2026-10-19T15:52:27.066521Z",
+  "run_id": "28f3ebdc1874",
+  "source_invoice": {
+    "id": 17,
+    "project_id": 7,
+    "document_id": 46,
+    "invoice_number": "INV-CEMENT-070",
+    "supplier": "Metro Materials (fictional)",
+    "supplier_code": "DEMO-CEMENT",
+    "currency": "BDT",
+    "subtotal": "70000.00",
+    "tax": "0.00",
+    "retention": "0.00",
+    "discount": "0.00",
+    "grand_total": "70000.00",
+    "status": "VERIFIED",
+    "invoice_date": "2026-10-18",
+    "version": 1
+  },
+  "balance_before": "1000000.00",
+  "starting_invoice_count": 4,
+  "simulation": true,
+  "decision": "DUPLICATE_HELD",
+  "duplicate_document": {
+    "id": 53,
+    "project_id": 7,
+    "document_type": "INVOICE",
+    "original_filename": "different-filename.json",
+    "sha256": "6763d879d14c34b00df2beca280a5093a0f5fc6ef66ed9aff0e518928a24bfdd",
+    "extraction_status": "DUPLICATE",
+    "version": 1,
+    "reviewed_by": null,
+    "confirmed_by": null,
+    "created_at": "2026-10-19T15:52:27.072813Z",
+    "validation_errors": null
+  },
+  "ending_invoice_count": 4,
+  "balance_after": "1000000.00",
+  "audit_events": [
+    {
+      "id": 223,
+      "project_id": 7,
+      "actor_id": 3,
+      "actor_name": "Rafi Ahmed",
+      "role": "OPERATOR",
+      "event_type": "DOCUMENT_EXTRACTED",
+      "entity_type": "document",
+      "entity_id": "53",
+      "details": {
+        "method": "JSON_SCHEMA",
+        "status": "DUPLICATE",
+        "validation_errors": null
+      },
+      "previous_hash": "c3de25edf7e0d6b188058846fe7d59d140950592f250ed18b8b268e9268d8ba6",
+      "created_at": "2026-10-19T15:52:27.072813Z",
+      "event_hash": "2164b3ec08f9b4699ef5999c2b5b50f068c081d2bd9c630a641200aa8b60d879"
+    },
+    {
+      "id": 222,
+      "project_id": 7,
+      "actor_id": 3,
+      "actor_name": "Rafi Ahmed",
+      "role": "OPERATOR",
+      "event_type": "DUPLICATE_INVOICE",
+      "entity_type": "document",
+      "entity_id": "53",
+      "details": {
+        "existing_invoice_id": 17
+      },
+      "previous_hash": "fd3c207078f516afa4b2f36f5ffbcebe6b554f54b511036a88ad5cbb393d8ed6",
+      "created_at": "2026-10-19T15:52:27.072813Z",
+      "event_hash": "c3de25edf7e0d6b188058846fe7d59d140950592f250ed18b8b268e9268d8ba6"
+    },
+    {
+      "id": 221,
+      "project_id": 7,
+      "actor_id": 3,
+      "actor_name": "Rafi Ahmed",
+      "role": "OPERATOR",
+      "event_type": "DOCUMENT_UPLOADED",
+      "entity_type": "document",
+      "entity_id": "53",
+      "details": {
+        "filename": "different-filename.json",
+        "sha256": "6763d879d14c34b00df2beca280a5093a0f5fc6ef66ed9aff0e518928a24bfdd"
+      },
+      "previous_hash": "89ab61ad3ba92ddac2d4949c7b935b12f0bfea698faedf5dc5cd693146ec5527",
+      "created_at": "2026-10-19T15:52:27.072813Z",
+      "event_hash": "fd3c207078f516afa4b2f36f5ffbcebe6b554f54b511036a88ad5cbb393d8ed6"
+    }
+  ],
+  "audit_event_ids": [
+    223,
+    222,
+    221
+  ],
+  "audit_integrity": {
+    "valid": true,
+    "checked_events": 223,
+    "failed_event_id": null,
+    "head_hash": "2164b3ec08f9b4699ef5999c2b5b50f068c081d2bd9c630a641200aa8b60d879",
+    "limitation": "Local hash chain; an unrestricted database administrator can rewrite the complete chain."
+  },
+  "source_records": [
+    {
+      "document": {
+        "id": 46,
+        "project_id": 7,
+        "document_type": "INVOICE",
+        "original_filename": "scenario-b-valid.json",
+        "sha256": "f011fc88ebce9f69b25b1e49fdeac1dea520b15a0a87635619cf4e35b173a987",
+        "extraction_status": "EXTRACTED",
+        "version": 1,
+        "reviewed_by": null,
+        "confirmed_by": null,
+        "created_at": "2026-10-19T15:52:26.989037Z"
+      },
+      "data": {
+        "beneficiary_fingerprint": "d9413b828e4752e3c57c4bfbd09203f9ff2866e56a6096550d36f70bc0ce984d",
+        "currency": "BDT",
+        "discount": "0",
+        "document_type": "INVOICE",
+        "grand_total": "70000",
+        "invoice_date": "2026-10-18",
+        "invoice_number": "INV-CEMENT-070",
+        "items": [
+          {
+            "amount": "70000",
+            "description": "Portland Cement 50 kg bag",
+            "item_code": "CEMENT-50KG",
+            "quantity": "100",
+            "unit": "bag",
+            "unit_rate": "700"
+          }
+        ],
+        "notes": "",
+        "po_number": "PO-CEMENT-001",
+        "receipt_number": "",
+        "retention": "0",
+        "retention_percent": "0",
+        "subtotal": "70000",
+        "supplier_code": "DEMO-CEMENT",
+        "tax": "0",
+        "tax_percent": "0"
+      },
+      "revisions": [
+        {
+          "version": 1,
+          "fields": [
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "document_type",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 46,
+              "value": "INVOICE"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "supplier_code",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 46,
+              "value": "DEMO-CEMENT"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "po_number",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 46,
+              "value": "PO-CEMENT-001"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "receipt_number",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 46,
+              "value": ""
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "invoice_number",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 46,
+              "value": "INV-CEMENT-070"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "invoice_date",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 46,
+              "value": "2026-10-18"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "currency",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 46,
+              "value": "BDT"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "beneficiary_fingerprint",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 46,
+              "value": "d9413b828e4752e3c57c4bfbd09203f9ff2866e56a6096550d36f70bc0ce984d"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "subtotal",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 46,
+              "value": "70000"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "tax",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 46,
+              "value": "0"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "retention",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 46,
+              "value": "0"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "discount",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 46,
+              "value": "0"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "grand_total",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 46,
+              "value": "70000"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "tax_percent",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 46,
+              "value": "0"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "retention_percent",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 46,
+              "value": "0"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "notes",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 46,
+              "value": ""
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.0.item_code",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 46,
+              "value": "CEMENT-50KG"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.0.description",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 46,
+              "value": "Portland Cement 50 kg bag"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.0.quantity",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 46,
+              "value": "100"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.0.unit",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 46,
+              "value": "bag"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.0.unit_rate",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 46,
+              "value": "700"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.0.amount",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 46,
+              "value": "70000"
+            }
+          ],
+          "created_at": "2026-10-19T15:52:26.989037Z"
+        }
+      ]
+    }
+  ],
+  "passed": true
+}

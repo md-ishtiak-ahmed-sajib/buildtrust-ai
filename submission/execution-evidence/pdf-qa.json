@@ -1,0 +1,56 @@
+{
+  "readable_text_verified": true,
+  "files": [
+    {
+      "file": "demo/fixtures/boq.pdf",
+      "pages": 1,
+      "sha256": "fc72f7b330d3d4ed35eca4bf3e5848fca957b51811fcccf3998db103c2120d14"
+    },
+    {
+      "file": "demo/fixtures/grn-cement.pdf",
+      "pages": 1,
+      "sha256": "e024b5b82227aa42ad4c83185940fa6f9cf3df25ed944e370f5ee32b1de13632"
+    },
+    {
+      "file": "demo/fixtures/grn-steel.pdf",
+      "pages": 1,
+      "sha256": "fcf393f183468b8d37ad8ae1d28ed15c06bcc8fb7ce7d999184b7574ef24ba88"
+    },
+    {
+      "file": "demo/fixtures/po-cement.pdf",
+      "pages": 1,
+      "sha256": "71bd0a351b5f65a6050948b562af640299e237d055eece0a9ecbb4b0df788962"
+    },
+    {
+      "file": "demo/fixtures/po-steel.pdf",
+      "pages": 1,
+      "sha256": "932f3af375b0b9ff8adc93b074322bc0e217681b9090b192094a46fd05f8ae73"
+    },
+    {
+      "file": "demo/fixtures/scenario-a-inflated.pdf",
+      "pages": 1,
+      "sha256": "68d23d0eb207fe8b296ce3387356b4411f6f1da9836499a43b03ea2690e922b9"
+    },
+    {
+      "file": "demo/fixtures/scenario-b-valid.pdf",
+      "pages": 1,
+      "sha256": "fee03c3a86007886bb182d4c04097cedac0094f32bc77615d259ad5756c09e9a"
+    },
+    {
+      "file": "demo/fixtures/scenario-d-beneficiary.pdf",
+      "pages": 1,
+      "sha256": "de00f6f42c5552a5c5faaa49f169a9d5948e887892b13698040a2aef6c29ff0b"
+    },
+    {
+      "file": "demo/fixtures/scenario-f-injection.pdf",
+      "pages": 1,
+      "sha256": "29ee87243f9e9aca941aa16affa98eb470fd7812d75610866757a1bec7b97486"
+    },
+    {
+      "file": "submission/screenshots/estimate-print.pdf",
+      "pages": 5,
+      "sha256": "a3706b41e8eb35d7234b34e7dfe08db2368b5ed00b29c23f892bf8c630867861"
+    }
+  ],
+  "notice": "Generated source fixtures and actual browser print; this does not evaluate representative scanned-document OCR accuracy."
+}

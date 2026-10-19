@@ -1,0 +1,1604 @@
+{
+  "revision": "0017",
+  "legacy_tables_preserved": 54,
+  "before": {
+    "users": {
+      "columns": [
+        "id",
+        "email",
+        "name",
+        "role",
+        "password_hash",
+        "active",
+        "created_at",
+        "version"
+      ],
+      "rows": 4,
+      "sha256": "304e27885b61a154ab36add591e664d8fdf5c76003207e09f66814b7c04f0a9f"
+    },
+    "projects": {
+      "columns": [
+        "id",
+        "code",
+        "name",
+        "client",
+        "currency",
+        "budget_minor",
+        "balance_minor",
+        "reserve_minor",
+        "version",
+        "run_id",
+        "active"
+      ],
+      "rows": 22,
+      "sha256": "ece326a71ca2797664637f3885b3102adb2b4700f6eaad0324e9f71f6a5ea4e0"
+    },
+    "memberships": {
+      "columns": [
+        "user_id",
+        "project_id"
+      ],
+      "rows": 88,
+      "sha256": "bf882628fe1f704ffef9fcd919fc26eb3822ff41443b75ba92441ce5fd577057"
+    },
+    "suppliers": {
+      "columns": [
+        "id",
+        "project_id",
+        "code",
+        "name",
+        "approved",
+        "beneficiary_token",
+        "beneficiary_fingerprint",
+        "version"
+      ],
+      "rows": 34,
+      "sha256": "f13dd60e25635df35d9654ff94770084a723f00d98fc0221082d10da07c38f6f"
+    },
+    "documents": {
+      "columns": [
+        "id",
+        "project_id",
+        "document_type",
+        "original_filename",
+        "storage_name",
+        "sha256",
+        "extraction_status",
+        "extracted_json",
+        "text",
+        "version",
+        "reviewed_by",
+        "confirmed_by",
+        "created_at"
+      ],
+      "rows": 153,
+      "sha256": "edc2bd281d6721f730eceb3e69c8c9154fc14a70ba88d5b82b0569ac3942847b"
+    },
+    "audit_events": {
+      "columns": [
+        "id",
+        "project_id",
+        "actor_id",
+        "actor_name",
+        "role",
+        "event_type",
+        "entity_type",
+        "entity_id",
+        "details_json",
+        "previous_hash",
+        "event_hash",
+        "created_at"
+      ],
+      "rows": 699,
+      "sha256": "4fe776d37ccc748914d1c5893754fa36540fae34cdfcf7dde1360c4e1779a631"
+    },
+    "extraction_revisions": {
+      "columns": [
+        "id",
+        "document_id",
+        "version",
+        "fields_json",
+        "actor_id",
+        "created_at"
+      ],
+      "rows": 153,
+      "sha256": "e9f2fcea1362f922f138b35f6da8c615cb141074f184585a7d31c2e4bd2feb02"
+    },
+    "boq_items": {
+      "columns": [
+        "id",
+        "project_id",
+        "document_id",
+        "item_code",
+        "description",
+        "unit",
+        "quantity",
+        "rate",
+        "version"
+      ],
+      "rows": 34,
+      "sha256": "f6242b21cd252f8575b07535cbbff8725349c3456f713fc715afdb85370da056"
+    },
+    "purchase_orders": {
+      "columns": [
+        "id",
+        "project_id",
+        "document_id",
+        "supplier_id",
+        "number",
+        "currency",
+        "tax_percent",
+        "retention_percent",
+        "discount_minor",
+        "approved",
+        "version"
+      ],
+      "rows": 34,
+      "sha256": "d5f1970507ccde8ab85a3ace0c1f4934708e494bf4cb8cf61a30ad08d6abec77"
+    },
+    "variations": {
+      "columns": [
+        "id",
+        "boq_item_id",
+        "document_id",
+        "quantity",
+        "unit",
+        "approved_by"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "purchase_order_lines": {
+      "columns": [
+        "id",
+        "po_id",
+        "item_code",
+        "description",
+        "quantity",
+        "unit",
+        "rate"
+      ],
+      "rows": 34,
+      "sha256": "e619e946f615725106b4ee3f2c08c3763bdb97a4ca48a59815f6eb34edfd2c35"
+    },
+    "goods_receipts": {
+      "columns": [
+        "id",
+        "po_id",
+        "document_id",
+        "number",
+        "approved_by",
+        "version"
+      ],
+      "rows": 34,
+      "sha256": "3c3eb1fe8d27d0725abc52cd536d1198e01f10442db27de83c10ea9b372af804"
+    },
+    "invoices": {
+      "columns": [
+        "id",
+        "project_id",
+        "document_id",
+        "supplier_id",
+        "po_id",
+        "supplier_code",
+        "number",
+        "invoice_date",
+        "currency",
+        "subtotal_minor",
+        "tax_minor",
+        "retention_minor",
+        "discount_minor",
+        "total_minor",
+        "beneficiary_fingerprint",
+        "status",
+        "version"
+      ],
+      "rows": 60,
+      "sha256": "2a5e50f79f33cb5bada428813b83af06db725a25b5373a115ebf0d7e8b31a377"
+    },
+    "receipt_lines": {
+      "columns": [
+        "id",
+        "receipt_id",
+        "item_code",
+        "quantity",
+        "unit"
+      ],
+      "rows": 34,
+      "sha256": "32deead96d34f077be89a40c663772a5e76033028817ebef7b8c2ba0f087468b"
+    },
+    "invoice_lines": {
+      "columns": [
+        "id",
+        "invoice_id",
+        "item_code",
+        "description",
+        "quantity",
+        "unit",
+        "rate",
+        "amount_minor",
+        "active"
+      ],
+      "rows": 60,
+      "sha256": "28afbe4b1fecc78d027d2bf93bf1e5512f81378a8c0ef584e9877c6c766db9ea"
+    },
+    "verification_results": {
+      "columns": [
+        "id",
+        "invoice_id",
+        "report_json",
+        "analyzed_at"
+      ],
+      "rows": 68,
+      "sha256": "6e809dd63677888881e167c917eb778176c23be91b7207aa73fba02cb1f032ac"
+    },
+    "cash_movements": {
+      "columns": [
+        "id",
+        "project_id",
+        "kind",
+        "amount_minor",
+        "currency",
+        "due_date",
+        "description",
+        "invoice_id",
+        "settled",
+        "cost_pressure"
+      ],
+      "rows": 39,
+      "sha256": "f3db792eaff0a5a2de26c4523dd5583b3be2eb7587930f16220912ce2b2b3cdc"
+    },
+    "workflows": {
+      "columns": [
+        "id",
+        "invoice_id",
+        "actor_id",
+        "status",
+        "result_json",
+        "error",
+        "created_at"
+      ],
+      "rows": 8,
+      "sha256": "9ff7f19c0fb265fc39e8c1cc197974fdcfbd713bb0c2244126354dcf26746949"
+    },
+    "reservations": {
+      "columns": [
+        "id",
+        "proposal_id",
+        "amount_minor",
+        "state"
+      ],
+      "rows": 6,
+      "sha256": "e3ab13315801fac97f0978d3fb592cc79d63c08f187d46a2da7f683e8dec7fe1"
+    },
+    "receipt_allocations": {
+      "columns": [
+        "id",
+        "proposal_id",
+        "receipt_line_id",
+        "invoice_line_id",
+        "canonical_quantity",
+        "state"
+      ],
+      "rows": 6,
+      "sha256": "f8b2ab2f93dbabc3405b2cb893fa61e08d468e335c87ee67943d100a2a92f97a"
+    },
+    "approvals": {
+      "columns": [
+        "id",
+        "proposal_id",
+        "approver_id",
+        "decision",
+        "snapshot_hash",
+        "created_at"
+      ],
+      "rows": 5,
+      "sha256": "cf2595646329e60ce8aa4e0fe42a46db80aac1d9d4f596db680a237fe810a050"
+    },
+    "execution_attempts": {
+      "columns": [
+        "id",
+        "proposal_id",
+        "idempotency_key",
+        "request_hash",
+        "status_code",
+        "response_json",
+        "actor_id"
+      ],
+      "rows": 5,
+      "sha256": "f2c26d014a8cf284af656830dd28b9963d95b88422327f553b8a1804cff56b8b"
+    },
+    "workflow_steps": {
+      "columns": [
+        "id",
+        "workflow_id",
+        "name",
+        "tool",
+        "status",
+        "input_json",
+        "output_json",
+        "started_at",
+        "finished_at"
+      ],
+      "rows": 72,
+      "sha256": "16deabde5c2baea366c72b7eb2b944456127702ba39a85ba77ba41cc425e986b"
+    },
+    "ledger_entries": {
+      "columns": [
+        "id",
+        "project_id",
+        "payment_id",
+        "account",
+        "direction",
+        "amount_minor",
+        "currency",
+        "created_at"
+      ],
+      "rows": 10,
+      "sha256": "1130182ac99f448a4ee6152f484e8b169e155ccd26ff0957b16bde034b093b07"
+    },
+    "measurement_profiles": {
+      "columns": [
+        "id",
+        "code",
+        "name",
+        "edition",
+        "source_url",
+        "rules_json",
+        "verification_status"
+      ],
+      "rows": 8,
+      "sha256": "afdc92e69f89cfea99ec3e0d5a7ad9699a8112435be6c5661198e5b6d799bc8b"
+    },
+    "estimate_versions": {
+      "columns": [
+        "id",
+        "project_id",
+        "estimate_key",
+        "revision",
+        "version",
+        "parent_id",
+        "name",
+        "status",
+        "fields_json",
+        "calculated_json",
+        "total_minor",
+        "prepared_by",
+        "checked_by",
+        "approved_by",
+        "snapshot_hash",
+        "created_at",
+        "approval_snapshot_json"
+      ],
+      "rows": 1,
+      "sha256": "e886e33794467eaf8fb05950a5206d52679eb723c42f1826b98b9a3b84f9bcf9"
+    },
+    "exchange_rate_observations": {
+      "columns": [
+        "id",
+        "project_id",
+        "base",
+        "quote",
+        "factor",
+        "source",
+        "observed_date",
+        "actor_id",
+        "created_at"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "materials": {
+      "columns": [
+        "id",
+        "project_id",
+        "name",
+        "category",
+        "unit",
+        "specification_json",
+        "version",
+        "active",
+        "created_by",
+        "created_at"
+      ],
+      "rows": 1,
+      "sha256": "3e3aee28a798e880a1cedaefbf494f54bbd39f5af7cf26e913bc64b30350d302"
+    },
+    "takeoff_sheets": {
+      "columns": [
+        "id",
+        "project_id",
+        "profile_id",
+        "fields_json",
+        "result_json",
+        "prepared_by",
+        "checked_by",
+        "status",
+        "version",
+        "created_at"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "budget_baselines": {
+      "columns": [
+        "id",
+        "project_id",
+        "estimate_id",
+        "amount_minor",
+        "snapshot_hash",
+        "approved_by",
+        "created_at"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "price_searches": {
+      "columns": [
+        "id",
+        "project_id",
+        "material_id",
+        "actor_id",
+        "fingerprint",
+        "request_json",
+        "states_json",
+        "status",
+        "created_at",
+        "updated_at"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "supplier_quotations": {
+      "columns": [
+        "id",
+        "project_id",
+        "material_id",
+        "fields_json",
+        "status",
+        "version",
+        "prepared_by",
+        "verified_by",
+        "storage_name",
+        "original_filename",
+        "attachment_hash",
+        "created_at"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "price_observations": {
+      "columns": [
+        "id",
+        "project_id",
+        "material_id",
+        "search_id",
+        "quotation_id",
+        "provider",
+        "source_type",
+        "payload_json",
+        "evidence_hash",
+        "retrieved_at"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "material_equivalents": {
+      "columns": [
+        "id",
+        "project_id",
+        "material_id",
+        "observation_id",
+        "approved_by",
+        "reason",
+        "material_version",
+        "created_at"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "price_selections": {
+      "columns": [
+        "id",
+        "project_id",
+        "estimate_id",
+        "observation_id",
+        "line_id",
+        "component_id",
+        "snapshot_json",
+        "snapshot_hash",
+        "reason",
+        "actor_id",
+        "created_at"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "record_contributors": {
+      "columns": [
+        "id",
+        "entity_type",
+        "entity_id",
+        "actor_id",
+        "evidence",
+        "created_at"
+      ],
+      "rows": 1,
+      "sha256": "4cb67789920c67c9ca00bcd39037aa8536792715484be4688fdf439824c83784"
+    },
+    "commitment_coverage": {
+      "columns": [
+        "id",
+        "project_id",
+        "boq_item_id",
+        "po_line_id",
+        "source_hash",
+        "quantity",
+        "unit",
+        "method",
+        "created_at"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "evidence_revisions": {
+      "columns": [
+        "id",
+        "project_id",
+        "entity_type",
+        "entity_id",
+        "version",
+        "evidence_json",
+        "snapshot_hash",
+        "actor_id",
+        "created_at"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "job_attempts": {
+      "columns": [
+        "id",
+        "kind",
+        "entity_id",
+        "attempt",
+        "lease_token",
+        "status",
+        "started_at",
+        "heartbeat_at",
+        "lease_until",
+        "next_attempt_at",
+        "finished_at"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "control_records": {
+      "columns": [
+        "id",
+        "project_id",
+        "kind",
+        "name",
+        "version",
+        "status",
+        "parent_id",
+        "payload_json",
+        "calculated_json",
+        "contributors_json",
+        "prepared_by",
+        "checked_by",
+        "approved_by",
+        "snapshot_hash",
+        "snapshot_json",
+        "created_at"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "cost_codes": {
+      "columns": [
+        "id",
+        "project_id",
+        "code",
+        "name",
+        "active",
+        "version"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "accounting_journals": {
+      "columns": [
+        "id",
+        "project_id",
+        "source_key",
+        "record_id",
+        "business_date",
+        "currency",
+        "evidence_json",
+        "snapshot_hash",
+        "created_at"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "cost_code_links": {
+      "columns": [
+        "id",
+        "project_id",
+        "cost_code_id",
+        "source_type",
+        "source_id",
+        "version"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "receivable_balances": {
+      "columns": [
+        "id",
+        "project_id",
+        "certificate_id",
+        "amount_minor",
+        "received_minor",
+        "retention_minor",
+        "due_date",
+        "currency",
+        "version"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "accounting_journal_lines": {
+      "columns": [
+        "id",
+        "journal_id",
+        "account",
+        "debit_minor",
+        "credit_minor",
+        "cost_code_id"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "payable_balances": {
+      "columns": [
+        "id",
+        "project_id",
+        "supplier_id",
+        "invoice_id",
+        "record_id",
+        "amount_minor",
+        "paid_minor",
+        "credit_minor",
+        "retention_minor",
+        "retention_released_minor",
+        "supplier_credit_minor",
+        "currency",
+        "due_date",
+        "version"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "cost_recognitions": {
+      "columns": [
+        "id",
+        "project_id",
+        "record_id",
+        "receipt_line_id",
+        "cost_code_id",
+        "amount_minor",
+        "quantity",
+        "unit",
+        "invoice_id",
+        "source_hash"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "invoice_entitlements": {
+      "columns": [
+        "id",
+        "invoice_id",
+        "receipt_line_id",
+        "invoice_line_id",
+        "canonical_quantity",
+        "state"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "obligations": {
+      "columns": [
+        "id",
+        "project_id",
+        "source_type",
+        "source_id",
+        "category",
+        "direction",
+        "amount_minor",
+        "currency",
+        "due_date",
+        "cash_movement_id",
+        "version"
+      ],
+      "rows": 39,
+      "sha256": "3fe01133e40db7acfad8e9c1b0e74ab186218cf5d8e9a21b4ededf02d8ce1698"
+    },
+    "commercial_publications": {
+      "columns": [
+        "id",
+        "project_id",
+        "control_id",
+        "source_type",
+        "source_id"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "certificate_allocations": {
+      "columns": [
+        "id",
+        "certificate_id",
+        "acceptance_id",
+        "amount_minor"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "payment_proposals": {
+      "columns": [
+        "id",
+        "invoice_id",
+        "project_id",
+        "supplier_id",
+        "amount_minor",
+        "currency",
+        "beneficiary_fingerprint",
+        "status",
+        "requested_by",
+        "version",
+        "snapshot_json",
+        "snapshot_hash",
+        "expires_at",
+        "created_at",
+        "payable_id"
+      ],
+      "rows": 6,
+      "sha256": "c92286963d26d0fa9d49aad2f1233c0544b8a01c6a91a351c194b5d6db5a0442"
+    },
+    "payments": {
+      "columns": [
+        "id",
+        "proposal_id",
+        "invoice_id",
+        "mock_transaction_id",
+        "idempotency_key",
+        "amount_minor",
+        "currency",
+        "provider",
+        "executed_at",
+        "payable_id"
+      ],
+      "rows": 5,
+      "sha256": "33d34f705b9bb7dbd3ec7860f01851a83501072d9dcc74a1b7680c5ce632e201"
+    },
+    "recognition_allocations": {
+      "columns": [
+        "id",
+        "recognition_id",
+        "invoice_id",
+        "invoice_line_id",
+        "quantity",
+        "amount_minor"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  },
+  "after": {
+    "users": {
+      "columns": [
+        "id",
+        "email",
+        "name",
+        "role",
+        "password_hash",
+        "active",
+        "created_at",
+        "version"
+      ],
+      "rows": 4,
+      "sha256": "304e27885b61a154ab36add591e664d8fdf5c76003207e09f66814b7c04f0a9f"
+    },
+    "projects": {
+      "columns": [
+        "id",
+        "code",
+        "name",
+        "client",
+        "currency",
+        "budget_minor",
+        "balance_minor",
+        "reserve_minor",
+        "version",
+        "run_id",
+        "active"
+      ],
+      "rows": 22,
+      "sha256": "ece326a71ca2797664637f3885b3102adb2b4700f6eaad0324e9f71f6a5ea4e0"
+    },
+    "memberships": {
+      "columns": [
+        "user_id",
+        "project_id"
+      ],
+      "rows": 88,
+      "sha256": "bf882628fe1f704ffef9fcd919fc26eb3822ff41443b75ba92441ce5fd577057"
+    },
+    "suppliers": {
+      "columns": [
+        "id",
+        "project_id",
+        "code",
+        "name",
+        "approved",
+        "beneficiary_token",
+        "beneficiary_fingerprint",
+        "version"
+      ],
+      "rows": 34,
+      "sha256": "f13dd60e25635df35d9654ff94770084a723f00d98fc0221082d10da07c38f6f"
+    },
+    "documents": {
+      "columns": [
+        "id",
+        "project_id",
+        "document_type",
+        "original_filename",
+        "storage_name",
+        "sha256",
+        "extraction_status",
+        "extracted_json",
+        "text",
+        "version",
+        "reviewed_by",
+        "confirmed_by",
+        "created_at"
+      ],
+      "rows": 153,
+      "sha256": "edc2bd281d6721f730eceb3e69c8c9154fc14a70ba88d5b82b0569ac3942847b"
+    },
+    "audit_events": {
+      "columns": [
+        "id",
+        "project_id",
+        "actor_id",
+        "actor_name",
+        "role",
+        "event_type",
+        "entity_type",
+        "entity_id",
+        "details_json",
+        "previous_hash",
+        "event_hash",
+        "created_at"
+      ],
+      "rows": 699,
+      "sha256": "4fe776d37ccc748914d1c5893754fa36540fae34cdfcf7dde1360c4e1779a631"
+    },
+    "extraction_revisions": {
+      "columns": [
+        "id",
+        "document_id",
+        "version",
+        "fields_json",
+        "actor_id",
+        "created_at"
+      ],
+      "rows": 153,
+      "sha256": "e9f2fcea1362f922f138b35f6da8c615cb141074f184585a7d31c2e4bd2feb02"
+    },
+    "boq_items": {
+      "columns": [
+        "id",
+        "project_id",
+        "document_id",
+        "item_code",
+        "description",
+        "unit",
+        "quantity",
+        "rate",
+        "version"
+      ],
+      "rows": 34,
+      "sha256": "f6242b21cd252f8575b07535cbbff8725349c3456f713fc715afdb85370da056"
+    },
+    "purchase_orders": {
+      "columns": [
+        "id",
+        "project_id",
+        "document_id",
+        "supplier_id",
+        "number",
+        "currency",
+        "tax_percent",
+        "retention_percent",
+        "discount_minor",
+        "approved",
+        "version"
+      ],
+      "rows": 34,
+      "sha256": "d5f1970507ccde8ab85a3ace0c1f4934708e494bf4cb8cf61a30ad08d6abec77"
+    },
+    "variations": {
+      "columns": [
+        "id",
+        "boq_item_id",
+        "document_id",
+        "quantity",
+        "unit",
+        "approved_by"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "purchase_order_lines": {
+      "columns": [
+        "id",
+        "po_id",
+        "item_code",
+        "description",
+        "quantity",
+        "unit",
+        "rate"
+      ],
+      "rows": 34,
+      "sha256": "e619e946f615725106b4ee3f2c08c3763bdb97a4ca48a59815f6eb34edfd2c35"
+    },
+    "goods_receipts": {
+      "columns": [
+        "id",
+        "po_id",
+        "document_id",
+        "number",
+        "approved_by",
+        "version"
+      ],
+      "rows": 34,
+      "sha256": "3c3eb1fe8d27d0725abc52cd536d1198e01f10442db27de83c10ea9b372af804"
+    },
+    "invoices": {
+      "columns": [
+        "id",
+        "project_id",
+        "document_id",
+        "supplier_id",
+        "po_id",
+        "supplier_code",
+        "number",
+        "invoice_date",
+        "currency",
+        "subtotal_minor",
+        "tax_minor",
+        "retention_minor",
+        "discount_minor",
+        "total_minor",
+        "beneficiary_fingerprint",
+        "status",
+        "version"
+      ],
+      "rows": 60,
+      "sha256": "2a5e50f79f33cb5bada428813b83af06db725a25b5373a115ebf0d7e8b31a377"
+    },
+    "receipt_lines": {
+      "columns": [
+        "id",
+        "receipt_id",
+        "item_code",
+        "quantity",
+        "unit"
+      ],
+      "rows": 34,
+      "sha256": "32deead96d34f077be89a40c663772a5e76033028817ebef7b8c2ba0f087468b"
+    },
+    "invoice_lines": {
+      "columns": [
+        "id",
+        "invoice_id",
+        "item_code",
+        "description",
+        "quantity",
+        "unit",
+        "rate",
+        "amount_minor",
+        "active"
+      ],
+      "rows": 60,
+      "sha256": "28afbe4b1fecc78d027d2bf93bf1e5512f81378a8c0ef584e9877c6c766db9ea"
+    },
+    "verification_results": {
+      "columns": [
+        "id",
+        "invoice_id",
+        "report_json",
+        "analyzed_at"
+      ],
+      "rows": 68,
+      "sha256": "6e809dd63677888881e167c917eb778176c23be91b7207aa73fba02cb1f032ac"
+    },
+    "cash_movements": {
+      "columns": [
+        "id",
+        "project_id",
+        "kind",
+        "amount_minor",
+        "currency",
+        "due_date",
+        "description",
+        "invoice_id",
+        "settled",
+        "cost_pressure"
+      ],
+      "rows": 39,
+      "sha256": "f3db792eaff0a5a2de26c4523dd5583b3be2eb7587930f16220912ce2b2b3cdc"
+    },
+    "workflows": {
+      "columns": [
+        "id",
+        "invoice_id",
+        "actor_id",
+        "status",
+        "result_json",
+        "error",
+        "created_at"
+      ],
+      "rows": 8,
+      "sha256": "9ff7f19c0fb265fc39e8c1cc197974fdcfbd713bb0c2244126354dcf26746949"
+    },
+    "reservations": {
+      "columns": [
+        "id",
+        "proposal_id",
+        "amount_minor",
+        "state"
+      ],
+      "rows": 6,
+      "sha256": "e3ab13315801fac97f0978d3fb592cc79d63c08f187d46a2da7f683e8dec7fe1"
+    },
+    "receipt_allocations": {
+      "columns": [
+        "id",
+        "proposal_id",
+        "receipt_line_id",
+        "invoice_line_id",
+        "canonical_quantity",
+        "state"
+      ],
+      "rows": 6,
+      "sha256": "f8b2ab2f93dbabc3405b2cb893fa61e08d468e335c87ee67943d100a2a92f97a"
+    },
+    "approvals": {
+      "columns": [
+        "id",
+        "proposal_id",
+        "approver_id",
+        "decision",
+        "snapshot_hash",
+        "created_at"
+      ],
+      "rows": 5,
+      "sha256": "cf2595646329e60ce8aa4e0fe42a46db80aac1d9d4f596db680a237fe810a050"
+    },
+    "execution_attempts": {
+      "columns": [
+        "id",
+        "proposal_id",
+        "idempotency_key",
+        "request_hash",
+        "status_code",
+        "response_json",
+        "actor_id"
+      ],
+      "rows": 5,
+      "sha256": "f2c26d014a8cf284af656830dd28b9963d95b88422327f553b8a1804cff56b8b"
+    },
+    "workflow_steps": {
+      "columns": [
+        "id",
+        "workflow_id",
+        "name",
+        "tool",
+        "status",
+        "input_json",
+        "output_json",
+        "started_at",
+        "finished_at"
+      ],
+      "rows": 72,
+      "sha256": "16deabde5c2baea366c72b7eb2b944456127702ba39a85ba77ba41cc425e986b"
+    },
+    "ledger_entries": {
+      "columns": [
+        "id",
+        "project_id",
+        "payment_id",
+        "account",
+        "direction",
+        "amount_minor",
+        "currency",
+        "created_at"
+      ],
+      "rows": 10,
+      "sha256": "1130182ac99f448a4ee6152f484e8b169e155ccd26ff0957b16bde034b093b07"
+    },
+    "measurement_profiles": {
+      "columns": [
+        "id",
+        "code",
+        "name",
+        "edition",
+        "source_url",
+        "rules_json",
+        "verification_status"
+      ],
+      "rows": 8,
+      "sha256": "afdc92e69f89cfea99ec3e0d5a7ad9699a8112435be6c5661198e5b6d799bc8b"
+    },
+    "estimate_versions": {
+      "columns": [
+        "id",
+        "project_id",
+        "estimate_key",
+        "revision",
+        "version",
+        "parent_id",
+        "name",
+        "status",
+        "fields_json",
+        "calculated_json",
+        "total_minor",
+        "prepared_by",
+        "checked_by",
+        "approved_by",
+        "snapshot_hash",
+        "created_at",
+        "approval_snapshot_json"
+      ],
+      "rows": 1,
+      "sha256": "e886e33794467eaf8fb05950a5206d52679eb723c42f1826b98b9a3b84f9bcf9"
+    },
+    "exchange_rate_observations": {
+      "columns": [
+        "id",
+        "project_id",
+        "base",
+        "quote",
+        "factor",
+        "source",
+        "observed_date",
+        "actor_id",
+        "created_at"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "materials": {
+      "columns": [
+        "id",
+        "project_id",
+        "name",
+        "category",
+        "unit",
+        "specification_json",
+        "version",
+        "active",
+        "created_by",
+        "created_at"
+      ],
+      "rows": 1,
+      "sha256": "3e3aee28a798e880a1cedaefbf494f54bbd39f5af7cf26e913bc64b30350d302"
+    },
+    "takeoff_sheets": {
+      "columns": [
+        "id",
+        "project_id",
+        "profile_id",
+        "fields_json",
+        "result_json",
+        "prepared_by",
+        "checked_by",
+        "status",
+        "version",
+        "created_at"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "budget_baselines": {
+      "columns": [
+        "id",
+        "project_id",
+        "estimate_id",
+        "amount_minor",
+        "snapshot_hash",
+        "approved_by",
+        "created_at"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "price_searches": {
+      "columns": [
+        "id",
+        "project_id",
+        "material_id",
+        "actor_id",
+        "fingerprint",
+        "request_json",
+        "states_json",
+        "status",
+        "created_at",
+        "updated_at"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "supplier_quotations": {
+      "columns": [
+        "id",
+        "project_id",
+        "material_id",
+        "fields_json",
+        "status",
+        "version",
+        "prepared_by",
+        "verified_by",
+        "storage_name",
+        "original_filename",
+        "attachment_hash",
+        "created_at"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "price_observations": {
+      "columns": [
+        "id",
+        "project_id",
+        "material_id",
+        "search_id",
+        "quotation_id",
+        "provider",
+        "source_type",
+        "payload_json",
+        "evidence_hash",
+        "retrieved_at"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "material_equivalents": {
+      "columns": [
+        "id",
+        "project_id",
+        "material_id",
+        "observation_id",
+        "approved_by",
+        "reason",
+        "material_version",
+        "created_at"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "price_selections": {
+      "columns": [
+        "id",
+        "project_id",
+        "estimate_id",
+        "observation_id",
+        "line_id",
+        "component_id",
+        "snapshot_json",
+        "snapshot_hash",
+        "reason",
+        "actor_id",
+        "created_at"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "record_contributors": {
+      "columns": [
+        "id",
+        "entity_type",
+        "entity_id",
+        "actor_id",
+        "evidence",
+        "created_at"
+      ],
+      "rows": 1,
+      "sha256": "4cb67789920c67c9ca00bcd39037aa8536792715484be4688fdf439824c83784"
+    },
+    "commitment_coverage": {
+      "columns": [
+        "id",
+        "project_id",
+        "boq_item_id",
+        "po_line_id",
+        "source_hash",
+        "quantity",
+        "unit",
+        "method",
+        "created_at"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "evidence_revisions": {
+      "columns": [
+        "id",
+        "project_id",
+        "entity_type",
+        "entity_id",
+        "version",
+        "evidence_json",
+        "snapshot_hash",
+        "actor_id",
+        "created_at"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "job_attempts": {
+      "columns": [
+        "id",
+        "kind",
+        "entity_id",
+        "attempt",
+        "lease_token",
+        "status",
+        "started_at",
+        "heartbeat_at",
+        "lease_until",
+        "next_attempt_at",
+        "finished_at"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "control_records": {
+      "columns": [
+        "id",
+        "project_id",
+        "kind",
+        "name",
+        "version",
+        "status",
+        "parent_id",
+        "payload_json",
+        "calculated_json",
+        "contributors_json",
+        "prepared_by",
+        "checked_by",
+        "approved_by",
+        "snapshot_hash",
+        "snapshot_json",
+        "created_at"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "cost_codes": {
+      "columns": [
+        "id",
+        "project_id",
+        "code",
+        "name",
+        "active",
+        "version"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "accounting_journals": {
+      "columns": [
+        "id",
+        "project_id",
+        "source_key",
+        "record_id",
+        "business_date",
+        "currency",
+        "evidence_json",
+        "snapshot_hash",
+        "created_at"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "cost_code_links": {
+      "columns": [
+        "id",
+        "project_id",
+        "cost_code_id",
+        "source_type",
+        "source_id",
+        "version"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "receivable_balances": {
+      "columns": [
+        "id",
+        "project_id",
+        "certificate_id",
+        "amount_minor",
+        "received_minor",
+        "retention_minor",
+        "due_date",
+        "currency",
+        "version"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "accounting_journal_lines": {
+      "columns": [
+        "id",
+        "journal_id",
+        "account",
+        "debit_minor",
+        "credit_minor",
+        "cost_code_id"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "payable_balances": {
+      "columns": [
+        "id",
+        "project_id",
+        "supplier_id",
+        "invoice_id",
+        "record_id",
+        "amount_minor",
+        "paid_minor",
+        "credit_minor",
+        "retention_minor",
+        "retention_released_minor",
+        "supplier_credit_minor",
+        "currency",
+        "due_date",
+        "version"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "cost_recognitions": {
+      "columns": [
+        "id",
+        "project_id",
+        "record_id",
+        "receipt_line_id",
+        "cost_code_id",
+        "amount_minor",
+        "quantity",
+        "unit",
+        "invoice_id",
+        "source_hash"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "invoice_entitlements": {
+      "columns": [
+        "id",
+        "invoice_id",
+        "receipt_line_id",
+        "invoice_line_id",
+        "canonical_quantity",
+        "state"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "obligations": {
+      "columns": [
+        "id",
+        "project_id",
+        "source_type",
+        "source_id",
+        "category",
+        "direction",
+        "amount_minor",
+        "currency",
+        "due_date",
+        "cash_movement_id",
+        "version"
+      ],
+      "rows": 39,
+      "sha256": "3fe01133e40db7acfad8e9c1b0e74ab186218cf5d8e9a21b4ededf02d8ce1698"
+    },
+    "commercial_publications": {
+      "columns": [
+        "id",
+        "project_id",
+        "control_id",
+        "source_type",
+        "source_id"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "certificate_allocations": {
+      "columns": [
+        "id",
+        "certificate_id",
+        "acceptance_id",
+        "amount_minor"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "payment_proposals": {
+      "columns": [
+        "id",
+        "invoice_id",
+        "project_id",
+        "supplier_id",
+        "amount_minor",
+        "currency",
+        "beneficiary_fingerprint",
+        "status",
+        "requested_by",
+        "version",
+        "snapshot_json",
+        "snapshot_hash",
+        "expires_at",
+        "created_at",
+        "payable_id"
+      ],
+      "rows": 6,
+      "sha256": "c92286963d26d0fa9d49aad2f1233c0544b8a01c6a91a351c194b5d6db5a0442"
+    },
+    "payments": {
+      "columns": [
+        "id",
+        "proposal_id",
+        "invoice_id",
+        "mock_transaction_id",
+        "idempotency_key",
+        "amount_minor",
+        "currency",
+        "provider",
+        "executed_at",
+        "payable_id"
+      ],
+      "rows": 5,
+      "sha256": "33d34f705b9bb7dbd3ec7860f01851a83501072d9dcc74a1b7680c5ce632e201"
+    },
+    "recognition_allocations": {
+      "columns": [
+        "id",
+        "recognition_id",
+        "invoice_id",
+        "invoice_line_id",
+        "quantity",
+        "amount_minor"
+      ],
+      "rows": 0,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  },
+  "credentials_and_secret_unchanged": true,
+  "audit_integrity": {
+    "valid": true,
+    "checked_events": 699,
+    "failed_event_id": null,
+    "head_hash": "e22fdd55541f9679442c40cae16623b7480fd306890f50ec47eee482d54d04ca",
+    "limitation": "Local hash chain; an unrestricted database administrator can rewrite the complete chain."
+  }
+}

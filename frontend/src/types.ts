@@ -1,0 +1,204 @@
+import type { components } from "./types/api.generated";
+export type User = components["schemas"]["UserResponse"];
+export type Project = {
+  id: number;
+  code: string;
+  name: string;
+  currency: string;
+  balance: string;
+  budget: string;
+  minimum_reserve: string;
+  run_id: string;
+  active: boolean;
+};
+export type Invoice = {
+  id: number;
+  project_id: number;
+  document_id: number;
+  invoice_number: string;
+  supplier: string;
+  supplier_code: string;
+  currency: string;
+  grand_total: string;
+  status: string;
+  invoice_date: string;
+  version: number;
+};
+export type Doc = {
+  id: number;
+  project_id: number;
+  document_type: string;
+  original_filename: string;
+  extraction_status: string;
+  sha256: string;
+  version: number;
+  confirmed_by: number | null;
+  reviewed_by: number | null;
+  created_at: string;
+};
+export type Item = {
+  item_code: string;
+  description: string;
+  quantity: string;
+  unit: string;
+  unit_rate: string;
+  amount?: string;
+};
+export type DocumentData = {
+  document_type: string;
+  items: Item[];
+  [key: string]: string | Item[] | null;
+};
+export type Source = {
+  document_id: number;
+  record_type: string;
+  item_code?: string;
+};
+export type Finding = {
+  code: string;
+  severity: "BLOCK" | "WARNING" | "INFO";
+  message: string;
+  evidence: Source[];
+};
+export type Comparison = {
+  item_code: string;
+  description: string;
+  unit: string;
+  boq_quantity: string;
+  po_quantity: string;
+  accepted_quantity: string;
+  previously_allocated: string;
+  available_entitlement: string;
+  invoice_quantity: string;
+  contract_rate: string;
+  invoice_rate: string;
+  claimed_amount: string;
+  verified_amount: string;
+  difference: string;
+  excess_quantity: string;
+  quantity_variance_percent: string | null;
+  severity: string;
+  evidence: Source[];
+};
+export type CashDay = {
+  date: string;
+  opening: string;
+  inflows: string;
+  outflows: string;
+  closing: string;
+  obligations: { id: number; description: string; amount: string }[];
+};
+export type Scenario = {
+  name: string;
+  days: CashDay[];
+  lowest_balance: string;
+  pressure_date: string;
+  reserve_maintained: boolean;
+  shortfall_obligations: { id: number; description: string; amount: string }[];
+};
+export type Forecast = {
+  project_id: number;
+  available_cash: string;
+  recorded_balance: string;
+  reserved: string;
+  minimum_reserve: string;
+  proposed_payment: string;
+  scenarios: Scenario[];
+  receivable_delay_days: number;
+  policy_receivable_delay_days: number;
+  cost_pressure_percent: string;
+  payment_eligible: boolean;
+  assumption_notice: string;
+};
+export type Verification = {
+  invoice_id: number;
+  status: string;
+  claimed_amount: string;
+  verified_amount: string;
+  difference: string;
+  comparisons: Comparison[];
+  findings: Finding[];
+  cashflow: Forecast;
+  payment_eligible: boolean;
+  explanation: string;
+  explanation_source: string;
+  analyzed_at?: string;
+};
+export type Proposal = {
+  id: number;
+  project_id: number;
+  invoice_id: number;
+  invoice_number: string;
+  supplier: string;
+  amount: string;
+  currency: string;
+  status: string;
+  requested_by: number;
+  beneficiary_fingerprint: string;
+  snapshot_hash: string;
+  expires_at: string;
+  payment_id: number | null;
+  approvals: { approver_id: number; decision: string; created_at: string }[];
+};
+export type Receipt = {
+  payment_id: number;
+  proposal_id: number;
+  invoice_number: string;
+  supplier: string;
+  amount: string;
+  currency: string;
+  mock_transaction_id: string;
+  provider: string;
+  simulation: boolean;
+  status: string;
+  executed_at: string;
+  balance_after: string;
+};
+export type Workflow = {
+  id: number;
+  status: string;
+  error: string | null;
+  result: { proposal_id?: number };
+  steps: {
+    id: number;
+    name: string;
+    tool: string;
+    status: string;
+    started_at: string;
+    finished_at: string | null;
+  }[];
+};
+export type AuditEvent = {
+  id: number;
+  actor_name: string;
+  role: string;
+  approval_limit: string;
+  event_type: string;
+  entity_type: string;
+  entity_id: string;
+  created_at: string;
+  event_hash: string;
+  previous_hash: string;
+  details: Record<string, unknown>;
+};
+export type Integrity = {
+  valid: boolean;
+  checked_events: number;
+  failed_event_id: number | null;
+  head_hash: string;
+  limitation: string;
+};
+export type Summary = {
+  project: Project;
+  available_cash: string;
+  outstanding_obligations: string;
+  pending_review: number;
+  blocked_invoices: number;
+  awaiting_approval: number;
+  approved_payments: number;
+  settled_payments: number;
+  total_paid: string;
+  cashflow: Forecast;
+  invoices: Invoice[];
+  activity: { id: number; type: string; actor: string; created_at: string }[];
+};

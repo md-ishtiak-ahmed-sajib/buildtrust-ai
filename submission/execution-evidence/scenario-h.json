@@ -1,0 +1,3498 @@
+{
+  "scenario_id": "H",
+  "executed_at": "2026-10-19T15:52:28.286303Z",
+  "run_id": "a496f242d02c",
+  "source_invoice": {
+    "id": 42,
+    "project_id": 17,
+    "document_id": 112,
+    "invoice_number": "INV-CEMENT-070",
+    "supplier": "Metro Materials (fictional)",
+    "supplier_code": "DEMO-CEMENT",
+    "currency": "BDT",
+    "subtotal": "70000.00",
+    "tax": "0.00",
+    "retention": "0.00",
+    "discount": "0.00",
+    "grand_total": "70000.00",
+    "status": "VERIFIED",
+    "invoice_date": "2026-10-18",
+    "version": 1
+  },
+  "balance_before": "1000000.00",
+  "starting_invoice_count": 4,
+  "simulation": true,
+  "workflow": {
+    "id": 7,
+    "invoice_id": 42,
+    "status": "AWAITING_APPROVAL",
+    "error": null,
+    "created_at": "2026-10-19T15:52:28.289284Z",
+    "result": {
+      "proposal_id": 3,
+      "verification": {
+        "analysis_version": 1,
+        "cashflow": {
+          "as_of": "2026-10-19",
+          "assumption_notice": "Scheduled internal records and configurable scenarios; not independently verified market forecasts.",
+          "available_cash": "1000000.00",
+          "cost_pressure_percent": "10",
+          "currency": "BDT",
+          "currency_mismatch": false,
+          "minimum_reserve": "100000.00",
+          "payment_eligible": true,
+          "policy_receivable_delay_days": 15,
+          "project_id": 17,
+          "proposed_payment": "70000.00",
+          "receivable_delay_days": 15,
+          "recommendation": "PROCEED_TO_HUMAN_APPROVAL",
+          "recorded_balance": "1000000.00",
+          "reserved": "0.00",
+          "scenarios": [
+            {
+              "days": [
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-19",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-20",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-21",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-22",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-23",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-24",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-25",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-26",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-27",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-28",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "1180000.00",
+                  "date": "2026-10-29",
+                  "inflows": "250000.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "1180000.00",
+                  "date": "2026-10-30",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "1180000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "1180000.00",
+                  "date": "2026-10-31",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "1180000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "1180000.00",
+                  "date": "2026-11-01",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "1180000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "1180000.00",
+                  "date": "2026-11-02",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "1180000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "980000.00",
+                  "date": "2026-11-03",
+                  "inflows": "0.00",
+                  "obligations": [
+                    {
+                      "amount": "200000.00",
+                      "description": "Committed site payroll",
+                      "id": 26
+                    }
+                  ],
+                  "opening": "1180000.00",
+                  "outflows": "200000.00"
+                },
+                {
+                  "closing": "980000.00",
+                  "date": "2026-11-04",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "980000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "980000.00",
+                  "date": "2026-11-05",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "980000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "980000.00",
+                  "date": "2026-11-06",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "980000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "980000.00",
+                  "date": "2026-11-07",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "980000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "980000.00",
+                  "date": "2026-11-08",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "980000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "980000.00",
+                  "date": "2026-11-09",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "980000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "980000.00",
+                  "date": "2026-11-10",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "980000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "980000.00",
+                  "date": "2026-11-11",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "980000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "980000.00",
+                  "date": "2026-11-12",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "980000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "880000.00",
+                  "date": "2026-11-13",
+                  "inflows": "0.00",
+                  "obligations": [
+                    {
+                      "amount": "100000.00",
+                      "description": "Equipment hire commitment",
+                      "id": 27
+                    }
+                  ],
+                  "opening": "980000.00",
+                  "outflows": "100000.00"
+                },
+                {
+                  "closing": "880000.00",
+                  "date": "2026-11-14",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "880000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "880000.00",
+                  "date": "2026-11-15",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "880000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "880000.00",
+                  "date": "2026-11-16",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "880000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "880000.00",
+                  "date": "2026-11-17",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "880000.00",
+                  "outflows": "0.00"
+                }
+              ],
+              "lowest_balance": "880000.00",
+              "name": "base",
+              "pressure_date": "2026-11-13",
+              "reserve_maintained": true,
+              "shortfall_obligations": [
+                {
+                  "amount": "200000.00",
+                  "description": "Committed site payroll",
+                  "id": 26
+                },
+                {
+                  "amount": "100000.00",
+                  "description": "Equipment hire commitment",
+                  "id": 27
+                }
+              ]
+            },
+            {
+              "days": [
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-19",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-20",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-21",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-22",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-23",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-24",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-25",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-26",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-27",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-28",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-29",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-30",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-31",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-11-01",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-11-02",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "730000.00",
+                  "date": "2026-11-03",
+                  "inflows": "0.00",
+                  "obligations": [
+                    {
+                      "amount": "200000.00",
+                      "description": "Committed site payroll",
+                      "id": 26
+                    }
+                  ],
+                  "opening": "930000.00",
+                  "outflows": "200000.00"
+                },
+                {
+                  "closing": "730000.00",
+                  "date": "2026-11-04",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "730000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "730000.00",
+                  "date": "2026-11-05",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "730000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "730000.00",
+                  "date": "2026-11-06",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "730000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "730000.00",
+                  "date": "2026-11-07",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "730000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "730000.00",
+                  "date": "2026-11-08",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "730000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "730000.00",
+                  "date": "2026-11-09",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "730000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "730000.00",
+                  "date": "2026-11-10",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "730000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "730000.00",
+                  "date": "2026-11-11",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "730000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "730000.00",
+                  "date": "2026-11-12",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "730000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "880000.00",
+                  "date": "2026-11-13",
+                  "inflows": "250000.00",
+                  "obligations": [
+                    {
+                      "amount": "100000.00",
+                      "description": "Equipment hire commitment",
+                      "id": 27
+                    }
+                  ],
+                  "opening": "730000.00",
+                  "outflows": "100000.00"
+                },
+                {
+                  "closing": "880000.00",
+                  "date": "2026-11-14",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "880000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "880000.00",
+                  "date": "2026-11-15",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "880000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "880000.00",
+                  "date": "2026-11-16",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "880000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "880000.00",
+                  "date": "2026-11-17",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "880000.00",
+                  "outflows": "0.00"
+                }
+              ],
+              "lowest_balance": "730000.00",
+              "name": "delayed_receivables",
+              "pressure_date": "2026-11-03",
+              "reserve_maintained": true,
+              "shortfall_obligations": [
+                {
+                  "amount": "200000.00",
+                  "description": "Committed site payroll",
+                  "id": 26
+                }
+              ]
+            },
+            {
+              "days": [
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-19",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-20",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-21",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-22",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-23",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-24",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-25",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-26",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-27",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-28",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "1180000.00",
+                  "date": "2026-10-29",
+                  "inflows": "250000.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "1180000.00",
+                  "date": "2026-10-30",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "1180000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "1180000.00",
+                  "date": "2026-10-31",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "1180000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "1180000.00",
+                  "date": "2026-11-01",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "1180000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "1180000.00",
+                  "date": "2026-11-02",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "1180000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "960000.00",
+                  "date": "2026-11-03",
+                  "inflows": "0.00",
+                  "obligations": [
+                    {
+                      "amount": "220000.00",
+                      "description": "Committed site payroll",
+                      "id": 26
+                    }
+                  ],
+                  "opening": "1180000.00",
+                  "outflows": "220000.00"
+                },
+                {
+                  "closing": "960000.00",
+                  "date": "2026-11-04",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "960000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "960000.00",
+                  "date": "2026-11-05",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "960000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "960000.00",
+                  "date": "2026-11-06",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "960000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "960000.00",
+                  "date": "2026-11-07",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "960000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "960000.00",
+                  "date": "2026-11-08",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "960000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "960000.00",
+                  "date": "2026-11-09",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "960000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "960000.00",
+                  "date": "2026-11-10",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "960000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "960000.00",
+                  "date": "2026-11-11",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "960000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "960000.00",
+                  "date": "2026-11-12",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "960000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "850000.00",
+                  "date": "2026-11-13",
+                  "inflows": "0.00",
+                  "obligations": [
+                    {
+                      "amount": "110000.00",
+                      "description": "Equipment hire commitment",
+                      "id": 27
+                    }
+                  ],
+                  "opening": "960000.00",
+                  "outflows": "110000.00"
+                },
+                {
+                  "closing": "850000.00",
+                  "date": "2026-11-14",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "850000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "850000.00",
+                  "date": "2026-11-15",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "850000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "850000.00",
+                  "date": "2026-11-16",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "850000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "850000.00",
+                  "date": "2026-11-17",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "850000.00",
+                  "outflows": "0.00"
+                }
+              ],
+              "lowest_balance": "850000.00",
+              "name": "cost_pressure",
+              "pressure_date": "2026-11-13",
+              "reserve_maintained": true,
+              "shortfall_obligations": [
+                {
+                  "amount": "220000.00",
+                  "description": "Committed site payroll",
+                  "id": 26
+                },
+                {
+                  "amount": "110000.00",
+                  "description": "Equipment hire commitment",
+                  "id": 27
+                }
+              ]
+            }
+          ]
+        },
+        "claimed_amount": "70000.00",
+        "comparisons": [
+          {
+            "accepted_quantity": "100",
+            "available_entitlement": "100",
+            "boq_quantity": "100",
+            "claimed_amount": "70000.00",
+            "contract_rate": "700",
+            "description": "Portland Cement 50 kg bag",
+            "difference": "0.00",
+            "evidence": [
+              {
+                "document_id": 112,
+                "item_code": "CEMENT-50KG",
+                "record_type": "INVOICE"
+              },
+              {
+                "document_id": 106,
+                "item_code": "CEMENT-50KG",
+                "record_type": "BOQ"
+              },
+              {
+                "document_id": 108,
+                "item_code": "CEMENT-50KG",
+                "record_type": "PO"
+              },
+              {
+                "document_id": 110,
+                "item_code": "CEMENT-50KG",
+                "record_type": "GRN"
+              }
+            ],
+            "excess_quantity": "0",
+            "invoice_line_id": 42,
+            "invoice_quantity": "100",
+            "invoice_rate": "700",
+            "item_code": "CEMENT-50KG",
+            "po_quantity": "100",
+            "previously_allocated": "0",
+            "quantity_variance_percent": "0.00",
+            "severity": "INFO",
+            "unit": "bag",
+            "verified_amount": "70000.00"
+          }
+        ],
+        "currency": "BDT",
+        "difference": "0.00",
+        "explanation": "Invoice INV-CEMENT-070 claims BDT 70000.00; supported amount is BDT 70000.00. Financial checks passed. Explicit approval by a different authorized account is required.",
+        "explanation_source": "deterministic",
+        "findings": [],
+        "invoice_id": 42,
+        "invoice_number": "INV-CEMENT-070",
+        "payment_eligible": true,
+        "status": "VERIFIED",
+        "suggested_action": "PREPARE_PAYMENT_FOR_HUMAN_APPROVAL",
+        "verified_amount": "70000.00"
+      }
+    },
+    "steps": [
+      {
+        "id": 55,
+        "name": "Document intake",
+        "tool": "get_document_evidence",
+        "status": "COMPLETED",
+        "input": {
+          "invoice_id": 42
+        },
+        "output": {
+          "document_id": 112,
+          "invoice_id": 42,
+          "po_id": 26
+        },
+        "started_at": "2026-10-19T15:52:28.291928Z",
+        "finished_at": "2026-10-19T15:52:28.291928Z"
+      },
+      {
+        "id": 56,
+        "name": "Extraction review",
+        "tool": "read_extraction",
+        "status": "COMPLETED",
+        "input": {
+          "invoice_id": 42
+        },
+        "output": {
+          "document_id": 112,
+          "extraction_status": "EXTRACTED",
+          "provenance_revisions": 1,
+          "version": 1
+        },
+        "started_at": "2026-10-19T15:52:28.291928Z",
+        "finished_at": "2026-10-19T15:52:28.291928Z"
+      },
+      {
+        "id": 57,
+        "name": "Four-way reconciliation",
+        "tool": "reconcile_invoice",
+        "status": "COMPLETED",
+        "input": {
+          "invoice_id": 42
+        },
+        "output": {
+          "claimed_amount": "70000.00",
+          "comparisons": [
+            {
+              "accepted_quantity": "100",
+              "available_entitlement": "100",
+              "boq_quantity": "100",
+              "claimed_amount": "70000.00",
+              "contract_rate": "700",
+              "description": "Portland Cement 50 kg bag",
+              "difference": "0.00",
+              "evidence": [
+                {
+                  "document_id": 112,
+                  "item_code": "CEMENT-50KG",
+                  "record_type": "INVOICE"
+                },
+                {
+                  "document_id": 106,
+                  "item_code": "CEMENT-50KG",
+                  "record_type": "BOQ"
+                },
+                {
+                  "document_id": 108,
+                  "item_code": "CEMENT-50KG",
+                  "record_type": "PO"
+                },
+                {
+                  "document_id": 110,
+                  "item_code": "CEMENT-50KG",
+                  "record_type": "GRN"
+                }
+              ],
+              "excess_quantity": "0",
+              "invoice_line_id": 42,
+              "invoice_quantity": "100",
+              "invoice_rate": "700",
+              "item_code": "CEMENT-50KG",
+              "po_quantity": "100",
+              "previously_allocated": "0",
+              "quantity_variance_percent": "0.00",
+              "severity": "INFO",
+              "unit": "bag",
+              "verified_amount": "70000.00"
+            }
+          ],
+          "status": "VERIFIED",
+          "verified_amount": "70000.00"
+        },
+        "started_at": "2026-10-19T15:52:28.291928Z",
+        "finished_at": "2026-10-19T15:52:28.307180Z"
+      },
+      {
+        "id": 58,
+        "name": "Risk assessment",
+        "tool": "calculate_financial_risk",
+        "status": "COMPLETED",
+        "input": {
+          "invoice_id": 42
+        },
+        "output": {
+          "findings": [],
+          "payment_eligible": true
+        },
+        "started_at": "2026-10-19T15:52:28.312807Z",
+        "finished_at": "2026-10-19T15:52:28.312807Z"
+      },
+      {
+        "id": 59,
+        "name": "Cash-flow assessment",
+        "tool": "forecast_project_cashflow",
+        "status": "COMPLETED",
+        "input": {
+          "invoice_id": 42
+        },
+        "output": {
+          "as_of": "2026-10-19",
+          "assumption_notice": "Scheduled internal records and configurable scenarios; not independently verified market forecasts.",
+          "available_cash": "1000000.00",
+          "cost_pressure_percent": "10",
+          "currency": "BDT",
+          "currency_mismatch": false,
+          "minimum_reserve": "100000.00",
+          "payment_eligible": true,
+          "policy_receivable_delay_days": 15,
+          "project_id": 17,
+          "proposed_payment": "70000.00",
+          "receivable_delay_days": 15,
+          "recommendation": "PROCEED_TO_HUMAN_APPROVAL",
+          "recorded_balance": "1000000.00",
+          "reserved": "0.00",
+          "scenarios": [
+            {
+              "days": [
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-19",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-20",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-21",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-22",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-23",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-24",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-25",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-26",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-27",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-28",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "1180000.00",
+                  "date": "2026-10-29",
+                  "inflows": "250000.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "1180000.00",
+                  "date": "2026-10-30",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "1180000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "1180000.00",
+                  "date": "2026-10-31",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "1180000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "1180000.00",
+                  "date": "2026-11-01",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "1180000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "1180000.00",
+                  "date": "2026-11-02",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "1180000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "980000.00",
+                  "date": "2026-11-03",
+                  "inflows": "0.00",
+                  "obligations": [
+                    {
+                      "amount": "200000.00",
+                      "description": "Committed site payroll",
+                      "id": 26
+                    }
+                  ],
+                  "opening": "1180000.00",
+                  "outflows": "200000.00"
+                },
+                {
+                  "closing": "980000.00",
+                  "date": "2026-11-04",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "980000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "980000.00",
+                  "date": "2026-11-05",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "980000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "980000.00",
+                  "date": "2026-11-06",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "980000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "980000.00",
+                  "date": "2026-11-07",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "980000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "980000.00",
+                  "date": "2026-11-08",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "980000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "980000.00",
+                  "date": "2026-11-09",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "980000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "980000.00",
+                  "date": "2026-11-10",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "980000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "980000.00",
+                  "date": "2026-11-11",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "980000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "980000.00",
+                  "date": "2026-11-12",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "980000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "880000.00",
+                  "date": "2026-11-13",
+                  "inflows": "0.00",
+                  "obligations": [
+                    {
+                      "amount": "100000.00",
+                      "description": "Equipment hire commitment",
+                      "id": 27
+                    }
+                  ],
+                  "opening": "980000.00",
+                  "outflows": "100000.00"
+                },
+                {
+                  "closing": "880000.00",
+                  "date": "2026-11-14",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "880000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "880000.00",
+                  "date": "2026-11-15",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "880000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "880000.00",
+                  "date": "2026-11-16",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "880000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "880000.00",
+                  "date": "2026-11-17",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "880000.00",
+                  "outflows": "0.00"
+                }
+              ],
+              "lowest_balance": "880000.00",
+              "name": "base",
+              "pressure_date": "2026-11-13",
+              "reserve_maintained": true,
+              "shortfall_obligations": [
+                {
+                  "amount": "200000.00",
+                  "description": "Committed site payroll",
+                  "id": 26
+                },
+                {
+                  "amount": "100000.00",
+                  "description": "Equipment hire commitment",
+                  "id": 27
+                }
+              ]
+            },
+            {
+              "days": [
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-19",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-20",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-21",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-22",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-23",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-24",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-25",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-26",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-27",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-28",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-29",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-30",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-31",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-11-01",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-11-02",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "730000.00",
+                  "date": "2026-11-03",
+                  "inflows": "0.00",
+                  "obligations": [
+                    {
+                      "amount": "200000.00",
+                      "description": "Committed site payroll",
+                      "id": 26
+                    }
+                  ],
+                  "opening": "930000.00",
+                  "outflows": "200000.00"
+                },
+                {
+                  "closing": "730000.00",
+                  "date": "2026-11-04",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "730000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "730000.00",
+                  "date": "2026-11-05",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "730000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "730000.00",
+                  "date": "2026-11-06",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "730000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "730000.00",
+                  "date": "2026-11-07",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "730000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "730000.00",
+                  "date": "2026-11-08",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "730000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "730000.00",
+                  "date": "2026-11-09",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "730000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "730000.00",
+                  "date": "2026-11-10",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "730000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "730000.00",
+                  "date": "2026-11-11",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "730000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "730000.00",
+                  "date": "2026-11-12",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "730000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "880000.00",
+                  "date": "2026-11-13",
+                  "inflows": "250000.00",
+                  "obligations": [
+                    {
+                      "amount": "100000.00",
+                      "description": "Equipment hire commitment",
+                      "id": 27
+                    }
+                  ],
+                  "opening": "730000.00",
+                  "outflows": "100000.00"
+                },
+                {
+                  "closing": "880000.00",
+                  "date": "2026-11-14",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "880000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "880000.00",
+                  "date": "2026-11-15",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "880000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "880000.00",
+                  "date": "2026-11-16",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "880000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "880000.00",
+                  "date": "2026-11-17",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "880000.00",
+                  "outflows": "0.00"
+                }
+              ],
+              "lowest_balance": "730000.00",
+              "name": "delayed_receivables",
+              "pressure_date": "2026-11-03",
+              "reserve_maintained": true,
+              "shortfall_obligations": [
+                {
+                  "amount": "200000.00",
+                  "description": "Committed site payroll",
+                  "id": 26
+                }
+              ]
+            },
+            {
+              "days": [
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-19",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-20",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-21",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-22",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-23",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-24",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-25",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-26",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-27",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "930000.00",
+                  "date": "2026-10-28",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "1180000.00",
+                  "date": "2026-10-29",
+                  "inflows": "250000.00",
+                  "obligations": [],
+                  "opening": "930000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "1180000.00",
+                  "date": "2026-10-30",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "1180000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "1180000.00",
+                  "date": "2026-10-31",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "1180000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "1180000.00",
+                  "date": "2026-11-01",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "1180000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "1180000.00",
+                  "date": "2026-11-02",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "1180000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "960000.00",
+                  "date": "2026-11-03",
+                  "inflows": "0.00",
+                  "obligations": [
+                    {
+                      "amount": "220000.00",
+                      "description": "Committed site payroll",
+                      "id": 26
+                    }
+                  ],
+                  "opening": "1180000.00",
+                  "outflows": "220000.00"
+                },
+                {
+                  "closing": "960000.00",
+                  "date": "2026-11-04",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "960000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "960000.00",
+                  "date": "2026-11-05",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "960000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "960000.00",
+                  "date": "2026-11-06",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "960000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "960000.00",
+                  "date": "2026-11-07",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "960000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "960000.00",
+                  "date": "2026-11-08",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "960000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "960000.00",
+                  "date": "2026-11-09",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "960000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "960000.00",
+                  "date": "2026-11-10",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "960000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "960000.00",
+                  "date": "2026-11-11",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "960000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "960000.00",
+                  "date": "2026-11-12",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "960000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "850000.00",
+                  "date": "2026-11-13",
+                  "inflows": "0.00",
+                  "obligations": [
+                    {
+                      "amount": "110000.00",
+                      "description": "Equipment hire commitment",
+                      "id": 27
+                    }
+                  ],
+                  "opening": "960000.00",
+                  "outflows": "110000.00"
+                },
+                {
+                  "closing": "850000.00",
+                  "date": "2026-11-14",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "850000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "850000.00",
+                  "date": "2026-11-15",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "850000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "850000.00",
+                  "date": "2026-11-16",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "850000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "850000.00",
+                  "date": "2026-11-17",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "850000.00",
+                  "outflows": "0.00"
+                }
+              ],
+              "lowest_balance": "850000.00",
+              "name": "cost_pressure",
+              "pressure_date": "2026-11-13",
+              "reserve_maintained": true,
+              "shortfall_obligations": [
+                {
+                  "amount": "220000.00",
+                  "description": "Committed site payroll",
+                  "id": 26
+                },
+                {
+                  "amount": "110000.00",
+                  "description": "Equipment hire commitment",
+                  "id": 27
+                }
+              ]
+            }
+          ]
+        },
+        "started_at": "2026-10-19T15:52:28.314716Z",
+        "finished_at": "2026-10-19T15:52:28.314716Z"
+      },
+      {
+        "id": 60,
+        "name": "Recommendation",
+        "tool": "explain_findings",
+        "status": "COMPLETED",
+        "input": {
+          "invoice_id": 42
+        },
+        "output": {
+          "explanation_source": "deterministic",
+          "text": "Invoice INV-CEMENT-070 claims BDT 70000.00; supported amount is BDT 70000.00. Financial checks passed. Explicit approval by a different authorized account is required."
+        },
+        "started_at": "2026-10-19T15:52:28.314716Z",
+        "finished_at": "2026-10-19T15:52:28.314716Z"
+      },
+      {
+        "id": 61,
+        "name": "Payment preparation",
+        "tool": "create_payment_proposal",
+        "status": "COMPLETED",
+        "input": {
+          "invoice_id": 42
+        },
+        "output": {
+          "amount": "70000.00",
+          "approvals": [],
+          "beneficiary_fingerprint": "d9413b828e4752e3c57c4bfbd09203f9ff2866e56a6096550d36f70bc0ce984d",
+          "created_at": "2026-10-19T15:52:28.327929Z",
+          "currency": "BDT",
+          "expires_at": "2026-10-19T16:22:28.327929Z",
+          "id": 3,
+          "invoice_id": 42,
+          "invoice_number": "INV-CEMENT-070",
+          "payment_id": null,
+          "project_id": 17,
+          "requested_by": 3,
+          "snapshot_hash": "6e1339252cd2af725a85f1e9727ca905da3e3b37b23872476c7b406173d8467d",
+          "status": "PENDING_APPROVAL",
+          "supplier": "Metro Materials (fictional)",
+          "version": 1
+        },
+        "started_at": "2026-10-19T15:52:28.322149Z",
+        "finished_at": "2026-10-19T15:52:28.333518Z"
+      },
+      {
+        "id": 62,
+        "name": "Human authorization",
+        "tool": "request_human_approval",
+        "status": "COMPLETED",
+        "input": {
+          "invoice_id": 42
+        },
+        "output": {
+          "message": "No autonomous approval or execution is permitted.",
+          "proposal_id": 3,
+          "status": "AWAITING_HUMAN_APPROVAL"
+        },
+        "started_at": "2026-10-19T15:52:28.333518Z",
+        "finished_at": "2026-10-19T15:52:28.337786Z"
+      },
+      {
+        "id": 63,
+        "name": "Audit evidence",
+        "tool": "generate_audit_report",
+        "status": "COMPLETED",
+        "input": {
+          "invoice_id": 42
+        },
+        "output": {
+          "audit_event_id": 505,
+          "event_hash": "372c58f83a947fffa320178588658a8b7d0c25e9ac303ad8f2884a7708de41dc"
+        },
+        "started_at": "2026-10-19T15:52:28.337786Z",
+        "finished_at": "2026-10-19T15:52:28.337786Z"
+      }
+    ]
+  },
+  "decision": "SETTLED",
+  "approval": {
+    "id": 3,
+    "project_id": 17,
+    "invoice_id": 42,
+    "payable_id": null,
+    "certificate_id": null,
+    "invoice_number": "INV-CEMENT-070",
+    "supplier": "Metro Materials (fictional)",
+    "amount": "70000.00",
+    "currency": "BDT",
+    "status": "APPROVED",
+    "requested_by": 3,
+    "beneficiary_fingerprint": "d9413b828e4752e3c57c4bfbd09203f9ff2866e56a6096550d36f70bc0ce984d",
+    "snapshot_hash": "6e1339252cd2af725a85f1e9727ca905da3e3b37b23872476c7b406173d8467d",
+    "expires_at": "2026-10-19T16:22:28.327929Z",
+    "created_at": "2026-10-19T15:52:28.327929Z",
+    "version": 1,
+    "approvals": [
+      {
+        "approver_id": 2,
+        "decision": "APPROVED",
+        "created_at": "2026-10-19T15:52:28.417223Z"
+      }
+    ],
+    "payment_id": null
+  },
+  "receipt": {
+    "payment_id": 2,
+    "proposal_id": 3,
+    "invoice_id": 42,
+    "invoice_number": "INV-CEMENT-070",
+    "supplier": "Metro Materials (fictional)",
+    "amount": "70000.00",
+    "currency": "BDT",
+    "beneficiary_fingerprint": "d9413b828e4752e3c57c4bfbd09203f9ff2866e56a6096550d36f70bc0ce984d",
+    "mock_transaction_id": "MOCK-6343856D57D3402ABF1A791CB2311A26",
+    "provider": "BuildTrust Local Sandbox",
+    "status": "SETTLED",
+    "simulation": true,
+    "executed_at": "2026-10-19T15:52:28.423650Z",
+    "balance_after": "930000.00"
+  },
+  "retry_response": {
+    "payment_id": 2,
+    "proposal_id": 3,
+    "invoice_id": 42,
+    "invoice_number": "INV-CEMENT-070",
+    "supplier": "Metro Materials (fictional)",
+    "amount": "70000.00",
+    "currency": "BDT",
+    "beneficiary_fingerprint": "d9413b828e4752e3c57c4bfbd09203f9ff2866e56a6096550d36f70bc0ce984d",
+    "mock_transaction_id": "MOCK-6343856D57D3402ABF1A791CB2311A26",
+    "provider": "BuildTrust Local Sandbox",
+    "status": "SETTLED",
+    "simulation": true,
+    "executed_at": "2026-10-19T15:52:28.423650Z",
+    "balance_after": "930000.00"
+  },
+  "settled_payment_count": 1,
+  "identical_retry_response": true,
+  "balance_after": "930000.00",
+  "audit_events": [
+    {
+      "id": 509,
+      "project_id": 17,
+      "actor_id": 2,
+      "actor_name": "Samira Khan",
+      "role": "FINANCE_MANAGER",
+      "event_type": "PAYMENT_RETRY",
+      "entity_type": "proposal",
+      "entity_id": "3",
+      "details": {
+        "outcome": "ORIGINAL_RESULT_RETURNED"
+      },
+      "previous_hash": "069b9da8af9fb0617c0dfd06c12ced37fa63fe750180363baba77e44695d2ec1",
+      "created_at": "2026-10-19T15:52:28.438955Z",
+      "event_hash": "4ede7fa5ef540e652c35c67af86bac8612041fd673e2e3cf5b75e895ac8ba50e"
+    },
+    {
+      "id": 508,
+      "project_id": 17,
+      "actor_id": 2,
+      "actor_name": "Samira Khan",
+      "role": "FINANCE_MANAGER",
+      "event_type": "PAYMENT_SETTLED",
+      "entity_type": "payment",
+      "entity_id": "2",
+      "details": {
+        "amount": "70000.00",
+        "balance_after": "930000.00",
+        "balance_before": "1000000.00",
+        "beneficiary_fingerprint": "d9413b828e4752e3c57c4bfbd09203f9ff2866e56a6096550d36f70bc0ce984d",
+        "currency": "BDT",
+        "executed_at": "2026-10-19T15:52:28.423650Z",
+        "invoice_id": 42,
+        "invoice_number": "INV-CEMENT-070",
+        "mock_transaction_id": "MOCK-6343856D57D3402ABF1A791CB2311A26",
+        "payment_id": 2,
+        "proposal_id": 3,
+        "provider": "BuildTrust Local Sandbox",
+        "simulation": true,
+        "status": "SETTLED",
+        "supplier": "Metro Materials (fictional)"
+      },
+      "previous_hash": "cd686c0823cca1cbcfc87fc097e3e98094d0e0650c3854dab5b1d0e3d2b60bb7",
+      "created_at": "2026-10-19T15:52:28.423650Z",
+      "event_hash": "069b9da8af9fb0617c0dfd06c12ced37fa63fe750180363baba77e44695d2ec1"
+    },
+    {
+      "id": 507,
+      "project_id": 17,
+      "actor_id": 2,
+      "actor_name": "Samira Khan",
+      "role": "FINANCE_MANAGER",
+      "event_type": "PAYMENT_EXECUTING",
+      "entity_type": "proposal",
+      "entity_id": "3",
+      "details": {
+        "simulation": true
+      },
+      "previous_hash": "39817c83f232697a8f65b754b01ca9efc1713557282d79001c5507b35d17cf43",
+      "created_at": "2026-10-19T15:52:28.423650Z",
+      "event_hash": "cd686c0823cca1cbcfc87fc097e3e98094d0e0650c3854dab5b1d0e3d2b60bb7"
+    },
+    {
+      "id": 506,
+      "project_id": 17,
+      "actor_id": 2,
+      "actor_name": "Samira Khan",
+      "role": "FINANCE_MANAGER",
+      "event_type": "PAYMENT_APPROVED",
+      "entity_type": "proposal",
+      "entity_id": "3",
+      "details": {
+        "snapshot_hash": "6e1339252cd2af725a85f1e9727ca905da3e3b37b23872476c7b406173d8467d"
+      },
+      "previous_hash": "372c58f83a947fffa320178588658a8b7d0c25e9ac303ad8f2884a7708de41dc",
+      "created_at": "2026-10-19T15:52:28.418248Z",
+      "event_hash": "39817c83f232697a8f65b754b01ca9efc1713557282d79001c5507b35d17cf43"
+    },
+    {
+      "id": 505,
+      "project_id": 17,
+      "actor_id": 3,
+      "actor_name": "Rafi Ahmed",
+      "role": "OPERATOR",
+      "event_type": "WORKFLOW_COMPLETED",
+      "entity_type": "workflow",
+      "entity_id": "7",
+      "details": {
+        "proposal_id": 3
+      },
+      "previous_hash": "c84d724cac0dc1947a6b5c6ad5ceafa4aeed6c4afe0b0061b1dfee7733fc0e48",
+      "created_at": "2026-10-19T15:52:28.337786Z",
+      "event_hash": "372c58f83a947fffa320178588658a8b7d0c25e9ac303ad8f2884a7708de41dc"
+    },
+    {
+      "id": 504,
+      "project_id": 17,
+      "actor_id": 3,
+      "actor_name": "Rafi Ahmed",
+      "role": "OPERATOR",
+      "event_type": "PAYMENT_PENDING_APPROVAL",
+      "entity_type": "proposal",
+      "entity_id": "3",
+      "details": {
+        "expires_at": "2026-10-19T16:22:28.327929Z",
+        "snapshot_hash": "6e1339252cd2af725a85f1e9727ca905da3e3b37b23872476c7b406173d8467d"
+      },
+      "previous_hash": "39a119520644bf13529c015f4915fc7a5fefba8b4b685e4fa044b1918e85fcfa",
+      "created_at": "2026-10-19T15:52:28.333518Z",
+      "event_hash": "c84d724cac0dc1947a6b5c6ad5ceafa4aeed6c4afe0b0061b1dfee7733fc0e48"
+    },
+    {
+      "id": 503,
+      "project_id": 17,
+      "actor_id": 3,
+      "actor_name": "Rafi Ahmed",
+      "role": "OPERATOR",
+      "event_type": "PAYMENT_VALIDATED",
+      "entity_type": "proposal",
+      "entity_id": "3",
+      "details": {
+        "amount": "70000.00",
+        "findings": []
+      },
+      "previous_hash": "452d1755fdc2b56010f5c932eb016b3194fdd4c621d1b5c87cb053a7285d00f7",
+      "created_at": "2026-10-19T15:52:28.328924Z",
+      "event_hash": "39a119520644bf13529c015f4915fc7a5fefba8b4b685e4fa044b1918e85fcfa"
+    },
+    {
+      "id": 502,
+      "project_id": 17,
+      "actor_id": 3,
+      "actor_name": "Rafi Ahmed",
+      "role": "OPERATOR",
+      "event_type": "PAYMENT_CREATED",
+      "entity_type": "proposal",
+      "entity_id": "3",
+      "details": {
+        "amount": "70000.00",
+        "findings": []
+      },
+      "previous_hash": "6d4a3d88d44265bf0c19b01556b3b05d499f70c3ab6d01f140a6e6e95928807c",
+      "created_at": "2026-10-19T15:52:28.328924Z",
+      "event_hash": "452d1755fdc2b56010f5c932eb016b3194fdd4c621d1b5c87cb053a7285d00f7"
+    },
+    {
+      "id": 501,
+      "project_id": 17,
+      "actor_id": 3,
+      "actor_name": "Rafi Ahmed",
+      "role": "OPERATOR",
+      "event_type": "CASHFLOW_EVALUATED",
+      "entity_type": "invoice",
+      "entity_id": "42",
+      "details": {
+        "claimed": "70000.00",
+        "findings": [],
+        "status": "VERIFIED",
+        "verified": "70000.00"
+      },
+      "previous_hash": "ef39241f6e7a8a7d620a7d7a159e20f0e04310a4e889553d982962d9c9b881d3",
+      "created_at": "2026-10-19T15:52:28.307180Z",
+      "event_hash": "6d4a3d88d44265bf0c19b01556b3b05d499f70c3ab6d01f140a6e6e95928807c"
+    },
+    {
+      "id": 500,
+      "project_id": 17,
+      "actor_id": 3,
+      "actor_name": "Rafi Ahmed",
+      "role": "OPERATOR",
+      "event_type": "RISK_EVALUATED",
+      "entity_type": "invoice",
+      "entity_id": "42",
+      "details": {
+        "claimed": "70000.00",
+        "findings": [],
+        "status": "VERIFIED",
+        "verified": "70000.00"
+      },
+      "previous_hash": "3cb82dc5f90cb33a532cd39fbf0d6697a7672f2a9707eb6acc8d73fbf01dc900",
+      "created_at": "2026-10-19T15:52:28.307180Z",
+      "event_hash": "ef39241f6e7a8a7d620a7d7a159e20f0e04310a4e889553d982962d9c9b881d3"
+    },
+    {
+      "id": 499,
+      "project_id": 17,
+      "actor_id": 3,
+      "actor_name": "Rafi Ahmed",
+      "role": "OPERATOR",
+      "event_type": "INVOICE_MATCHED",
+      "entity_type": "invoice",
+      "entity_id": "42",
+      "details": {
+        "claimed": "70000.00",
+        "findings": [],
+        "status": "VERIFIED",
+        "verified": "70000.00"
+      },
+      "previous_hash": "39242a5c0ec6d3adae9bf5a408dd54c9c52dba63ec25348826ac0bf5be72907f",
+      "created_at": "2026-10-19T15:52:28.307180Z",
+      "event_hash": "3cb82dc5f90cb33a532cd39fbf0d6697a7672f2a9707eb6acc8d73fbf01dc900"
+    },
+    {
+      "id": 498,
+      "project_id": 17,
+      "actor_id": 3,
+      "actor_name": "Rafi Ahmed",
+      "role": "OPERATOR",
+      "event_type": "WORKFLOW_STARTED",
+      "entity_type": "workflow",
+      "entity_id": "7",
+      "details": {
+        "invoice_id": 42
+      },
+      "previous_hash": "9530da6264243e7b35082c39108736f3863806900895768567b7f35675a9578b",
+      "created_at": "2026-10-19T15:52:28.289284Z",
+      "event_hash": "39242a5c0ec6d3adae9bf5a408dd54c9c52dba63ec25348826ac0bf5be72907f"
+    }
+  ],
+  "audit_event_ids": [
+    509,
+    508,
+    507,
+    506,
+    505,
+    504,
+    503,
+    502,
+    501,
+    500,
+    499,
+    498
+  ],
+  "audit_integrity": {
+    "valid": true,
+    "checked_events": 509,
+    "failed_event_id": null,
+    "head_hash": "4ede7fa5ef540e652c35c67af86bac8612041fd673e2e3cf5b75e895ac8ba50e",
+    "limitation": "Local hash chain; an unrestricted database administrator can rewrite the complete chain."
+  },
+  "source_records": [
+    {
+      "document": {
+        "id": 106,
+        "project_id": 17,
+        "document_type": "BOQ",
+        "original_filename": "boq.json",
+        "sha256": "ce7fa3dfefd6eef3ffd3679e045c4408d013d97f7b3db50b8a9900de2912615f",
+        "extraction_status": "CONFIRMED",
+        "version": 1,
+        "reviewed_by": null,
+        "confirmed_by": 1,
+        "created_at": "2026-10-19T15:52:28.165389Z"
+      },
+      "data": {
+        "beneficiary_fingerprint": "",
+        "currency": "BDT",
+        "discount": "0",
+        "document_type": "BOQ",
+        "grand_total": "0",
+        "invoice_date": null,
+        "invoice_number": "",
+        "items": [
+          {
+            "amount": "5600000",
+            "description": "Reinforcement Steel 500 MPa",
+            "item_code": "REBAR-500",
+            "quantity": "80",
+            "unit": "tonnes",
+            "unit_rate": "70000"
+          },
+          {
+            "amount": "70000",
+            "description": "Portland Cement 50 kg bag",
+            "item_code": "CEMENT-50KG",
+            "quantity": "100",
+            "unit": "bag",
+            "unit_rate": "700"
+          }
+        ],
+        "notes": "",
+        "po_number": "",
+        "receipt_number": "",
+        "retention": "0",
+        "retention_percent": "0",
+        "subtotal": "0",
+        "supplier_code": "",
+        "tax": "0",
+        "tax_percent": "0"
+      },
+      "revisions": [
+        {
+          "version": 1,
+          "fields": [
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "document_type",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 106,
+              "value": "BOQ"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "supplier_code",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 106,
+              "value": ""
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "po_number",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 106,
+              "value": ""
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "receipt_number",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 106,
+              "value": ""
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "invoice_number",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 106,
+              "value": ""
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "invoice_date",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 106,
+              "value": "None"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "currency",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 106,
+              "value": "BDT"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "beneficiary_fingerprint",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 106,
+              "value": ""
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "subtotal",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 106,
+              "value": "0"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "tax",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 106,
+              "value": "0"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "retention",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 106,
+              "value": "0"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "discount",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 106,
+              "value": "0"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "grand_total",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 106,
+              "value": "0"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "tax_percent",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 106,
+              "value": "0"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "retention_percent",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 106,
+              "value": "0"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "notes",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 106,
+              "value": ""
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.0.item_code",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 106,
+              "value": "REBAR-500"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.0.description",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 106,
+              "value": "Reinforcement Steel 500 MPa"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.0.quantity",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 106,
+              "value": "80"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.0.unit",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 106,
+              "value": "tonnes"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.0.unit_rate",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 106,
+              "value": "70000"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.0.amount",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 106,
+              "value": "5600000"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.1.item_code",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 106,
+              "value": "CEMENT-50KG"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.1.description",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 106,
+              "value": "Portland Cement 50 kg bag"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.1.quantity",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 106,
+              "value": "100"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.1.unit",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 106,
+              "value": "bag"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.1.unit_rate",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 106,
+              "value": "700"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.1.amount",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 106,
+              "value": "70000"
+            }
+          ],
+          "created_at": "2026-10-19T15:52:28.165389Z"
+        }
+      ]
+    },
+    {
+      "document": {
+        "id": 108,
+        "project_id": 17,
+        "document_type": "PO",
+        "original_filename": "po-cement.json",
+        "sha256": "20e7b3d2444dac6f75b1146866fddfa34e33a29be87954aafdf18172f2d148fc",
+        "extraction_status": "CONFIRMED",
+        "version": 1,
+        "reviewed_by": null,
+        "confirmed_by": 1,
+        "created_at": "2026-10-19T15:52:28.183253Z"
+      },
+      "data": {
+        "beneficiary_fingerprint": "",
+        "currency": "BDT",
+        "discount": "0",
+        "document_type": "PO",
+        "grand_total": "0",
+        "invoice_date": null,
+        "invoice_number": "",
+        "items": [
+          {
+            "amount": "70000",
+            "description": "Portland Cement 50 kg bag",
+            "item_code": "CEMENT-50KG",
+            "quantity": "100",
+            "unit": "bag",
+            "unit_rate": "700"
+          }
+        ],
+        "notes": "",
+        "po_number": "PO-CEMENT-001",
+        "receipt_number": "",
+        "retention": "0",
+        "retention_percent": "0",
+        "subtotal": "0",
+        "supplier_code": "DEMO-CEMENT",
+        "tax": "0",
+        "tax_percent": "0"
+      },
+      "revisions": [
+        {
+          "version": 1,
+          "fields": [
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "document_type",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 108,
+              "value": "PO"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "supplier_code",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 108,
+              "value": "DEMO-CEMENT"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "po_number",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 108,
+              "value": "PO-CEMENT-001"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "receipt_number",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 108,
+              "value": ""
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "invoice_number",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 108,
+              "value": ""
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "invoice_date",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 108,
+              "value": "None"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "currency",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 108,
+              "value": "BDT"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "beneficiary_fingerprint",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 108,
+              "value": ""
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "subtotal",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 108,
+              "value": "0"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "tax",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 108,
+              "value": "0"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "retention",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 108,
+              "value": "0"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "discount",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 108,
+              "value": "0"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "grand_total",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 108,
+              "value": "0"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "tax_percent",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 108,
+              "value": "0"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "retention_percent",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 108,
+              "value": "0"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "notes",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 108,
+              "value": ""
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.0.item_code",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 108,
+              "value": "CEMENT-50KG"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.0.description",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 108,
+              "value": "Portland Cement 50 kg bag"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.0.quantity",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 108,
+              "value": "100"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.0.unit",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 108,
+              "value": "bag"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.0.unit_rate",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 108,
+              "value": "700"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.0.amount",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 108,
+              "value": "70000"
+            }
+          ],
+          "created_at": "2026-10-19T15:52:28.183253Z"
+        }
+      ]
+    },
+    {
+      "document": {
+        "id": 110,
+        "project_id": 17,
+        "document_type": "GRN",
+        "original_filename": "grn-cement.json",
+        "sha256": "666451e366a1a6c4188706ccb749428b30e5cd9b3d87ec2aaf36e42840541de6",
+        "extraction_status": "CONFIRMED",
+        "version": 1,
+        "reviewed_by": null,
+        "confirmed_by": 1,
+        "created_at": "2026-10-19T15:52:28.191241Z"
+      },
+      "data": {
+        "beneficiary_fingerprint": "",
+        "currency": "BDT",
+        "discount": "0",
+        "document_type": "GRN",
+        "grand_total": "0",
+        "invoice_date": null,
+        "invoice_number": "",
+        "items": [
+          {
+            "amount": "70000",
+            "description": "Portland Cement 50 kg bag",
+            "item_code": "CEMENT-50KG",
+            "quantity": "100",
+            "unit": "bag",
+            "unit_rate": "700"
+          }
+        ],
+        "notes": "",
+        "po_number": "PO-CEMENT-001",
+        "receipt_number": "GRN-CEMENT-001",
+        "retention": "0",
+        "retention_percent": "0",
+        "subtotal": "0",
+        "supplier_code": "",
+        "tax": "0",
+        "tax_percent": "0"
+      },
+      "revisions": [
+        {
+          "version": 1,
+          "fields": [
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "document_type",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 110,
+              "value": "GRN"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "supplier_code",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 110,
+              "value": ""
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "po_number",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 110,
+              "value": "PO-CEMENT-001"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "receipt_number",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 110,
+              "value": "GRN-CEMENT-001"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "invoice_number",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 110,
+              "value": ""
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "invoice_date",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 110,
+              "value": "None"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "currency",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 110,
+              "value": "BDT"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "beneficiary_fingerprint",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 110,
+              "value": ""
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "subtotal",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 110,
+              "value": "0"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "tax",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 110,
+              "value": "0"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "retention",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 110,
+              "value": "0"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "discount",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 110,
+              "value": "0"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "grand_total",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 110,
+              "value": "0"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "tax_percent",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 110,
+              "value": "0"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "retention_percent",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 110,
+              "value": "0"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "notes",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 110,
+              "value": ""
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.0.item_code",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 110,
+              "value": "CEMENT-50KG"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.0.description",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 110,
+              "value": "Portland Cement 50 kg bag"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.0.quantity",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 110,
+              "value": "100"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.0.unit",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 110,
+              "value": "bag"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.0.unit_rate",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 110,
+              "value": "700"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.0.amount",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 110,
+              "value": "70000"
+            }
+          ],
+          "created_at": "2026-10-19T15:52:28.191241Z"
+        }
+      ]
+    },
+    {
+      "document": {
+        "id": 112,
+        "project_id": 17,
+        "document_type": "INVOICE",
+        "original_filename": "scenario-b-valid.json",
+        "sha256": "f011fc88ebce9f69b25b1e49fdeac1dea520b15a0a87635619cf4e35b173a987",
+        "extraction_status": "EXTRACTED",
+        "version": 1,
+        "reviewed_by": null,
+        "confirmed_by": null,
+        "created_at": "2026-10-19T15:52:28.194849Z"
+      },
+      "data": {
+        "beneficiary_fingerprint": "d9413b828e4752e3c57c4bfbd09203f9ff2866e56a6096550d36f70bc0ce984d",
+        "currency": "BDT",
+        "discount": "0",
+        "document_type": "INVOICE",
+        "grand_total": "70000",
+        "invoice_date": "2026-10-18",
+        "invoice_number": "INV-CEMENT-070",
+        "items": [
+          {
+            "amount": "70000",
+            "description": "Portland Cement 50 kg bag",
+            "item_code": "CEMENT-50KG",
+            "quantity": "100",
+            "unit": "bag",
+            "unit_rate": "700"
+          }
+        ],
+        "notes": "",
+        "po_number": "PO-CEMENT-001",
+        "receipt_number": "",
+        "retention": "0",
+        "retention_percent": "0",
+        "subtotal": "70000",
+        "supplier_code": "DEMO-CEMENT",
+        "tax": "0",
+        "tax_percent": "0"
+      },
+      "revisions": [
+        {
+          "version": 1,
+          "fields": [
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "document_type",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 112,
+              "value": "INVOICE"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "supplier_code",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 112,
+              "value": "DEMO-CEMENT"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "po_number",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 112,
+              "value": "PO-CEMENT-001"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "receipt_number",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 112,
+              "value": ""
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "invoice_number",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 112,
+              "value": "INV-CEMENT-070"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "invoice_date",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 112,
+              "value": "2026-10-18"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "currency",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 112,
+              "value": "BDT"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "beneficiary_fingerprint",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 112,
+              "value": "d9413b828e4752e3c57c4bfbd09203f9ff2866e56a6096550d36f70bc0ce984d"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "subtotal",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 112,
+              "value": "70000"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "tax",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 112,
+              "value": "0"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "retention",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 112,
+              "value": "0"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "discount",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 112,
+              "value": "0"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "grand_total",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 112,
+              "value": "70000"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "tax_percent",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 112,
+              "value": "0"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "retention_percent",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 112,
+              "value": "0"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "notes",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 112,
+              "value": ""
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.0.item_code",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 112,
+              "value": "CEMENT-50KG"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.0.description",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 112,
+              "value": "Portland Cement 50 kg bag"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.0.quantity",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 112,
+              "value": "100"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.0.unit",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 112,
+              "value": "bag"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.0.unit_rate",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 112,
+              "value": "700"
+            },
+            {
+              "confidence": null,
+              "extraction_method": "JSON_SCHEMA",
+              "human_reviewed": false,
+              "page": null,
+              "path": "items.0.amount",
+              "reviewed_by": null,
+              "row": null,
+              "source_document_id": 112,
+              "value": "70000"
+            }
+          ],
+          "created_at": "2026-10-19T15:52:28.194849Z"
+        }
+      ]
+    }
+  ],
+  "passed": true
+}

@@ -1,0 +1,32 @@
+flowchart TD
+    UI[React + TypeScript workspace] --> API[FastAPI: authentication, role and project access]
+    API --> Intake[Private PDF / CSV / JSON intake]
+    Intake --> Parser[Bounded PDF worker and deterministic parsers]
+    Parser --> Review[Field provenance and human review]
+    Review --> Confirm[Authorized procurement confirmation]
+    API --> Workflow[Persisted Python state machine]
+    Workflow --> Match[BOQ + PO + accepted receipt + invoice reconciliation]
+    Match --> Risk[Rules-based blocking findings]
+    Risk --> Cash[30-day base / delayed / cost scenarios]
+    Cash --> Prepare[Exact proposal + cash and receipt reservations]
+    Prepare --> Human[Different authorized human approves]
+    Human --> Execute[Authenticated idempotent sandbox executor]
+    Execute --> Atomic[Atomic cash, payment, subledger, receipt and audit commit]
+    Workflow -. optional explanation only .-> Ollama[Ollama / deterministic fallback]
+    Confirm --> DB[(SQLite: exact money, foreign keys and uniqueness)]
+    Match --> DB
+    Prepare --> DB
+    Atomic --> DB
+    Atomic --> Audit[Canonical SHA-256 audit chain]
+    Audit --> Verify[Integrity verifier and exported evidence]
+    API --> Price[Material catalogue and persisted price searches]
+    Price --> Providers[Optional SerpApi / DataForSEO + verified quotes / references]
+    Providers --> Evidence[Immutable source observations and selections]
+    API --> QS[Profile-aware geometry and checked takeoff sheets]
+    QS --> Estimate[Versioned estimating BOQ and component rate analysis]
+    Evidence --> Estimate
+    Estimate --> Budget[Independent check and Admin baseline approval]
+    Estimate --> Overlay[Scheduled uncommitted forecast overlay]
+    Budget --> DB
+    Overlay -. does not authorize payment .-> Cash
+    Estimate --> DB

@@ -1,0 +1,21 @@
+{
+  "document_type": "BOQ",
+  "items": [
+    {
+      "item_code": "REBAR-500",
+      "description": "Reinforcement Steel 500 MPa",
+      "quantity": "80",
+      "unit": "tonnes",
+      "unit_rate": "70000",
+      "amount": "5600000"
+    },
+    {
+      "item_code": "CEMENT-50KG",
+      "description": "Portland Cement 50 kg bag",
+      "quantity": "100",
+      "unit": "bag",
+      "unit_rate": "700",
+      "amount": "70000"
+    }
+  ]
+}

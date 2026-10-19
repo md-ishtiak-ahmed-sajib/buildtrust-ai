@@ -1,0 +1,35 @@
+name: Application checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  verify:
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: uv sync --project backend --frozen
+      - run: npm --prefix frontend ci
+      - run: uv run --project backend pytest backend/tests
+      - run: npm --prefix frontend test
+      - run: npm --prefix frontend run build
+      - run: uv run --project backend python scripts/check_asset_budget.py
+      - run: uv run --project backend python scripts/export_contracts.py
+      - run: npm --prefix frontend run types:api
+      - run: git diff --exit-code -- docs/openapi.json frontend/src/types/api.generated.ts demo/document.schema.json
+      - run: npm --prefix frontend audit --audit-level=moderate
+      - run: uv export --project backend --frozen --no-hashes --format requirements-txt --output-file audit-requirements.txt
+      - run: uvx pip-audit -r audit-requirements.txt
+      - run: npx --prefix frontend playwright install chromium --with-deps
+      - run: uv run --project backend python scripts/verify_upgrade_browser.py
+      - run: uv run --project backend python scripts/collect_evidence.py

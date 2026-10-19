@@ -1,0 +1,15 @@
+# Scenario E
+
+Executed: 2026-10-19T15:52:27.473718Z
+
+Decision: **BLOCKED**
+
+Balance before: BDT 150000.00
+
+Balance after: BDT 150000.00
+
+Audit events: 333, 332, 331, 330, 329
+
+Actual HTTP inputs, source provenance, workflow stages, findings, and receipt (where applicable): `scenario-e.json`.
+
+All identities and transfers are fictional sandbox records.

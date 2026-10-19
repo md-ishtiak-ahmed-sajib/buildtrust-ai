@@ -1,0 +1,54 @@
+
+> buildtrust-ai-ui@0.2.0 build
+> tsc -b && vite build
+
+vite v8.3.4 building client environment for production...
+transforming...
+✓ 2231 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                              0.54 kB │ gzip:   0.35 kB
+dist/assets/index-BWIfoU0B.css              44.68 kB │ gzip:  10.85 kB
+dist/assets/plus-BLJESdJo.js                 0.14 kB │ gzip:   0.14 kB
+dist/assets/info-d-iKA_t2.js                 0.19 kB │ gzip:   0.17 kB
+dist/assets/external-link-BfS05VVj.js        0.23 kB │ gzip:   0.19 kB
+dist/assets/upload-BmmisyK-.js               0.24 kB │ gzip:   0.20 kB
+dist/assets/save-D9mVn5Ih.js                 0.31 kB │ gzip:   0.22 kB
+dist/assets/shared-BakS8eYO.js               0.33 kB │ gzip:   0.25 kB
+dist/assets/file-check-2-B4iNAHK3.js         0.36 kB │ gzip:   0.24 kB
+dist/assets/sparkles-B2skos-K.js             0.49 kB │ gzip:   0.29 kB
+dist/assets/fingerprint-DWmirnhW.js          0.59 kB │ gzip:   0.34 kB
+dist/assets/ForecastBreakdown-DdWQD4pb.js    1.00 kB │ gzip:   0.52 kB
+dist/assets/shared-Dab9_HpQ.js               2.78 kB │ gzip:   1.30 kB
+dist/assets/CashFlow-D9wzgnzA.js             3.55 kB │ gzip:   1.58 kB
+dist/assets/Audit-DvMi_nQ1.js                4.83 kB │ gzip:   1.83 kB
+dist/assets/Administration-DyQstjqk.js       4.97 kB │ gzip:   1.92 kB
+dist/assets/Performance-DM8i9IDv.js          5.66 kB │ gzip:   2.11 kB
+dist/assets/Operations-yF3oylHl.js           5.68 kB │ gzip:   2.17 kB
+dist/assets/Overview-QelogRDz.js             6.18 kB │ gzip:   2.39 kB
+dist/assets/Documents-BQDyw5KK.js            7.77 kB │ gzip:   2.99 kB
+dist/assets/Payments-DDPOB_ho.js             8.61 kB │ gzip:   2.95 kB
+dist/assets/Invoices-BszgzKwi.js             9.18 kB │ gzip:   3.33 kB
+dist/assets/Prices-WrrufAgq.js              11.13 kB │ gzip:   3.64 kB
+dist/assets/Takeoff-BGJxAQ35.js             12.73 kB │ gzip:   4.27 kB
+dist/assets/PriceDrawer-DbHfprdK.js         18.18 kB │ gzip:   5.45 kB
+dist/assets/Estimates-Ck0NPmF5.js           23.70 kB │ gzip:   7.04 kB
+dist/assets/Controls-BBP2WFp8.js            40.51 kB │ gzip:  10.82 kB
+dist/assets/index-BqljExCd.js              374.63 kB │ gzip: 118.02 kB
+dist/assets/CashChart-Bi8f8zEY.js          385.90 kB │ gzip: 110.29 kB
+
+✓ built in 299ms
+
+
+> buildtrust-ai-ui@0.2.0 test
+> vitest run
+
+
+ RUN  v5.0.5 D:/Project/buildtrust-ai/frontend
+
+
+ Test Files  2 passed (2)
+      Tests  8 passed (8)
+   Start at  18:13:44
+   Duration  164ms (tests 43%, import 27%, transform 22%, worker 8%)
+

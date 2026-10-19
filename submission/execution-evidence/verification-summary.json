@@ -1,0 +1,15 @@
+{
+  "backend_tests": 191,
+  "frontend_tests": 8,
+  "browser_workflows": 16,
+  "http_scenarios": 8,
+  "audit_valid": true,
+  "source_fingerprint": "f5be3254763e5c95a7134132f1cfa2a048069bedeca7d474bc09b494c4aa6aa1",
+  "migration_head": "0017",
+  "legacy_tables_preserved": 54,
+  "browser_runtime": "D:\\Project\\buildtrust-ai\\data\\advanced-browser-1c4d6920",
+  "simulation": true,
+  "video_duration_seconds": 272,
+  "presentation_slides": 9,
+  "app_source_fingerprint": "a15e085c6302a863a049b01c45088ba5953f26038aa12283f0135a1c89caf479"
+}

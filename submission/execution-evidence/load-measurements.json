@@ -1,0 +1,256 @@
+{
+  "timestamp": "2026-10-19T12:07:34.223293+00:00",
+  "dataset": {
+    "invoices": 2000,
+    "estimates": 500,
+    "quotations": 10000,
+    "audit_events": 50000
+  },
+  "runs": [
+    {
+      "run": 1,
+      "clients": 10,
+      "elapsed_seconds": 3.352,
+      "reads": {
+        "count": 250,
+        "median_ms": 38.371,
+        "p95_ms": 615.408,
+        "max_ms": 798.039
+      },
+      "writes": {
+        "count": 50,
+        "median_ms": 17.606,
+        "p95_ms": 68.414,
+        "max_ms": 167.045
+      },
+      "errors": []
+    },
+    {
+      "run": 2,
+      "clients": 10,
+      "elapsed_seconds": 3.491,
+      "reads": {
+        "count": 250,
+        "median_ms": 38.113,
+        "p95_ms": 648.298,
+        "max_ms": 809.31
+      },
+      "writes": {
+        "count": 50,
+        "median_ms": 13.468,
+        "p95_ms": 30.15,
+        "max_ms": 38.499
+      },
+      "errors": []
+    },
+    {
+      "run": 3,
+      "clients": 10,
+      "elapsed_seconds": 3.012,
+      "reads": {
+        "count": 250,
+        "median_ms": 43.828,
+        "p95_ms": 658.054,
+        "max_ms": 789.277
+      },
+      "writes": {
+        "count": 50,
+        "median_ms": 13.434,
+        "p95_ms": 30.58,
+        "max_ms": 47.856
+      },
+      "errors": []
+    }
+  ],
+  "sql": {
+    "count": 5862,
+    "median_ms": 0.285,
+    "p95_ms": 5.909,
+    "max_ms": 793.832
+  },
+  "sql_by_table": {
+    "audit_events": {
+      "count": 753,
+      "median_ms": 0.71,
+      "p95_ms": 635.627,
+      "max_ms": 793.832
+    },
+    "control_records": {
+      "count": 450,
+      "median_ms": 0.35,
+      "p95_ms": 1.845,
+      "max_ms": 14.991
+    },
+    "estimate_versions": {
+      "count": 300,
+      "median_ms": 0.455,
+      "p95_ms": 1.875,
+      "max_ms": 4.47
+    },
+    "invoices": {
+      "count": 300,
+      "median_ms": 2.343,
+      "p95_ms": 27.481,
+      "max_ms": 45.834
+    },
+    "job_attempts": {
+      "count": 1,
+      "median_ms": 0.115,
+      "p95_ms": 0.115,
+      "max_ms": 0.115
+    },
+    "memberships": {
+      "count": 900,
+      "median_ms": 0.113,
+      "p95_ms": 1.034,
+      "max_ms": 3.652
+    },
+    "payment_proposals": {
+      "count": 150,
+      "median_ms": 0.126,
+      "p95_ms": 1.515,
+      "max_ms": 2.113
+    },
+    "price_searches": {
+      "count": 1,
+      "median_ms": 0.094,
+      "p95_ms": 0.094,
+      "max_ms": 0.094
+    },
+    "projects": {
+      "count": 900,
+      "median_ms": 0.138,
+      "p95_ms": 1.1,
+      "max_ms": 3.125
+    },
+    "supplier_quotations": {
+      "count": 300,
+      "median_ms": 0.667,
+      "p95_ms": 1.722,
+      "max_ms": 4.966
+    },
+    "transaction": {
+      "count": 905,
+      "median_ms": 0.083,
+      "p95_ms": 1.854,
+      "max_ms": 154.052
+    },
+    "users": {
+      "count": 902,
+      "median_ms": 0.279,
+      "p95_ms": 1.843,
+      "max_ms": 7.795
+    }
+  },
+  "lock_waits_at_least_50ms": {
+    "count": 3,
+    "median_ms": 78,
+    "p95_ms": 78,
+    "max_ms": 156
+  },
+  "audit_integrity_before_load": {
+    "valid": true,
+    "checked_events": 50000,
+    "failed_event_id": null,
+    "head_hash": "d6795ec33e5c11f02888ae28c57b2b0d5b17b7ef8ca2509a65ee2aaab8a502d5",
+    "limitation": "Local hash chain; an unrestricted database administrator can rewrite the complete chain."
+  },
+  "runtime": "D:\\Project\\buildtrust-ai\\data\\load-check-f964bcf0",
+  "limitations": "Synthetic local Windows workload, three runs on this device; no production-capacity inference. Lock events are logged only at >=50ms.",
+  "source_files": {
+    "backend/app/__init__.py": "1049879793535b79f956148f4f69cb64715efbb47e33530473bc69ef2e954975",
+    "backend/app/accounting.py": "e88103b047a7c4ca78724a35bfdf0b460eb1016856d5ed0e7590bd5be16e35cb",
+    "backend/app/administration_api.py": "2f2b8f8a50cbdf2864241018037aa0a093762d2b0523ef6875cea8c81c819728",
+    "backend/app/advanced_api.py": "5743608297874cd18b73b90212ccd4672cf4a0bf7995afa183ce77f022a87586",
+    "backend/app/advanced_imports.py": "4fec7647af57cb6b4f9a0faa8919a05f58ffe505cd14bba789fbd5d5f7466e54",
+    "backend/app/advanced_math.py": "15e9c1192256aeb8e02d5f157d2f2798d930b62b10691223e12dbfcde9bba3f5",
+    "backend/app/advanced_models.py": "f23c63043e48407128b3717b556ae2f1e6f5e2d9f81c6e304590ee38fad8163b",
+    "backend/app/advanced_schemas.py": "768e4d96c5b48f2e646f6aed66da8e1f89e6755d4a6bdb43503f55fa4c60deb6",
+    "backend/app/api_support.py": "3fe8297eafc030ecbd8c49f52b5a1b388f8969633f008beab01c43bdec3e1c5f",
+    "backend/app/audit.py": "a472c17df70bb45f1e6ad50a6eb4e30391f7ce4e9c13335f9403534afeb51b34",
+    "backend/app/authority.py": "2d7130a00014bcb4c8e3a930c063318f13b666d68796b5d86d149444eaaa97ab",
+    "backend/app/authorship.py": "16fc9dcf75b7da7a727d252ffa1b2e0cd5846bde62d0faaab39910169b82a756",
+    "backend/app/bounded_json.py": "737ecaaaf0a65f820d82fd6d8ddbdfcc424f6392c5b274ff1a398eb43e98ae29",
+    "backend/app/calculation_schemas.py": "af76e983a46f9faf3439346e5b4a07a4aca7741db9edbe37d19c3c735670a6cc",
+    "backend/app/certified_payables.py": "0e9063d0d3211fdd3e15d3dac1bc6c7e00078cf7b9e5f10cd1144b202e56332d",
+    "backend/app/commercial.py": "b03939dbd3375e8a916f8f9aba7ef20ed6efbdd8a96ade52a7089bf3bf9a20aa",
+    "backend/app/commercial_api.py": "1aabfb05d223b8b230a24e283f8c15275a0bd2717c92910455cee71754aa5d3a",
+    "backend/app/commercial_models.py": "bbe8aef889a80e307f2f4a2e30e8499fcd7e433d30579ebdd936352df8d85107",
+    "backend/app/commercial_schemas.py": "f4270fcb487441a7c6a17a1e3664d463799c2869a3c41fc048542e92a61478cd",
+    "backend/app/config.py": "63df4ff40bcca28d09c8cb9594408973671194e954900637fb09c3b798b03ec4",
+    "backend/app/control_api.py": "4492e251b53d092cd059cec7016b459fa140b3c898c4b5ded04c747e30f29172",
+    "backend/app/control_models.py": "9e55e25c63f5ee4cb52870da1947fe913d9bb3711a4175f02786edbb64f3b02a",
+    "backend/app/control_schemas.py": "50af2174a99f5e04a84f8bd406519c3353a30edfdf85f94206c4129faef18994",
+    "backend/app/control_services.py": "b2b6802b67ba8f4901e0d305872624f4bdb4b1429c5796826c77966d8d70c3cb",
+    "backend/app/copilot_api.py": "36f8b2eca4d3bdeb01b4bdf1f8b754660ecc435011b56d4b645413445385b954",
+    "backend/app/correction_schemas.py": "f2e970026edee14622c6e2f86125f8f46df25ff4b132dbc2d31b5b0966b2bce5",
+    "backend/app/corrections.py": "5d76c1e1fce737b13a25d7e9d426f0252c58e42fb89ab9e2bf87e02921fd458c",
+    "backend/app/cost_coding.py": "c37a787a2c810d6ab7aefd0af0e66e9e5b4c2b1400c7fe5162d0b3921abdc4bc",
+    "backend/app/coverage.py": "ae5e9b4ea685ecef2ea5aa3ddf811359582969d28f7779ac129221aa620395be",
+    "backend/app/database.py": "dd430d54bdfa0ddfae571d2b21dcbacab242060f68cdec2dcd1534fd307f3836",
+    "backend/app/diagnostics.py": "59c1cf8fbb60c290b2ddc526f064b698fbeaa9d78ea74ccdca62ce49d130e379",
+    "backend/app/document_api.py": "69d12dd5e02a6ca706f983e0c63f8fec671e9cf17dd33e0e9472ef2a6a1d6c9f",
+    "backend/app/documents.py": "709efc52b207eb62b03edb443032a9e516758f83c0e7c6b694e6166491cbbef7",
+    "backend/app/estimate_api.py": "dd1177b368274410c669170d96e25eb4bb8036b72a798c1dde5bba1fb1c39737",
+    "backend/app/estimating.py": "f013213c1182a2b7b5c55a9a57aa6f8052d69fcef9e2a8fd8f4c662054113479",
+    "backend/app/evidence.py": "310c91cf9d87a82f1c8acf98e3ea19b2e706cdab14b0be988ad4e068b3e40040",
+    "backend/app/finance.py": "b85b30f3deeee9ee8edb652b6618077e6a136b54eb97ef11b7ebe4bc3acd68fa",
+    "backend/app/forecast_links.py": "628a7ff60c4afe645e0b6b4f38ccb7b1b8cd3e1965daa222aeacdafb8b43ac35",
+    "backend/app/forecasting.py": "3e6b8dcbd2aaa220563a99ef674c5ac2f03c25571f8385d4416754b8a1941ba6",
+    "backend/app/governance.py": "34ebb37abc34304c1496f78f7e7043adea0acded0df6ca3a69404fb5e4afed26",
+    "backend/app/governance_schemas.py": "3152d7150442e99a0b4a53b756178deca43d36a5646146b1a93e87da4a852199",
+    "backend/app/interface_schemas.py": "46b8b7d7fadf274360ab1fb309c7362d543fb65ec4021a6f9c82b32402bf6109",
+    "backend/app/invoice_api.py": "0ea364a03f30d28b85863843f6a648534f5f07d2db824c400bb32b98ec987fc5",
+    "backend/app/jobs.py": "3aaeab69e230a5927a9924c8bcf191aa39ae20be71963215a07d6ecb70795236",
+    "backend/app/login_security.py": "02fdf97fc8af3ff7d0816d5f26492883c02c1bc61a2df1f49f13fb7047733947",
+    "backend/app/main.py": "7353f8d9976448d9d8b58d983555ac3b3616f48c634baa6924ac471491b0e2a1",
+    "backend/app/measurement_api.py": "05f9f0ed6e1a80a7b2523a2d8b64bfd90b1100363595d0de5b21a3ea18694f5b",
+    "backend/app/migrations.py": "8265bd0e460eae4b83eb7bf5e6876b0334597f2d0c9df45c7655fbc4a140e9ba",
+    "backend/app/models.py": "81318e329a6cafcc5af57ee2f8c206fefe009d248bb06bc6a63e72b7986f5664",
+    "backend/app/money.py": "405c8e284f67c7ebb354a5b2ca775f2b5c311d1fd2751310e2088e05f9edc6db",
+    "backend/app/obligations.py": "c9738b55285acb6d14abc4016c3b820b7a50f0ba184b6101c754101c47fbd511",
+    "backend/app/ocr.py": "6c46c6098322f9a7b4cb38c15f7964cef7d925f54c5794b01d3b7e6205756516",
+    "backend/app/operations_api.py": "b489cb161957a2a0d84022b74a092d06db48f936e59c6788b91061a2fe339a51",
+    "backend/app/operations_models.py": "445e9e91a19732f81aff57594260628bd9d1b0c0212537d70f2dbfb5c3f2ac66",
+    "backend/app/parser_limits.py": "e43f54008f56dffca507fee5e02f361b25112567fefdc0b59d373f0aec74e789",
+    "backend/app/payment_api.py": "883d42d45234068353dc2b38c1568588064e8931e2fcef8e2c1abdfa80ef98a8",
+    "backend/app/payments.py": "6f3e06d515c80bb12b5825551171b1b7cd3d0d4abd92328074fc02134d92c168",
+    "backend/app/pdf_worker.py": "5fa08422cbb69235b818a5a9b9af5fad5672b7fc1726f45cc60c88ea911ec431",
+    "backend/app/performance.py": "82e79e440e05253df0ac54b3b03dc8e1ec98baa1b08f1fc2767e143e3ed7e042",
+    "backend/app/performance_schemas.py": "f681392c0a05914e8a240283f90408c3fae5ed2797c2488a431de581d61aa50b",
+    "backend/app/price_api.py": "49d60255b3f5a6a889fe03572d23b18d5a88261e4cd045f9c7489acea15d91ab",
+    "backend/app/price_providers.py": "52688e9689778d295873acd6aaf30043c4b40e8990e09949eecea879facdafc1",
+    "backend/app/pricing.py": "d03a466e4c0187f79b2eefe08c0b139ef4fb24c7f0ac7d52ab37e0e7d8046d22",
+    "backend/app/procurement.py": "c8e7fe2fee6d987c691496869ae6d43bee9f7b5d1c2d9e41f80b9270f0c5a710",
+    "backend/app/procurement_schemas.py": "a149a88b7f6883fe8b463f383436383a2a61102e945cf0ba14d8bbb52a74508b",
+    "backend/app/report_schemas.py": "90868183273d063af768975748dc80fa2f3e176b6685a29f2b7260475aa99e3c",
+    "backend/app/reporting_api.py": "3b5bc09da1ec6cd085a4e8ee8762da74b3f8018fc85d45826ceaaa061fad40b5",
+    "backend/app/review_models.py": "8afad9a06882bfc5b25c3fd33459dd7b7dc85d28b528068d7ea9684f66e52580",
+    "backend/app/schemas.py": "a16d54f389467a7fe6efa6c23d7f32c3e372f03b355fb396ae44597096a88b79",
+    "backend/app/security.py": "f17a7acf957c898ec6aa79ad2400e2baf033f36de49748ed2b156ba86b8e92ae",
+    "backend/app/seed.py": "5b9121dc8946526ee0640b3bfe73167d230be347d5d9923993d154b41c7c64e0",
+    "backend/app/source_schemas.py": "c8e8df7007e624f129c850a4a395accd9ce212dceaa2ecc42bbf88ebe5689a90",
+    "backend/app/upgrade_access.py": "d6273338a17d73125ffa90a8acc5d36df13e7a8d54c589d4390e860fe91571b8",
+    "backend/app/worker.py": "e903d60b5b2d104fae147f0aef0afaaa1ccbe83c45af18cf88596d98cc9f1a1c",
+    "backend/app/workflow.py": "691a4acc6ff25eb4da0721c91b241dd393b7dbc2611ce89689bd1dcd079bd760",
+    "backend/app/workflow_api.py": "30b9b979a96c24ce869562ee0333ee8b11d7ee9ef6a37a8eb8aef79f9e772156",
+    "backend/alembic/env.py": "3cf767a01267448ae7614bb54e1d1618415de3d1a020380222df5ca4a95ff0c7",
+    "backend/alembic/versions/0001_initial.py": "c3550b9c9cbb5b666bbb4025c73f013f12b38e306f03876113492076f1f349b7",
+    "backend/alembic/versions/0002_active_proposal_guard.py": "801624f9541322beea9fbb8b7de95a347b698bdb948101016ad799cb660e870c",
+    "backend/alembic/versions/0003_estimating.py": "af17d70dca63b0c3894430955df7f69eab8dbc0274b2359dbd86fea9c4a2b617",
+    "backend/alembic/versions/0004_estimate_snapshot.py": "2243d2a951bcd0400a93e9e65e98bc7c836c9cf30c06b9a6bc9793164a8e0fc2",
+    "backend/alembic/versions/0005_review_controls.py": "1e49b8893110b36ac19e39185c14eae150af074cb0a631d998736d342db4b671",
+    "backend/alembic/versions/0006_operations.py": "72e2cba239fb88b151626fbdbae1266fe9582e23b1f0df643e08597b5d3cc365",
+    "backend/alembic/versions/0007_accounting.py": "8f78025c9b07db17f81850c292f1ed19f26bc04be92a4a36808c4ec36df5314b",
+    "backend/alembic/versions/0008_installments.py": "6da840dfc3e83f61fbab2220b68106bfe2bd1103a35301eefb67dc52e14ca515",
+    "backend/alembic/versions/0009_invoice_entitlement.py": "6d763fce886d5c920e1f2f546bdf8f5f6dee6a4d8443a2f41c1d50f7aa388950",
+    "backend/alembic/versions/0010_obligations.py": "983c1adc3bf17565a445141fced1358194aa5b1993d9e53e050ffe123988a064",
+    "backend/alembic/versions/0011_user_versions.py": "1917bd3a6eb42c1d6144e201788bcdec6f496fe516ca53044d81663247c41f85",
+    "backend/alembic/versions/0012_commercial.py": "86eef39aa992bbc2027289abb5081d89e1e10f17c395db252214a06a76e9e410",
+    "backend/alembic/versions/0013_certificate_payments.py": "41c49ee2676a3923e1ac7e71929cddb20454afc6163de42fc7eddc3754339805",
+    "backend/alembic/versions/0014_recognition_allocations.py": "96feee586c3a063bac0376618d3ca0c82874a38fb216419e7f58fd41ad509fd0",
+    "backend/alembic/versions/0015_procurement_amendments.py": "aed23e873820ea39142bb65b99151aaeaff504a6ff5efa5510f8ee7b8a95a6b6",
+    "backend/alembic/versions/0016_receivable_corrections.py": "3c5dc4e09605d81eaad69ca7c3a04e89da545b1c87708e0f9b2a30bada002c41",
+    "backend/alembic/versions/0017_register_indexes.py": "cd8595d1c6d67d751987d47b3d43790674b29d8124250692e8828a7597c68a3f"
+  }
+}

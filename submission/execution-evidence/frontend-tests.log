@@ -1,0 +1,13 @@
+
+> buildtrust-ai-ui@0.2.0 test
+> vitest run
+
+
+ RUN  v5.0.5 D:/Project/buildtrust-ai/frontend
+
+
+ Test Files  2 passed (2)
+      Tests  8 passed (8)
+   Start at  18:13:44
+   Duration  164ms (tests 43%, import 27%, transform 22%, worker 8%)
+

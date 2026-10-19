@@ -1,0 +1,33 @@
+{
+  "A": {
+    "claimed": "6650000.00",
+    "verified": "5600000.00",
+    "excess": "1050000.00",
+    "variance_percent": "18.75",
+    "status": "BLOCKED"
+  },
+  "B": {
+    "amount": "70000.00",
+    "balance_before": "1000000.00",
+    "balance_after": "930000.00",
+    "status": "SETTLED"
+  },
+  "C": {
+    "status": "DUPLICATE"
+  },
+  "D": {
+    "finding": "BENEFICIARY_CHANGE"
+  },
+  "E": {
+    "finding": "INSUFFICIENT_FUNDS"
+  },
+  "F": {
+    "finding": "SUSPICIOUS_INSTRUCTIONS"
+  },
+  "G": {
+    "http_status": 403
+  },
+  "H": {
+    "settlement_count": 1
+  }
+}

@@ -1,0 +1,2 @@
+document_type,supplier_code,po_number,currency,item_code,description,quantity,unit,unit_rate,amount
+PO,DEMO-STEEL,PO-STEEL-001,BDT,REBAR-500,Reinforcement Steel 500 MPa,80,tonnes,70000,5600000

@@ -1,25 +1,21 @@
-# Implemented measurement rule register
+# Measurement rule register
 
-Saved sheets retain the chosen profile edition, source and assumptions. These rules
-are generic geometry-v1, not independently verified NRM/CESMM clauses. There are no
-bundled copyrighted tables or universal deduction thresholds.
+Saved sheets keep their profile edition, source, explicit rules and assumptions. Arithmetic tests do not establish professional standards compliance.
 
-| Rule | Scope | Output |
+| Rule group | Scope | Typical output |
 |---|---|---|
-| RECTANGULAR_VOLUME | Explicit L/B/H/count | m3 |
-| CIRCULAR_VOLUME | Explicit diameter/height/count | m3 |
-| REBAR | Supplied lengths/counts and specified/density/approximate unit mass | kg |
-| FORMWORK_COLUMN / FOOTING | Four side contact areas | m2 |
-| FORMWORK_BEAM | Two sides plus soffit | m2 |
-| FORMWORK_SLAB | Soffit only | m2 |
-| AREA / LENGTH / COUNT | Explicit dimensions/count | m2 / m / each |
+| RECTANGULAR_VOLUME / CIRCULAR_VOLUME | Supplied dimensions/count | m³ |
+| TRIANGULAR_PRISM / FRUSTUM / ANNULAR_VOLUME | Supplied geometric dimensions | m³ |
+| REBAR / REBAR_SCHEDULE | Supplied lengths/counts and supported mass method | kg |
+| FORMWORK_COLUMN / FOOTING | Four side contact area | m² |
+| FORMWORK_BEAM / SLAB | Sides/soffit or soffit as selected | m² |
+| AREA / LENGTH / COUNT | Supplied dimensions/count | m² / m / each |
+| EARTHWORK / BACKFILL / DISPOSAL / COMPACTION | Geometry and explicit factors | m³ |
+| MASONRY / FINISHES | Geometry and explicit opening/deduction rules | m³ / m² |
+| DOORS_WINDOWS / ROOFING / PAVEMENT | Supplied sizes and required assumptions | Calculation-specific quantity |
 
-Arithmetic is regression tested. Professional measurement/design review is required.
-D²/162 is labeled approximate; design lengths remain external. Opening, intersection
-and special deductions are supplied explicitly in output units, with a reason and
-bounded by gross. No structural adequacy or trade-specific waste is inferred.
+No arbitrary uploaded formula code executes. Reviewed project profiles whitelist known templates and finite opening-threshold rules. Thresholds need source references, edition, reviewer evidence and independent approval. Deductions remain bounded by gross quantity and have reasons.
 
-Prepared/checker IDs, UTC event time, drawing/revision and location are retained.
-NRM 2 is the default contextual profile. NRM 1/3, CESMM4, PWD/LGED and project rules
-are registered as REQUIRES_PROFESSIONAL_REVIEW. ICMS 3 is reporting classification.
-See quantity-surveying-standards.md for edition/source references and exclusions.
+NRM 2 remains the default context; baseline published-standard profiles require professional review. ICMS is reporting classification. `D²/162` is approximate. No structural adequacy, automatic bar lengths or universal waste rule is inferred.
+
+See [quantity surveying support](quantity-surveying-standards.md) and [current tests](completion-verification.md).

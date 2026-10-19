@@ -1,23 +1,20 @@
 # Threat model
 
-## Actors
+This guide asks what can go wrong and where the app checks trust. All examples use fictional data.
 
-- A supplier submitting an inflated, duplicate, or manipulated invoice.
-- A user with an Operator token trying to approve, execute, alter project scope, or cross project boundaries.
-- A malicious document attempting to influence an optional language model.
-- An authorized staff member making a mistaken procurement or payment decision.
-- A local attacker or database administrator with stronger access than the application.
+| Possible actor/action | Main boundary and protection |
+|---|---|
+| Supplier inflates or duplicates an invoice | Match approved scope, PO, accepted delivery, supplier and prior allocations |
+| Operator tries to approve or cross projects | Reload role/membership on the server; deny and audit unauthorized operations |
+| Document tells AI to bypass checks | Treat text as untrusted data; AI has no approval or settlement authority |
+| Authorized person makes a mistake | Independent review, exact snapshots, source references and current revalidation |
+| Two requests try to pay the same balance | Serialized transaction, database constraints and required idempotency key |
+| Malicious file consumes resources | Bound intake and parsing in a restricted child process |
+| Someone knows a published demo password | Access only the deliberately separate local fictional profile; no private-password reuse |
+| Host/database administrator rewrites history | Local verification is limited; an independent retained checkpoint is required for stronger assurance |
 
-## Boundaries and mitigations
+Supplier files enter private storage. Human confirmation publishes procurement facts. Automation can explain facts and prepare proposals. Independent people approve exact actions. Sandbox settlement commits cash, ledger, receipt, allocations and success audit together. Failed actions roll back money and retain separate evidence.
 
-Supplier claims enter private file storage and an extraction-review boundary. Only authorized confirmation publishes BOQ/PO/receipt facts. Exact item matching, Decimal arithmetic, delivery allocations, supplier fingerprints, and currency checks govern verified values. Human authorization is independent of preparation and binds a specific snapshot. Settlement runs under a serialized transaction with database uniqueness and mandatory idempotency.
+The public launcher binds localhost and uses a separate marked database. It does not make the app safe for public hosting. It disables paid providers so copied README passwords cannot create paid search tasks through that profile.
 
-Automation can read facts, analyze them, and prepare a proposal. Neither document text nor an LLM can grant a role, approve a proposal, or call settlement. Explicit authenticated API actions perform approval and execution. Browser role-aware controls are convenience only; backend checks remain authoritative.
-
-Cash, ledger, and audit success events share the settlement transaction. Denials and failed attempts are recorded after rollback. Hash-chain verification detects changes relative to retained chain links; an independent checkpoint is still needed against complete rewrite or tail truncation.
-
-## Exclusions
-
-The prototype does not validate a real bank account, verify physical delivery, provide lending advice, defend a compromised operating system, certify legal compliance, or support an Internet-facing multi-tenant service. Its fictional fixtures and simulator intentionally avoid real financial credentials.
-
-See `security-self-assessment.md` for controls, test evidence, and deployment residual risks.
+This app cannot verify physical delivery, prove a real beneficiary identity, defend a compromised operating system or certify legal compliance. See [security controls](security-self-assessment.md) and [limits](limitations.md).

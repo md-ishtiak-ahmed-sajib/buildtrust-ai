@@ -42,12 +42,12 @@ with wave.open(str(media / "narration.wav"), "wb") as output:
 assert elapsed <= 290, f"Recording would exceed submission limit: {elapsed}s"
 (media / "timing.json").write_text(json.dumps(timeline, indent=2), encoding="utf-8")
 (ROOT / "docs/demo-script.md").write_text(
-    "# Demonstration script\n\nThe recording uses actual browser interactions and local Windows synthetic narration (Microsoft Zira). All financial states come from the running application. No success screen or transaction reference is fabricated.\n\n"
+    "# Demonstration script\n\nThis video shows the actual app in a separate fictional database. Narration uses the local Microsoft Zira synthetic voice. Screen actions, amounts and receipts come from the running app. No success screen or transaction reference is invented. The public demo in README uses a different separate profile.\n\n"
     + "\n\n".join(
         f"## {int(s['start'] // 60)}:{int(s['start'] % 60):02d} - {s['title']}\n\n{s['text']}"
         for s in timeline
     )
-    + "\n\nTo record manually, run the judge server, use the generated Operator and Manager credentials, and follow these scenes. Keep total length below five minutes.\n",
+    + "\n\nFor a new recording, use the isolated recording wrapper and its own generated accounts. Follow these scenes and stay below five minutes. Do not reset the working database. For a personal trial, use the separate public launcher and README passwords.\n",
     encoding="utf-8",
 )
 print(f"Prepared narration and scene timing: {elapsed} seconds")

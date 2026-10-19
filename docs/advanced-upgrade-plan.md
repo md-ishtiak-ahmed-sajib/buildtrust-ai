@@ -1,4 +1,4 @@
-> Scope update — October 19: the later user-approved 42-suggestion plan now includes the accounting, commercial, OCR, supplier and performance modules formerly deferred below. They have working implementations with separately tracked remaining acceptance. See [the current matrix](all-suggestions-implementation.md); the original competition-core plan below is retained as background, not the current backlog.
+> Historical plan. Some features described below as future work now exist. Read [current features](../features.md), [the implementation ledger](all-suggestions-implementation.md) and [remaining tasks](../prompt/Not%20implemented.md) for today's status. This original plan is preserved as background.
 
 # Advanced upgrade implementation plan
 

@@ -1,5 +1,9 @@
 # Third-party attribution
 
+This file names the libraries and tools used by BuildTrust AI. Their licenses still apply. The application is AGPL-3.0-only. Public demo passwords are fictional sample data; private credentials and model files are not bundled. Documentation charts are generated from labelled sample values, and application images are actual screenshots. Existing license names and source links below are retained.
+
+Documentation-only verification uses [Marked](https://github.com/markedjs/marked) and [Mermaid](https://github.com/mermaid-js/mermaid), both MIT-licensed. They are authoring tools, not production app dependencies. The documentation includes original diagrams and charts; it does not bundle their runtime libraries.
+
 BuildTrust AI is distributed under AGPL-3.0-only. Dependency licenses remain with their respective authors. Exact versions and hashes are recorded in the lockfiles. The following license labels are read from installed package metadata; consult each package’s license text for full terms.
 
 ## Python components

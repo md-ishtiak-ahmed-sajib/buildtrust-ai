@@ -1,4 +1,6 @@
-# Financial control boundary for the upgrade
+# Who can prepare, check and approve?
+
+The API checks these rules. Hiding a browser button is not the permission boundary. Public demo logins have the same restrictions as private accounts.
 
 | Action | Authority and effect |
 |---|---|
@@ -11,10 +13,7 @@
 | Approve estimate/budget | Third independent Admin; current valid checker authority required |
 | Prepare/approve/execute payment | Original roles, exact approval binding, BDT limits, liquidity and idempotency |
 
-Estimate approval creates a separate budget baseline. It does not amend approved BOQ,
-PO, accepted deliveries, beneficiaries or existing financial commitments. Rate refresh
-cannot change a prior selection. Revising a submitted version supersedes it; an approved
-version stays reproducible. Source changes block pending approval until a fresh revision.
+Estimate approval creates a separate budget baseline. It does not amend procurement BOQs, POs, accepted delivery, beneficiaries or existing commitments. Refreshing prices cannot change an old selection. A new revision supersedes a pending submission; an approved version stays unchanged. Changed sources need fresh review.
 
 Payment defaults remain minimum reserve BDT 100,000, Finance Manager payment ceiling
 BDT 100,000, Admin payment ceiling BDT 1,000,000 and 30-minute approval validity.
@@ -22,5 +21,4 @@ Both base and 15-day delayed-receivables projections gate payment. Forecast prev
 cost warnings and a new approved estimate do not bypass these deterministic controls.
 
 All transfers remain local simulations. No bank, real card or real funds are connected.
-New audit events use the existing serialized local SHA-256 chain; a database owner can
-rewrite that chain, as described in the original security assessment.
+Audit events use the local SHA-256 chain. A full database owner can rewrite it. See [security limits](security-self-assessment.md) and the [glossary](glossary.md).

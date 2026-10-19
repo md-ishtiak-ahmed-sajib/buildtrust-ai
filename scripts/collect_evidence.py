@@ -50,7 +50,7 @@ def source_manifest():
 
 def main():
     global OUT
-    sys.stdout.reconfigure(encoding='utf-8')
+    sys.stdout.reconfigure(encoding="utf-8")
     parser = argparse.ArgumentParser()
     parser.add_argument("--port", type=int, default=8001)
     parser.add_argument("--output", type=Path, default=OUT)
@@ -315,7 +315,7 @@ def main():
                 json.dumps(result, indent=2), encoding="utf-8"
             )
             (OUT / f"scenario-{scenario.lower()}.md").write_text(
-                f"# Scenario {scenario}\n\nExecuted: {result['executed_at']}\n\nDecision: **{result['decision']}**\n\nBalance before: BDT {result['balance_before']}\n\nBalance after: BDT {result['balance_after']}\n\nAudit events: {', '.join(map(str, result['audit_event_ids']))}\n\nActual HTTP inputs, source provenance, workflow stages, findings, and receipt (where applicable): `scenario-{scenario.lower()}.json`.\n\nAll identities and transfers are fictional sandbox records.\n",
+                f"# Scenario {scenario}\n\nRun time (UTC): {result['executed_at']}\n\nResult: **{result['decision']}**\n\nCash before: BDT {result['balance_before']}\n\nCash after: BDT {result['balance_after']}\n\nAudit record IDs: {', '.join(map(str, result['audit_event_ids']))}\n\nRead `scenario-{scenario.lower()}.json` for the actual requests, source records, checks and receipt, where a payment occurred. These results came from a running local API and saved database.\n\nAll companies and transfers are fictional. No real money moved.\n",
                 encoding="utf-8",
             )
             results.append(

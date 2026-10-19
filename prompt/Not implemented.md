@@ -1,21 +1,32 @@
-# BuildTrust AI — Remaining work
+# Remaining work
 
-## External integrations and field evidence
+Only unfinished tasks belong here. Completed work and test evidence are recorded in the [implementation ledger](../docs/all-suggestions-implementation.md) and [verification guide](../docs/completion-verification.md).
 
-- [ ] **Owner: user / provider account owner.** Supply backend SerpApi and DataForSEO credentials plus explicit authorization for paid tests. Then verify supported locations, real source links, paid task recovery and uncertain-submission reconciliation in an isolated run. Synthetic and fixture results do not prove live-provider success.
-- [ ] **Owner: user / local environment.** Install or provide an available Ollama model and authorize its local endpoint configuration; then execute and record real explanation/fallback checks. Offline deterministic operation is already available.
-- [ ] **Owner: user / document owner.** Supply authorized representative Bengali scans, reference schedules and supplier documents, with expected readings and reviewer permission. Then record field accuracy and complex-layout acceptance; synthetic OCR fixtures cannot establish representative accuracy.
-- [ ] **Owner: qualified QS/engineer and finance reviewers.** Independently accept supplied measurement-rule editions, project policies, real supplier/beneficiary attestations and estimate-maturity evidence. Local independent role checks do not substitute for professional acceptance.
+## External services and real documents
 
-## Environments and independent assessment
+| Task | Owner | What is needed next |
+|---|---|---|
+| Test live SerpApi and DataForSEO searches | Provider account owner | Supply backend credentials and explicit paid-test permission. Then verify real links, supported locations, task recovery and uncertain submissions in an isolated run. |
+| Test a real Ollama model | Local environment owner | Install/provide a model and its local endpoint. Then record actual explanation and fallback checks. The deterministic copilot already works. |
+| Check representative Bengali scans and reference/supplier documents | Document owner | Supply authorized files, expected readings and reviewer permission. Synthetic OCR tests do not establish field accuracy. |
+| Obtain professional acceptance | Qualified QS/engineer and finance reviewers | Review source editions, measurement rules, project policies, real supplier/beneficiary attestations and maturity evidence. Role-based app tests are not professional approval. |
 
-- [ ] **Owner: local environment administrator.** Start a working Docker engine and provide a separate authorized native Linux environment, then run platform checks. Docker CLI is installed, but its engine pipe is unavailable; WSL currently contains only Docker's managed distribution, which must remain untouched.
-- [ ] **Owner: user / GitHub repository administrator.** Complete and retain the hosted Windows/Linux CI run after publication. The current source run is queued at https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39281590860; runner results are not yet available. The superseded initial run was cancelled. A committed workflow file is not evidence of a hosted run.
-- [ ] **Owner: accessibility reviewer / user.** Perform a genuine screen-reader and first-user assessment with suitable assistive technology and representative users. Automated scans, keyboard/modal checks and narrow-screen workflows cover a narrower verified scope.
-- [ ] **Owner: independent security reviewer.** Complete the deployment-specific penetration/security assessment if this sandbox is to progress toward deployment. Dependency scans, functional tests and local resource bounds are not an independent security attestation.
+## Platforms and independent assessment
 
-## GitHub and competition handoff
+| Task | Owner | What is needed next |
+|---|---|---|
+| Validate Docker | Local environment administrator | Start a working Docker engine, then run the isolated checks. The installed CLI currently cannot reach its engine. Do not modify Docker's managed WSL distribution. |
+| Validate native Linux startup | Repository/environment owner | Record the shell-launcher and clean-start checks in a separate authorized Linux environment. Hosted Ubuntu application tests have their own revision-specific results. |
+| Complete current hosted Windows/Linux checks | GitHub repository owner / runner service | Retain the actual run result for the refreshed source. A queued/running workflow is not a pass; see the verification guide for run links. |
+| Perform a real screen-reader and first-user assessment | Accessibility reviewer and representative users | Use suitable assistive technology and actual users. Keyboard/mobile and automated scans cover a narrower scope. |
+| Obtain an independent deployment security review | Independent security reviewer | Review the proposed hosting environment before any wider deployment. Local tests and known-advisory scans are not a penetration-test certificate. |
 
-- [ ] **Owner: team.** Confirm competition registration, team identity and presenter details, then add their real values to the handoff materials.
-- [ ] **Owner: presenter/team.** Rehearse the nine-slide presentation and demonstration against the verified release, including timing and team-specific introduction.
-- [ ] **Owner: team.** Upload the final required materials to the authorized competition destination and retain its confirmation before the supplied deadline.
+## Team and competition submission
+
+| Task | Owner | What is needed next |
+|---|---|---|
+| Confirm registration and team details | Team | Supply actual registration confirmation, team identity and presenter details. |
+| Rehearse | Presenter/team | Run the nine-slide talk and demonstration, check timing and add the real team introduction. |
+| Upload the final package | Team | Supply the authorized destination, upload the required files and keep confirmation before the supplied deadline. |
+
+GitHub publication is authorized and has already occurred. Final refreshed revisions and their remote/CI evidence are recorded separately; competition upload has not occurred.

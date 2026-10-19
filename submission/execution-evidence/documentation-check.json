@@ -1,0 +1,226 @@
+{
+  "passed": true,
+  "documents": [
+    {
+      "document": "README.md",
+      "mermaid_diagrams": 1,
+      "images": 5,
+      "rendered": true,
+      "mobile_checked": true
+    },
+    {
+      "document": "features.md",
+      "mermaid_diagrams": 1,
+      "images": 9,
+      "rendered": true,
+      "mobile_checked": true
+    },
+    {
+      "document": "docs/accounting-and-controls.md",
+      "mermaid_diagrams": 0,
+      "images": 0,
+      "rendered": true
+    },
+    {
+      "document": "docs/advanced-feature-tests.md",
+      "mermaid_diagrams": 0,
+      "images": 0,
+      "rendered": true
+    },
+    {
+      "document": "docs/advanced-upgrade-plan.md",
+      "mermaid_diagrams": 0,
+      "images": 0,
+      "rendered": true
+    },
+    {
+      "document": "docs/all-suggestions-implementation.md",
+      "mermaid_diagrams": 0,
+      "images": 0,
+      "rendered": true
+    },
+    {
+      "document": "docs/api-reference.md",
+      "mermaid_diagrams": 0,
+      "images": 0,
+      "rendered": true
+    },
+    {
+      "document": "docs/architecture.md",
+      "mermaid_diagrams": 0,
+      "images": 1,
+      "rendered": true
+    },
+    {
+      "document": "docs/completion-handoff-plan.md",
+      "mermaid_diagrams": 0,
+      "images": 0,
+      "rendered": true
+    },
+    {
+      "document": "docs/completion-verification.md",
+      "mermaid_diagrams": 0,
+      "images": 0,
+      "rendered": true
+    },
+    {
+      "document": "docs/demo-script.md",
+      "mermaid_diagrams": 0,
+      "images": 0,
+      "rendered": true
+    },
+    {
+      "document": "docs/estimating-methodology.md",
+      "mermaid_diagrams": 1,
+      "images": 0,
+      "rendered": true
+    },
+    {
+      "document": "docs/financial-controls.md",
+      "mermaid_diagrams": 0,
+      "images": 0,
+      "rendered": true
+    },
+    {
+      "document": "docs/financial-rules.md",
+      "mermaid_diagrams": 0,
+      "images": 0,
+      "rendered": true
+    },
+    {
+      "document": "docs/glossary.md",
+      "mermaid_diagrams": 0,
+      "images": 0,
+      "rendered": true
+    },
+    {
+      "document": "docs/judges-quickstart.md",
+      "mermaid_diagrams": 0,
+      "images": 0,
+      "rendered": true,
+      "mobile_checked": true
+    },
+    {
+      "document": "docs/limitations.md",
+      "mermaid_diagrams": 0,
+      "images": 0,
+      "rendered": true
+    },
+    {
+      "document": "docs/measurement-rule-register.md",
+      "mermaid_diagrams": 0,
+      "images": 0,
+      "rendered": true
+    },
+    {
+      "document": "docs/presentation-outline.md",
+      "mermaid_diagrams": 0,
+      "images": 0,
+      "rendered": true
+    },
+    {
+      "document": "docs/price-source-integrations.md",
+      "mermaid_diagrams": 0,
+      "images": 0,
+      "rendered": true
+    },
+    {
+      "document": "docs/quantity-surveying-standards.md",
+      "mermaid_diagrams": 0,
+      "images": 0,
+      "rendered": true
+    },
+    {
+      "document": "docs/README.md",
+      "mermaid_diagrams": 0,
+      "images": 0,
+      "rendered": true,
+      "mobile_checked": true
+    },
+    {
+      "document": "docs/security-self-assessment.md",
+      "mermaid_diagrams": 0,
+      "images": 0,
+      "rendered": true
+    },
+    {
+      "document": "docs/technical-documentation.md",
+      "mermaid_diagrams": 0,
+      "images": 0,
+      "rendered": true
+    },
+    {
+      "document": "docs/test-results.md",
+      "mermaid_diagrams": 0,
+      "images": 0,
+      "rendered": true
+    },
+    {
+      "document": "docs/threat-model.md",
+      "mermaid_diagrams": 0,
+      "images": 0,
+      "rendered": true
+    },
+    {
+      "document": "docs/assets/README.md",
+      "mermaid_diagrams": 0,
+      "images": 0,
+      "rendered": true
+    },
+    {
+      "document": "demo/README.md",
+      "mermaid_diagrams": 0,
+      "images": 0,
+      "rendered": true
+    },
+    {
+      "document": "submission/README.md",
+      "mermaid_diagrams": 0,
+      "images": 0,
+      "rendered": true
+    },
+    {
+      "document": "submission/submission-checklist.md",
+      "mermaid_diagrams": 0,
+      "images": 0,
+      "rendered": true
+    },
+    {
+      "document": "submission/screenshots/README.md",
+      "mermaid_diagrams": 0,
+      "images": 0,
+      "rendered": true
+    },
+    {
+      "document": "submission/execution-evidence/README.md",
+      "mermaid_diagrams": 0,
+      "images": 0,
+      "rendered": true
+    }
+  ],
+  "svg_checks": [
+    {
+      "name": "architecture.svg",
+      "text_within_bounds": true
+    },
+    {
+      "name": "estimate-flow.svg",
+      "text_within_bounds": true
+    },
+    {
+      "name": "estimate-impact.svg",
+      "text_within_bounds": true
+    },
+    {
+      "name": "payment-cash.svg",
+      "text_within_bounds": true
+    },
+    {
+      "name": "payment-flow.svg",
+      "text_within_bounds": true
+    }
+  ],
+  "broken_links": [],
+  "public_password_table_matches": true,
+  "architecture_mermaid_parsed": true
+}

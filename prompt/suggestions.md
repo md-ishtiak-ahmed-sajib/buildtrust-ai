@@ -1,8 +1,8 @@
-> Implementation status: the review below records the original findings. Current implementation, actual acceptance and external prerequisites are maintained in [the 42-item ledger](../docs/all-suggestions-implementation.md) and [completion verification](../docs/completion-verification.md). Historical bug descriptions below are not a claim that the fixed reproductions remain present.
+> Historical review. The findings below describe the app before the fixes. Read [current features](../features.md), [the 42-item ledger](../docs/all-suggestions-implementation.md) and [actual verification](../docs/completion-verification.md) for today's implementation and external review limits. The original reproductions are preserved as evidence.
 
 # BuildTrust AI — Application Review and Improvement Roadmap
 
-> **Implementation update:** application changes have now been made and verified against the review. The nine reproduced defects are corrected, and accounting, installments, trade/OCR, supplier-control and performance examples have been added. **All 42 recommendations are not yet complete.** See the [implementation matrix](../docs/all-suggestions-implementation.md) for current per-ID status, evidence and unfinished scope. The review below remains the historical reproduction record; its earlier descriptions are not the current release status.
+> **Current status:** the local fixes and feature work are recorded per recommendation in the ledger. Real provider, document, professional and independent assessment tasks remain separate. Use [Not implemented.md](Not%20implemented.md) for unfinished work rather than treating the old review below as the current backlog.
 
 **Review date:** October 18, 2026 · **Application:** v0.2.0 · **Direction:** stabilize first, then expand.
 

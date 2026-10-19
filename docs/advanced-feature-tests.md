@@ -1,4 +1,4 @@
-> Historical upgrade-stage evidence. Current release checks and artifacts are in [completion-verification.md](completion-verification.md); counts below describe the earlier upgrade checkpoint.
+> Historical test report from October 18, 2026. Counts and deferred features below describe that earlier checkpoint. Read [current verification](completion-verification.md) for the latest results. The original report is preserved; it is not the current backlog.
 
 # Upgrade validation — actual results
 

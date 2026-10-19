@@ -5,4 +5,4 @@ uv sync --project backend --locked
 npm --prefix frontend ci
 npm --prefix frontend run build
 uv run --directory backend python -m app.seed
-printf '\nCredentials are in data/demo-credentials.json. Run scripts/run_demo.sh\n'
+printf '\nCredentials are in %s/demo-credentials.json. Run scripts/run_demo.sh\n' "${BUILDTRUST_DATA_DIR:-data}"

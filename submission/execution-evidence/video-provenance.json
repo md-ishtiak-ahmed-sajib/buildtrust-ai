@@ -1,63 +1,63 @@
 {
-  "duration_seconds": 272.0,
-  "planned_duration_seconds": 272,
+  "duration_seconds": 258.0,
+  "planned_duration_seconds": 258,
   "narration": "Local Windows Microsoft Zira synthetic voice",
   "screen_source": "Actual running application browser recording",
   "simulation": true,
   "playback_decode_passed": true,
-  "video_sha256": "313214a38c2f30c8c809376a4459d866d0bc29cd45d4a154a7dad9f16eb1d5f9",
+  "video_sha256": "1b206cfb6f25c29fae063ca1f461a993a2ed66e9eb0bf78f78d59e2739e41b72",
   "recording": {
-    "recorded_at": "2026-10-19T12:21:24.542Z",
+    "recorded_at": "2026-10-19T16:45:57.309Z",
     "actual_scenes": [
       {
         "scene": 1,
-        "title": "Construction finance with evidence",
-        "actual_started_seconds": 0.444
+        "title": "The working app",
+        "actual_started_seconds": 0.515
       },
       {
         "scene": 2,
-        "title": "Source documents and trust",
-        "actual_started_seconds": 25.288
+        "title": "Four source records",
+        "actual_started_seconds": 25.261
       },
       {
         "scene": 3,
-        "title": "The inflated steel claim",
-        "actual_started_seconds": 51.208
+        "title": "An inflated steel invoice",
+        "actual_started_seconds": 50.205
       },
       {
         "scene": 4,
-        "title": "Blocking findings and grounded answers",
-        "actual_started_seconds": 86.135
+        "title": "A clear reason for the block",
+        "actual_started_seconds": 85.15
       },
       {
         "scene": 5,
-        "title": "A separate compliant invoice",
-        "actual_started_seconds": 112.951
+        "title": "A valid invoice",
+        "actual_started_seconds": 110.932
       },
       {
         "scene": 6,
-        "title": "The operator cannot approve",
-        "actual_started_seconds": 137.137
+        "title": "Independent approval",
+        "actual_started_seconds": 135.104
       },
       {
         "scene": 7,
-        "title": "Authorized simulated settlement",
-        "actual_started_seconds": 162.675
+        "title": "One simulated payment",
+        "actual_started_seconds": 160.815
       },
       {
         "scene": 8,
-        "title": "Evidence-backed estimating and forecast impact",
-        "actual_started_seconds": 195.175
+        "title": "Prices and an estimate",
+        "actual_started_seconds": 191.213
       },
       {
         "scene": 9,
-        "title": "Audit evidence and limitations",
-        "actual_started_seconds": 235.136
+        "title": "Evidence and limits",
+        "actual_started_seconds": 230.132
       }
     ],
     "simulation": true,
     "source": "Actual Playwright browser recording",
-    "runtime": "D:\\Project\\buildtrust-ai\\data\\recording-97ec87d6",
+    "runtime": "D:\\Project\\buildtrust-ai\\data\\recording-1bdd5f3a",
     "base_url": "http://127.0.0.1:8013",
     "working_database_reset": false,
     "app_source_files": {
@@ -144,12 +144,13 @@
       "backend/app/pricing.py": "d03a466e4c0187f79b2eefe08c0b139ef4fb24c7f0ac7d52ab37e0e7d8046d22",
       "backend/app/procurement.py": "c8e7fe2fee6d987c691496869ae6d43bee9f7b5d1c2d9e41f80b9270f0c5a710",
       "backend/app/procurement_schemas.py": "a149a88b7f6883fe8b463f383436383a2a61102e945cf0ba14d8bbb52a74508b",
+      "backend/app/public_demo.py": "ea53aba9f09af44dfa0d26e9d11ed4453f28bcd911847328ec7356c3ce6f4ded",
       "backend/app/report_schemas.py": "90868183273d063af768975748dc80fa2f3e176b6685a29f2b7260475aa99e3c",
       "backend/app/reporting_api.py": "3b5bc09da1ec6cd085a4e8ee8762da74b3f8018fc85d45826ceaaa061fad40b5",
       "backend/app/review_models.py": "8afad9a06882bfc5b25c3fd33459dd7b7dc85d28b528068d7ea9684f66e52580",
       "backend/app/schemas.py": "a16d54f389467a7fe6efa6c23d7f32c3e372f03b355fb396ae44597096a88b79",
       "backend/app/security.py": "f17a7acf957c898ec6aa79ad2400e2baf033f36de49748ed2b156ba86b8e92ae",
-      "backend/app/seed.py": "5b9121dc8946526ee0640b3bfe73167d230be347d5d9923993d154b41c7c64e0",
+      "backend/app/seed.py": "4555b25cf4fcb35dd6f295aa0a3c2be7fd1064bf7b4f3602b5d7da4b2fe80d02",
       "backend/app/source_schemas.py": "c8e8df7007e624f129c850a4a395accd9ce212dceaa2ecc42bbf88ebe5689a90",
       "backend/app/upgrade_access.py": "d6273338a17d73125ffa90a8acc5d36df13e7a8d54c589d4390e860fe91571b8",
       "backend/app/worker.py": "e903d60b5b2d104fae147f0aef0afaaa1ccbe83c45af18cf88596d98cc9f1a1c",
@@ -208,6 +209,6 @@
       "frontend/src/types.ts": "4b59cad0b000be6beadc6aeb3ffbbe03c2f8f4a837e974df63479fcc44965ed9",
       "frontend/src/ui.tsx": "5b8d028e4ae06449c5359c5c46c56b4c473a1b63e4f17896f86d11e55234b5e8"
     },
-    "app_source_fingerprint": "a15e085c6302a863a049b01c45088ba5953f26038aa12283f0135a1c89caf479"
+    "app_source_fingerprint": "6ead88eacf28d8c13cad145f2b71904f75349a9e4f9c3f64c30e2f72d5629156"
   }
 }

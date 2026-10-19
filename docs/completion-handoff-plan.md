@@ -1,7 +1,17 @@
-# Completion and GitHub handoff
+# Release and GitHub handoff
 
-The accepted plan finishes locally achievable remaining work before rebuilding submission artifacts. Work order: procurement amendments and correction controls; composite/shared forecasts; contracts and UI; broad acceptance and load measurements; release verification; presentation/video/source package. The recorded starting baseline is 172 backend tests, 8 frontend tests and 11 browser workflows.
+This is the current handoff process. Earlier plans and old test counts remain historical records.
 
-Completion requires actual persisted behavior and evidence. Remove verified tasks from `prompt/Not implemented.md`; preserve completed evidence in the implementation ledger. External credentials, professional and accessibility acceptance, unavailable platforms, hosted CI, registration and final upload remain explicit dependencies. GitHub operations await the user's repository and authorization.
+1. Verify local behavior without changing private records or financial history.
+2. Keep only unresolved tasks in the remaining-work file. Keep completed evidence in the ledger.
+3. Update guides, diagrams, screenshots, the nine-slide presentation and short demonstration.
+4. Run isolated checks, compare fingerprints and install the packaged archive in a fresh copy.
+5. Commit and push the release to [the authorized repository](https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai), default branch `codex/verified-release`.
+6. Record the remote revision and hosted-check state. A queued run is not a pass.
+7. Leave registration, presenter details, rehearsal and final upload pending until confirmed by the team.
 
-Financial corrections and accepted-cost corrections require separate linked reviews. Existing documents, approvals, settlements, original receipt bodies and audit events remain immutable historical evidence. Migration/recovery is rehearsed on a consistent copy before the local app is upgraded. All settlement remains local simulation.
+The user authorized repository updates and submission-file regeneration. Competition upload still needs its own destination and authorization. All transfers remain simulated.
+
+Financial and accepted-cost corrections need separate linked reviews. Preserve original documents, approvals, receipts, settlements and audit events. Public passwords belong only to a separate fictional profile. Private credentials stay private.
+
+See [verification](completion-verification.md), [the ledger](all-suggestions-implementation.md) and [remaining work](../prompt/Not%20implemented.md).

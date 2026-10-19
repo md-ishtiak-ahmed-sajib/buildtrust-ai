@@ -1,17 +1,23 @@
-# Known limitations and external acceptance
+# Limits and external acceptance
 
-The local implementation and executed checks are described in [completion-verification.md](completion-verification.md). The [remaining-work file](../prompt/Not%20implemented.md) is the handoff checklist.
+Read [current verification](completion-verification.md) for actual local results and [remaining work](../prompt/Not%20implemented.md) for unresolved tasks.
 
-- **Sandbox:** every settlement is simulated. There is no bank/card connection, real funds movement or cross-currency settlement.
-- **Human authority:** source confirmation, quotations, measurements, supplier changes, contract amendments, certificates, corrections and payments depend on independently authorized people. An LLM cannot grant authority. The copilot explains recorded evidence and can prepare drafts.
-- **Document coverage:** bounded CSV/JSON schemas and supported labeled PDF layouts work locally. Optional pinned English/Bengali OCR runs without runtime downloads in bounded workers. Synthetic English scans and missing-model handling have acceptance evidence. Representative authorized Bengali/reference documents and arbitrary commercial layouts still require field evaluation.
-- **Professional rules:** finite, versioned project rules retain source editions and independent review. Geometry and supplied reinforcement schedules do not establish structural adequacy or blanket NRM/CESMM/PWD/LGED compliance. AACE classifications require evidenced professional acceptance.
-- **Accounting completeness:** reviewed opening records are necessary for historical gaps. Cost, contractual commitment, certification, liability and cash remain distinct. Corrections cannot refund cash or silently release physical entitlement. A financial reversal and an accepted-cost correction need separate linked reviews.
-- **Forecast boundaries:** mappings cover reviewed disjoint future scope; changed sources require fresh review and keep the estimate requirement visible. Existing approved PO rates remain authoritative until separately approved amendment. Unknown payment/release dates remain unscheduled. Estimates and scenarios do not authorize payment; the original 30-day liquidity gate remains authoritative.
-- **Reporting:** project ratios describe recorded data and disclose missing accounting measures. Reporting FX never changes settlement currency. Live free USD/BDT retrieval, dated attribution and persistence passed locally; paid-provider connectivity and a real Ollama model remain external checks.
-- **Operational model:** the supported deployment is one local application process. Durable jobs, leases, fencing and bounded recovery work locally. An uncertain paid submission requires manual reconciliation. Distributed workers have not been validated.
-- **Identity:** local users and memberships enforce separation of duties and last-Admin protection. MFA, SSO and enterprise recovery/lifecycle are outside this local sandbox.
-- **Audit:** a local hash chain detects inconsistent retained events. An unrestricted database administrator can rewrite the chain or remove its tail. Exported checkpoints provide evidence, not independent blockchain anchoring.
-- **Assessment:** the specified synthetic 2,000/500/10,000/50,000-record workload ran with ten clients and three repetitions. Broad audit contains-search counts remain the slow group. These measurements do not establish production capacity. Parser bounds and child quotas are not antivirus or a full OS security sandbox. Independent penetration and complete assistive-technology assessment remain external prerequisites for deployment assurance.
-- **Platforms:** fresh Windows installation, consistent backup/migration/recovery and local integrity checks passed. Docker's engine is unavailable; WSL contains only Docker's managed distribution, which has not been modified. Native Linux, hosted CI and live Ollama need their own available environments.
-- **Handoff:** the repository destination, team registration/presenter details, rehearsal and final upload require human input. No customers, independently measured business savings, regulatory approval or production certification are claimed.
+| Area | Boundary |
+|---|---|
+| Payments | Every transfer is simulated. No bank, card or cross-currency settlement is connected. |
+| Public demo | Published passwords work only in its separate local profile. They are unsuitable for public hosting. Private setup still uses random passwords. |
+| Human authority | Documents, quotations, measurements, suppliers, contracts, corrections and payments need authorized independent review. AI cannot grant authority. |
+| Documents/OCR | Supported layouts and bounded imports work. Optional local OCR needs pinned models and review. Synthetic English fixtures do not prove representative Bengali accuracy. |
+| Measurement | Supplied geometry and reviewed finite rules do not prove structural adequacy or full NRM/CESMM/PWD/LGED compliance. |
+| Accounting | Historical gaps need evidenced opening records. Estimates, commitments, accepted cost, liabilities, revenue and cash stay separate. This is not a statutory accounting suite. |
+| Corrections | No automatic refund or physical quantity release. Financial correction and accepted-cost reversal need separate reviews. |
+| Forecast | Dated assumptions drive schedules. Unknown dates stay unscheduled. Stale/unresolved mappings cannot silently lower requirements. Forecasts cannot authorize payments. |
+| Prices/FX | Unknown specifications/charges remain unknown. Paid providers need live acceptance. Recorded FX has a date and attribution; it is not a guaranteed bank execution rate. |
+| Operations | One local process is supported. Saved job recovery is not a validated distributed system. Uncertain paid submissions need manual reconciliation. |
+| Identity | Roles/memberships and last-Admin protection exist. MFA, SSO and enterprise account recovery are outside this local release. |
+| Audit | A local chain detects inconsistent retained events. A full database owner can rewrite or truncate it without an independent checkpoint. |
+| Assessment | Actual synthetic load results are a local baseline, not production capacity. Parser quotas are not antivirus. Independent security and full assistive-technology reviews remain separate. |
+| Platforms | Windows installation is verified. Docker, native Linux, Ollama and hosted CI need their own actual environment/run evidence. |
+| Handoff | Source has been published to the authorized GitHub repository. Team registration/details, rehearsal and final competition upload still need human confirmation. |
+
+There are no claimed customers, externally measured savings, regulatory approvals or production certifications.

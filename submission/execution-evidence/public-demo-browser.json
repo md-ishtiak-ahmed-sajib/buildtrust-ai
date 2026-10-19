@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "url": "http://127.0.0.1:8003",
+  "checks": [
+    {
+      "role": "OPERATOR",
+      "login_passed": true
+    },
+    {
+      "role": "FINANCE_MANAGER",
+      "login_passed": true
+    },
+    {
+      "role": "ADMIN",
+      "login_passed": true
+    },
+    {
+      "role": "AUDITOR",
+      "login_passed": true
+    }
+  ],
+  "scope": "Four real browser logins and read-only navigation; no demo reset or financial writes"
+}

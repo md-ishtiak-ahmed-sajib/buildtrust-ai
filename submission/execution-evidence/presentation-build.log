@@ -1,14 +1,14 @@
-Inspect result written to file: D:\Project\buildtrust-ai\data\presentation-build\candidate-1792412668969.pptx.inspect.ndjson
+Inspect result written to file: D:\Project\buildtrust-ai\data\presentation-build\candidate-1792427927947.pptx.inspect.ndjson
 {
-  "final": "D:\\Project\\buildtrust-ai\\data\\presentation-final\\completion-20261019-v3.pptx",
+  "final": "D:\\Project\\buildtrust-ai\\data\\presentation-docs-final\\BuildTrustAI_Presentation.pptx",
   "slides": 9,
   "font": "Arial",
   "validation": {
-    "finalPath": "D:\\Project\\buildtrust-ai\\data\\presentation-final\\completion-20261019-v3.pptx",
-    "receiptPath": "D:\\Project\\buildtrust-ai\\data\\presentation-build\\validation-1792412669481.json",
+    "finalPath": "D:\\Project\\buildtrust-ai\\data\\presentation-docs-final\\BuildTrustAI_Presentation.pptx",
+    "receiptPath": "D:\\Project\\buildtrust-ai\\data\\presentation-build\\validation-1792427929887.json",
     "schemaVersion": "presentation-finalization.v1",
-    "finalSha256": "9cd7d105984884500184f08c578d352868a921476d141e830d28eac5c387e4b4",
-    "byteCount": 254029,
+    "finalSha256": "a62b95024a81b5283e08379bd69740502948f6152bb946297d0bde3d26599b15",
+    "byteCount": 254878,
     "packageIntegrity": {
       "chart_count": 0,
       "claim_boundary": "Structural package checks only; no slide text, notes, formulas, chart values, or native PowerPoint execution were inspected.",
@@ -82,9 +82,9 @@ Inspect result written to file: D:\Project\buildtrust-ai\data\presentation-build
       "performed": true,
       "passed": true,
       "slideCount": 9,
-      "sha256": "9cd7d105984884500184f08c578d352868a921476d141e830d28eac5c387e4b4",
+      "sha256": "a62b95024a81b5283e08379bd69740502948f6152bb946297d0bde3d26599b15",
       "runtimeNodeModules": "C:\\Users\\ishti\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules",
-      "nodeExecutable": "C:\\Users\\ishti\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe"
+      "nodeExecutable": "C:\\Program Files\\nodejs\\node.exe"
     },
     "nativeTableArithmetic": {
       "performed": true,
@@ -121,7 +121,7 @@ Inspect result written to file: D:\Project\buildtrust-ai\data\presentation-build
       "native_chart_count": 0,
       "native_powerpoint_verified": false,
       "passed": true,
-      "presentation_sha256": "9cd7d105984884500184f08c578d352868a921476d141e830d28eac5c387e4b4",
+      "presentation_sha256": "a62b95024a81b5283e08379bd69740502948f6152bb946297d0bde3d26599b15",
       "schema_version": "presentation-native-chart-titles.v1",
       "slide_count": 9,
       "source_text_emitted": false,

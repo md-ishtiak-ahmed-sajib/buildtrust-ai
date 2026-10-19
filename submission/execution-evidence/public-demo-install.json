@@ -1,0 +1,15 @@
+{
+  "passed": true,
+  "profile": "isolated public demo",
+  "port": 8003,
+  "four_readme_passwords_login": true,
+  "operator_self_approval_denied": true,
+  "auditor_write_denied": true,
+  "independent_payment_balance": "930000.00",
+  "audit_valid": true,
+  "repeat_prepare_preserved_records": true,
+  "occupied_port_failed_clearly": true,
+  "private_profile_unchanged": true,
+  "private_table_count": 57,
+  "simulation": true
+}

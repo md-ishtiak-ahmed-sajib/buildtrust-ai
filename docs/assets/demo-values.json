@@ -1,0 +1,6 @@
+{
+  "currency": "BDT",
+  "notice": "Fictional, verified local examples. These are not customer results or live market prices.",
+  "payment": {"opening_cash": 1000000, "payment": 70000, "closing_cash": 930000, "reserve": 100000, "source": "submission/execution-evidence/scenario-b.json"},
+  "estimate": {"tonnes": 20, "old_rate": 70000, "new_rate": 74000, "old_total": 1400000, "new_total": 1480000, "difference": 80000, "recorded_cash": 2000000, "old_forecast": 600000, "new_forecast": 520000, "source": "backend/tests/test_advanced_upgrade.py; submission/screenshots/upgrade-approved-estimate.png"}
+}

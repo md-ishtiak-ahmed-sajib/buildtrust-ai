@@ -1,41 +1,41 @@
 # Demonstration script
 
-The recording uses actual browser interactions and local Windows synthetic narration (Microsoft Zira). All financial states come from the running application. No success screen or transaction reference is fabricated.
+This video shows the actual app in a separate fictional database. Narration uses the local Microsoft Zira synthetic voice. Screen actions, amounts and receipts come from the running app. No success screen or transaction reference is invented. The public demo in README uses a different separate profile.
 
-## 0:00 - Construction finance with evidence
+## 0:00 - The working app
 
-BuildTrust A I is a construction finance copilot for small and medium sized businesses. This is the working local prototype for the Shenzhen FinTechathon, Topic E. The dashboard reads persisted project data. All companies, supplier identities, and payments in this demonstration are fictional. No real bank is connected.
+BuildTrust A I helps construction teams check costs and payments. These are real screens from the local app. The projects, suppliers and money are fictional. No bank is connected. You can try a separate public demo with the four passwords in the read me. This recording uses its own sample database.
 
-## 0:25 - Source documents and trust
+## 0:25 - Four source records
 
-A payment decision starts with four different records: the approved bill of quantities, a purchase order, an accepted delivery receipt, and the supplier invoice. This workspace imports actual PDF, CSV, or JSON contents. Extraction retains source references and review history. A label inside a document cannot grant approval.
+A payment starts with four records. The bill of quantities lists approved work. A purchase order records what was ordered. A delivery receipt records what was accepted. The invoice states the supplier claim. The app reads actual files and keeps their sources. A person must confirm procurement records before they are trusted.
 
-## 0:51 - The inflated steel claim
+## 0:50 - An inflated steel invoice
 
-Here the supplier claims ninety five tonnes of reinforcement steel. Approved scope, the purchase order, and accepted delivery support only eighty tonnes. At seventy thousand taka per tonne, the claim is six million six hundred and fifty thousand taka. The supported amount is five million six hundred thousand. The difference is one million and fifty thousand taka, or eighteen point seven five percent of the supported entitlement.
+This invoice claims ninety five tonnes of steel. The approved records support only eighty tonnes. The price is seventy thousand taka per tonne. The claim is six million six hundred and fifty thousand taka. The supported amount is five million six hundred thousand. The excess is one million and fifty thousand taka, or eighteen point seven five percent. The app blocks payment.
 
-## 1:26 - Blocking findings and grounded answers
+## 1:25 - A clear reason for the block
 
-The financial workflow persists its actual tool steps and findings. Quantity and authorization discrepancies block this invoice, regardless of any optional model explanation. Evidence links identify the supporting records. The copilot answers why the claim was held using saved calculations. Document instructions cannot approve an invoice or bypass a control.
+The workflow saves each check and its result. The comparison shows where the invoice differs from the records. The copilot explains the block using this saved evidence. It does not decide whether to ignore a financial rule. Instructions inside an uploaded document cannot approve a payment or give someone extra access.
 
-## 1:52 - A separate compliant invoice
+## 1:50 - A valid invoice
 
-A separate cement invoice claims seventy thousand taka. Its item, quantity, contracted rate, supplier, beneficiary, and accepted delivery agree. Base and delayed receivable scenarios preserve the cash reserve. The workflow prepares an exact proposal and reserves its cash and delivery entitlement. It stops at the human authorization gate.
+The cement invoice is a separate example. It claims seventy thousand taka. The supplier, price, quantity and accepted delivery agree. The app also checks cash today and cash after a delay in customer receipts. The required reserve is preserved. It prepares a proposal and holds the needed cash and quantity for review.
 
-## 2:17 - The operator cannot approve
+## 2:15 - Independent approval
 
-The operator can prepare this proposal, but cannot approve or execute it. These restrictions are enforced by the backend as well as the interface. Approval must come from a different authorized account. It binds the invoice, supplier, amount, currency, beneficiary fingerprint, evidence, and expiry to one exact snapshot.
+The Operator prepared this payment and cannot approve it. We must use a different authorized account. Approval applies to the exact amount, supplier and evidence shown here, and it has an expiry time. If important records or permissions change, the app requires fresh checks. The browser cannot bypass these server rules.
 
-## 2:42 - Authorized simulated settlement
+## 2:40 - One simulated payment
 
-We now sign in as the finance manager. After explicit approval and a second confirmation, the sandbox rechecks authority, the approved snapshot, current risks, delivery allocations, and cash. Settlement updates the balance, payment, subledger, and audit records in one transaction. The mock receipt shows seventy thousand taka paid and nine hundred and thirty thousand taka remaining. It is a simulated transaction, not a banking confirmation.
+We sign in as Finance Manager, review the proposal and approve it. We then confirm the simulation. The app rechecks permission, evidence, cash and the reserve before saving the payment. Cash, ledger and audit records are saved together. Seventy thousand taka is paid once. One million becomes nine hundred and thirty thousand. The receipt is clearly a simulation.
 
-## 3:14 - Evidence-backed estimating and forecast impact
+## 3:10 - Prices and an estimate
 
-A separate fictional project starts with two million taka cash and twenty tonnes estimated at seventy thousand per tonne. The comparison drawer explicitly uses synthetic demonstration offers. A wrong grade cannot supply an approved rate. Selecting seventy four thousand increases the estimate by eighty thousand. The scheduled forecast falls from six hundred thousand to five hundred and twenty thousand. Recorded cash stays unchanged. Budget checking and approval require independent people. Contract mappings can update selected components while retaining unrelated labour, tax and retention details.
+A different sample project has two million taka in cash. It estimates twenty tonnes of steel at seventy thousand per tonne. We explicitly search fictional demo prices. The wrong grade cannot be selected. Choosing seventy four thousand increases the estimate by eighty thousand taka. Forecast cash falls from six hundred thousand to five hundred and twenty thousand. Recorded cash stays at two million. A different Manager checks the submitted estimate and a separate Admin approves it.
 
-## 3:55 - Audit evidence and limitations
+## 3:50 - Evidence and limits
 
-Finally, the audit view verifies the saved hash chain. Execution evidence reproduces the original payment scenarios and extended estimating, commercial and correction workflows. Certificate corrections retain source history and require separate reviews for accepted cost. Procurement amendments protect received quantities. The application runs without paid services. Professional acceptance and final team submission remain separate gates. Local hash chaining cannot prevent an unrestricted administrator from rewriting the database.
+The audit screen checks the saved chain. Other areas cover measurements, accounting, contracts, installments and reviewed corrections. Tests and source files are included in the package. Paid searches and professional acceptance need separate evidence. A person with full database access can rewrite a local audit chain. Real registration, rehearsal and competition upload remain team actions.
 
-To record manually, run the judge server, use the generated Operator and Manager credentials, and follow these scenes. Keep total length below five minutes.
+For a new recording, use the isolated recording wrapper and its own generated accounts. Follow these scenes and stay below five minutes. Do not reset the working database. For a personal trial, use the separate public launcher and README passwords.

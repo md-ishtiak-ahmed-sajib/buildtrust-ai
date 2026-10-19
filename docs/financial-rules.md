@@ -1,98 +1,99 @@
 # Financial rules
 
-All authoritative calculations run in Python. Monetary inputs are decimal strings, amounts are quantized using Decimal `ROUND_HALF_UP` to BDT 0.01, and SQLite stores monetary minor units as integers. No binary floating-point value is accepted as an authoritative monetary/quantity input. UI chart conversion is presentation only.
+The server makes financial decisions using saved records and fixed rules. Browser numbers and AI explanations cannot authorize payment. See the [glossary](glossary.md) for terms.
 
-## Quantities and rates
+## Exact arithmetic
 
-Supported canonical units are kg, bag, each, m2, and m3. `t`, `tonne`, `tonnes`, and `metric tonnes` convert to kg by multiplying quantities by 1,000 and dividing rates by 1,000. Kilogram aliases, bags, and pcs are normalized explicitly. No bag-to-kg, volume-to-mass, specification, or fuzzy product-name conversion is assumed.
+Store money as integer minor units. Return money as decimal strings. Use Decimal and ROUND_HALF_UP: money to two decimal places, published rates/quantities to six. Round each line amount before summing. For example, `1.2345665` publishes as `1.234567`. Preserve exact intermediate values and old approved snapshots.
 
-For each exact item/specification:
+## Supported quantities
+
+Match project, supplier, item code, specification and compatible units. Tonnes convert to kilograms by multiplying quantity by 1,000 and dividing rate by 1,000. Invoice entitlement does not guess package weight, density or similar product names. Pricing has its own explicit conversion evidence.
 
 ```text
-Approved scope = BOQ quantity + separately Admin-approved variation quantities
-Remaining BOQ quantity = approved scope - allocations across the project item
-Remaining PO quantity = ordered quantity - allocations against that PO item
-Remaining accepted quantity = confirmed accepted receipts - allocations against that PO item
-Supported entitlement = max(0, min(remaining BOQ, remaining PO, remaining accepted))
-Verified quantity = min(current claimed quantity, supported entitlement)
-Excess quantity = max(0, claimed quantity - supported entitlement)
-Quantity variance % = excess / supported entitlement × 100, when entitlement > 0
+Approved scope = BOQ quantity + separately approved quantity variations
+Remaining scope = approved scope - existing allocations
+Remaining PO = effective ordered quantity - allocations against that PO item
+Remaining delivery = confirmed accepted quantity - allocations against that PO item
+Supported quantity = max(0, min(remaining scope, remaining PO, remaining delivery))
+Verified quantity = min(claimed quantity, supported quantity)
+Excess = max(0, claimed quantity - supported quantity)
+Variance % = excess / supported quantity × 100, when supported quantity > 0
 ```
 
-Only active unexpired proposal allocations and consumed settled allocations count. The proposal being revalidated excludes its own allocations. Rejected, failed, and expired allocations are released. Reanalysis does not create allocations.
+Effective PO quantities include approved retirement events. An amendment cannot retire received, allocated, certified or settled scope. Original PO lines/rates remain in history; replacements use a linked successor PO.
 
-Confirmed receipt quantities are allocated by receipt-line ID in deterministic order under the proposal write transaction. Different invoices cannot reserve the same accepted quantity. The PO and BOQ limits still apply even if multiple receipts exist.
+Active unexpired reservations and consumed allocations count. Revalidation excludes the proposal's own reservation. Rejection, expiry, invalidation and terminal failure release live reservations. Analysis alone does not allocate quantities. Each receipt line can support its quantity only once.
 
-## Invoice amounts and approved value
+## Supported amounts
 
 ```text
-Claimed line calculation = round(claimed quantity × claimed rate)
-Verified line amount = round(verified quantity × contracted PO rate)
-Remaining BOQ value = round(approved scope × approved BOQ rate - prior allocated values)
-Supported line value = min(verified line amount, remaining BOQ value)
+Claimed line = round(claimed quantity × claimed rate)
+Verified line = round(verified quantity × contracted PO rate)
+Remaining BOQ value = round(approved scope × approved BOQ rate - allocated values)
+Supported line value = min(verified line, remaining BOQ value)
 Subtotal = sum(rounded line amounts)
 Tax = round(subtotal × explicit PO tax percent / 100)
 Retention = round(subtotal × explicit PO retention percent / 100)
-Grand total = subtotal + tax - retention - fixed per-invoice contractual discount
+Grand total = subtotal + tax - retention - fixed per-invoice discount
 ```
 
-Claimed headers and line amounts must agree exactly after rounding. Rate differences require review even if a supplier claims less. A value above the remaining BOQ budget requires an approved change; no unapproved increase is inferred. The MVP variation import extends approved quantities at the BOQ rate. A negotiated rate revision requires a separately supported implementation, not an invoice override.
+Headers and line calculations must agree. Rate differences need review even when the claim is lower. An invoice cannot override the PO rate or approve a budget increase. Tax/retention are explicitly zero in the headline samples, not a claim about tax law. Whole-order discount allocation across progress invoices is not implemented.
 
-Zero tax/retention is an explicit fictional demonstration assumption, not a statement about applicable tax law. Fixed discounts apply per invoice under the recorded PO terms. Order-wide discount apportionment over progress invoices remains unsupported. Separately approved retention releases now create an additional payable balance and require their own payment approval.
+## Source and supplier checks
 
-## Supplier, duplication, and source trust
+An invoice is a claim. BOQ/quantity variations require Admin confirmation; PO/receipts require Manager/Admin confirmation. Supplier/beneficiary changes have their own independently reviewed workflow. Invoice text cannot update the supplier master.
 
-Supplier IDs, PO supplier, project, currency, and approved beneficiary fingerprint must agree. Invoice beneficiary text cannot update the master. Unknown suppliers and beneficiary changes block execution. Supplier-master changes now require evidence, independent checking and a separate Admin approval; a blocked invoice cannot override beneficiary authority.
+Duplicate checks cover file hash, invoice identity, prior payment, active proposal and receipt use. A duplicate remains a held document rather than a second payable invoice. Projects and archived demo runs have separate identities.
 
-Duplicate controls check raw document hash, project/supplier/invoice identity, prior settlements, active proposals, and receipt allocations. Duplicate uploads are retained as held documents without creating a second invoice. Each project is an independent financial scope; reset creates new project identities and preserves previous evidence.
-
-## Liquidity
+## Cash and reserve
 
 ```text
-Available cash = recorded cash balance - other active unexpired cash reservations
-Cash immediately after proposed payment = available cash - proposed payment
-Daily closing = daily opening + recorded expected inflows - committed outflows
+Available cash = recorded cash - other active unexpired cash reservations
+Immediate balance = available cash - proposed payment
+Daily closing = daily opening + expected inflows - committed outflows
 ```
 
-Forecast horizon: today through today + 29 days, using Asia/Dhaka business dates. Overdue unsettled movements are placed on the first day. A delayed-receivables scenario moves inflow due dates by the configured delay before checking overdue handling. Cost pressure increases only flagged future outflows; it does not rewrite recorded cash or liabilities.
+The payment gate checks today through today + 29 days in Asia/Dhaka. Overdue unsettled movements fall on the first day. The delayed scenario shifts receivable dates by the policy delay before overdue handling. Cost pressure affects only eligible future costs.
 
-Each linked invoice obligation is counted once: as a scheduled obligation, a reserved proposal, or a settled movement. A current proposal is removed from other-reservation totals and applied once. Receivables are assumptions, never available settled cash.
+The payment must have enough recorded available cash now. Its immediate balance and every daily balance in both base and delayed scenarios must preserve the reserve. Expected receipts do not become settled cash. Cost-pressure breaches warn. Foreign-currency movements cannot silently supply an FX conversion.
 
-Eligibility requires available cash to cover the payment, the immediate post-payment balance to preserve the reserve, and every projected day in both base and policy-delayed scenarios to preserve it. Cost-pressure breaches warn. Foreign-currency cash movements block the project assessment rather than silently supplying FX conversions.
+One obligation appears once as scheduled, reserved or settled. Installments reserve only their exact cash amount. The unpaid remainder keeps its recorded date or remains unscheduled. Retention without a release date remains unscheduled.
 
 ## Approval and settlement
 
-Operator prepares; Finance Manager approves/executes up to BDT 100,000; Admin approves/executes up to the configured ceiling (BDT 1,000,000 by default). Auditor is read-only. Limits are inclusive. The creator cannot approve their proposal. Every settlement needs a distinct account's exact, unexpired approval.
+| Rule | Default |
+|---|---|
+| Required reserve | BDT 100,000 |
+| Finance Manager payment ceiling | BDT 100,000, inclusive |
+| Admin payment ceiling | BDT 1,000,000, inclusive |
+| Approval validity | 30 minutes |
+| Delayed receivables | 15 days |
+| Cost-pressure preview | 10% on eligible future costs |
 
-Default approval validity is 30 minutes. The snapshot includes amount, currency, supplier, beneficiary, proposal version, expiry, source content/versions, and policy inputs. Material changes invalidate approval. Current cash, current allocations, financial findings, executor authority, and approving-account authority are checked again at execution.
+The creator cannot approve. Approval binds the exact amount, currency, supplier, beneficiary, proposal version, sources, policy and expiry. Material changes require fresh validation and approval. Execution rechecks preparer/approver/executor authority, project access, source versions, entitlement, risks and current cash.
 
-Reservations reduce spendable availability but never debit the ledger. Settlement consumes them, deducts recorded cash once, records a cash credit and payable debit, marks linked obligations settled, and writes a mock receipt atomically. Failures roll back all monetary effects. Identical successful retries return the same receipt; a key used for another request is rejected. A terminal failure remains a failure on replay.
+Settlement consumes reservations and commits payment, cash, payable, allocations, ledger, receipt and success audit together. Failures roll back money. An identical successful retry returns the original receipt. Conflicting key reuse is rejected. Terminal failed retries retain the original failure. Denied/failed attempts are recorded separately after rollback.
 
-## Independent headline examples
+## Accounting, corrections and forecasts
 
-- Steel: 95 tonnes × BDT 70,000 = BDT 6,650,000 claimed; 80 tonnes × BDT 70,000 = BDT 5,600,000 supported; excess BDT 1,050,000; 15 / 80 = 18.75%.
-- Valid cement: 100 bags × BDT 700 = BDT 70,000; BDT 1,000,000 opening cash becomes BDT 930,000 once.
-- Liquidity stress: BDT 150,000 - BDT 70,000 = BDT 80,000, below the BDT 100,000 reserve; no settlement.
+Accepted delivery/work recognizes cost/accrual once. Invoice/certificate reconciliation moves supported accrual into payable and explicit tax/retention/advance accounts. Payment reduces liability and cash. Customer certification records revenue/receivable; collection is a separate event.
 
-## Reviewed accounting and installments
+A credit can create supplier credit after settlement, but cannot refund cash or release quantities. Financial certificate reversal and accepted-cost correction need separate linked reviews. Cumulative source/code/tax/retention/advance limits apply.
 
-Accepted cost debits project cost and credits accrued liability once. Exact invoice reconciliation moves that liability to AP/retention without recognizing original cost again; explicit tax treatment separates tax accounts. Historical recognition dates are not reconstructed automatically.
+Estimates have separate cost and tender totals. Cost excludes profit, recoverable tax and output tax. Explicit nonrecoverable tax may enter cost; unknown nonzero tax treatment blocks a cost baseline. Approved historical snapshots retain their original meaning.
 
-A reconciled invoice claims physical entitlement once. Each installment reserves its exact cash and requires independent approval. Unpaid amounts retain their actual scheduled date, or remain unscheduled. BDT 30,000 then 40,000 moves opening cash from 1,000,000 to 970,000 and 930,000. Separate 66,500 net payment and 3,500 retention release total 70,000. Excess credits become supplier credit without automatic refund or quantity release.
+Shared forecast calculations cover reviewed whole-line/component scope. Reject overlaps, keep unrelated components and contractual rates, apply allowances once, and retain unresolved/stale requirements until fresh review. Estimates and scenarios do not authorize payment.
 
-New cost totals exclude profit/recoverable/output tax; unknown nonzero tax treatment blocks a cost baseline. Legacy approved snapshots retain their meaning. EVM uses approved cost BAC, dated PV, checked EV and recognized AC. Formula details and remaining allocation/certification limits are in [accounting-and-controls.md](accounting-and-controls.md).
+## Verified fictional examples
 
+| Example | Expected result |
+|---|---|
+| Steel: 95 vs 80 tonnes at BDT 70,000 | BDT 1,050,000 excess; 18.75%; blocked |
+| Cement: 100 bags at BDT 700 | BDT 70,000; cash 1,000,000 → 930,000 once |
+| Stress cash: 150,000 less 70,000 | 80,000 below reserve; no payment |
+| Installments: 30,000 then 40,000 | Cash 1,000,000 → 970,000 → 930,000; one quantity claim |
+| Retention: 66,500 plus approved 3,500 release | Total 70,000 with separate settlement authority |
+| Estimate: 20 tonnes at 70,000 → 74,000 | Cost +80,000; forecast 600,000 → 520,000; recorded cash unchanged |
 
-## Completion release: explicit scopes, amendments and corrections
-
-Migrations 0015–0017 add immutable procurement authorization/amendment relations, receivable correction balances and project-scoped query indexes. A populated-copy rehearsal and live upgrade preserve 54 legacy table/column fingerprints, credentials, original receipts and audit history. Original audit payloads and stored receipt bodies retain their exact historical schema; current authoritative calculation/source views have explicit response contracts and generated frontend types.
-
-`forecasting.py` is the shared estimate/extended cash-overlay service. Whole-item or specific-component allocations retain quantity/unit conversions, disjoint intervals, source hashes, calculation policy, dated segments, tax treatment, retention and sourced advance recovery. Whole-item contracts include their complete scope; component mappings apply estimate overhead/contingency once and contract tax once. Unmapped components retain estimate assumptions; profit and output tax do not become project cost. Missing cash or retention-release dates remain unscheduled. Changed sources retain estimated requirements until fresh review. Existing invoice/certificate obligations and exact installments remain canonical; unrecognized PO exposure and held retention appear separately without fabricated dates.
-
-Procurement value/quantity authorization is separate from estimate budgeting. An independently checked and Admin-approved PO amendment appends retirement events for eligible unreceived scope, then publishes a successor PO. It cannot rewrite original lines/rates or retire received, allocated, certified or settled scope. Entitlement, coverage, cost control and forecasts use effective quantities. Material procurement/supplier/authority changes invalidate affected pending approvals and release live reservations.
-
-Source-linked certificate reversals post compensating financial journals and adjust payable/receivable or supplier/customer credit balances. They never refund cash. A separate linked accepted-cost correction reverses supported cost/accrual without releasing physical quantity. Cumulative source, cost-code, tax, retention, advance and previous-correction limits are checked under the same serialized approval boundary.
-
-The estimate page now delegates BOQ display, measurement/rate editing, basis/allowances and forecast presentation to focused components. Read failures retain request/field/retry details; loading retries preserve the workspace, and failed edits stay available for correction. Paginated registers cover growing accounting and commercial records alongside the original lists.
-
-See [completion-verification.md](completion-verification.md) for actual test results, local workload limitations and separately outstanding external verification.
+See [accounting details](accounting-and-controls.md), [estimating](estimating-methodology.md) and [actual verification](completion-verification.md).

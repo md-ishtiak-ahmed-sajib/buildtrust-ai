@@ -33,3 +33,9 @@ jobs:
       - run: npx --prefix frontend playwright install chromium --with-deps
       - run: uv run --project backend python scripts/verify_upgrade_browser.py
       - run: uv run --project backend python scripts/collect_evidence.py
+      - name: Native Linux shell setup and startup
+        if: runner.os == 'Linux'
+        run: uv run --project backend python scripts/verify_linux_startup.py
+      - name: Fresh Windows private and public setup
+        if: runner.os == 'Windows'
+        run: uv run --project backend python scripts/verify_clean_install.py --output data/ci-clean-install

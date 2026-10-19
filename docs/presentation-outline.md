@@ -1,17 +1,19 @@
 # Presentation outline
 
-Nine slides, targeting 8 minutes 50 seconds including demonstration pauses. All amounts are fictional prototype results. Screenshots come from actual browser tests; scenario references point to actual HTTP execution evidence.
+Nine slides. Target **8 minutes 50 seconds**, including pauses to explain the actual screens. The PPTX includes speaker notes and source references. All financial examples are fictional local results.
 
-| Slide | Time | Purpose and evidence |
+| Slide | Time | What to explain |
 |---|---|---|
-| 1. BuildTrust AI | 0:00–0:40 | Construction-finance copilot; Topic E; explicit sandbox boundary |
-| 2. The construction payment problem | 0:40–1:30 | Explain fragmented scope, ordering, accepted delivery, and supplier claims without invented market statistics |
-| 3. Invoice risk meets liquidity pressure | 1:30–2:20 | Distinguish verified entitlement from available cash; show the implemented delayed-receivables scenario |
-| 4. A complete financial workflow | 2:20–3:15 | Actual document-to-audit flow with the human authorization boundary |
-| 5. System architecture | 3:15–4:10 | React/FastAPI, persisted tools, deterministic engines, explicit approval, atomic SQLite settlement |
-| 6. Inflated steel invoice | 4:10–5:30 | Actual UI and Scenario A: 95 tonnes claimed, 80 supported, BDT 1,050,000 excess, 18.75%, blocked |
-| 7. Authorized sandbox transaction | 5:30–6:40 | Actual receipt and Scenario B/H: BDT 70,000; cash 1,000,000 → 930,000 once; stable mock reference on retry |
-| 8. Security and evidence | 6:40–7:50 | Permission tiers, independent exact approval, idempotency, audit verification, actual executed test counts |
-| 9. Cost planning and commercial controls | 7:50–8:50 | Actual 80,000 estimate difference, 600,000 to 520,000 forecast, retained cash, component mappings, protected amendments and linked corrections; external acceptance remains separate |
+| 1. BuildTrust AI | 0:00–0:40 | Construction costs/payment review; working app; simulated money; public trial |
+| 2. Four records before payment | 0:40–1:30 | Approved quantities, order, accepted delivery and supplier claim |
+| 3. Cash and the minimum reserve | 1:30–2:20 | A correct invoice can still breach the reserve; delayed receipts must pass |
+| 4. Payment review | 2:20–3:15 | Saved checks, exact proposal, independent approval and one transaction |
+| 5. How the app works | 3:15–4:10 | Browser, server checks, services, private storage and explanation-only AI |
+| 6. An inflated steel invoice | 4:10–5:30 | 95 vs 80 tonnes; BDT 1,050,000 excess; 18.75%; blocked |
+| 7. One approved payment | 5:30–6:40 | BDT 70,000; cash 1,000,000 to 930,000 once; repeat request returns original receipt |
+| 8. Checks and limits | 6:40–7:50 | Actual test counts, public setup checks and local audit/security limits |
+| 9. Price and estimate changes | 7:50–8:50 | BDT 80,000 estimate increase; forecast 600,000 to 520,000; cash unchanged; wider reviewed tools |
 
-Do not claim customers, external settlements, quantified business savings, fraud probability, regulatory certification, or independent audit immutability. The exported PPTX contains speaker notes and supporting evidence references.
+Use clear words and explain BOQ, BDT and forecast before using them. Let the audience read the two native tables. Do not claim customers, business savings, real banking, fraud probability, regulatory certification or a tamper-proof local database.
+
+Team name/presenter and actual rehearsal remain pending until supplied. Do not invent them. See the [judge guide](judges-quickstart.md), [demo script](demo-script.md) and [submission checklist](../submission/submission-checklist.md).

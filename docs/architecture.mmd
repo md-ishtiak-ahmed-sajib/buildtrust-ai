@@ -1,32 +1,35 @@
 flowchart TD
-    UI[React + TypeScript workspace] --> API[FastAPI: authentication, role and project access]
-    API --> Intake[Private PDF / CSV / JSON intake]
-    Intake --> Parser[Bounded PDF worker and deterministic parsers]
-    Parser --> Review[Field provenance and human review]
-    Review --> Confirm[Authorized procurement confirmation]
-    API --> Workflow[Persisted Python state machine]
-    Workflow --> Match[BOQ + PO + accepted receipt + invoice reconciliation]
-    Match --> Risk[Rules-based blocking findings]
-    Risk --> Cash[30-day base / delayed / cost scenarios]
-    Cash --> Prepare[Exact proposal + cash and receipt reservations]
-    Prepare --> Human[Different authorized human approves]
-    Human --> Execute[Authenticated idempotent sandbox executor]
-    Execute --> Atomic[Atomic cash, payment, subledger, receipt and audit commit]
-    Workflow -. optional explanation only .-> Ollama[Ollama / deterministic fallback]
-    Confirm --> DB[(SQLite: exact money, foreign keys and uniqueness)]
-    Match --> DB
-    Prepare --> DB
-    Atomic --> DB
-    Atomic --> Audit[Canonical SHA-256 audit chain]
-    Audit --> Verify[Integrity verifier and exported evidence]
-    API --> Price[Material catalogue and persisted price searches]
-    Price --> Providers[Optional SerpApi / DataForSEO + verified quotes / references]
-    Providers --> Evidence[Immutable source observations and selections]
-    API --> QS[Profile-aware geometry and checked takeoff sheets]
-    QS --> Estimate[Versioned estimating BOQ and component rate analysis]
-    Evidence --> Estimate
-    Estimate --> Budget[Independent check and Admin baseline approval]
-    Estimate --> Overlay[Scheduled uncommitted forecast overlay]
-    Budget --> DB
-    Overlay -. does not authorize payment .-> Cash
-    Estimate --> DB
+    Public[Separate public profile on port 8003] --> API[FastAPI in the chosen local profile]
+    Private[Private profile on port 8000] --> API
+    UI[React workspace with 14 areas] --> API
+    API --> Access[Current user, role and project checks]
+    Access --> Documents[Private documents and field review]
+    Documents --> Sources[Human-confirmed source records]
+    Access --> Prices[Materials, searches and reviewed quotations]
+    Access --> Takeoff[Drawings, quantities and checked sheets]
+    Prices --> Estimates[Versioned estimates and independent budget approval]
+    Takeoff --> Estimates
+    Access --> Commercial[Contracts, awards, certificates and amendments]
+    Sources --> Commercial
+    Commercial --> Accounting[Accepted cost, journals, payables and receivables]
+    Accounting --> Forecast[Shared forecasts and performance reports]
+    Estimates --> Forecast
+    Access --> Workflow[Saved document and financial check steps]
+    Sources --> Workflow
+    Workflow --> Proposal[Exact payment proposal and reservations]
+    Forecast --> CashGate[Current cash and required 30-day reserve checks]
+    Proposal --> CashGate
+    CashGate --> Human[Different authorized person approves]
+    Human --> Recheck[Current authority, sources, cash and expiry]
+    Recheck --> Settlement[Atomic sandbox payment, ledger, receipt and audit]
+    Access --> Reviews[Role-aware review inbox and team controls]
+    Access --> Jobs[Saved jobs, leases and bounded recovery]
+    Jobs --> Workflow
+    Jobs --> Prices
+    Workflow -. explanation only .-> Model[Built-in explanation or optional local model]
+    Settlement --> Storage[(The chosen profile's SQLite database and private files)]
+    Accounting --> Storage
+    Sources --> Storage
+    Estimates --> Storage
+    Reviews --> Storage
+    Storage --> Audit[Local hash-chain verification and evidence]

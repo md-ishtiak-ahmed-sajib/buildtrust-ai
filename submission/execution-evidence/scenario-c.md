@@ -1,15 +1,15 @@
 # Scenario C
 
-Executed: 2026-10-19T15:54:51.930016Z
+Run time (UTC): 2026-10-19T16:48:54.508198Z
 
-Decision: **DUPLICATE_HELD**
+Result: **DUPLICATE_HELD**
 
-Balance before: BDT 1000000.00
+Cash before: BDT 1000000.00
 
-Balance after: BDT 1000000.00
+Cash after: BDT 1000000.00
 
-Audit events: 223, 222, 221
+Audit record IDs: 223, 222, 221
 
-Actual HTTP inputs, source provenance, workflow stages, findings, and receipt (where applicable): `scenario-c.json`.
+Read `scenario-c.json` for the actual requests, source records, checks and receipt, where a payment occurred. These results came from a running local API and saved database.
 
-All identities and transfers are fictional sandbox records.
+All companies and transfers are fictional. No real money moved.

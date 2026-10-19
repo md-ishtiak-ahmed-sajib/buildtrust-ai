@@ -98,7 +98,15 @@ def demo_payloads():
     return result
 
 
-def seed(session, settings, reset=False, test_password=None):
+def seed(session, settings, reset=False, test_password=None, public_demo=False):
+    public_passwords = {}
+    if public_demo:
+        from .public_demo import load_accounts, validate_profile
+
+        if not settings.demo_mode or test_password:
+            raise ValueError("Public demo accounts need a separate demo profile.")
+        validate_profile(settings.data_dir, require_marker=True)
+        public_passwords = {a["email"]: a["password"] for a in load_accounts()}
     existing = session.scalar(select(Project).where(Project.active.is_(True)).limit(1))
     if existing and not reset:
         return {"already_seeded": True, "project_id": existing.id}
@@ -121,7 +129,11 @@ def seed(session, settings, reset=False, test_password=None):
         email = f"{name}@buildtrust.demo"
         user = session.scalar(select(User).where(User.email == email))
         if not user:
-            password = test_password or "Demo-" + secrets.token_urlsafe(12)
+            password = (
+                public_passwords.get(email)
+                or test_password
+                or "Demo-" + secrets.token_urlsafe(12)
+            )
             user = User(
                 email=email,
                 name={

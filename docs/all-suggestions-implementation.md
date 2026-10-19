@@ -1,62 +1,79 @@
-# All-suggestions implementation ledger
+# Implementation ledger
 
-Scope: all 42 recommendations B01–B09, F01–F11, A01–A10 and Q01–Q12. Locally implemented behavior has actual acceptance evidence; missing real credentials, representative field documents, environments and independent human acceptance stay separate. The user authorized commit/push to https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai after local readiness. Competition upload still requires its destination and authorization.
+This ledger covers all **42 recommendations**: B01–B09, F01–F11, A01–A10 and Q01–Q12. It records completed local work and links to evidence. Only unfinished tasks belong in [Not implemented.md](../prompt/Not%20implemented.md).
 
-The original nine defects are corrected. The completion release adds disjoint composite forecasts, protected PO amendments, source-linked financial/cost corrections, wider installment boundaries, explicit calculation/source contracts, focused estimate workflows, paginated business registers and the specified local workload measurement. The local application is http://127.0.0.1:8000/.
+**Local checks passed** means the implemented local behavior has test/API/browser evidence. It does not mean live providers, real documents, professional acceptance or production hosting have been certified. See [current verification](completion-verification.md) for actual counts and dates.
 
-## Implementation matrix
+## Nine reproduced problems
 
-| ID | Recommendation | Status | Interfaces / migrations | Executed scope and remaining verification |
-|---|---|---|---|---|
-| A01 | Incremental feature boundaries | Verified local refactor | Feature routers; original page modules; focused estimate BOQ, rate, basis and forecast components | The estimate page falls from 1,133 to 605 lines; public routes, draft guards, independent review and browser workflows stay intact. |
-| A02 | Short SQLite write transactions | Verified local request boundaries | Read/prepare outside writers; authority/version recheck; atomic financial publication | Argon2 login/user creation and bounded document/quotation/BOQ parsing run outside writers. Initial CLI seed hashing occurs before the server starts. Specified concurrent local workload measured; no distributed capacity claim. |
-| A03 | Typed API errors and complete contracts | Verified authoritative contracts | Explicit financial calculation, takeoff, source, quotation, material, FX, accounting and operational response models; regenerated OpenAPI/TypeScript | Contract-drift checks pass. Original immutable audit payloads, approval evidence and receipt bodies retain their historical JSON rather than being rewritten. |
-| A04 | Persisted job attempts and recovery | Verified local recovery scope | Durable workflow/search intents, leases, heartbeat fencing, backoff and local scheduler | Known remote IDs resume without resubmitting paid tasks; uncertain submissions stay held. Recovery/fencing fixtures pass. Multi-host operation and live-provider recovery remain external checks. |
-| A05 | Operational diagnostics and redaction | Verified local diagnostics and measurements | Request IDs; method/path/status/bytes/duration; parser/job durations and SQLite lock waits | Request/parser/job/lock metadata is redacted. Actual ten-client measurements include SQL groups and lock waits; independent security and production availability assessment remain external. |
-| A06 | Lazy loading and a measured asset budget | Verified asset budget | Lazy routes and CashChart; asset budget script/CI | Initial JavaScript measured at 116708 gzip bytes, 49.8% below 232480; requested 25% reduction exceeded. |
-| A07 | Search, pagination, and query efficiency | Verified local registers and workload | 18 project-scoped paginated registers; 0017 indexes | Registers add invoices, PO/receipts, materials/prices/measurements, controls/contracts/certificates/amendments/corrections, journals and cost codes. Stable paging/search/status/order retain old list contracts. Broad audit contains-search is the measured slow group. |
-| A08 | Accessibility validation | Verified automated/keyboard/mobile scope; external assessment pending | Automated axe checks, contrast fixes, named fields, keyboard/mobile checks | 16 browser workflows and 18 automated screens/forms pass. Modal focus, errors, narrow screens and daily financial tables are exercised. Genuine screen-reader assessment remains external. |
-| A09 | Safer validation defaults and CI | Verified local tooling; hosted/platform acceptance external | Isolated HTTP/browser/contracts defaults; .github/workflows/checks.yml | Isolated tests, contracts, HTTP/browser/evidence and fresh Windows setup pass. Hosted CI requires the repository; native Linux/Docker require available environments. |
-| A10 | Request-ingestion and resource bounds | Implemented and locally verified bounds | Pre-parser body envelope/15-second deadline; JSON structure limits; CSV/XLSX expansion limits; PDF child memory/CPU/time/page/pixel/output limits | Slow/deep inputs are rejected before parsing. A real dedicated child allocation verifies the Windows memory quota. POSIX execution and a full adversarial assessment remain separate checks. |
-| B01 | Earlier estimate contributors can approve their work | Verified | 0005; estimate/quotation/equivalence contributor checks | test_stabilization.py; migration/recovery; retained contributors bind submissions. Professional equivalence evidence itself needs human acceptance. |
-| B02 | Incompatible PO items suppress estimated forecast costs | Verified | 0005 commitment_coverage; estimating forecast | Incompatible PO specification reproduction and warnings pass; source fingerprints are checked before subtracting coverage. |
-| B03 | Inconsistent rounding in normalized and landed rates | Verified | money.published; pricing and calculations | Actual quote normalization publishes 1.2345665 as 1.234567; money uses HALF_UP 2dp. Old approved snapshots are preserved. |
-| B04 | Whitespace bypasses the login failure throttle | Verified | LoginThrottle; normalized identifier; short write login | Whitespace variants share expiring account/IP counters; Retry-After and bounded buckets. |
-| B05 | Missing BOQ CSV headers return an unhandled 500 | Verified | TableInputError; CSV/XLSX import | Missing/duplicate headers return 422; row iteration stops at 500; failed imports leave estimates unchanged. |
-| B06 | Displayed takeoff results become stale after input changes | Verified | Takeoff input fingerprint | Browser invalidation and recalculation 9.6 to 19.2; in-flight old results are discarded. |
-| B07 | Navigation silently discards unsaved estimate changes | Verified in browser scope | DraftGuard; router and project/version guards | Save / Discard / Stay, back navigation and printable estimate exercised. Latest expanded browser run additionally checks failed saves and project/version guards. |
-| B08 | Estimate print styles hide the BOQ | Verified | Separate receipt/estimate CSS scopes | Generated PDF is parsed for actual BOQ codes and total; original receipt workflow passes. |
-| B09 | Small decimal inputs can expand into large canonical strings | Verified | Ingress decimal bounds and output bound | Raw length/digit/exponent bounds reject pathological input before fixed-point expansion; internal Decimal arithmetic remains separate. |
-| F01 | Quotation evidence and a role-aware review inbox | Verified local evidence workflow; field corpus external | Quotation page evidence/correction revisions, listing drafts, review inbox including commercial controls | Quotation PDF page/correction revisions and listing-to-draft flows preserve unknown costs. Role/project inbox and immutable source evidence are exercised; representative authorized documents remain external. |
-| F02 | Actual-cost, accrual, and integrated cost-coding foundation | Verified local accounting examples | 0007–0016 accounting, allocation, code and correction records | Acceptance/invoice/payment recognition, code lineage and compensating journals pass. Supplier/customer tax, retention, advance and credit allocations reconcile. Historical gaps still require evidenced opening balances. |
-| F03 | Extended forecasting and earned value management | Verified local forecasts and EVM | Shared forecasting service; reviewed schedules/progress and canonical obligations | 7/30/90/project horizons, golden EVM, composite mapping, changed-source review and explicit schedule updates pass; installments are counted once. Undated commitments and retention stay unscheduled. |
-| F04 | Additional trade takeoff and professionally reviewed measurement rules | Verified local rules; professional acceptance external | Trade geometry, explicit compaction, finite opening-threshold rules, source/edition/reviewer approval | Trade geometries, supplied schedules and finite reviewed opening rules pass. No unprovided licensed standard rule or professional certification is inferred. |
-| F05 | Sensitivity analysis and evidence-based estimate maturity | Verified local sensitivity/maturity/history; professional classification external | Immutable sensitivity controls, approved historical-estimate comparisons and append-only procurement/settlement history | Browser preparation/checking/approval and approved historical comparison pass. Maturity preserves evidence and flags professional acceptance; no automatic AACE class. |
-| F06 | RFQs, procurement integration, certificates and variations | Verified local commercial extension | 0012–0017; procurement.py, corrections.py, forecast_links.py and focused control forms | RFQ-to-award, cumulative certificates, contract advances, disjoint component forecast scopes, nonzero terms and protected successor-PO amendments pass through persisted interfaces. |
-| F07 | Profitability, aging, ratios and reporting currencies | Verified recorded-data reporting; completeness external | Actual margins, reviewed forecast margins, source-staleness flags, aging, retention, working capital and dated FX | Actual/forecast margins, aging, retention, EVM and supported ratios retain missing-data disclosures. Live USD/BDT rate/date/attribution persist in a private database. Real accounting completeness requires reviewed inputs. |
-| F08 | Reviewed OCR for scanned documents | Verified optional local OCR; representative corpus external | Optional hash-pinned eng/ben OCR; bounded PyMuPDF worker | Pinned eng/ben setup and bounded OCR/manual fallback exist; synthetic English scanned acceptance passes. Representative Bengali/reference accuracy awaits authorized supplied documents. |
-| F09 | Supplier onboarding and controlled master maintenance | Verified local supplier/team controls; real attestations external | Supplier changes, controlled beneficiaries, Team & Access, current roles/memberships and last-Admin protections | Independent supplier/beneficiary changes, pending-approval invalidation, membership/role administration and last-Admin protection pass; real callback verification requires human evidence. |
-| F10 | Partial payments, credit notes and retention release | Verified invoice/certificate installment boundaries | Shared settlement service; exact installments; explicit base/tax/held-retention credits; supplier-credit balances | Expiry, lost preparer/approver authority, concurrent credits, rollback, repeated settlement, separate retention and post-settlement supplier credit pass. Physical claims remain consumed; cash is never refunded by a credit. |
-| F11 | Extend the copilot with each delivered module | Verified local deterministic tools | Grounded price/takeoff/estimate/performance and commercial evidence-register tools | Commercial answers cover mappings, procurement amendments and separate financial/cost corrections with source hashes. Existing estimating/QS/performance tools remain read/prepare only. |
-| Q01 | Show role-specific next steps and why an approval/action is unavailable. Reduces confusion about preparation versus checking and approval. | Verified local role guidance | Review Inbox next steps; retained contributor explanations | Review Inbox, control/estimate cards and archive/draft context explain independent checking, contributor restrictions and unavailable actions. |
-| Q02 | Display last-searched material, quantity, unit, destination, mode, and timestamp next to price results. | Verified in stored-search scope | Displayed immutable search request and timestamp | Actual quantity/unit/city/country/mode are displayed for the returned search. Provider connectivity remains separately unverified. |
-| Q03 | Add searchable project/material/version selectors and preserve useful filters. | Verified local selectors/filter persistence | Searchable project/material/version/cost-code selectors; session view filters | Native searchable selectors and project/user filters retain selections; browser exercises archive navigation and register search. |
-| Q04 | Improve inline validation, field-error summaries, and empty/loading/retry states. | Verified local errors/retries/edit preservation | Typed error/field summaries; status and empty states | Typed domain/field/retry/session information is retained. Shared query retry reloads in place; browser verifies failure/retry and unsaved/failed-edit preservation. |
-| Q05 | Improve secondary text readability, touch targets, form grouping, and mobile review of long sheets. | Verified local automated/mobile scope; human usability external | Contrast-corrected navy/teal palette, readable labels, 44px controls | 16 browser workflows cover narrow screens, touch controls and keyboard/modal behavior. Full user/screen-reader assessment remains external. |
-| Q06 | Add accessible table alternatives and meaningful summaries for financial charts. | Verified in cash-chart scope | CashChart accessible daily table and caption | Browser expands the equivalent table; chart measures and daily balances come from the same response. |
-| Q07 | Authorized read-only archived-run navigation | Verified API and browser scope | Archived project selector, preserved records and write denial | Browser selects an archived run, reads unchanged documents, persists register search across navigation and confirms an archived write returns 409. |
-| Q08 | Improve export context: project, revision, state, currency, calculation basis, and clear CSV/XLSX round-trip limits. | Verified export arithmetic scope | Version-2 CSV/XLSX context, component JSON and allowance settings | A new regression reproduced and fixed duplicate markup on reimport. Cost/tender totals round-trip; imported selection/material authority is cleared for review. |
-| Q09 | Actionable in-app review and expiry notifications | Verified current inbox scope | Project/role work items; derived five-minute warning and expired state | Current authoritative approvals drive availability and expiry. Tests verify expiring/expired behavior; there is no duplicate notification database or external messaging. |
-| Q10 | Add a short first-run guide covering locally generated credentials, demo roles, upgrade-project creation, and source categories. | Verified local guidance; user assessment external | Review Inbox expandable first-run guide | First-run instructions cover generated private credentials, independent roles, source categories and upgrade project. Unobserved first-user experience is not claimed. |
-| Q11 | Shared behavior and readable evidence components | Verified shared workflows | DraftGuard, ApiError, Field/Modal/status, SearchSelect, configured control forms and ControlEvidence | Focused estimate/editor/forecast modules share safe draft/error/status/field/modal/selector behavior. Evidence views retain readable business amounts and separate raw audit disclosure. |
-| Q12 | Documentation and release-tool assumptions | Verified local artifacts and release tools | Updated README, financial/security/technical docs and remaining-work list; release packager requires explicit submission opt-in | Updated technical/security/judge docs and isolated recording/package/install tooling. Nine rendered slides with notes, a 272-second decoded recording, source/checksum agreement and actual archive installation passed. See completion verification for receipts. |
+| ID | Completed work | Evidence/limit |
+|---|---|---|
+| B01 | Retain all contributors across estimate edits/revisions; block their independent checking/approval | Estimate, quotation and equivalent-review tests; old approved history preserved |
+| B02 | Use compatible, versioned BOQ-to-PO coverage; keep unresolved costs visible | Incompatible commitment and source-change tests |
+| B03 | Apply explicit HALF_UP rounding to money and published rates | Tie `1.2345665` becomes `1.234567`; old snapshots retained |
+| B04 | Normalize login identifiers before lookup and throttling | Whitespace variants share bounded account/IP limits |
+| B05 | Validate required/duplicate import headers and stop at row limits | Structured 422 errors; failed imports leave drafts unchanged |
+| B06 | Invalidate takeoff results when inputs change | Browser checks 9.6 m³ becoming stale, then 19.2 m³ after recalculation |
+| B07 | Protect unsaved estimates during navigation, project/version changes and failed saves | Save/Discard/Stay browser checks |
+| B08 | Separate estimate and receipt print styles | Actual printed BOQ codes/totals and receipt checks |
+| B09 | Bound numeric text before expansion | Pathological exponents/digits rejected before formatting |
 
-## Completion evidence and release boundaries
+## Eleven feature recommendations
 
-[Completion verification](completion-verification.md) records current actual checks. Local evidence includes 191 backend tests, 8 frontend tests, 16 browser workflows, A–H real HTTP scenarios, audit verification, contract drift, advisory scans, migration/recovery and fresh Windows setup. Source/API/UI outputs live under `submission/execution-evidence/` and `submission/screenshots/`.
+| ID | Completed local work | Separate acceptance still needed |
+|---|---|---|
+| F01 | Quotation page evidence, correction history, listing drafts and role-aware review inbox | Representative real supplier files |
+| F02 | Cost codes, accepted cost/accrual, invoice reconciliation, balanced journals, liabilities and revenue | Evidenced opening records for real historical gaps |
+| F03 | 7/30/90/project forecasts, shared scope mapping, checked progress and earned-value calculations | Complete dated project inputs; no production forecast guarantee |
+| F04 | More trade geometry and finite versioned measurement profiles | Qualified review of supplied standards/rules |
+| F05 | Saved sensitivity, maturity evidence and historical estimate comparisons | Professional classification; no automatic AACE class |
+| F06 | Contracts, RFQs, bids, awards, certificates, variations, procurement authority/amendments and corrections | Real contract/source acceptance |
+| F07 | Margins, aging, retention, working capital, supported ratios and dated reporting FX | Completeness of real accounting inputs |
+| F08 | Optional pinned English/Bengali OCR with bounded workers and manual fallback | Representative Bengali/layout accuracy |
+| F09 | Reviewed supplier/beneficiary changes, access management and last-Admin protection | Real identity/callback attestations |
+| F10 | Installments, credits and separately approved retention release for invoice/certificate payables | Real banking is intentionally absent |
+| F11 | Deterministic explanations for quantity, price, estimate, performance and commercial evidence | Live optional model check; no AI approval authority |
 
-The live upgrade preserves 54 legacy table/column fingerprints, credentials, signing material, original settlements/receipts and audit history. Migrations 0015–0017 are additive. The recorded 2,000-invoice / 500-estimate / 10,000-quotation / 50,000-audit synthetic workload completes 900 requests across three ten-client runs. Broad audit text searches are the slow group; no production-capacity conclusion is inferred.
+## Ten foundation recommendations
 
-Actual free USD/BDT FX persistence, dates and provider attribution pass in an isolated database. Paid price providers, real Ollama, representative Bengali documents, professional measurement acceptance, independent accessibility/security assessment, unavailable platforms, hosted CI and final human submission remain explicit dependencies in [Not implemented.md](../prompt/Not%20implemented.md).
+| ID | Completed work | Evidence/limit |
+|---|---|---|
+| A01 | Split routers/services and large frontend workflows | Focused invoice, payment, estimate, price and control modules |
+| A02 | Shorten ordinary financial write locks; recheck authority/versions | Hashing/parsing outside ordinary request writers; CLI sample seed runs before serving |
+| A03 | Typed errors and authoritative response contracts | Generated OpenAPI/types; original stored audit/receipt bodies preserved |
+| A04 | Saved job attempts, leases, heartbeat fencing, retry and restart recovery | Fixture recovery tests; unknown paid submissions held for manual reconciliation |
+| A05 | Request IDs, safe diagnostics and actual local workload measurements | No secrets/document bodies in logs; no production-capacity claim |
+| A06 | Load routes/charts as needed and enforce an asset budget | Actual gzip measurement exceeds the requested 25% initial reduction |
+| A07 | Project-scoped search, filtering, stable sorting and 18 register types | Indexes and synthetic workload checks; broad audit search remains the slow group |
+| A08 | Keyboard, modal, contrast, narrow-screen and automated accessibility checks | Real screen-reader/user assessment remains external |
+| A09 | Isolated tests/evidence, locked installs and hosted workflow | Actual hosted/platform results are revision-specific, not inferred from YAML |
+| A10 | Bound request envelopes, imports, JSON and PDF/OCR resources | Windows child-memory test; not antivirus or full adversarial assessment |
 
-Presentation/video/archive outputs have separate render, decode, source-agreement, checksum and installation receipts. Their current verification is recorded by release tooling; a file's existence alone is not acceptance. GitHub publication is now authorized; its actual remote and hosted-run receipts are recorded separately.
+## Twelve interface recommendations
+
+| ID | Completed work | Evidence/limit |
+|---|---|---|
+| Q01 | Role-specific next steps and disabled-action explanations | Review/approval guidance uses current authority |
+| Q02 | Show the parameters/time belonging to displayed prices | Saved search identity, quantity, location and source mode |
+| Q03 | Searchable selectors and retained project/user filters | Browser navigation/register search |
+| Q04 | Field errors, retry, loading/empty states and failed-edit preservation | Typed errors and read-error retry checks |
+| Q05 | Readable secondary text, grouped forms, touch targets and mobile layouts | Automated/narrow-screen scope; real usability review still needed |
+| Q06 | Data-table alternatives for cash charts | Same API values supply chart and daily table |
+| Q07 | Read-only archived-run navigation | Archived reads pass; writes are denied |
+| Q08 | Context-rich exports and safe arithmetic round-trip | Project/revision/currency, components and allowances; imported authority cleared for review |
+| Q09 | Review/expiry guidance derived from current records | Five-minute warning; no separate email/SMS service |
+| Q10 | First-run guidance and easy sample access | Separate public demo, four documented passwords, private setup unchanged |
+| Q11 | Shared draft/error/modal/field and readable evidence components | Focused estimate components and protected audit disclosure |
+| Q12 | Accurate guides and safe release tools | Plain-English README/features/guides; isolated recorder, checked artifacts and archive installation |
+
+## Completion evidence
+
+Backend test groups cover stabilization, accounting, cost coding, governance/trades, performance, commercial records, advances, composite forecasts, procurement amendments, corrections, installments, jobs and parser limits. Public-demo tests check all four logins, permissions, repeat startup, conflicts and private defaults. Browser and real HTTP runs supply separate evidence.
+
+The existing migration rehearsal/live upgrade preserved 54 legacy table/column fingerprints and original credentials, balances, receipts and audit history. The documentation/public-demo update needs no new migration. Preservation of the working profile is checked separately.
+
+The recorded synthetic workload contains 2,000 invoices, 500 estimates, 10,000 quotations and 50,000 audit events. Three ten-client runs completed 900 requests without errors. Broad audit contains-search is the slow group. These are local measurements, not a production claim.
+
+A free USD/BDT observation was fetched and persisted with date/provider attribution. Paid providers, real model acceptance, representative documents, professional reviews and human submission retain their own prerequisites.
+
+The presentation, recording and archive have separate render, decode, fingerprint, checksum and installation records. The user authorized publishing to [the GitHub repository](https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai). Actual remote revisions and hosted status are recorded in the execution evidence. Competition upload remains a separate human action.

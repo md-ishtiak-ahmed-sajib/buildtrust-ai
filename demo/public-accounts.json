@@ -1,0 +1,9 @@
+{
+  "purpose": "Public fictional demo accounts. These passwords are intentionally published, not private credentials.",
+  "accounts": [
+    {"role": "OPERATOR", "email": "operator@buildtrust.demo", "password": "BuildTrust-Operator-2026!"},
+    {"role": "FINANCE_MANAGER", "email": "manager@buildtrust.demo", "password": "BuildTrust-Manager-2026!"},
+    {"role": "ADMIN", "email": "admin@buildtrust.demo", "password": "BuildTrust-Admin-2026!"},
+    {"role": "AUDITOR", "email": "auditor@buildtrust.demo", "password": "BuildTrust-Auditor-2026!"}
+  ]
+}

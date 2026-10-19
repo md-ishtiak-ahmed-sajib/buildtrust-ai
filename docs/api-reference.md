@@ -1,86 +1,68 @@
-# API reference
+# API guide
 
-Base path: `/api/v1`. The running interactive reference is `/docs`; `openapi.json` is exported from the implementation, not hand-written. Frontend generated contracts are produced with `npm --prefix frontend run types:api`.
+All business routes start with `/api/v1`. Open `/docs` on the running app for interactive details. [Generated OpenAPI](openapi.json) is the full current contract, including exact request/response fields. This guide explains the main routes.
 
-## Estimating upgrade endpoints
+## Login and data
 
-| Area | Routes |
+`POST /auth/login` accepts email/password and returns a signed short-lived token. Send `Authorization: Bearer …` on protected requests. `GET /auth/me` reloads current identity. Business resources require current project membership and role; health is public.
+
+Public and private demos use the same login API. Their servers/databases and passwords differ. Public accounts come from the sample fixture; no endpoint grants a role based on a client-supplied value.
+
+Money is a decimal string. Quantities/rates are exact strings; timestamps use UTC and business dates use Asia/Dhaka. Mutable writes use `expected_version` where defined. The server computes amounts.
+
+Errors preserve status, domain code, field details and retry information. Request IDs are returned in headers. Typical statuses: 401 login/session failure, 403 denied authority, 409 stale/conflicting state and 422 invalid input. Stored idempotent receipt/failure bodies are returned unchanged; correlation IDs stay in headers where needed.
+
+## Core workflow
+
+| Area | Main routes |
 |---|---|
-| Material catalogue | `GET/POST /materials`, `GET/PATCH/DELETE /materials/{id}`; project-scoped specifications, versions and archive |
-| Price comparison | `GET /prices/providers`, `POST /materials/{id}/prices/refresh` → 202 search ID, `GET /prices/searches/{id}`, `POST /prices/searches/{id}/retry`, `GET /materials/{id}/prices?search_id=…` |
-| Rate evidence | `POST /materials/{id}/prices/preview`, `POST /materials/{id}/prices/select`, `POST /materials/{id}/equivalents`, `GET /prices/history?project_id=…` |
-| Quotations/schedules | `GET/POST /quotations`, `PATCH /quotations/{id}`, `POST /quotations/{id}/verify`, multipart `POST /quotations/import`, `GET /quotations/{id}/attachment` |
-| Exchange rates | `GET/POST /prices/exchange-rates`, `POST /prices/exchange-rates/fetch` |
-| Measurement | `GET /measurement/profiles`, `POST /takeoff/calculate`, `GET/POST /takeoff/sheets`, `POST /takeoff/sheets/{id}/check` |
-| Estimates | `GET/POST /estimates`, `GET/PATCH /estimates/{id}`, `POST /estimates/{id}/{submit,check,approve,revise,recalculate}` |
-| Estimate analysis | `GET /estimates/{id}/forecast`, `/compare?other_id=…`, `/evidence`, `/export?format=csv|xlsx`; multipart `POST /estimates/{id}/import` |
-| Finance/copilot | `GET /finance/cost-control?project_id=…`, `POST /advanced/ask` |
-| Safe demo | Admin-only `POST /advanced/demo-project`, available only in demo mode |
+| System/projects | `GET /health`, `/projects`, `/projects/{id}`, `/projects/archived` |
+| Overview | `GET /dashboard/summary?project_id=…` |
+| Documents | `GET /documents`, `/documents/{id}`, `/documents/{id}/extraction`; multipart `POST /documents/upload` |
+| Corrections/trust | `PATCH /documents/{id}/extraction` with version/data; `POST /documents/{id}/confirm`; `GET /documents/{id}/preview?page=1` |
+| Invoices | `GET /invoices`, `/invoices/{id}`, `/invoices/{id}/verification`, `/invoices/{id}/workflows`; `POST /invoices/{id}/analyze` |
+| Workflow | `POST /agent/analyze` → 202/ID; `GET /agent/workflows/{id}`; `POST /agent/workflows/{id}/retry` |
+| Questions | `POST /agent/ask`, `POST /advanced/ask` |
+| Cash | `GET /cashflow/forecast?project_id=…`; scenario parameters preview assumptions, not payment-policy changes |
+| Proposals | `GET /payments`; `POST /payments/proposals` with invoice ID; `POST /payables/{id}/installments` |
+| Approval/settlement | `POST /payments/{id}/approve`, `/reject`, `/execute`; `GET /payments/{id}/receipt` |
+| Audit | `GET /audit/events?project_id=…`, `GET /audit/verify` |
+| Demo | Admin-only `POST /demo/reset`; disabled outside demo mode |
 
-Writes carry `expected_version` where applicable. Price selection identifies the
-estimate, line, component, observation and optionally search. The server calculates
-amounts. A preview writes no selection, estimate, budget or cash. Selection persists
-an immutable snapshot. Catalogue/evidence changes invalidate pending approval hashes.
-New resources enforce current database roles and memberships using the original
-authentication mechanism. Full request/response schemas are in generated OpenAPI.
+Payment `{id}` is the **proposal ID**, including receipt lookup. Execution requires `Idempotency-Key`, not a client amount or beneficiary. Retain a key for retries of the same request; conflicting reuse fails. Identical successful retries return the original receipt. Terminal failed retries preserve their failure result.
 
-## Authentication and responses
+## Prices, measurement and estimates
 
-`POST /auth/login` accepts `email` and `password`, returning a short-lived bearer token and the database-authoritative user/limit. Use `Authorization: Bearer …` for protected endpoints. `GET /auth/me` reloads identity. Health is public; business resources require project membership.
-
-Money is represented by decimal strings (for example `"70000.00"`). Timestamp strings are UTC `Z`; business schedules use dates. Errors are structured as `{"error":{"code":"…","message":"…"}}`. Validation errors add field locations without echoing passwords or internal traceback details.
-
-Important status codes: 401 unauthenticated, 403 forbidden/limit violation, 404 unavailable resource, 409 conflicting identity/state/snapshot, 413 upload too large, 415 unsupported/signature mismatch, 422 invalid fields, 429 login rate limit, and 503 transient storage or simulated settlement failure.
-
-## Endpoint groups
-
-| Group | Endpoints and behavior |
+| Area | Main routes |
 |---|---|
-| System | `GET /health`, `POST /auth/login`, `GET /auth/me` |
-| Projects | `GET /projects`, `GET /projects/{id}`; assigned active projects, balance, and fictional supplier fingerprints |
-| Overview | `GET /dashboard/summary?project_id=…`; persisted financial metrics, trend, and recent events |
-| Documents | `POST /documents/upload` multipart `project_id` + `file`; `GET /documents`, `GET /documents/{id}`, `GET /documents/{id}/extraction` |
-| Document trust | `PATCH /documents/{id}/extraction` with `{version,data}`; `POST /documents/{id}/confirm`; `GET /documents/{id}/preview?page=1` |
-| Invoices | `GET /invoices`, `GET /invoices/{id}`, `POST /invoices/{id}/analyze`, `GET /invoices/{id}/verification`, `GET /invoices/{id}/workflows` |
-| Cash | `GET /cashflow/forecast?project_id=…&delay_days=15&cost_pressure_percent=10`; scenario preview does not modify policy |
-| Proposals | `GET /payments`, `POST /payments/proposals` with `{invoice_id}` |
-| Authorization | `POST /payments/{id}/approve`, `POST /payments/{id}/reject` |
-| Simulation | `POST /payments/{id}/execute` with required `Idempotency-Key`; `GET /payments/{id}/receipt` |
-| Workflow | `POST /agent/analyze` with `{invoice_id}` returns 202 and workflow ID; `GET /agent/workflows/{id}`; `POST /agent/workflows/{id}/retry` |
-| Questions | `POST /agent/ask` with `{project_id,invoice_id?,question}` |
-| Audit | `GET /audit/events?project_id=…&limit=200`, `GET /audit/verify` |
-| Demo | `POST /demo/reset`; Admin only, unavailable when demo mode is false |
+| Catalogue | `GET/POST /materials`; `GET/PATCH/DELETE /materials/{id}` |
+| Search | `GET /prices/providers`; `POST /materials/{id}/prices/refresh` → 202/search ID; `GET /prices/searches/{id}`; `POST /prices/searches/{id}/retry` |
+| Comparison/selection | `GET /materials/{id}/prices?search_id=…`; `POST /materials/{id}/prices/preview`, `/select`, `/equivalents` |
+| History | `GET /prices/history`; `POST /materials/{id}/history/refresh` |
+| Quotations | `GET/POST /quotations`; `PATCH /quotations/{id}`; `POST /quotations/{id}/verify`; multipart `POST /quotations/import`; `GET /quotations/{id}/attachment` |
+| FX | `GET/POST /prices/exchange-rates`; `POST /prices/exchange-rates/fetch` |
+| Takeoff | `GET /measurement/profiles`; `POST /takeoff/calculate`; `GET/POST /takeoff/sheets`; `POST /takeoff/sheets/{id}/check` |
+| Estimates | `GET/POST /estimates`; `GET/PATCH /estimates/{id}`; `POST /estimates/{id}/{submit,check,approve,revise,recalculate}` |
+| Estimate evidence | `GET /estimates/{id}/forecast`, `/compare?other_id=…`, `/evidence`, `/export?format=csv|xlsx`; multipart `POST /estimates/{id}/import` |
+| Upgrade sample | Admin-only `POST /advanced/demo-project`; `?new_run=true` creates a separate fictional run |
 
-`{id}` under `/payments` always refers to the **proposal ID**, including receipt retrieval. An execute request supplies no amount or beneficiary; those come from the approved snapshot. Use a new key for a genuinely new request and retain the same key across network retries of the same request. Keys reused for different proposals conflict. Successful retries return the stored original receipt; terminal failed retries preserve the original failure.
+Selection identifies the estimate, line/component, observation and expected version. Preview writes no selection, budget or cash. Selection saves an immutable evidence snapshot. It never updates an approved procurement record.
 
-## Source trust
+## Accounting, contracts and operations
 
-Invoice imports register claims. Procurement imports remain untrusted until role-authorized confirmation. The correction endpoint uses an optimistic version check and retains provenance. Confirmed procurement evidence is immutable; BOQ extensions use separately authorized variation documents. A duplicate upload remains a held document instead of becoming a second payable invoice.
+| Area | Main routes/behavior |
+|---|---|
+| Reviewed records | `/controls` with typed payloads and submit/check/approve/reject/revise transitions |
+| Accounting | `/accounting/{sources,summary,balances,journals,cost-codes,cost-code-position}` |
+| Commercial sources | `/commercial/sources` supplies project-scoped contracts, bids, work acceptances, certificates, POs/BOQs and advances |
+| Cost control | `/finance/cost-control?project_id=…` |
+| Extended forecast | `/finance/extended-forecast` for 7/30/90/project horizons and selected estimate/contract scope |
+| Performance | `/finance/performance` for sourced EVM, ratios, FX and saved forecast context |
+| Work/registers | `/work-items`, `/registers/{kind}`, `/operations/attempts` |
+| Administration | `/administration/users` and project-membership routes |
 
+Control kinds cover accounting, supplier changes, measurement rules, performance, contracts, procurement and corrections. `PROCUREMENT_AUTHORIZATION` is separate from estimate budgeting. `PROCUREMENT_AMENDMENT` retires eligible scope through a successor PO. `CERTIFICATE_CORRECTION` and `ACCEPTED_COST_CORRECTION` are separate linked reviews. `OBLIGATION_SCHEDULE_CHANGE` updates the canonical schedule and its movement.
 
-## Current controlled extensions
+`CONTRACT_ESTIMATE_LINK` binds whole lines or components, quantities, source/target offsets, source versions, schedules, retention-release dates and supported advance assignments. Reject overlaps and stale authority. The shared forecast response keeps cost, tax, retention, recovery, cash and unscheduled requirements separate.
 
-All paths below retain the `/api/v1` prefix and current project/role access checks. Generated [OpenAPI](openapi.json) is the complete route/field contract.
-
-- `/controls`: prepare typed accounting, governance, commercial and performance records; independent `/submit`, `/check`, `/approve`, `/reject` and permitted `/revise` transitions use expected versions.
-- `/accounting/{sources,summary,balances,journals,cost-codes,cost-code-position}`: original source lineage, recognized accounting and reconciled cost positions.
-- `/payables/{id}/installments`: prepare an exact installment against a current balance. Existing payment approval/execution/receipt routes remain authoritative.
-- `/commercial/sources`: authenticated options for contracts, RFQs, verified quotation bids, work acceptances, cumulative certificates and source advances.
-- Control kinds `ADVANCE_ASSIGNMENT` and `CONTRACT_ESTIMATE_LINK`: independently bind contract advances and exact direct-cost forecast mappings. Their approval creates no payment authority.
-- `/finance/extended-forecast`: 7/30/90/project-duration scenarios; optional `estimate_id`, `use_project_schedule` and `use_contract_links`. `/finance/performance`: EVM, accounting-derived ratios, reporting FX and preserved forecast snapshots with current-source status.
-- `/materials/{id}/history/refresh`: append-only approved purchasing/settlement context. Existing `/prices/history` still returns immutable selections.
-- `/work-items`, `/registers/{kind}`, `/operations/attempts`, `/projects/archived`: review/expiry state, paginated evidence, durable attempts and read-only archived runs.
-- `/administration/users` and project-membership interfaces: local independent reviewers with current authority and last-Admin protections.
-
-Typed error envelopes carry domain codes/fields and retry information. Per-request `X-Request-ID` stays in headers where a stored idempotent terminal-failure body must remain identical. Invalid fields return 422, stale state 409, denied authority 403. No request may supply its own settlement amount, beneficiary or approval authority.
-
-
-## Completion-release additions
-
-`POST /controls` accepts independently reviewed `PROCUREMENT_AUTHORIZATION`, `PROCUREMENT_AMENDMENT`, `CERTIFICATE_CORRECTION`, `ACCEPTED_COST_CORRECTION` and `OBLIGATION_SCHEDULE_CHANGE` payloads. Current source versions come from project-scoped source/balance interfaces. Submit/check/approve binds the source snapshot; conflicts return 409. Procurement authorization does not alter an estimate baseline. A financial reversal does not release physical entitlement or refund cash.
-
-`CONTRACT_ESTIMATE_LINK` supports `component_id`, allocated quantity, explicit source/target offsets, optional supersession, quantity/date schedules, retention-release dates and approved advance assignments. The backend rejects unsupported or overlapping scope. Estimate and extended previews share calculated overlays with distinct project cost, tax, retention, recovery and cash fields. Unscheduled commitments remain separate from dated movements.
-
-Additive `/registers/{kind}` pages cover growing accounting, commercial and procurement records with project scope, search/status, stable order and paging. Original list endpoints remain available. `POST /advanced/demo-project?new_run=true` creates an explicitly fictional separate run; the default reuses the current fictional project and returns its estimate/material identities.
-
-Current financial calculation and source views use explicit response models. Original stored audit/approval/receipt payloads remain unchanged historical evidence. Exported OpenAPI and generated frontend contracts pass drift verification.
+Current calculation/source views have explicit response models. Original stored audit, approval and receipt bodies remain historical evidence. Regenerate contracts with `scripts/export_contracts.py` and `npm --prefix frontend run types:api`; check drift before release.

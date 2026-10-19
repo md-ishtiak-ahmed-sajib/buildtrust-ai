@@ -1,98 +1,55 @@
 # Security self-assessment
 
-BuildTrust AI is a local, fictional payment simulator. This report describes implemented controls and remaining risks. It is not regulatory certification, a penetration-test attestation, or proof of production suitability.
+BuildTrust AI is a local payment simulator. This report describes implemented controls and known risks. It is not a penetration-test certificate, regulatory approval or proof that the app is ready for public hosting.
 
-## Assets and boundaries
+## Accounts and public passwords
 
-Assets include source documents and extracted claims, approved procurement/supplier records, cash balances, receipt entitlement, payment reservations, approval snapshots, credentials/signing material, settlement evidence, and audit history.
+Private setup generates random passwords and stores only Argon2 hashes in the database. The local credential file and signing secret stay outside Git and the source archive. Login uses short-lived signed tokens kept in browser memory. Requests reload the current active user, role and project membership.
 
-Trust boundaries separate browser input from the API, uploaded content from approved project evidence, workflow automation from human authorization, optional LLM prose from deterministic decisions, and application access from unrestricted host/database administration. The API binds only to localhost in the primary delivery. All beneficiary tokens are explicitly fictional.
+The separate public demo intentionally publishes four fictional passwords. It uses a marked `data/public-demo` profile and localhost port 8003. It refuses unrelated data and conflicting accounts; it never resets existing private passwords. Its settings ignore private environment/.env values. Public passwords are not a secret or a suitable configuration for an Internet-facing app. Signing secrets are still generated privately. The launcher disables paid services and optional model access.
 
-## Permission tiers
+## Roles and independent review
 
-| Role | Implemented authority | Restrictions |
+| Role | Authority | Boundary |
 |---|---|---|
-| Operator | Intake, correction, analysis, preparation | Cannot approve or execute |
-| Finance Manager | PO/receipt confirmation; approval and execution up to BDT 100,000 | Cannot approve own proposal or publish BOQ/variations |
-| Admin | BOQ/variation confirmation, demo reset, approval/execution up to configured ceiling | Cannot bypass financial blocks or approve own proposal |
-| Auditor | Read assigned project records and verify integrity | No financial or document writes |
+| Operator | Prepare, upload, correct and analyze | Cannot approve/execute payments |
+| Finance Manager | Confirm procurement, check estimates/controls and approve eligible payments | Independent work only; BDT 100,000 payment ceiling |
+| Admin | Approve checked budgets/controls, manage access and eligible payments | Cannot approve retained work they prepared/checked; configured payment ceiling |
+| Auditor | Read assigned records, receipts and integrity results | No writes |
 
-Each request reloads account role, active status, and project membership from the database. An authoritative role cannot be selected in a login or financial request. Payment execution rechecks the approving account's active authority. Archived demo runs remain readable and cannot receive ordinary API financial changes.
+Retained contributors survive edits and revisions. Approvals bind exact snapshots and current sources. Execution rechecks preparer, approver and executor authority. Account/source changes invalidate affected pending proposals and release reservations. Archived runs remain read-only through ordinary business endpoints.
 
-## Implemented controls and known risks
+## Controls and remaining risks
 
-| Threat | Implemented control | Residual risk / boundary |
+| Risk | Implemented protection | Remaining boundary |
 |---|---|---|
-| Stolen password database | Argon2 password hashes; generated local passwords | Host administrator can access local secrets; no MFA |
-| Forged/expired tokens | Signed 30-minute JWTs, fixed algorithm/issuer/audience; current account lookup | No complete production session-revocation service |
-| Browser token persistence | Memory-only bearer token; no auth cookies or token localStorage | XSS on an authenticated origin could access memory |
-| Login abuse | Per-process email/address attempt window | Not distributed; not a production rate-limiting system |
-| Unauthorized operation | Backend role and membership checks; forbidden/not-found errors; audit outcome | Trusted administrators can alter the host/database |
-| Uploaded “approval” | Separate authorized procurement confirmation | Human certification can be mistaken or dishonest |
-| Beneficiary substitution | Match invoice fingerprint to approved supplier master; no document-driven master update | Supplier-master verification/administration UI is not implemented |
-| Duplicate invoice | File hash and business identity detection; unique invoice identity | Identity normalization is limited; altered numbers still need financial review |
-| Reused receipt | Per-receipt-line allocation under serialized transactions; PO/BOQ caps | Accepted delivery truth depends on authorized records |
-| Unapproved financial changes | Canonical exact approval snapshot; current source/content/policy revalidation | Complete database compromise can rewrite all relevant state |
-| Double execution | Mandatory idempotency key, stored original result, unique proposal settlement and authoritative invoice/certificate payable balances | Local SQLite availability and lock capacity are limited |
-| Partial settlement failure | Atomic cash/payment/subledger/allocation/audit commit; rollback; separately recorded failure | No external banking provider or distributed transaction is exercised |
-| Liquidity pressure | Current settled-cash check; reserve gating in base and delayed scenarios | Scheduled receivables remain assumptions; no external confirmation |
-| Prompt injection | Document content remains untrusted; deterministic controls; no LLM payment/write tools | Instruction heuristics do not detect every attack; optional prose can be incorrect |
-| Dangerous upload | Type/size checks, PDF signature, UUID storage names, private storage, bounded PDF child process | No antivirus service, hardened OS sandbox, or memory cgroup isolation |
-| Malicious document preview | Authenticated raster PDFs/escaped text; no active original-file rendering | A native parser vulnerability remains possible |
-| Sensitive response leakage | Explicit user/document/receipt models; structured errors; private paths/secrets omitted | Local credentials are readable by the local operator/host account |
-| Audit manipulation | Canonical SHA-256 chain, serialized appends, verifier identifying first failure | Whole-chain rewrite and tail truncation need an external trusted checkpoint to detect |
+| Password theft/login abuse | Argon2, generic errors, normalized account/IP failure buckets, expiry and Retry-After | Per-process limits; no MFA/SSO or enterprise recovery |
+| Forged/stale token | Fixed signing policy, expiry, issuer/audience and current database access | Host compromise can expose signing material |
+| Untrusted document | Private files, explicit human confirmation, escaped text and image previews | Human review may be wrong; parser vulnerabilities remain possible |
+| Beneficiary substitution | Source-linked supplier changes with separate checking/approval | Real identity/callback evidence needs people |
+| Duplicate quantity/payment | Invoice identity, receipt allocations, payable bounds, one active proposal and unique settlement per proposal | False source records can still misstate physical delivery |
+| Changed approval | Source/version/policy/content snapshot and current revalidation | A database owner can rewrite underlying state |
+| Partial settlement failure | One cash/payment/ledger/allocation/receipt/audit transaction; rollback | No distributed bank transaction has been exercised |
+| Cash shortfall | Current cash and base/delayed reserve checks | Expected inflows are assumptions |
+| Prompt injection | Document text is data; deterministic decisions; no AI approval/payment tools | Optional explanation text may still be wrong |
+| Resource abuse | Pre-parser body limits, bounded JSON/CSV/XLSX, PDF child time/page/pixel/output/memory/CPU limits | Not antivirus or a complete malware sandbox |
+| Provider abuse | Fixed origins, bounded responses, stored task IDs, server-only keys and unknown-submission holds | Paid/live recovery needs separate verification |
+| Spreadsheet injection | Reject imported formulas; escape exported formula-like cells | Review files in a suitable local environment |
+| Browser disclosure | Memory-only tokens, protected previews/downloads and typed responses | XSS on an authenticated origin can access browser memory |
+| Audit tampering | Canonical SHA-256 chain, serialized appends and first-failure verification | Full rewrite or tail removal needs an independent trusted checkpoint |
 
-## Payment controls verified by tests
+## Financial records and jobs
 
-The automated suite exercises role denial, account inactivity, entity access, independent approval, inclusive role thresholds, changed approval fields and source data, expiry, current cash changes, concurrent execution requests, exact retry results, injected failure rollback, and protected receipt retrieval. It also verifies matching/units/tax arithmetic, prompt-injection holds, and tampered audit-event detection.
+Estimates do not authorize procurement or payments. Cost and selling totals remain separate. Installments use one accepted quantity claim and exact cash reservations. Credits/corrections do not refund cash or release physical entitlement. Financial correction and accepted-cost reversal need separate linked reviews.
 
-Actual counts and command logs are referenced in `test-results.md`. A–H evidence uses a real HTTP server and persistent SQLite, with mock references and balance changes captured from execution. No externally settled banking transaction is claimed.
+Jobs retain attempts, leases, heartbeats, bounded retry and restart recovery. Stale publishers are fenced. Unknown paid submissions require manual reconciliation. The supported deployment is one local process, not a distributed worker platform.
 
-## Deployment limitations and recommended future controls
+Logs contain request IDs and timing/status metadata. They omit credentials, tokens, provider keys and document contents. Numeric and upload bounds apply before expensive expansion/parsing. Hashing and parser work stay outside ordinary financial write locks, followed by current authority/version checks.
 
-The release is designed for an attended local judge demonstration. A public or organizational deployment requires TLS, protected account provisioning and recovery, stronger token/session lifecycle, MFA where appropriate, centralized rate limits, least-privilege OS accounts, isolated parsing and resource quotas, malware scanning, backup/restore drills, independently retained audit checkpoints, monitoring, retention policy, and a separate security review.
+## Evidence and deployment limits
 
-Those are recommendations, not implemented certifications. Optional Docker configuration is provided; its actual validation status is stated in the test report. There is no live banking integration, verified credit offer, regulatory certification, or mainnet transaction.
+See [actual verification](completion-verification.md) for tests, HTTP/browser workflows, parser checks and local workload results. Known-advisory scans describe published issues at their execution time; they do not prove complete security. Automated accessibility checks do not replace human assessment.
 
-## Price intelligence and estimating controls
+Recordings use isolated databases and addresses. Their provenance binds application source, duration and decoding. Packaging excludes private credentials, databases and uploads. The public sample-password fixture is intentionally included and labelled.
 
-The upgrade adds fixed-origin API adapters, server-only credentials, bounded responses,
-provider failure isolation, explicit paid-task IDs, search deduplication and refresh
-limits. Unknown paid submissions are held for manual provider reconciliation. No
-generic URL-fetch endpoint exists. External links require public HTTPS syntax and
-are opened with noreferrer/noopener; they are not fetched by the backend.
-
-PDF/CSV/XLSX quotations remain drafts until a different authorized person verifies
-them. Financial fields are validated server-side; files and extraction suggestions
-never confer engineering or financial authority. Spreadsheet formulas and oversized
-expanded workbooks are rejected; export cells are escaped against formula injection.
-
-Estimates are separate from procurement entitlement. Version checks, submission locks,
-independent checking, a separate Admin, retained full evidence snapshots, and current
-checker-authority checks protect budget approval. Selected prices are immutable,
-and their material requirements must remain compatible. Price previews and copilot
-sensitivity calculations have no procurement/payment/cash mutation authority.
-
-Remaining limits: standards profiles require professional review; provider listing
-availability/completeness is not guaranteed; no live paid-provider validation without
-credentials; single-process rate limiting/workers are not a distributed operations
-system. The local audit chain retains its previously documented administrator limits.
-
-## Current control extensions
-
-Retained estimate and quotation contributors survive edits/revisions and bind submission evidence. Older pending estimate submissions require fresh review during migration; approved history is preserved. Source-bound commitment mappings replace item-code-only forecast deductions. Accounting/governance controls retain every contributor and require independent checking and a separate Admin approval. Supplier changes preserve master snapshots and invalidate affected pending payment approvals.
-
-Installments use authoritative payable balances and one persistent invoice entitlement claim. Unique settlement per proposal, exact cash reservations, current liquidity/authority, idempotency and atomic cash/ledger/audit publication remain enforced. Non-BDT payment authority requires sourced BDT conversion evidence. Credits do not refund cash or release physical entitlement automatically.
-
-The request envelope is bounded before multipart parsing. Import iteration, XLSX expansion and PDF/OCR page/pixel/output/time limits precede expensive publication. OCR uses pinned local models, no runtime downloads, and human review. Diagnostics contain request IDs and timing metadata, not request bodies or passwords. Argon2 and expensive parsing run outside writer locks, followed by current authority/version checks.
-
-These are implemented controls, not a security certification. Local automatic recovery and dedicated-parser OS memory/CPU quotas are implemented and locally tested. A complete accessibility assessment, load testing and independent penetration testing remain outstanding. See [current controls](accounting-and-controls.md) and [per-item status](all-suggestions-implementation.md).
-
-
-## Completion release controls
-
-New procurement/correction/mapping workflows use the existing contributor-aware preparation, independent checking and independent Admin approval. Snapshots bind current source versions and calculations. Pending payment proposals are retired after material source or account-authority changes; executing code also rechecks preparer and approver access. Competing credits and settlements serialize within SQLite; failed operations preserve cash and retain denied-attempt evidence after rollback.
-
-The media recorder requires an isolated runtime marker and explicit localhost address, rejects the working app port, and never resets the user's database. Video provenance binds application source hashes and actual duration/decoding checks. Release packaging excludes credentials, uploads, databases, environments and dependencies; source fingerprints, archive contents and checksums are validated.
-
-Actual checks and assessment limits are in [completion-verification.md](completion-verification.md). Paid-provider, professional, assistive-technology and independent security acceptance require their external prerequisites.
+Before any wider deployment, independently review hosting, TLS, identity lifecycle, MFA, OS isolation, malware handling, backups, external audit checkpoints, monitoring, data retention and incident response. See [remaining work](../prompt/Not%20implemented.md). No real bank transfer, professional standards certification or security certification is claimed.

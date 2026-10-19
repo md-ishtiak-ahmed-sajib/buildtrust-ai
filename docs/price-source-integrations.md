@@ -1,11 +1,6 @@
-# Material price sources and evidence
+# Price sources and evidence
 
-Price intelligence runs in the existing backend. No scraping, paid subscription or
-LLM is required to start the app. External adapters call fixed HTTPS origins only.
-
-## Configuration
-
-Set values locally in `.env`, then restart the backend:
+The app starts without scraping, paid subscriptions or an external AI model. The public demo disables paid providers. Private users can configure optional adapters in their local `.env` and restart.
 
 ```dotenv
 BUILDTRUST_SERPAPI_KEY=
@@ -14,91 +9,63 @@ BUILDTRUST_DATAFORSEO_PASSWORD=
 BUILDTRUST_PRICE_TIMEOUT_SECONDS=15
 ```
 
-Do not paste keys into documents, browser code, Git, or screenshots. Provider status
-returns enabled/disabled flags, never credential values. Missing credentials display
-an unavailable state and never activate the demonstration provider automatically.
+Keep keys out of Git, documents and screenshots. Provider status returns enabled/disabled flags, never keys. Missing keys show unavailable status; they never silently activate fake online results.
 
-- SerpApi: `GET https://serpapi.com/search.json?engine=google_shopping`. Merchant and
-  product links are preserved; a Google Shopping link is not represented as a direct
-  merchant quotation. Reference: https://serpapi.com/shopping-results
-- DataForSEO: authenticated Merchant `google/locations`, `google/products/task_post`
-  and `google/products/task_get/advanced/{id}`. A supported city/country must be found
-  before task submission. Remote task IDs persist before polling. Pending tasks can
-  resume; ambiguous submissions block repetition. No public callbacks are required.
-  Reference: https://docs.dataforseo.com/v3/merchant/google/products/task_post/
-- Frankfurter v2: `/v2/rate/{base}/{quote}` with provider attribution. A recorded daily
-  rate is an estimate assumption, not a bank execution rate. Unsupported pairs remain
-  unavailable or accept a Finance Manager/Admin sourced manual rate.
-  Reference: https://frankfurter.dev/
+## Source types
 
-Coverage and valid offers depend on each provider; Dhaka construction materials are
-not guaranteed to be present. Public listing fields frequently lack units, grades,
-shipping or tax. Such observations can be displayed but cannot be recommended until
-sufficient evidence exists. Supplier confirmation is a separate reviewed quotation.
+| Source | How it works | Important limit |
+|---|---|---|
+| SerpApi | Google Shopping search through a fixed API origin | Preserve the supplied merchant/product link; it may lead to Google Shopping |
+| DataForSEO | Validate location, submit a Merchant product task, persist its ID, retrieve results | An uncertain paid submission is not blindly repeated |
+| Official schedules | Import legally supplied reference files with edition, locality and dates | Composite/work rates are not raw material offers |
+| Supplier quotations | Manual entry or CSV/XLSX/PDF suggestions, then independent verification | A listing is not a verified quotation |
+| Internal history | Append approved PO rates and settlement context | Whole-invoice cash is context, not a line unit rate |
+| Synthetic catalogue | Explicitly select demonstration mode | All offers are fictional, not live market results |
+| Frankfurter FX | Fetch a supported dated rate and store attribution | Not a guaranteed bank execution rate; unsupported pairs stay unavailable |
 
-## Search behavior
+The app calls fixed HTTPS origins. It does not fetch arbitrary user-supplied URLs. External source links are validated and displayed safely.
 
-POST refresh returns 202 and a persisted search ID. Poll its status and GET the
-material prices with `search_id`. Equivalent searches cache for one hour. Refresh is
-limited to five new searches per user/project/minute. Concurrency is two external
-requests per provider per process, responses are bounded to 2 MB and at most 50 offers
-per adapter. Connect timeout is 3 seconds, total request timeout defaults to 15 seconds.
-Safe GET retrieval gets one transient-network retry. Paid POST submission is never
-blindly retried. A known DataForSEO task polls after 0/2/5/10 seconds; WAITING resumes
-through the explicit retry endpoint. Restarted queued/running searches are interrupted.
+## Search and recovery
 
-`UNKNOWN_SUBMISSION` requires checking the provider account/task state before another
-submission. There is no automatic reconciliation with the provider account in v1.
-Keys are not included in persisted payloads, user-visible errors or audit details.
+Refresh returns **202** with a saved search ID. Poll status and request prices for that search. Display its material, quantity, unit, destination, mode and timestamp so users know which search they are viewing.
 
-## Imports
+Equivalent searches cache for one hour. Public listings become stale after 24 hours. Limits are five new searches per user/project/minute, two simultaneous requests per provider/process, 2 MB responses and at most 50 offers per adapter. Connect timeout is three seconds; request timeout defaults to 15 seconds. Safe retrieval has one transient retry.
 
-Quotation imports accept CSV/XLSX tables (one header row, up to 500 data rows) or
-labeled machine-readable PDFs. Upload limit: 10 MB; PDF bounds: 50 pages, 15 seconds.
-XLSX expansion is limited to 20 MB and formula cells are rejected.
+DataForSEO uses location discovery, `task_post` and `task_get/advanced/{id}`. Known remote IDs resume retrieval through saved jobs or explicit retry. Jobs retain leases, attempts and bounded backoff. An `UNKNOWN_SUBMISSION` needs provider-account reconciliation before another paid submission. No automatic paid-account reconciliation is claimed.
 
-Required table fields: `supplier,title`; set `price,currency,unit,quoted_quantity` to
-make the rate usable. Other fields match QuotationInput in OpenAPI. Specifications
-use a JSON `specification` column or columns such as `spec_grade,spec_diameter_mm,
-spec_standard`. Dates are ISO YYYY-MM-DD. Booleans use true/false. Financial values
-are decimal strings. Extra fields are rejected. Freight/tax basis is INCLUDED,
-EXCLUDED or UNKNOWN. Handling/other charges require an explicit zero when known zero.
+Disabled, unsupported-location, empty, waiting, timeout and error states remain distinct. Coverage for Dhaka construction materials is not guaranteed.
 
-For official schedules, set `source_type=OFFICIAL_REFERENCE` and supply `edition`,
-`effective_date`, `source_url`, chapter/item/locality where available, and
-`rate_category=MATERIAL|WORK_ITEM|COMPOSITE`. These are reference rates, not live
-supplier offers. Composite/work-item rates cannot price a raw material component.
-The official importer uses legally provided documents, not a crawler of PWD/LGED.
+## Importing quotation/reference files
 
-PDF suggestions recognize Supplier, Quotation Number, Product, Unit Price, Currency,
-Unit, Quantity, Quotation Date and Valid Until labels, saving page evidence. Unusual
-layouts/scans require manual fields. Original attachments and corrections remain
-private; verification publishes an immutable observation. The preparer cannot verify
-their own quotation. Uploaded instruction text has no execution or approval authority.
+Use one header row and at most 500 data rows. CSV/XLSX required fields are `supplier,title`. Usable prices also need `price,currency,unit,quoted_quantity` and sufficient costs/specifications. Other fields follow OpenAPI. Unknown columns and duplicate/missing headers return actionable errors.
 
-## Normalization and recommendation
+Specifications use a JSON `specification` column or fields such as `spec_grade`, `spec_diameter_mm` and `spec_standard`. Dates use YYYY-MM-DD, booleans true/false and financial inputs decimal strings. Freight/tax bases are INCLUDED, EXCLUDED or UNKNOWN. Known zero charges must be explicit; missing charges stay unknown.
 
-Canonical units are explicit. Package/mass conversion requires package weight;
-volume/mass requires material density and a recorded moisture/bulk assumption.
-Fixed order charges for a different order quantity require fresh review. Recoverable
-included tax requires its amount so it can be removed; nonrecoverable included tax
-remains within the product price. Wastage is applied in rate analysis, not hidden in
-the observed purchase price.
+Files are limited to 10 MB, PDFs to 50 pages and XLSX expansion to 20 MB. XLSX formulas are rejected. Normal PDF parsing has a 15-second timeout; configured OCR uses bounded longer processing. Suggestions retain page evidence. Scans and unusual layouts need review.
 
-Eligibility gates run before scoring: exact/independently approved equivalent,
-known comparable costs and units, delivery confirmation, MOQ, location, valid quote,
-and a usable source link for public listings. Public listings become stale after
-24 hours. Official/historical observations are reference-only in this release; use
-their documented basis in a manual estimate rate after professional review.
+Official references need `source_type=OFFICIAL_REFERENCE`, edition, effective date and source URL; retain chapter/item/locality where available. Set `rate_category` to MATERIAL, WORK_ITEM or COMPOSITE. The app does not crawl official schedules.
 
-Policy recommendation-v1: cost = 50 × lowest eligible landed cost / offer cost;
-source = 25 for human-verified supplier or explicit synthetic demo, 15 for indicative
-public evidence; delivery = 15 after eligibility; freshness = 10 for valid firm
-quotes, otherwise 10 × max(0, 1 − age_hours/24). Rank by total descending, cost
-ascending, observation ID ascending. Demo scores compare synthetic entries only,
-never live offers. A single eligible source carries an additional-quotation warning.
-This is decision support, not a fraud probability or supplier reliability assessment.
+Corrections keep revisions. A different authorized reviewer verifies a quotation before it becomes an immutable observation. Retained contributors cannot verify their own work. Unknown costs cannot be invented during listing-to-quotation conversion.
 
-Selected snapshots preserve original payload, specification, conversions, cost
-breakdown, policy, hash, user and time. Refresh never rewrites a selection. Nonrecommended
-eligible choices require a reason. Ineligible offers cannot supply a selected rate.
+## Comparable cost and eligibility
+
+Use explicit kg/tonne, known package weights, each/thousand and cubic-foot/cubic-metre conversions. Density and moisture/bulk assumptions are required for mass/volume conversions. A fixed order charge for another quantity needs fresh review.
+
+Recoverable included tax needs its amount so the app can remove it from cost. Nonrecoverable included tax remains in price. Material waste belongs in rate analysis, not hidden in the purchase observation.
+
+Eligible offers need an exact match or independently approved equivalent, usable units, complete comparable cost, suitable delivery/location/quantity and valid dates. Public listings also need a usable source link. Missing inputs, incompatibility and expiry cannot be overcome by a high score. Official/historical observations remain references for reviewed manual rates in this release.
+
+## Recommendation policy
+
+| Part | Maximum score | Calculation |
+|---|---:|---|
+| Comparable landed cost | 50 | 50 × lowest eligible cost / offer cost |
+| Source evidence | 25 | 25 for human-verified supplier or explicit demo; 15 for indicative public evidence |
+| Delivery suitability | 15 | Awarded after delivery eligibility passes |
+| Freshness | 10 | Valid firm quote: 10; otherwise 10 × max(0, 1 − age-hours/24) |
+
+Rank by total descending, then cost ascending, then observation ID. Demo offers compare only with demo offers. One eligible source shows a warning. This is decision support, not supplier reliability or fraud probability.
+
+Another eligible selection needs a reason. A saved selection keeps original/normalized prices, specifications, costs, conversions, FX, policy, source hash, user and time. Refresh never rewrites it.
+
+Protocol references: [SerpApi](https://serpapi.com/shopping-results), [DataForSEO task submission](https://docs.dataforseo.com/v3/merchant/google/products/task_post/), [Frankfurter](https://frankfurter.dev/). See [current live/fixture status](completion-verification.md) and [remaining work](../prompt/Not%20implemented.md).

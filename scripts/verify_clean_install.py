@@ -225,3 +225,16 @@ finally:
     except subprocess.TimeoutExpired:
         server.kill()
         server.wait()
+
+subprocess.run(
+    [
+        str(ROOT / "backend/.venv/Scripts/python.exe"),
+        str(ROOT / "scripts/verify_public_demo.py"),
+        "--root",
+        str(target),
+        "--output",
+        str(OUT),
+    ],
+    cwd=ROOT,
+    check=True,
+)

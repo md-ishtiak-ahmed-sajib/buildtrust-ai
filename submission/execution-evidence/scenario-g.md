@@ -1,15 +1,15 @@
 # Scenario G
 
-Executed: 2026-10-19T15:54:53.196309Z
+Run time (UTC): 2026-10-19T16:48:55.438300Z
 
-Decision: **UNAUTHORIZED_APPROVAL_DENIED**
+Result: **UNAUTHORIZED_APPROVAL_DENIED**
 
-Balance before: BDT 1000000.00
+Cash before: BDT 1000000.00
 
-Balance after: BDT 1000000.00
+Cash after: BDT 1000000.00
 
-Audit events: 447, 446, 445, 444, 443, 442, 441, 440, 439
+Audit record IDs: 447, 446, 445, 444, 443, 442, 441, 440, 439
 
-Actual HTTP inputs, source provenance, workflow stages, findings, and receipt (where applicable): `scenario-g.json`.
+Read `scenario-g.json` for the actual requests, source records, checks and receipt, where a payment occurred. These results came from a running local API and saved database.
 
-All identities and transfers are fictional sandbox records.
+All companies and transfers are fictional. No real money moved.

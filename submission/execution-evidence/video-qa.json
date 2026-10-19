@@ -1,7 +1,8 @@
 {
-  "duration_seconds": 272.0,
-  "playback_decode_passed": true,
-  "video_sha256": "313214a38c2f30c8c809376a4459d866d0bc29cd45d4a154a7dad9f16eb1d5f9",
-  "working_database_reset": false,
-  "app_source_fingerprint": "a15e085c6302a863a049b01c45088ba5953f26038aa12283f0135a1c89caf479"
+  "passed": true,
+  "duration_seconds": 258,
+  "full_decode_passed": true,
+  "application_source_hashes_match": true,
+  "video_sha256": "1b206cfb6f25c29fae063ca1f461a993a2ed66e9eb0bf78f78d59e2739e41b72",
+  "source": "Actual isolated app recording, not a fabricated UI"
 }

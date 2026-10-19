@@ -1,16 +1,22 @@
-# Architecture guide
+# How the app is built
 
-The full system description is in `technical-documentation.md`; the editable Mermaid source is `architecture.mmd`.
+The browser provides 14 application areas. FastAPI checks login, current roles and project access. Domain services calculate quantities and money. SQLite and private files keep evidence and financial records.
 
-## Responsibilities
+![Application architecture](assets/architecture.svg)
 
-- `backend/app/main.py`: API boundary, explicit serialization, authenticated project access, structured denial auditing, and local static serving.
-- `documents.py` / `pdf_worker.py`: real-content intake, versioned field provenance, trusted-source publication, private raster preview, and bounded native parsing.
-- `finance.py` / `money.py`: deterministic matching, quantity/rate normalization, exact money, risk findings, cash scenarios, and source snapshots.
-- `payments.py`: reservations, separation of duties, approval limits and snapshots, current revalidation, idempotency, and atomic local settlement.
-- `audit.py`: canonical chained audit records and integrity verification.
-- `workflow.py`: observable persisted tool stages, grounded questions, and optional explanation adapter.
-- `models.py` / `alembic`: relational constraints and explicit schema installation.
-- `frontend/src`: six connected financial screens, role-aware actions, protected evidence viewing, and generated API contracts.
+The editable [Mermaid diagram](architecture.mmd) shows detailed flows. See the [technical guide](technical-documentation.md) for setup and operations.
 
-The database is the source of financial truth. Frontend calculations and optional model prose do not authorize or alter settlement.
+| Boundary | Responsibility |
+|---|---|
+| Browser | Forms, saved-record views, draft guards, charts and data tables |
+| API routers | Validate requests, enforce access, own transactions and return typed errors |
+| Documents | Private storage, bounded parsing/OCR, field revisions and human confirmation |
+| Pricing/measurement | Saved searches, matching, reviewed quantities and price evidence |
+| Estimating | Versioned BOQs, rate components, selections and independent budget approval |
+| Accounting/commercial | Cost recognition, balances, contracts, certificates, amendments and corrections |
+| Payments | Reservations, approval rechecks, limits, liquidity, idempotency and atomic settlement |
+| Audit/jobs | Linked events, integrity checks, saved attempts, leases and restart recovery |
+
+Routers are split by documents, invoices, payments, workflows, prices, measurement, estimates, controls, reports, operations and administration. Model modules share one SQLAlchemy Base. Pages load as needed. The estimate editor has separate BOQ, rate, basis and forecast components.
+
+The database is the financial source of truth. Chart numbers and optional AI prose cannot authorize payment. Budgets do not rewrite procurement authority. Corrections use compensating records instead of editing history.

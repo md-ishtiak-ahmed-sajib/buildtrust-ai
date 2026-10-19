@@ -1,15 +1,15 @@
 # Scenario H
 
-Executed: 2026-10-19T15:54:53.609592Z
+Run time (UTC): 2026-10-19T16:48:55.722684Z
 
-Decision: **SETTLED**
+Result: **SETTLED**
 
-Balance before: BDT 1000000.00
+Cash before: BDT 1000000.00
 
-Balance after: BDT 930000.00
+Cash after: BDT 930000.00
 
-Audit events: 509, 508, 507, 506, 505, 504, 503, 502, 501, 500, 499, 498
+Audit record IDs: 509, 508, 507, 506, 505, 504, 503, 502, 501, 500, 499, 498
 
-Actual HTTP inputs, source provenance, workflow stages, findings, and receipt (where applicable): `scenario-h.json`.
+Read `scenario-h.json` for the actual requests, source records, checks and receipt, where a payment occurred. These results came from a running local API and saved database.
 
-All identities and transfers are fictional sandbox records.
+All companies and transfers are fictional. No real money moved.

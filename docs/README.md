@@ -28,11 +28,11 @@ New to the app? Start with the [README](../README.md), [feature list](../feature
 
 ## Status and history
 
-- [Remaining work](../prompt/Not%20implemented.md) contains unresolved tasks and their owners.
+- [Remaining work](../docs/remaining-work.md) contains unresolved tasks and their owners.
 - [Implementation ledger](all-suggestions-implementation.md) records the 42 recommendations and completed evidence.
 - [Handoff record](completion-handoff-plan.md) explains the release and GitHub process.
 - [Earlier upgrade plan](advanced-upgrade-plan.md) and [earlier tests](advanced-feature-tests.md) are dated background, not the current backlog.
-- The original briefs and review in `prompt/` are preserved. Their old instructions and counts do not replace current status.
+- Private planning notes and local engineering instructions are excluded from the repository and source archive.
 - [Submission checklist](../submission/submission-checklist.md) separates prepared files from human submission steps.
 
 All payments are simulated. Public passwords work only in the separate public demo. Keep private runtime files out of Git.

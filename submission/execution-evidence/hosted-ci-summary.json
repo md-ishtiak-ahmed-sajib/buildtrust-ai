@@ -1,0 +1,27 @@
+{
+  "conclusion": "success",
+  "source_revision": "9d2f3a48f6ac48ab71a2dbcaed52eeeb37d1034e",
+  "url": "https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39289544488",
+  "platform_startup_steps": [
+    {
+      "job": "verify (ubuntu-latest)",
+      "step": "Native Linux shell setup and startup",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    {
+      "job": "verify (windows-latest)",
+      "step": "Fresh Windows private and public setup",
+      "status": "completed",
+      "conclusion": "success"
+    }
+  ],
+  "actual_log_excerpts": [
+    "verify (ubuntu-latest)\tRun uv run --project backend python scripts/verify_upgrade_browser.py\t2026-10-19T17:00:59.1110256Z   16 passed (1.0m)",
+    "verify (ubuntu-latest)\tNative Linux shell setup and startup\t2026-10-19T17:01:16.6255722Z Native Linux shell setup, launcher, four logins and audit: PASS",
+    "verify (windows-latest)\tRun uv run --project backend python scripts/verify_upgrade_browser.py\t2026-10-19T17:06:02.5864398Z   16 passed (1.2m)",
+    "verify (windows-latest)\tFresh Windows private and public setup\t2026-10-19T17:07:18.2920683Z Fresh Windows public-demo launcher, four logins, payment and preservation: PASS",
+    "verify (windows-latest)\tFresh Windows private and public setup\t2026-10-19T17:07:18.3149345Z Fresh Windows source-copy installation, payment and estimating smoke tests: PASS"
+  ],
+  "scope": "Observed GitHub API job/step results and actual log lines, not a reconstructed local run"
+}

@@ -17,6 +17,13 @@
   ],
   "design_preserved": true,
   "native_powerpoint_execution_claimed": false,
-  "presentation_sha256": "a62b95024a81b5283e08379bd69740502948f6152bb946297d0bde3d26599b15",
-  "checked_at": "2026-10-19T16:45:14.337596+00:00"
+  "presentation_sha256": "6fec706ebae6830f7854dcbdcf4f79f9613444790eedd7ab5aef71b3b2ce98ee",
+  "checked_at": "2026-10-19T16:45:14.337596+00:00",
+  "notes_reference_update": {
+    "parts": [
+      "ppt/notesSlides/notesSlide1.xml",
+      "ppt/notesSlides/notesSlide2.xml"
+    ],
+    "scope": "Replace private brief references with the public technical guide; slide visuals unchanged."
+  }
 }

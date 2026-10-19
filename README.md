@@ -4,7 +4,7 @@
 
 BuildTrust AI helps a project team compare documents, measure work, build estimates and review supplier payments. People approve financial actions. All payments are simulations. No bank, card or real money is connected.
 
-[All features](features.md) · [Documentation](docs/README.md) · [Test evidence](docs/completion-verification.md) · [Remaining work](prompt/Not%20implemented.md)
+[All features](features.md) · [Documentation](docs/README.md) · [Test evidence](docs/completion-verification.md) · [Remaining work](docs/remaining-work.md)
 
 ![The real public demo overview, showing project cash, invoice status and recent activity](submission/screenshots/public-demo-overview.png)
 
@@ -166,7 +166,7 @@ The first browser run needs Chromium: `npm --prefix frontend exec playwright ins
 - [All features](features.md), [judge guide](docs/judges-quickstart.md) and [financial rules](docs/financial-rules.md)
 - [Technical guide](docs/technical-documentation.md), [API guide](docs/api-reference.md) and [security review](docs/security-self-assessment.md)
 - [Presentation](submission/BuildTrustAI_Presentation.pptx), [demo video](submission/BuildTrustAI_Demo.mp4), [source archive](submission/BuildTrustAI_Source.zip) and [submission checklist](submission/submission-checklist.md)
-- [Remaining tasks and their owners](prompt/Not%20implemented.md)
+- [Remaining tasks and their owners](docs/remaining-work.md)
 
 Paid price services need keys and separate live checks. OCR needs local models and human review. Professional standards, representative Bengali documents, assistive-technology assessment and unavailable platforms still need their own evidence. A local audit chain can detect inconsistent records, but a person with full database access can rewrite it. Read the [limits](docs/limitations.md) before considering deployment.
 

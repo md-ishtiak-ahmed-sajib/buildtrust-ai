@@ -1,11 +1,10 @@
-> Historical plan. Some features described below as future work now exist. Read [current features](../features.md), [the implementation ledger](all-suggestions-implementation.md) and [remaining tasks](../prompt/Not%20implemented.md) for today's status. This original plan is preserved as background.
+> Historical plan. Some features described below as future work now exist. Read [current features](../features.md), [the implementation ledger](all-suggestions-implementation.md) and [remaining tasks](../docs/remaining-work.md) for today's status. This original plan is preserved as background.
 
 # Advanced upgrade implementation plan
 
 The accepted first release adds material price intelligence, core quantity takeoff,
 versioned estimates and financial previews to the existing application. The full
-user-approved plan is the specification; `prompt/New prompt for upgrade.md` is its
-background brief. Existing invoice/payment controls remain authoritative.
+approved implementation plan is the specification. Existing invoice/payment controls remain authoritative.
 
 ## Integration and dependency map
 

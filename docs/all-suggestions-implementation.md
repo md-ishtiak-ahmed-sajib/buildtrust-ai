@@ -1,6 +1,6 @@
 # Implementation ledger
 
-This ledger covers all **42 recommendations**: B01–B09, F01–F11, A01–A10 and Q01–Q12. It records completed local work and links to evidence. Only unfinished tasks belong in [Not implemented.md](../prompt/Not%20implemented.md).
+This ledger covers all **42 recommendations**: B01–B09, F01–F11, A01–A10 and Q01–Q12. It records completed local work and links to evidence. Only unfinished tasks belong in [Not implemented.md](../docs/remaining-work.md).
 
 **Local checks passed** means the implemented local behavior has test/API/browser evidence. It does not mean live providers, real documents, professional acceptance or production hosting have been certified. See [current verification](completion-verification.md) for actual counts and dates.
 

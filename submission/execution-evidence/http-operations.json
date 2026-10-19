@@ -1,702 +1,702 @@
 [
   {
-    "timestamp": "2026-10-19T16:48:53.947312Z",
+    "timestamp": "2026-10-19T17:17:47.912118Z",
     "method": "POST",
     "path": "/demo/reset",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:53.952723Z",
+    "timestamp": "2026-10-19T17:17:47.927928Z",
     "method": "GET",
     "path": "/invoices?project_id=3",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:53.956095Z",
+    "timestamp": "2026-10-19T17:17:47.927928Z",
     "method": "GET",
     "path": "/projects/3",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:53.959195Z",
+    "timestamp": "2026-10-19T17:17:47.927928Z",
     "method": "GET",
     "path": "/audit/verify",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:53.959195Z",
+    "timestamp": "2026-10-19T17:17:47.927928Z",
     "method": "POST",
     "path": "/agent/analyze",
     "http_status": 202
   },
   {
-    "timestamp": "2026-10-19T16:48:53.974913Z",
+    "timestamp": "2026-10-19T17:17:47.943669Z",
     "method": "GET",
     "path": "/agent/workflows/1",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.085639Z",
+    "timestamp": "2026-10-19T17:17:48.053842Z",
     "method": "GET",
     "path": "/agent/workflows/1",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.088641Z",
+    "timestamp": "2026-10-19T17:17:48.065072Z",
     "method": "GET",
     "path": "/projects/3",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.091226Z",
+    "timestamp": "2026-10-19T17:17:48.069566Z",
     "method": "GET",
     "path": "/audit/events?project_id=3&limit=1000",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.091226Z",
+    "timestamp": "2026-10-19T17:17:48.072109Z",
     "method": "GET",
     "path": "/audit/verify",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.091226Z",
+    "timestamp": "2026-10-19T17:17:48.075453Z",
     "method": "GET",
     "path": "/documents/14/extraction",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.091226Z",
+    "timestamp": "2026-10-19T17:17:48.078454Z",
     "method": "GET",
     "path": "/documents/15/extraction",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.106475Z",
+    "timestamp": "2026-10-19T17:17:48.081848Z",
     "method": "GET",
     "path": "/documents/17/extraction",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.109211Z",
+    "timestamp": "2026-10-19T17:17:48.081848Z",
     "method": "GET",
     "path": "/documents/19/extraction",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.211270Z",
+    "timestamp": "2026-10-19T17:17:48.179415Z",
     "method": "POST",
     "path": "/demo/reset",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.214271Z",
+    "timestamp": "2026-10-19T17:17:48.184058Z",
     "method": "GET",
     "path": "/invoices?project_id=5",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.217604Z",
+    "timestamp": "2026-10-19T17:17:48.184058Z",
     "method": "GET",
     "path": "/projects/5",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.222943Z",
+    "timestamp": "2026-10-19T17:17:48.189885Z",
     "method": "GET",
     "path": "/audit/verify",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.222943Z",
+    "timestamp": "2026-10-19T17:17:48.198114Z",
     "method": "POST",
     "path": "/agent/analyze",
     "http_status": 202
   },
   {
-    "timestamp": "2026-10-19T16:48:54.222943Z",
+    "timestamp": "2026-10-19T17:17:48.198640Z",
     "method": "GET",
     "path": "/agent/workflows/2",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.335024Z",
+    "timestamp": "2026-10-19T17:17:48.312713Z",
     "method": "GET",
     "path": "/agent/workflows/2",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.355163Z",
+    "timestamp": "2026-10-19T17:17:48.321015Z",
     "method": "POST",
     "path": "/payments/1/approve",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.376326Z",
+    "timestamp": "2026-10-19T17:17:48.350482Z",
     "method": "POST",
     "path": "/payments/1/execute",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.379496Z",
+    "timestamp": "2026-10-19T17:17:48.350482Z",
     "method": "GET",
     "path": "/projects/5",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.382865Z",
+    "timestamp": "2026-10-19T17:17:48.350482Z",
     "method": "GET",
     "path": "/audit/events?project_id=5&limit=1000",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.387909Z",
+    "timestamp": "2026-10-19T17:17:48.361459Z",
     "method": "GET",
     "path": "/audit/verify",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.389521Z",
+    "timestamp": "2026-10-19T17:17:48.364692Z",
     "method": "GET",
     "path": "/documents/27/extraction",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.389521Z",
+    "timestamp": "2026-10-19T17:17:48.366430Z",
     "method": "GET",
     "path": "/documents/29/extraction",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.389521Z",
+    "timestamp": "2026-10-19T17:17:48.366430Z",
     "method": "GET",
     "path": "/documents/31/extraction",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.389521Z",
+    "timestamp": "2026-10-19T17:17:48.372645Z",
     "method": "GET",
     "path": "/documents/33/extraction",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.497341Z",
+    "timestamp": "2026-10-19T17:17:48.459042Z",
     "method": "POST",
     "path": "/demo/reset",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.497341Z",
+    "timestamp": "2026-10-19T17:17:48.459042Z",
     "method": "GET",
     "path": "/invoices?project_id=7",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.505145Z",
+    "timestamp": "2026-10-19T17:17:48.459042Z",
     "method": "GET",
     "path": "/projects/7",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.508198Z",
+    "timestamp": "2026-10-19T17:17:48.475121Z",
     "method": "GET",
     "path": "/audit/verify",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.521156Z",
+    "timestamp": "2026-10-19T17:17:48.475121Z",
     "method": "POST",
     "path": "/documents/upload",
     "http_status": 201
   },
   {
-    "timestamp": "2026-10-19T16:48:54.524673Z",
+    "timestamp": "2026-10-19T17:17:48.491013Z",
     "method": "GET",
     "path": "/invoices?project_id=7",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.526673Z",
+    "timestamp": "2026-10-19T17:17:48.495103Z",
     "method": "GET",
     "path": "/projects/7",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.528306Z",
+    "timestamp": "2026-10-19T17:17:48.498003Z",
     "method": "GET",
     "path": "/audit/events?project_id=7&limit=1000",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.528306Z",
+    "timestamp": "2026-10-19T17:17:48.503507Z",
     "method": "GET",
     "path": "/audit/verify",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.528306Z",
+    "timestamp": "2026-10-19T17:17:48.506249Z",
     "method": "GET",
     "path": "/documents/46/extraction",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.625413Z",
+    "timestamp": "2026-10-19T17:17:48.603745Z",
     "method": "POST",
     "path": "/demo/reset",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.639576Z",
+    "timestamp": "2026-10-19T17:17:48.606533Z",
     "method": "GET",
     "path": "/invoices?project_id=9",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.642451Z",
+    "timestamp": "2026-10-19T17:17:48.610498Z",
     "method": "GET",
     "path": "/projects/9",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.651532Z",
+    "timestamp": "2026-10-19T17:17:48.616686Z",
     "method": "GET",
     "path": "/audit/verify",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.656984Z",
+    "timestamp": "2026-10-19T17:17:48.621843Z",
     "method": "POST",
     "path": "/agent/analyze",
     "http_status": 202
   },
   {
-    "timestamp": "2026-10-19T16:48:54.659984Z",
+    "timestamp": "2026-10-19T17:17:48.628087Z",
     "method": "GET",
     "path": "/agent/workflows/3",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.770526Z",
+    "timestamp": "2026-10-19T17:17:48.731291Z",
     "method": "GET",
     "path": "/agent/workflows/3",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.771179Z",
+    "timestamp": "2026-10-19T17:17:48.740573Z",
     "method": "GET",
     "path": "/projects/9",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.778082Z",
+    "timestamp": "2026-10-19T17:17:48.744572Z",
     "method": "GET",
     "path": "/audit/events?project_id=9&limit=1000",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.784249Z",
+    "timestamp": "2026-10-19T17:17:48.750480Z",
     "method": "GET",
     "path": "/audit/verify",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.787400Z",
+    "timestamp": "2026-10-19T17:17:48.752213Z",
     "method": "GET",
     "path": "/documents/54/extraction",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.790401Z",
+    "timestamp": "2026-10-19T17:17:48.752213Z",
     "method": "GET",
     "path": "/documents/56/extraction",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.791894Z",
+    "timestamp": "2026-10-19T17:17:48.760082Z",
     "method": "GET",
     "path": "/documents/58/extraction",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.791894Z",
+    "timestamp": "2026-10-19T17:17:48.763113Z",
     "method": "GET",
     "path": "/documents/61/extraction",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.897535Z",
+    "timestamp": "2026-10-19T17:17:48.867535Z",
     "method": "POST",
     "path": "/demo/reset",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.901297Z",
+    "timestamp": "2026-10-19T17:17:48.871228Z",
     "method": "GET",
     "path": "/invoices?project_id=12",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.903471Z",
+    "timestamp": "2026-10-19T17:17:48.873227Z",
     "method": "GET",
     "path": "/projects/12",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.913237Z",
+    "timestamp": "2026-10-19T17:17:48.880245Z",
     "method": "GET",
     "path": "/audit/verify",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:54.917494Z",
+    "timestamp": "2026-10-19T17:17:48.885128Z",
     "method": "POST",
     "path": "/agent/analyze",
     "http_status": 202
   },
   {
-    "timestamp": "2026-10-19T16:48:54.923695Z",
+    "timestamp": "2026-10-19T17:17:48.892137Z",
     "method": "GET",
     "path": "/agent/workflows/4",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.028991Z",
+    "timestamp": "2026-10-19T17:17:49.001340Z",
     "method": "GET",
     "path": "/agent/workflows/4",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.032007Z",
+    "timestamp": "2026-10-19T17:17:49.003887Z",
     "method": "GET",
     "path": "/projects/12",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.036035Z",
+    "timestamp": "2026-10-19T17:17:49.008940Z",
     "method": "GET",
     "path": "/audit/events?project_id=12&limit=1000",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.041642Z",
+    "timestamp": "2026-10-19T17:17:49.015785Z",
     "method": "GET",
     "path": "/audit/verify",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.041642Z",
+    "timestamp": "2026-10-19T17:17:49.019054Z",
     "method": "GET",
     "path": "/documents/76/extraction",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.041642Z",
+    "timestamp": "2026-10-19T17:17:49.022088Z",
     "method": "GET",
     "path": "/documents/77/extraction",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.050564Z",
+    "timestamp": "2026-10-19T17:17:49.022681Z",
     "method": "GET",
     "path": "/documents/78/extraction",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.053533Z",
+    "timestamp": "2026-10-19T17:17:49.022681Z",
     "method": "GET",
     "path": "/documents/79/extraction",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.156991Z",
+    "timestamp": "2026-10-19T17:17:49.126787Z",
     "method": "POST",
     "path": "/demo/reset",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.161025Z",
+    "timestamp": "2026-10-19T17:17:49.126787Z",
     "method": "GET",
     "path": "/invoices?project_id=13",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.165007Z",
+    "timestamp": "2026-10-19T17:17:49.134988Z",
     "method": "GET",
     "path": "/projects/13",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.171428Z",
+    "timestamp": "2026-10-19T17:17:49.143919Z",
     "method": "GET",
     "path": "/audit/verify",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.173878Z",
+    "timestamp": "2026-10-19T17:17:49.148164Z",
     "method": "POST",
     "path": "/agent/analyze",
     "http_status": 202
   },
   {
-    "timestamp": "2026-10-19T16:48:55.184631Z",
+    "timestamp": "2026-10-19T17:17:49.153094Z",
     "method": "GET",
     "path": "/agent/workflows/5",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.291365Z",
+    "timestamp": "2026-10-19T17:17:49.261891Z",
     "method": "GET",
     "path": "/agent/workflows/5",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.295738Z",
+    "timestamp": "2026-10-19T17:17:49.265884Z",
     "method": "GET",
     "path": "/projects/13",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.299720Z",
+    "timestamp": "2026-10-19T17:17:49.269914Z",
     "method": "GET",
     "path": "/audit/events?project_id=13&limit=1000",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.305793Z",
+    "timestamp": "2026-10-19T17:17:49.272439Z",
     "method": "GET",
     "path": "/audit/verify",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.305793Z",
+    "timestamp": "2026-10-19T17:17:49.281222Z",
     "method": "GET",
     "path": "/documents/80/extraction",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.312740Z",
+    "timestamp": "2026-10-19T17:17:49.284221Z",
     "method": "GET",
     "path": "/documents/82/extraction",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.317690Z",
+    "timestamp": "2026-10-19T17:17:49.286531Z",
     "method": "GET",
     "path": "/documents/84/extraction",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.321934Z",
+    "timestamp": "2026-10-19T17:17:49.289545Z",
     "method": "GET",
     "path": "/documents/88/extraction",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.423209Z",
+    "timestamp": "2026-10-19T17:17:49.392978Z",
     "method": "POST",
     "path": "/demo/reset",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.427419Z",
+    "timestamp": "2026-10-19T17:17:49.395978Z",
     "method": "GET",
     "path": "/invoices?project_id=15",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.430197Z",
+    "timestamp": "2026-10-19T17:17:49.399807Z",
     "method": "GET",
     "path": "/projects/15",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.438300Z",
+    "timestamp": "2026-10-19T17:17:49.407806Z",
     "method": "GET",
     "path": "/audit/verify",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.443300Z",
+    "timestamp": "2026-10-19T17:17:49.412806Z",
     "method": "POST",
     "path": "/agent/analyze",
     "http_status": 202
   },
   {
-    "timestamp": "2026-10-19T16:48:55.448976Z",
+    "timestamp": "2026-10-19T17:17:49.417806Z",
     "method": "GET",
     "path": "/agent/workflows/6",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.558783Z",
+    "timestamp": "2026-10-19T17:17:49.529811Z",
     "method": "GET",
     "path": "/agent/workflows/6",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.564654Z",
+    "timestamp": "2026-10-19T17:17:49.536816Z",
     "method": "POST",
     "path": "/payments/2/approve",
     "http_status": 403
   },
   {
-    "timestamp": "2026-10-19T16:48:55.564654Z",
+    "timestamp": "2026-10-19T17:17:49.541103Z",
     "method": "GET",
     "path": "/payments?project_id=15",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.564654Z",
+    "timestamp": "2026-10-19T17:17:49.544103Z",
     "method": "GET",
     "path": "/projects/15",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.578073Z",
+    "timestamp": "2026-10-19T17:17:49.548102Z",
     "method": "GET",
     "path": "/audit/events?project_id=15&limit=1000",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.586225Z",
+    "timestamp": "2026-10-19T17:17:49.553101Z",
     "method": "GET",
     "path": "/audit/verify",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.589594Z",
+    "timestamp": "2026-10-19T17:17:49.557324Z",
     "method": "GET",
     "path": "/documents/93/extraction",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.589594Z",
+    "timestamp": "2026-10-19T17:17:49.562131Z",
     "method": "GET",
     "path": "/documents/95/extraction",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.594777Z",
+    "timestamp": "2026-10-19T17:17:49.565432Z",
     "method": "GET",
     "path": "/documents/97/extraction",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.594777Z",
+    "timestamp": "2026-10-19T17:17:49.567172Z",
     "method": "GET",
     "path": "/documents/99/extraction",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.703751Z",
+    "timestamp": "2026-10-19T17:17:49.664659Z",
     "method": "POST",
     "path": "/demo/reset",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.709292Z",
+    "timestamp": "2026-10-19T17:17:49.669784Z",
     "method": "GET",
     "path": "/invoices?project_id=17",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.709292Z",
+    "timestamp": "2026-10-19T17:17:49.669784Z",
     "method": "GET",
     "path": "/projects/17",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.722684Z",
+    "timestamp": "2026-10-19T17:17:49.682318Z",
     "method": "GET",
     "path": "/audit/verify",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.727684Z",
+    "timestamp": "2026-10-19T17:17:49.688807Z",
     "method": "POST",
     "path": "/agent/analyze",
     "http_status": 202
   },
   {
-    "timestamp": "2026-10-19T16:48:55.728426Z",
+    "timestamp": "2026-10-19T17:17:49.694357Z",
     "method": "GET",
     "path": "/agent/workflows/7",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.841147Z",
+    "timestamp": "2026-10-19T17:17:49.804759Z",
     "method": "GET",
     "path": "/agent/workflows/7",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.859073Z",
+    "timestamp": "2026-10-19T17:17:49.818104Z",
     "method": "POST",
     "path": "/payments/3/approve",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.877150Z",
+    "timestamp": "2026-10-19T17:17:49.835145Z",
     "method": "POST",
     "path": "/payments/3/execute",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.882457Z",
+    "timestamp": "2026-10-19T17:17:49.840854Z",
     "method": "POST",
     "path": "/payments/3/execute",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.885490Z",
+    "timestamp": "2026-10-19T17:17:49.843811Z",
     "method": "GET",
     "path": "/payments?project_id=17",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.888349Z",
+    "timestamp": "2026-10-19T17:17:49.847222Z",
     "method": "GET",
     "path": "/projects/17",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.892350Z",
+    "timestamp": "2026-10-19T17:17:49.851227Z",
     "method": "GET",
     "path": "/audit/events?project_id=17&limit=1000",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.900703Z",
+    "timestamp": "2026-10-19T17:17:49.855204Z",
     "method": "GET",
     "path": "/audit/verify",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.900703Z",
+    "timestamp": "2026-10-19T17:17:49.862116Z",
     "method": "GET",
     "path": "/documents/106/extraction",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.907509Z",
+    "timestamp": "2026-10-19T17:17:49.865227Z",
     "method": "GET",
     "path": "/documents/108/extraction",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.911072Z",
+    "timestamp": "2026-10-19T17:17:49.868078Z",
     "method": "GET",
     "path": "/documents/110/extraction",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.914074Z",
+    "timestamp": "2026-10-19T17:17:49.872090Z",
     "method": "GET",
     "path": "/documents/112/extraction",
     "http_status": 200
   },
   {
-    "timestamp": "2026-10-19T16:48:55.949215Z",
+    "timestamp": "2026-10-19T17:17:49.902011Z",
     "method": "GET",
     "path": "/audit/verify",
     "http_status": 200

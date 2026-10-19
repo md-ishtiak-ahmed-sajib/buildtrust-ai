@@ -52,4 +52,4 @@ See [actual verification](completion-verification.md) for tests, HTTP/browser wo
 
 Recordings use isolated databases and addresses. Their provenance binds application source, duration and decoding. Packaging excludes private credentials, databases and uploads. The public sample-password fixture is intentionally included and labelled.
 
-Before any wider deployment, independently review hosting, TLS, identity lifecycle, MFA, OS isolation, malware handling, backups, external audit checkpoints, monitoring, data retention and incident response. See [remaining work](../prompt/Not%20implemented.md). No real bank transfer, professional standards certification or security certification is claimed.
+Before any wider deployment, independently review hosting, TLS, identity lifecycle, MFA, OS isolation, malware handling, backups, external audit checkpoints, monitoring, data retention and incident response. See [remaining work](../docs/remaining-work.md). No real bank transfer, professional standards certification or security certification is claimed.

@@ -1,9 +1,8 @@
 {
   "passed": true,
-  "source_fingerprint": "e4f771edf8d5a24b357b757924c18a768da3e1f18e4a4848aaf642acd0e51e4c",
-  "source_file_count": 182,
-  "archive_sha256": "c037762fcf4f31cfb96a1ee1f86a8a77e152f47500f9a228fae1d96cd65e3aef",
-  "final_archive_install_passed": true,
+  "source_fingerprint": "24df4ef55f0ed47ebb47e12845b24b7b8cdb3d33f896c7347c75282b2cd13fb4",
+  "source_file_count": 181,
   "private_runtime_excluded": true,
-  "video_application_hashes_match": true
+  "video_application_hashes_match": true,
+  "archive_receipt_scope": "Prior archive installation is recorded separately. Current archive acceptance is recorded after packaging in final-source-agreement.json."
 }

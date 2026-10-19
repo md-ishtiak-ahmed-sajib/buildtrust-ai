@@ -1,10 +1,10 @@
 {
   "repository": "https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai",
-  "branch": "codex/verified-release",
-  "verified_commit": "869c4e470d61430e46885d150e24dd6a127c9e92",
+  "verified_commit": "9d2f3a48f6ac48ab71a2dbcaed52eeeb37d1034e",
   "remote_commit_verified": true,
-  "verified_at": "2026-10-19T15:57:05.320522+00:00",
-  "hosted_ci_run": "https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39281590860",
-  "hosted_ci_status": "queued",
-  "scope": "Remote verification records this published revision; later documentation/package commits are recorded by Git history. Competition upload has not occurred."
+  "verified_at": "2026-10-19T17:09:42.919992+00:00",
+  "hosted_ci_run": "https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39289544488",
+  "hosted_ci_status": "completed",
+  "scope": "Remote verification records this published revision; later documentation/package commits are recorded by Git history. Competition upload has not occurred.",
+  "hosted_ci_conclusion": "success"
 }

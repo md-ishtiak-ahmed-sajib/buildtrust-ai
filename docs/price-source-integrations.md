@@ -68,4 +68,4 @@ Rank by total descending, then cost ascending, then observation ID. Demo offers 
 
 Another eligible selection needs a reason. A saved selection keeps original/normalized prices, specifications, costs, conversions, FX, policy, source hash, user and time. Refresh never rewrites it.
 
-Protocol references: [SerpApi](https://serpapi.com/shopping-results), [DataForSEO task submission](https://docs.dataforseo.com/v3/merchant/google/products/task_post/), [Frankfurter](https://frankfurter.dev/). See [current live/fixture status](completion-verification.md) and [remaining work](../prompt/Not%20implemented.md).
+Protocol references: [SerpApi](https://serpapi.com/shopping-results), [DataForSEO task submission](https://docs.dataforseo.com/v3/merchant/google/products/task_post/), [Frankfurter](https://frankfurter.dev/). See [current live/fixture status](completion-verification.md) and [remaining work](../docs/remaining-work.md).

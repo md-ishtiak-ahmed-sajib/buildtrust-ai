@@ -138,6 +138,12 @@
       "mobile_checked": true
     },
     {
+      "document": "docs/remaining-work.md",
+      "mermaid_diagrams": 0,
+      "images": 0,
+      "rendered": true
+    },
+    {
       "document": "docs/security-self-assessment.md",
       "mermaid_diagrams": 0,
       "images": 0,

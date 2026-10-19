@@ -58,7 +58,7 @@ React, Vite, Tailwind, Recharts, TanStack Query, React Router, Lucide, TypeScrip
 
 ## Optional artifact tools
 
-The deck was authored with the installed Codex artifact runtime, which is not bundled into this source project. PDF samples use ReportLab. The recorded video uses Playwright Chromium and local Windows speech synthesis; Windows speech binaries are not redistributed. Optional video muxing uses imageio-ffmpeg/FFmpeg; no FFmpeg executable is included in the release archive. These authoring tools are not needed to run the default application.
+The optional presentation tooling is not bundled into this source project. PDF samples use ReportLab. The recorded video uses Playwright Chromium and local Windows speech synthesis; Windows speech binaries are not redistributed. Optional video muxing uses imageio-ffmpeg/FFmpeg; no FFmpeg executable is included in the release archive. These authoring tools are not needed to run the default application.
 
 ## Optional OCR models
 

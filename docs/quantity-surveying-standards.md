@@ -30,4 +30,4 @@ Baseline profiles visibly require professional review. A project profile may ena
 
 Copyrighted clause tables and universal deduction thresholds are not bundled. Complex design-derived lengths, unprovided special geometry and unreviewed trade conventions remain outside automatic inference.
 
-References: [RICS NRM](https://www.rics.org/profession-standards/rics-standards-and-guidance/sector-standards/construction-standards/nrm), [ICMS](https://icms-coalition.org/the-standard/). See [the rule register](measurement-rule-register.md) and [remaining professional acceptance](../prompt/Not%20implemented.md).
+References: [RICS NRM](https://www.rics.org/profession-standards/rics-standards-and-guidance/sector-standards/construction-standards/nrm), [ICMS](https://icms-coalition.org/the-standard/). See [the rule register](measurement-rule-register.md) and [remaining professional acceptance](../docs/remaining-work.md).

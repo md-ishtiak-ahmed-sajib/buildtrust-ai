@@ -22,7 +22,7 @@ def stamp():
 
 def source_manifest():
     paths = [
-        ROOT / "AGENTS.md",
+
         ROOT / "backend" / "pyproject.toml",
         ROOT / "backend" / "uv.lock",
         ROOT / "frontend" / "package.json",

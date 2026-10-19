@@ -127,11 +127,12 @@ Deadline: October 20, 2026, 21:59 Dhaka / 23:59 Beijing. Target upload readiness
 - [ ] Add the real team/presenter details and rehearse the talk within ten minutes
 - [ ] Upload the required reports, source link/archive, presentation, video and evidence; keep confirmation
 
-Read prompt/Not implemented.md for unresolved tasks, owners and prerequisites. Live free USD/BDT retrieval and storage passed in a separate database. Hosted/platform results are recorded for their actual source revision. All transfers are simulated. No regulatory or professional certification is claimed.
+Read docs/remaining-work.md for unresolved tasks, owners and prerequisites. Live free USD/BDT retrieval and storage passed in a separate database. Hosted/platform results are recorded for their actual source revision. All transfers are simulated. No regulatory or professional certification is claimed.
 """
 (submission / "submission-checklist.md").write_text(checklist, encoding="utf-8")
 excluded = {
     ".git",
+    "prompt",
     ".venv",
     "node_modules",
     "dist",
@@ -144,6 +145,10 @@ excluded = {
 }
 excluded_files = {
     ".env",
+    "AGENTS.md",
+    "agents.md",
+    "presentation-validation.json",
+    "presentation-build.log",
     "BuildTrustAI_Source.zip",
     "BuildTrustAI_Source.zip.sha256",
     "release-manifest.json",
@@ -155,7 +160,7 @@ for directory in [
     "demo",
     "docs",
     "scripts",
-    "prompt",
+
     ".github",
     "submission",
 ]:

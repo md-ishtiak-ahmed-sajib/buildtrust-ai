@@ -1,6 +1,6 @@
 # BuildTrust AI features
 
-BuildTrust AI is a local construction finance and estimating app. It works with fictional projects and simulated payments. This page describes the current application. [Remaining external and human tasks](prompt/Not%20implemented.md) are listed separately.
+BuildTrust AI is a local construction finance and estimating app. It works with fictional projects and simulated payments. This page describes the current application. [Remaining external and human tasks](docs/remaining-work.md) are listed separately.
 
 [Try the demo and see the four passwords](README.md#try-the-public-demo) · [Documentation](docs/README.md) · [Glossary](docs/glossary.md) · [Actual test results](docs/completion-verification.md)
 
@@ -179,7 +179,8 @@ Balanced journals, source versions, cost codes and cumulative limits connect the
 | Frankfurter FX | Dated retrieval, attribution and persistence; a live USD/BDT check is recorded | Pair coverage and dates vary; old observations are not today's bank rate |
 | Local OCR | Optional pinned English/Bengali models and manual fallback | Representative Bengali accuracy and layout review |
 | Ollama | Optional explanation adapter and deterministic fallback | Available local model and actual live check |
-| Docker/Linux/hosted CI | Startup and workflow files | Actual results are tracked in the remaining-work list |
+| Windows/Linux/hosted CI | Passed hosted Windows/Ubuntu checks, native Linux shell startup and fresh Windows private/public setup | Results apply to the recorded source revision; see verification |
+| Docker | Optional container configuration | A working engine and actual container validation are still needed |
 
 ## Real application gallery
 
@@ -203,4 +204,4 @@ These screenshots come from separate fictional runs. They are not invented inter
 
 ## Boundaries
 
-This app does not connect to a bank, certify a construction standard or prove a supplier's real identity. It is not a statutory accounting suite or production hosting package. A host administrator can rewrite the local audit chain. Read the [limits](docs/limitations.md), [security review](docs/security-self-assessment.md) and [remaining work](prompt/Not%20implemented.md).
+This app does not connect to a bank, certify a construction standard or prove a supplier's real identity. It is not a statutory accounting suite or production hosting package. A host administrator can rewrite the local audit chain. Read the [limits](docs/limitations.md), [security review](docs/security-self-assessment.md) and [remaining work](docs/remaining-work.md).

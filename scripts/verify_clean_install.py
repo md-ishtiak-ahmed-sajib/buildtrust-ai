@@ -46,7 +46,7 @@ if args.archive:
             name
         )
 else:
-    for name in ["backend", "frontend", "scripts", "demo", "docs", "prompt", ".github"]:
+    for name in ["backend", "frontend", "scripts", "demo", "docs", ".github"]:
         shutil.copytree(
             ROOT / name,
             target / name,
@@ -60,7 +60,7 @@ else:
                 "playwright-report",
             ),
         )
-    for name in [".env.example", "AGENTS.md", "README.md", "LICENSE"]:
+    for name in [".env.example", "README.md", "LICENSE"]:
         shutil.copy2(ROOT / name, target / name)
 result = subprocess.run(
     [

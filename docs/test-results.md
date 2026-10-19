@@ -18,4 +18,4 @@ The browser wrapper starts a private test server on port 8010. The HTTP collecto
 
 The fresh Windows installer checks the ordinary private setup, then launches the public profile in the same isolated source copy. It verifies four public logins, denied writes/self-approval, the BDT 70,000 payment, audit integrity, repeat preparation, occupied-port handling and unchanged private records.
 
-Contract generation must leave OpenAPI/document/frontend contracts unchanged. Advisory scans report known issues at execution time; they are not a security certificate. The hosted workflow runs Windows/Ubuntu checks and records its source revision. A queued job is not a pass.
+Contract generation must leave OpenAPI/document/frontend contracts unchanged. Advisory scans report known issues at execution time; they are not a security certificate. The current [hosted Windows/Ubuntu run](https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39289544488) passed both jobs, including platform startup checks. Its receipt records the tested revision. Future queued jobs must not be described as passing.

@@ -1,0 +1,42 @@
+{
+  "passed": true,
+  "checked_at": "2026-10-19T17:20:14.403357+00:00",
+  "archive_sha256": "8b5424f5e738e2f9268fdd59989227ea4639067cfc8d6e17bd8e0a952cdce379",
+  "fresh_windows_install": {
+    "passed": true,
+    "setup_command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/setup.ps1",
+    "source_copy": "data\\clean-checkout-e3556ed4",
+    "checks": [
+      "locked dependency setup",
+      "frontend production build",
+      "fresh migrations",
+      "generated credentials",
+      "static frontend served",
+      "steel discrepancy",
+      "independent approval",
+      "70000.00 settlement",
+      "930000.00 closing cash",
+      "audit integrity",
+      "upgrade material search and immutable selection",
+      "1480000.00 estimate and 520000.00 forecast"
+    ],
+    "simulation": true,
+    "archive_sha256": "8b5424f5e738e2f9268fdd59989227ea4639067cfc8d6e17bd8e0a952cdce379"
+  },
+  "public_demo": {
+    "passed": true,
+    "profile": "isolated public demo",
+    "port": 8003,
+    "four_readme_passwords_login": true,
+    "operator_self_approval_denied": true,
+    "auditor_write_denied": true,
+    "independent_payment_balance": "930000.00",
+    "audit_valid": true,
+    "repeat_prepare_preserved_records": true,
+    "occupied_port_failed_clearly": true,
+    "private_profile_unchanged": true,
+    "private_table_count": 57,
+    "simulation": true
+  },
+  "simulation": true
+}

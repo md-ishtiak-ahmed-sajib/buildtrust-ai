@@ -26,4 +26,4 @@ Deadline: October 20, 2026, 21:59 Dhaka / 23:59 Beijing. Target upload readiness
 - [ ] Add the real team/presenter details and rehearse the talk within ten minutes
 - [ ] Upload the required reports, source link/archive, presentation, video and evidence; keep confirmation
 
-Read prompt/Not implemented.md for unresolved tasks, owners and prerequisites. Live free USD/BDT retrieval and storage passed in a separate database. Hosted/platform results are recorded for their actual source revision. All transfers are simulated. No regulatory or professional certification is claimed.
+Read docs/remaining-work.md for unresolved tasks, owners and prerequisites. Live free USD/BDT retrieval and storage passed in a separate database. Hosted/platform results are recorded for their actual source revision. All transfers are simulated. No regulatory or professional certification is claimed.

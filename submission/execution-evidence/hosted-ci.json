@@ -1,30 +1,432 @@
 {
-  "conclusion": "",
-  "createdAt": "2026-10-19T15:55:38Z",
-  "headSha": "869c4e470d61430e46885d150e24dd6a127c9e92",
+  "conclusion": "success",
+  "createdAt": "2026-10-19T16:54:33Z",
+  "headSha": "9d2f3a48f6ac48ab71a2dbcaed52eeeb37d1034e",
   "jobs": [
     {
-      "completedAt": "0001-01-01T00:00:00Z",
-      "conclusion": "",
-      "databaseId": 118156775408,
+      "completedAt": "2026-10-19T17:01:20Z",
+      "conclusion": "success",
+      "databaseId": 118186291072,
       "name": "verify (ubuntu-latest)",
-      "startedAt": "2026-10-19T15:55:39Z",
-      "status": "queued",
-      "steps": [],
-      "url": "https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39281590860/job/118156775408"
+      "startedAt": "2026-10-19T16:54:36Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-10-19T16:54:40Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-10-19T16:54:37Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T16:54:44Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "number": 2,
+          "startedAt": "2026-10-19T16:54:40Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T16:54:47Z",
+          "conclusion": "success",
+          "name": "Run astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9",
+          "number": 3,
+          "startedAt": "2026-10-19T16:54:44Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T16:54:53Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-node@v4",
+          "number": 4,
+          "startedAt": "2026-10-19T16:54:47Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T16:54:55Z",
+          "conclusion": "success",
+          "name": "Run uv sync --project backend --frozen",
+          "number": 5,
+          "startedAt": "2026-10-19T16:54:53Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T16:55:00Z",
+          "conclusion": "success",
+          "name": "Run npm --prefix frontend ci",
+          "number": 6,
+          "startedAt": "2026-10-19T16:54:55Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T16:58:35Z",
+          "conclusion": "success",
+          "name": "Run uv run --project backend pytest backend/tests",
+          "number": 7,
+          "startedAt": "2026-10-19T16:55:00Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T16:58:36Z",
+          "conclusion": "success",
+          "name": "Run npm --prefix frontend test",
+          "number": 8,
+          "startedAt": "2026-10-19T16:58:35Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T16:58:41Z",
+          "conclusion": "success",
+          "name": "Run npm --prefix frontend run build",
+          "number": 9,
+          "startedAt": "2026-10-19T16:58:36Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T16:58:41Z",
+          "conclusion": "success",
+          "name": "Run uv run --project backend python scripts/check_asset_budget.py",
+          "number": 10,
+          "startedAt": "2026-10-19T16:58:41Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T16:58:43Z",
+          "conclusion": "success",
+          "name": "Run uv run --project backend python scripts/export_contracts.py",
+          "number": 11,
+          "startedAt": "2026-10-19T16:58:41Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T16:58:44Z",
+          "conclusion": "success",
+          "name": "Run npm --prefix frontend run types:api",
+          "number": 12,
+          "startedAt": "2026-10-19T16:58:43Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T16:58:44Z",
+          "conclusion": "success",
+          "name": "Run git diff --exit-code -- docs/openapi.json frontend/src/types/api.generated.ts demo/document.schema.json",
+          "number": 13,
+          "startedAt": "2026-10-19T16:58:44Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T16:58:44Z",
+          "conclusion": "success",
+          "name": "Run npm --prefix frontend audit --audit-level=moderate",
+          "number": 14,
+          "startedAt": "2026-10-19T16:58:44Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T16:58:44Z",
+          "conclusion": "success",
+          "name": "Run uv export --project backend --frozen --no-hashes --format requirements-txt --output-file audit-requirements.txt",
+          "number": 15,
+          "startedAt": "2026-10-19T16:58:44Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T16:58:56Z",
+          "conclusion": "success",
+          "name": "Run uvx pip-audit -r audit-requirements.txt",
+          "number": 16,
+          "startedAt": "2026-10-19T16:58:44Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T16:59:53Z",
+          "conclusion": "success",
+          "name": "Run npx --prefix frontend playwright install chromium --with-deps",
+          "number": 17,
+          "startedAt": "2026-10-19T16:58:56Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T17:00:59Z",
+          "conclusion": "success",
+          "name": "Run uv run --project backend python scripts/verify_upgrade_browser.py",
+          "number": 18,
+          "startedAt": "2026-10-19T16:59:53Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T17:01:04Z",
+          "conclusion": "success",
+          "name": "Run uv run --project backend python scripts/collect_evidence.py",
+          "number": 19,
+          "startedAt": "2026-10-19T17:00:59Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T17:01:16Z",
+          "conclusion": "success",
+          "name": "Native Linux shell setup and startup",
+          "number": 20,
+          "startedAt": "2026-10-19T17:01:04Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T17:01:16Z",
+          "conclusion": "skipped",
+          "name": "Fresh Windows private and public setup",
+          "number": 21,
+          "startedAt": "2026-10-19T17:01:16Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T17:01:16Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-node@v4",
+          "number": 40,
+          "startedAt": "2026-10-19T17:01:16Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T17:01:16Z",
+          "conclusion": "success",
+          "name": "Post Run astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9",
+          "number": 41,
+          "startedAt": "2026-10-19T17:01:16Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T17:01:17Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "number": 42,
+          "startedAt": "2026-10-19T17:01:16Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T17:01:17Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 43,
+          "startedAt": "2026-10-19T17:01:17Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39289544488/job/118186291072"
     },
     {
-      "completedAt": "0001-01-01T00:00:00Z",
-      "conclusion": "",
-      "databaseId": 118156775716,
+      "completedAt": "2026-10-19T17:07:24Z",
+      "conclusion": "success",
+      "databaseId": 118186291284,
       "name": "verify (windows-latest)",
-      "startedAt": "2026-10-19T15:55:39Z",
-      "status": "queued",
-      "steps": [],
-      "url": "https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39281590860/job/118156775716"
+      "startedAt": "2026-10-19T16:54:40Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-10-19T16:54:42Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-10-19T16:54:41Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T16:54:48Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "number": 2,
+          "startedAt": "2026-10-19T16:54:42Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T16:54:54Z",
+          "conclusion": "success",
+          "name": "Run astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9",
+          "number": 3,
+          "startedAt": "2026-10-19T16:54:48Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T16:55:00Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-node@v4",
+          "number": 4,
+          "startedAt": "2026-10-19T16:54:54Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T16:55:01Z",
+          "conclusion": "success",
+          "name": "Run uv sync --project backend --frozen",
+          "number": 5,
+          "startedAt": "2026-10-19T16:55:00Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T16:55:16Z",
+          "conclusion": "success",
+          "name": "Run npm --prefix frontend ci",
+          "number": 6,
+          "startedAt": "2026-10-19T16:55:01Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T17:00:25Z",
+          "conclusion": "success",
+          "name": "Run uv run --project backend pytest backend/tests",
+          "number": 7,
+          "startedAt": "2026-10-19T16:55:16Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T17:00:26Z",
+          "conclusion": "success",
+          "name": "Run npm --prefix frontend test",
+          "number": 8,
+          "startedAt": "2026-10-19T17:00:25Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T17:00:34Z",
+          "conclusion": "success",
+          "name": "Run npm --prefix frontend run build",
+          "number": 9,
+          "startedAt": "2026-10-19T17:00:26Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T17:00:35Z",
+          "conclusion": "success",
+          "name": "Run uv run --project backend python scripts/check_asset_budget.py",
+          "number": 10,
+          "startedAt": "2026-10-19T17:00:34Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T17:00:38Z",
+          "conclusion": "success",
+          "name": "Run uv run --project backend python scripts/export_contracts.py",
+          "number": 11,
+          "startedAt": "2026-10-19T17:00:35Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T17:00:40Z",
+          "conclusion": "success",
+          "name": "Run npm --prefix frontend run types:api",
+          "number": 12,
+          "startedAt": "2026-10-19T17:00:38Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T17:00:41Z",
+          "conclusion": "success",
+          "name": "Run git diff --exit-code -- docs/openapi.json frontend/src/types/api.generated.ts demo/document.schema.json",
+          "number": 13,
+          "startedAt": "2026-10-19T17:00:40Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T17:00:42Z",
+          "conclusion": "success",
+          "name": "Run npm --prefix frontend audit --audit-level=moderate",
+          "number": 14,
+          "startedAt": "2026-10-19T17:00:41Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T17:00:42Z",
+          "conclusion": "success",
+          "name": "Run uv export --project backend --frozen --no-hashes --format requirements-txt --output-file audit-requirements.txt",
+          "number": 15,
+          "startedAt": "2026-10-19T17:00:42Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T17:01:09Z",
+          "conclusion": "success",
+          "name": "Run uvx pip-audit -r audit-requirements.txt",
+          "number": 16,
+          "startedAt": "2026-10-19T17:00:42Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T17:04:42Z",
+          "conclusion": "success",
+          "name": "Run npx --prefix frontend playwright install chromium --with-deps",
+          "number": 17,
+          "startedAt": "2026-10-19T17:01:09Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T17:06:02Z",
+          "conclusion": "success",
+          "name": "Run uv run --project backend python scripts/verify_upgrade_browser.py",
+          "number": 18,
+          "startedAt": "2026-10-19T17:04:42Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T17:06:10Z",
+          "conclusion": "success",
+          "name": "Run uv run --project backend python scripts/collect_evidence.py",
+          "number": 19,
+          "startedAt": "2026-10-19T17:06:02Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T17:06:10Z",
+          "conclusion": "skipped",
+          "name": "Native Linux shell setup and startup",
+          "number": 20,
+          "startedAt": "2026-10-19T17:06:10Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T17:07:18Z",
+          "conclusion": "success",
+          "name": "Fresh Windows private and public setup",
+          "number": 21,
+          "startedAt": "2026-10-19T17:06:10Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T17:07:18Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-node@v4",
+          "number": 40,
+          "startedAt": "2026-10-19T17:07:18Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T17:07:18Z",
+          "conclusion": "success",
+          "name": "Post Run astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9",
+          "number": 41,
+          "startedAt": "2026-10-19T17:07:18Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T17:07:21Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+          "number": 42,
+          "startedAt": "2026-10-19T17:07:18Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-19T17:07:21Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 43,
+          "startedAt": "2026-10-19T17:07:21Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39289544488/job/118186291284"
     }
   ],
-  "status": "queued",
-  "updatedAt": "2026-10-19T15:55:38Z",
-  "url": "https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39281590860"
+  "status": "completed",
+  "updatedAt": "2026-10-19T17:07:24Z",
+  "url": "https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39289544488"
 }

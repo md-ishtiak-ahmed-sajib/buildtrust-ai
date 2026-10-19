@@ -1,6 +1,6 @@
 # Remaining work
 
-Only unfinished tasks belong here. Completed work and test evidence are recorded in the [implementation ledger](../docs/all-suggestions-implementation.md) and [verification guide](../docs/completion-verification.md).
+Only unfinished tasks belong here. Completed work and test evidence are recorded in the [implementation ledger](all-suggestions-implementation.md) and [verification guide](completion-verification.md).
 
 ## External services and real documents
 
@@ -16,8 +16,6 @@ Only unfinished tasks belong here. Completed work and test evidence are recorded
 | Task | Owner | What is needed next |
 |---|---|---|
 | Validate Docker | Local environment administrator | Start a working Docker engine, then run the isolated checks. The installed CLI currently cannot reach its engine. Do not modify Docker's managed WSL distribution. |
-| Validate native Linux startup | Repository/environment owner | Record the shell-launcher and clean-start checks in a separate authorized Linux environment. Hosted Ubuntu application tests have their own revision-specific results. |
-| Complete current hosted Windows/Linux checks | GitHub repository owner / runner service | Retain the actual run result for the refreshed source. A queued/running workflow is not a pass; see the verification guide for run links. |
 | Perform a real screen-reader and first-user assessment | Accessibility reviewer and representative users | Use suitable assistive technology and actual users. Keyboard/mobile and automated scans cover a narrower scope. |
 | Obtain an independent deployment security review | Independent security reviewer | Review the proposed hosting environment before any wider deployment. Local tests and known-advisory scans are not a penetration-test certificate. |
 
@@ -29,4 +27,3 @@ Only unfinished tasks belong here. Completed work and test evidence are recorded
 | Rehearse | Presenter/team | Run the nine-slide talk and demonstration, check timing and add the real team introduction. |
 | Upload the final package | Team | Supply the authorized destination, upload the required files and keep confirmation before the supplied deadline. |
 
-GitHub publication is authorized and has already occurred. Final refreshed revisions and their remote/CI evidence are recorded separately; competition upload has not occurred.

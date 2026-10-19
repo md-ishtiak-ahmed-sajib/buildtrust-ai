@@ -1,10 +1,9 @@
 {
-  "generated_at": "2026-10-19T16:48:55.937874Z",
+  "generated_at": "2026-10-19T17:17:49.886085Z",
   "transport": "Real local HTTP + persistent SQLite",
   "simulation": true,
-  "source_fingerprint": "e4f771edf8d5a24b357b757924c18a768da3e1f18e4a4848aaf642acd0e51e4c",
+  "source_fingerprint": "24df4ef55f0ed47ebb47e12845b24b7b8cdb3d33f896c7347c75282b2cd13fb4",
   "source_files": {
-    "AGENTS.md": "feb55caebd69654fab044a93cc983ac669e4100289572eb03d5299824607e012",
     "backend/alembic/env.py": "3cf767a01267448ae7614bb54e1d1618415de3d1a020380222df5ca4a95ff0c7",
     "backend/alembic/versions/0001_initial.py": "c3550b9c9cbb5b666bbb4025c73f013f12b38e306f03876113492076f1f349b7",
     "backend/alembic/versions/0001_schema.sql": "78d82a249620cefa80df1cb7b0a68086e0116108d2d1ea46d07c712ac6ab5da7",
@@ -156,15 +155,15 @@
     "frontend/src/types.ts": "4b59cad0b000be6beadc6aeb3ffbbe03c2f8f4a837e974df63479fcc44965ed9",
     "frontend/src/ui.tsx": "5b8d028e4ae06449c5359c5c46c56b4c473a1b63e4f17896f86d11e55234b5e8",
     "scripts/build_doc_visuals.py": "d8e5dd23eab2400fc5b98ebea9514c6ba08a20297a998f0786d88f2548db2cf0",
-    "scripts/build_presentation.mjs": "65b4d45e5a3aa39256b3dd7539427be80ceffb635dc47b0132f3e56d2bf56827",
+    "scripts/build_presentation.mjs": "364b0ffa0c0edf547fa9d6520f990405f660709d688a3739b3e8529627e64140",
     "scripts/check_asset_budget.py": "a76c842874225c4ebac0495ebd10977a2febee8a5348b298e457209518a0748a",
-    "scripts/collect_evidence.py": "1da1301d825fc5e923dd7c21860f94c244277455cedaf93b0a8b6d4cc0169195",
+    "scripts/collect_evidence.py": "02f868ec9a58413b1d312952c91ccb9e9fa70208ac349efd58a93b95d7001150",
     "scripts/container_start.sh": "391fcc6ebc87c7e590677f7addfe827e3008a843f0c3c8324950a2b3ae9a035a",
     "scripts/demo_segments.json": "2af4518df1668aa2ab709e7b0963e33933d119f26a93acc4a426290c7b645380",
     "scripts/export_contracts.py": "214baac5a3324043ab94351c8ac67b11f472bb110b3d18b42434a28832119ba5",
     "scripts/generate_demo_files.py": "54c7381aa8a4f998106a3576de4d05a415c0a3ec44ccf2a5b08dd81a1a1b9ee3",
     "scripts/mux_video.py": "a54003af209e7b4eff86696567d192eb4990f65e40b91988b1823933a7b3ed8c",
-    "scripts/package_release.py": "d852342ac169a60b7552ff937ff201aed1c21499528d8e3c53499638c3d6e3a2",
+    "scripts/package_release.py": "5d94ec7803e4b3b5dea41707809b9308ecd6259ea151ac19eb3323b8da0ad805",
     "scripts/prepare_narration.py": "10e638402e2527c04759b2a6abb3431816dac55041140daded75baec169d0151",
     "scripts/record_demo.mjs": "5a5b53ab67d04d0521ef181ddd22e8f295cc5878f5787c95ddf54d9ae1cdd0dd",
     "scripts/record_demo.py": "8285cb0c0b97fd69867d87235f50a8835c285eb5b2622c686e63d1108f1e8fb7",
@@ -177,7 +176,7 @@
     "scripts/setup_ocr.py": "870d0be02aedc8c25d5901f4c91943c73c95291911bee9363457958f3074fb20",
     "scripts/synthesize_narration.ps1": "4255a0133e915b764ba7f5644c65db288bf13d54290a530b77b3009339fb85a8",
     "scripts/try_demo.ps1": "6235fb0df1181d59fb86fce203adeaedc6874ca0b732bd432dc47948e59f2229",
-    "scripts/verify_clean_install.py": "2f712f57cdce98323ca2659d689cd5a91b2f7a4eb5aae560296650834932fca2",
+    "scripts/verify_clean_install.py": "d3bc4fc8a82e53fef771021b3397b8f1bcfd8f7a60650d3f766d7be27f3f6902",
     "scripts/verify_documentation.mjs": "c36461d9bce4f6368f6fbcc8ebc99f2280e550fb10771e88fae755d125985774",
     "scripts/verify_linux_startup.py": "bb2db4bcc6e32082ad493ed1032bd9085404932afdc49f84972fbd66a0ce42e5",
     "scripts/verify_live_fx.py": "5f412b1afe43f9e30825bce7076be2bfc8ff8e983a7b54052ddab4973795085a",
@@ -190,7 +189,7 @@
   "scenarios": [
     {
       "scenario_id": "A",
-      "executed_at": "2026-10-19T16:48:53.959195Z",
+      "executed_at": "2026-10-19T17:17:47.927928Z",
       "decision": "BLOCKED",
       "balance_before": "1000000.00",
       "balance_after": "1000000.00",
@@ -198,7 +197,7 @@
     },
     {
       "scenario_id": "B",
-      "executed_at": "2026-10-19T16:48:54.222943Z",
+      "executed_at": "2026-10-19T17:17:48.189885Z",
       "decision": "SETTLED",
       "balance_before": "1000000.00",
       "balance_after": "930000.00",
@@ -206,7 +205,7 @@
     },
     {
       "scenario_id": "C",
-      "executed_at": "2026-10-19T16:48:54.508198Z",
+      "executed_at": "2026-10-19T17:17:48.475121Z",
       "decision": "DUPLICATE_HELD",
       "balance_before": "1000000.00",
       "balance_after": "1000000.00",
@@ -214,7 +213,7 @@
     },
     {
       "scenario_id": "D",
-      "executed_at": "2026-10-19T16:48:54.651532Z",
+      "executed_at": "2026-10-19T17:17:48.616686Z",
       "decision": "BLOCKED",
       "balance_before": "1000000.00",
       "balance_after": "1000000.00",
@@ -222,7 +221,7 @@
     },
     {
       "scenario_id": "E",
-      "executed_at": "2026-10-19T16:48:54.913237Z",
+      "executed_at": "2026-10-19T17:17:48.880245Z",
       "decision": "BLOCKED",
       "balance_before": "150000.00",
       "balance_after": "150000.00",
@@ -230,7 +229,7 @@
     },
     {
       "scenario_id": "F",
-      "executed_at": "2026-10-19T16:48:55.171428Z",
+      "executed_at": "2026-10-19T17:17:49.143919Z",
       "decision": "BLOCKED",
       "balance_before": "1000000.00",
       "balance_after": "1000000.00",
@@ -238,7 +237,7 @@
     },
     {
       "scenario_id": "G",
-      "executed_at": "2026-10-19T16:48:55.438300Z",
+      "executed_at": "2026-10-19T17:17:49.407806Z",
       "decision": "UNAUTHORIZED_APPROVAL_DENIED",
       "balance_before": "1000000.00",
       "balance_after": "1000000.00",
@@ -246,7 +245,7 @@
     },
     {
       "scenario_id": "H",
-      "executed_at": "2026-10-19T16:48:55.722684Z",
+      "executed_at": "2026-10-19T17:17:49.682318Z",
       "decision": "SETTLED",
       "balance_before": "1000000.00",
       "balance_after": "930000.00",
@@ -257,8 +256,8 @@
     "valid": true,
     "checked_events": 509,
     "failed_event_id": null,
-    "head_hash": "caf056e1f329418bfb0bd51484fcd3174a8425183e8837ae03a80e04b248e8cb",
+    "head_hash": "5ae7001d23d2ad656384f95a8371effd6959e6c582c9c7d181354c49374f32ff",
     "limitation": "Local hash chain; an unrestricted database administrator can rewrite the complete chain."
   },
-  "runtime_database": "data\\evidence-512d8b692e\\buildtrust.db"
+  "runtime_database": "data\\evidence-928bac5382\\buildtrust.db"
 }

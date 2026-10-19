@@ -82,4 +82,4 @@ TCPI uses the selected supported completion target and displays its basis. Repor
 
 Exports retain project, revision, state, currency, components, allowance settings and calculation basis. Reimport preserves arithmetic but clears imported material/price-selection authority for review. Flat external rates are final manual rates; allowances are not silently added twice.
 
-Jobs keep leases, attempts, bounded retries and restart recovery. Unknown paid submissions stay held. The supported runtime is one local process. Actual load measurements exist, but do not establish production capacity. See [technical details](technical-documentation.md), [verification](completion-verification.md) and [remaining prerequisites](../prompt/Not%20implemented.md).
+Jobs keep leases, attempts, bounded retries and restart recovery. Unknown paid submissions stay held. The supported runtime is one local process. Actual load measurements exist, but do not establish production capacity. See [technical details](technical-documentation.md), [verification](completion-verification.md) and [remaining prerequisites](../docs/remaining-work.md).

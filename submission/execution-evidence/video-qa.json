@@ -4,5 +4,12 @@
   "full_decode_passed": true,
   "application_source_hashes_match": true,
   "video_sha256": "1b206cfb6f25c29fae063ca1f461a993a2ed66e9eb0bf78f78d59e2739e41b72",
-  "source": "Actual isolated app recording, not a fabricated UI"
+  "source": "Actual isolated app recording, not a fabricated UI",
+  "sample_frames_visually_reviewed_seconds": [
+    20,
+    90,
+    170,
+    195,
+    235
+  ]
 }

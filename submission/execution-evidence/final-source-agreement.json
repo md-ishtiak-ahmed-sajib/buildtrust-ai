@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "archive_sha256": "8b5424f5e738e2f9268fdd59989227ea4639067cfc8d6e17bd8e0a952cdce379",
+  "source_fingerprint": "24df4ef55f0ed47ebb47e12845b24b7b8cdb3d33f896c7347c75282b2cd13fb4",
+  "source_file_count": 181,
+  "archive_file_count": 405,
+  "current_and_archive_bytes_match": true,
+  "fresh_windows_install_passed": true,
+  "public_demo_acceptance_passed": true,
+  "prompt_folder_excluded": true,
+  "engineering_instructions_excluded": true,
+  "local_originals_preserved": true,
+  "receipt_scope": "Created after packaging; stored beside the archive to avoid circular checksums."
+}

@@ -65,7 +65,7 @@ Logs record request IDs, method/path/status/duration, parser/job timing and mate
 
 Use `.env.example` for private settings. Never publish private runtime data, uploads, signing secrets or credentials. Back up the database consistently with its private files and signing material.
 
-Docker and shell launchers are included; this is not platform acceptance. See [remaining work](../prompt/Not%20implemented.md). Do not alter Docker's managed WSL distribution for Linux testing.
+Hosted Windows/Ubuntu checks passed for the recorded release. These include native Linux shell setup/startup and fresh Windows private/public installation. Docker configuration is included, but its engine/container validation remains pending. See [remaining work](../docs/remaining-work.md). Do not alter Docker's managed WSL distribution for Linux testing.
 
 Use [isolated test commands](test-results.md). Recordings require a dedicated database/address and reject the working app port. Packaging checks source fingerprints, actual HTTP results, media evidence and private-file exclusion. Fresh archive installation checks setup, payment, estimating and public-demo behavior.
 

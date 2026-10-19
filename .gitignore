@@ -14,3 +14,10 @@ backend/data/
 playwright-report/
 test-results/
 .DS_Store
+
+# Local project instructions and planning notes are not public source.
+/prompt/
+/AGENTS.md
+/agents.md
+/submission/execution-evidence/presentation-validation.json
+/submission/execution-evidence/presentation-build.log

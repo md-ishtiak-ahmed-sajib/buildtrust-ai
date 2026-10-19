@@ -1,8 +1,9 @@
 {
   "passed": true,
-  "hashes": {
-    "docs\\openapi.json": "c622ef66267cc13080e834a76fb731d1b0ab08d188dc6460ba9d781e2975b4b0",
-    "frontend\\src\\types\\api.generated.ts": "11cf87246137162aef8696e5e062a4e919bb31e6a54805ec02f7faf2d248156b",
-    "demo\\document.schema.json": "3a1f988a477b640be7b720ca5ff8dff2fca1e2c23c4d505616ad607fbd375ad0"
-  }
+  "checksums": {
+    "docs/openapi.json": "a07a6ae6f6c531666795e75a7002d6c058b51946cefa76a48291fb71cfe64f76",
+    "demo/document.schema.json": "8b7622c4963c890961ca2c41c7962f350d452b1093ab0b93434618cfd4cbdfc6",
+    "frontend/src/types/api.generated.ts": "11cf87246137162aef8696e5e062a4e919bb31e6a54805ec02f7faf2d248156b"
+  },
+  "generated_json_line_ending": "LF on Windows and Linux"
 }

@@ -17,7 +17,7 @@ Deadline: October 20, 2026, 21:59 Dhaka / 23:59 Beijing. Target upload readiness
 - [x] 4:32 actual browser recording with locally synthesized English narration
 - [x] Reproducible execution evidence, source fingerprints, and release checksums
 - [x] AGPL license, dependency locks, attribution, and source archive
-- [ ] Push the reviewed source to the authorized repository: https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai
+- [x] Reviewed source published to https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai; verified commit and hosted-run evidence are recorded separately
 
 ## Human submission actions
 

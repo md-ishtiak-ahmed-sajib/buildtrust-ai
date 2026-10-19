@@ -1,6 +1,6 @@
 # Scenario B
 
-Executed: 2026-10-19T15:52:26.758980Z
+Executed: 2026-10-19T15:54:51.614138Z
 
 Decision: **SETTLED**
 

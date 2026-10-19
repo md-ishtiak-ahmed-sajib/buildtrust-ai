@@ -13,10 +13,10 @@ from app.config import Settings
 with TemporaryDirectory(prefix="buildtrust-contracts-") as temporary:
     application = create_app(Settings(data_dir=Path(temporary)), initialize=False)
     (ROOT / "docs" / "openapi.json").write_text(
-        json.dumps(application.openapi(), indent=2), encoding="utf-8"
+        json.dumps(application.openapi(), indent=2), encoding="utf-8", newline="\n"
     )
     application.state.engine.dispose()
 (ROOT / "demo" / "document.schema.json").write_text(
-    json.dumps(DocumentInput.model_json_schema(), indent=2), encoding="utf-8"
+    json.dumps(DocumentInput.model_json_schema(), indent=2), encoding="utf-8", newline="\n"
 )
 print("Exported OpenAPI and document schema from actual application contracts")

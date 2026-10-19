@@ -1,7 +1,7 @@
 {
   "scenario_id": "B",
-  "executed_at": "2026-10-19T15:52:26.758980Z",
-  "run_id": "bfc6baa783f0",
+  "executed_at": "2026-10-19T15:54:51.614138Z",
+  "run_id": "cae4e930b372",
   "source_invoice": {
     "id": 12,
     "project_id": 5,
@@ -27,7 +27,7 @@
     "invoice_id": 12,
     "status": "AWAITING_APPROVAL",
     "error": null,
-    "created_at": "2026-10-19T15:52:26.763008Z",
+    "created_at": "2026-10-19T15:54:51.617403Z",
     "result": {
       "proposal_id": 1,
       "verification": {
@@ -934,8 +934,8 @@
           "invoice_id": 12,
           "po_id": 8
         },
-        "started_at": "2026-10-19T15:52:26.763008Z",
-        "finished_at": "2026-10-19T15:52:26.763008Z"
+        "started_at": "2026-10-19T15:54:51.617403Z",
+        "finished_at": "2026-10-19T15:54:51.617403Z"
       },
       {
         "id": 11,
@@ -951,8 +951,8 @@
           "provenance_revisions": 1,
           "version": 1
         },
-        "started_at": "2026-10-19T15:52:26.773797Z",
-        "finished_at": "2026-10-19T15:52:26.773797Z"
+        "started_at": "2026-10-19T15:54:51.617403Z",
+        "finished_at": "2026-10-19T15:54:51.627221Z"
       },
       {
         "id": 12,
@@ -1011,8 +1011,8 @@
           "status": "VERIFIED",
           "verified_amount": "70000.00"
         },
-        "started_at": "2026-10-19T15:52:26.779797Z",
-        "finished_at": "2026-10-19T15:52:26.787898Z"
+        "started_at": "2026-10-19T15:54:51.627221Z",
+        "finished_at": "2026-10-19T15:54:51.634838Z"
       },
       {
         "id": 13,
@@ -1026,8 +1026,8 @@
           "findings": [],
           "payment_eligible": true
         },
-        "started_at": "2026-10-19T15:52:26.789895Z",
-        "finished_at": "2026-10-19T15:52:26.790894Z"
+        "started_at": "2026-10-19T15:54:51.636848Z",
+        "finished_at": "2026-10-19T15:54:51.636848Z"
       },
       {
         "id": 14,
@@ -1867,8 +1867,8 @@
             }
           ]
         },
-        "started_at": "2026-10-19T15:52:26.792912Z",
-        "finished_at": "2026-10-19T15:52:26.793468Z"
+        "started_at": "2026-10-19T15:54:51.639106Z",
+        "finished_at": "2026-10-19T15:54:51.639106Z"
       },
       {
         "id": 15,
@@ -1882,8 +1882,8 @@
           "explanation_source": "deterministic",
           "text": "Invoice INV-CEMENT-070 claims BDT 70000.00; supported amount is BDT 70000.00. Financial checks passed. Explicit approval by a different authorized account is required."
         },
-        "started_at": "2026-10-19T15:52:26.793468Z",
-        "finished_at": "2026-10-19T15:52:26.793468Z"
+        "started_at": "2026-10-19T15:54:51.641443Z",
+        "finished_at": "2026-10-19T15:54:51.641443Z"
       },
       {
         "id": 16,
@@ -1897,22 +1897,22 @@
           "amount": "70000.00",
           "approvals": [],
           "beneficiary_fingerprint": "d9413b828e4752e3c57c4bfbd09203f9ff2866e56a6096550d36f70bc0ce984d",
-          "created_at": "2026-10-19T15:52:26.793468Z",
+          "created_at": "2026-10-19T15:54:51.650968Z",
           "currency": "BDT",
-          "expires_at": "2026-10-19T16:22:26.793468Z",
+          "expires_at": "2026-10-19T16:24:51.650968Z",
           "id": 1,
           "invoice_id": 12,
           "invoice_number": "INV-CEMENT-070",
           "payment_id": null,
           "project_id": 5,
           "requested_by": 3,
-          "snapshot_hash": "699c4d92f9499ad16e47bc51182663eb85fc3e97045e0848a15c3892d1f23b6b",
+          "snapshot_hash": "712f4ae4891b1bcba7ce93f58e34fdbbb0e3ef1e846aadbd0a60a9cc332072b7",
           "status": "PENDING_APPROVAL",
           "supplier": "Metro Materials (fictional)",
           "version": 1
         },
-        "started_at": "2026-10-19T15:52:26.793468Z",
-        "finished_at": "2026-10-19T15:52:26.815534Z"
+        "started_at": "2026-10-19T15:54:51.643738Z",
+        "finished_at": "2026-10-19T15:54:51.660999Z"
       },
       {
         "id": 17,
@@ -1927,8 +1927,8 @@
           "proposal_id": 1,
           "status": "AWAITING_HUMAN_APPROVAL"
         },
-        "started_at": "2026-10-19T15:52:26.817836Z",
-        "finished_at": "2026-10-19T15:52:26.818835Z"
+        "started_at": "2026-10-19T15:54:51.662747Z",
+        "finished_at": "2026-10-19T15:54:51.662747Z"
       },
       {
         "id": 18,
@@ -1940,10 +1940,10 @@
         },
         "output": {
           "audit_event_id": 167,
-          "event_hash": "7528d99fc599d456a39f8ccbf2cc699027519b1105ccaf9df65c012049b2cd25"
+          "event_hash": "2c7b3d194ec11189ae9dc05f4d8a1a82bf0b277e5272a14cc07b3ee22c671c03"
         },
-        "started_at": "2026-10-19T15:52:26.821177Z",
-        "finished_at": "2026-10-19T15:52:26.821500Z"
+        "started_at": "2026-10-19T15:54:51.662747Z",
+        "finished_at": "2026-10-19T15:54:51.662747Z"
       }
     ]
   },
@@ -1961,15 +1961,15 @@
     "status": "APPROVED",
     "requested_by": 3,
     "beneficiary_fingerprint": "d9413b828e4752e3c57c4bfbd09203f9ff2866e56a6096550d36f70bc0ce984d",
-    "snapshot_hash": "699c4d92f9499ad16e47bc51182663eb85fc3e97045e0848a15c3892d1f23b6b",
-    "expires_at": "2026-10-19T16:22:26.793468Z",
-    "created_at": "2026-10-19T15:52:26.793468Z",
+    "snapshot_hash": "712f4ae4891b1bcba7ce93f58e34fdbbb0e3ef1e846aadbd0a60a9cc332072b7",
+    "expires_at": "2026-10-19T16:24:51.650968Z",
+    "created_at": "2026-10-19T15:54:51.650968Z",
     "version": 1,
     "approvals": [
       {
         "approver_id": 2,
         "decision": "APPROVED",
-        "created_at": "2026-10-19T15:52:26.890692Z"
+        "created_at": "2026-10-19T15:54:51.741987Z"
       }
     ],
     "payment_id": null
@@ -1983,11 +1983,11 @@
     "amount": "70000.00",
     "currency": "BDT",
     "beneficiary_fingerprint": "d9413b828e4752e3c57c4bfbd09203f9ff2866e56a6096550d36f70bc0ce984d",
-    "mock_transaction_id": "MOCK-40D6F0688FC34A42BFA9B0972BDAE6BA",
+    "mock_transaction_id": "MOCK-B1AD924566ED46F99F1D7F06679DBF60",
     "provider": "BuildTrust Local Sandbox",
     "status": "SETTLED",
     "simulation": true,
-    "executed_at": "2026-10-19T15:52:26.912828Z",
+    "executed_at": "2026-10-19T15:54:51.765738Z",
     "balance_after": "930000.00"
   },
   "balance_after": "930000.00",
@@ -2007,10 +2007,10 @@
         "balance_before": "1000000.00",
         "beneficiary_fingerprint": "d9413b828e4752e3c57c4bfbd09203f9ff2866e56a6096550d36f70bc0ce984d",
         "currency": "BDT",
-        "executed_at": "2026-10-19T15:52:26.912828Z",
+        "executed_at": "2026-10-19T15:54:51.765738Z",
         "invoice_id": 12,
         "invoice_number": "INV-CEMENT-070",
-        "mock_transaction_id": "MOCK-40D6F0688FC34A42BFA9B0972BDAE6BA",
+        "mock_transaction_id": "MOCK-B1AD924566ED46F99F1D7F06679DBF60",
         "payment_id": 1,
         "proposal_id": 1,
         "provider": "BuildTrust Local Sandbox",
@@ -2018,9 +2018,9 @@
         "status": "SETTLED",
         "supplier": "Metro Materials (fictional)"
       },
-      "previous_hash": "78af6e980f17cf8d8d3bb847f86135411c6decf13d3baccc5e54a7c88ec28de5",
-      "created_at": "2026-10-19T15:52:26.917772Z",
-      "event_hash": "f6ea261954d9d68fc2146940c9a8e6ffd1d260b05cc6692b26c64446becef6da"
+      "previous_hash": "ecaf1b1b0a738aab3b2ce69509ca32168191fb4d04a02d5dd54db97f847756e4",
+      "created_at": "2026-10-19T15:54:51.769749Z",
+      "event_hash": "c1068e2eb60417f2037080099afe4724ef74d64078e9b2621a2ff3f41d2eadfb"
     },
     {
       "id": 169,
@@ -2034,9 +2034,9 @@
       "details": {
         "simulation": true
       },
-      "previous_hash": "d7e006174ad230ed7798e872f10762892009a7d7b9314cb3c6d288e872ba08cd",
-      "created_at": "2026-10-19T15:52:26.911521Z",
-      "event_hash": "78af6e980f17cf8d8d3bb847f86135411c6decf13d3baccc5e54a7c88ec28de5"
+      "previous_hash": "1f987c9f55fe95a633884ff790da11f732ad522ce4be666249e2511b8f6f7bd7",
+      "created_at": "2026-10-19T15:54:51.763734Z",
+      "event_hash": "ecaf1b1b0a738aab3b2ce69509ca32168191fb4d04a02d5dd54db97f847756e4"
     },
     {
       "id": 168,
@@ -2048,11 +2048,11 @@
       "entity_type": "proposal",
       "entity_id": "1",
       "details": {
-        "snapshot_hash": "699c4d92f9499ad16e47bc51182663eb85fc3e97045e0848a15c3892d1f23b6b"
+        "snapshot_hash": "712f4ae4891b1bcba7ce93f58e34fdbbb0e3ef1e846aadbd0a60a9cc332072b7"
       },
-      "previous_hash": "7528d99fc599d456a39f8ccbf2cc699027519b1105ccaf9df65c012049b2cd25",
-      "created_at": "2026-10-19T15:52:26.892701Z",
-      "event_hash": "d7e006174ad230ed7798e872f10762892009a7d7b9314cb3c6d288e872ba08cd"
+      "previous_hash": "2c7b3d194ec11189ae9dc05f4d8a1a82bf0b277e5272a14cc07b3ee22c671c03",
+      "created_at": "2026-10-19T15:54:51.748240Z",
+      "event_hash": "1f987c9f55fe95a633884ff790da11f732ad522ce4be666249e2511b8f6f7bd7"
     },
     {
       "id": 167,
@@ -2066,9 +2066,9 @@
       "details": {
         "proposal_id": 1
       },
-      "previous_hash": "496abab63a9174ac712f96377af0c819814b8f1084c0b47f349049167953963e",
-      "created_at": "2026-10-19T15:52:26.821500Z",
-      "event_hash": "7528d99fc599d456a39f8ccbf2cc699027519b1105ccaf9df65c012049b2cd25"
+      "previous_hash": "3c1de048944b71ca97e614661533f94515c862ec93592825b23389674bf4c9c0",
+      "created_at": "2026-10-19T15:54:51.662747Z",
+      "event_hash": "2c7b3d194ec11189ae9dc05f4d8a1a82bf0b277e5272a14cc07b3ee22c671c03"
     },
     {
       "id": 166,
@@ -2080,12 +2080,12 @@
       "entity_type": "proposal",
       "entity_id": "1",
       "details": {
-        "expires_at": "2026-10-19T16:22:26.793468Z",
-        "snapshot_hash": "699c4d92f9499ad16e47bc51182663eb85fc3e97045e0848a15c3892d1f23b6b"
+        "expires_at": "2026-10-19T16:24:51.650968Z",
+        "snapshot_hash": "712f4ae4891b1bcba7ce93f58e34fdbbb0e3ef1e846aadbd0a60a9cc332072b7"
       },
-      "previous_hash": "a56e6369c8a1d032c3848703c7b9f8df6cf9eabbaec25a3676966177e9019d48",
-      "created_at": "2026-10-19T15:52:26.812574Z",
-      "event_hash": "496abab63a9174ac712f96377af0c819814b8f1084c0b47f349049167953963e"
+      "previous_hash": "b1cef11b0c97218bfaf3901f54e18cee04fc60f5b4fabdcf677a9e2c39150ccd",
+      "created_at": "2026-10-19T15:54:51.658991Z",
+      "event_hash": "3c1de048944b71ca97e614661533f94515c862ec93592825b23389674bf4c9c0"
     },
     {
       "id": 165,
@@ -2100,9 +2100,9 @@
         "amount": "70000.00",
         "findings": []
       },
-      "previous_hash": "ac1b84c787bcbcd4b6edac082374837ef3574e946b6ab9ff59ef9dbf03ab718d",
-      "created_at": "2026-10-19T15:52:26.793468Z",
-      "event_hash": "a56e6369c8a1d032c3848703c7b9f8df6cf9eabbaec25a3676966177e9019d48"
+      "previous_hash": "e1afbc0058d6dfc1740185afaa61fb03ea29d780bd559e57b32996345a39a731",
+      "created_at": "2026-10-19T15:54:51.652974Z",
+      "event_hash": "b1cef11b0c97218bfaf3901f54e18cee04fc60f5b4fabdcf677a9e2c39150ccd"
     },
     {
       "id": 164,
@@ -2117,9 +2117,9 @@
         "amount": "70000.00",
         "findings": []
       },
-      "previous_hash": "4f105adbcf7841737fc5a5c73154dec3acc26a48c0bda30cb2ad4756acb3c8db",
-      "created_at": "2026-10-19T15:52:26.793468Z",
-      "event_hash": "ac1b84c787bcbcd4b6edac082374837ef3574e946b6ab9ff59ef9dbf03ab718d"
+      "previous_hash": "077015b8fd06ab46263968fd462cf6f59f7e6111220acca42b8bf53534198db7",
+      "created_at": "2026-10-19T15:54:51.650968Z",
+      "event_hash": "e1afbc0058d6dfc1740185afaa61fb03ea29d780bd559e57b32996345a39a731"
     },
     {
       "id": 163,
@@ -2136,9 +2136,9 @@
         "status": "VERIFIED",
         "verified": "70000.00"
       },
-      "previous_hash": "d6827bf28ae4dca1fa84f0ecbec33f3afa2a04f8d1d519a8e5191754ece20f40",
-      "created_at": "2026-10-19T15:52:26.786863Z",
-      "event_hash": "4f105adbcf7841737fc5a5c73154dec3acc26a48c0bda30cb2ad4756acb3c8db"
+      "previous_hash": "de854298daf18dea3d51651121b86b5694301145955cf4167b79339707a8e474",
+      "created_at": "2026-10-19T15:54:51.634838Z",
+      "event_hash": "077015b8fd06ab46263968fd462cf6f59f7e6111220acca42b8bf53534198db7"
     },
     {
       "id": 162,
@@ -2155,9 +2155,9 @@
         "status": "VERIFIED",
         "verified": "70000.00"
       },
-      "previous_hash": "5546f9008b9f953e122e34ac90213ae14c5862b0c9fb4778b50e4258a1694dc0",
-      "created_at": "2026-10-19T15:52:26.786521Z",
-      "event_hash": "d6827bf28ae4dca1fa84f0ecbec33f3afa2a04f8d1d519a8e5191754ece20f40"
+      "previous_hash": "f1848d5aebbf757d79ac3cef0b4a7f6cd9d018fec78b5a64075b72c550929304",
+      "created_at": "2026-10-19T15:54:51.634838Z",
+      "event_hash": "de854298daf18dea3d51651121b86b5694301145955cf4167b79339707a8e474"
     },
     {
       "id": 161,
@@ -2174,9 +2174,9 @@
         "status": "VERIFIED",
         "verified": "70000.00"
       },
-      "previous_hash": "c53a7c9434555a8edcf372130459d68e26799cdc2b861571984499ce38c358c8",
-      "created_at": "2026-10-19T15:52:26.786004Z",
-      "event_hash": "5546f9008b9f953e122e34ac90213ae14c5862b0c9fb4778b50e4258a1694dc0"
+      "previous_hash": "51a76abd0510f0ed82601420cfd070d8f9cc6caed39589dedc63e5af93d6df88",
+      "created_at": "2026-10-19T15:54:51.634838Z",
+      "event_hash": "f1848d5aebbf757d79ac3cef0b4a7f6cd9d018fec78b5a64075b72c550929304"
     },
     {
       "id": 160,
@@ -2190,9 +2190,9 @@
       "details": {
         "invoice_id": 12
       },
-      "previous_hash": "d976f8940b9f17fcb6c04e5b9fe3e8d53328c4b3dc3246e376abadc18d7d5678",
-      "created_at": "2026-10-19T15:52:26.763008Z",
-      "event_hash": "c53a7c9434555a8edcf372130459d68e26799cdc2b861571984499ce38c358c8"
+      "previous_hash": "f36ed9c11c7d0c7d0298c53db5f1ec3fd326e5902ec11660ba2baca0249bc52d",
+      "created_at": "2026-10-19T15:54:51.617403Z",
+      "event_hash": "51a76abd0510f0ed82601420cfd070d8f9cc6caed39589dedc63e5af93d6df88"
     }
   ],
   "audit_event_ids": [
@@ -2212,7 +2212,7 @@
     "valid": true,
     "checked_events": 170,
     "failed_event_id": null,
-    "head_hash": "f6ea261954d9d68fc2146940c9a8e6ffd1d260b05cc6692b26c64446becef6da",
+    "head_hash": "c1068e2eb60417f2037080099afe4724ef74d64078e9b2621a2ff3f41d2eadfb",
     "limitation": "Local hash chain; an unrestricted database administrator can rewrite the complete chain."
   },
   "source_records": [
@@ -2227,7 +2227,7 @@
         "version": 1,
         "reviewed_by": null,
         "confirmed_by": 1,
-        "created_at": "2026-10-19T15:52:26.656028Z"
+        "created_at": "2026-10-19T15:54:51.502615Z"
       },
       "data": {
         "beneficiary_fingerprint": "",
@@ -2578,7 +2578,7 @@
               "value": "70000"
             }
           ],
-          "created_at": "2026-10-19T15:52:26.656028Z"
+          "created_at": "2026-10-19T15:54:51.502615Z"
         }
       ]
     },
@@ -2593,7 +2593,7 @@
         "version": 1,
         "reviewed_by": null,
         "confirmed_by": 1,
-        "created_at": "2026-10-19T15:52:26.661637Z"
+        "created_at": "2026-10-19T15:54:51.502615Z"
       },
       "data": {
         "beneficiary_fingerprint": "",
@@ -2870,7 +2870,7 @@
               "value": "70000"
             }
           ],
-          "created_at": "2026-10-19T15:52:26.661637Z"
+          "created_at": "2026-10-19T15:54:51.502615Z"
         }
       ]
     },
@@ -2885,7 +2885,7 @@
         "version": 1,
         "reviewed_by": null,
         "confirmed_by": 1,
-        "created_at": "2026-10-19T15:52:26.661637Z"
+        "created_at": "2026-10-19T15:54:51.522404Z"
       },
       "data": {
         "beneficiary_fingerprint": "",
@@ -3162,7 +3162,7 @@
               "value": "70000"
             }
           ],
-          "created_at": "2026-10-19T15:52:26.661637Z"
+          "created_at": "2026-10-19T15:54:51.522404Z"
         }
       ]
     },
@@ -3177,7 +3177,7 @@
         "version": 1,
         "reviewed_by": null,
         "confirmed_by": null,
-        "created_at": "2026-10-19T15:52:26.681335Z"
+        "created_at": "2026-10-19T15:54:51.532825Z"
       },
       "data": {
         "beneficiary_fingerprint": "d9413b828e4752e3c57c4bfbd09203f9ff2866e56a6096550d36f70bc0ce984d",
@@ -3454,7 +3454,7 @@
               "value": "70000"
             }
           ],
-          "created_at": "2026-10-19T15:52:26.681335Z"
+          "created_at": "2026-10-19T15:54:51.533827Z"
         }
       ]
     }

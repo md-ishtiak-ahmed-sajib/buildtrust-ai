@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-19T15:52:28.493049Z",
+  "generated_at": "2026-10-19T15:54:54.018409Z",
   "transport": "Real local HTTP + persistent SQLite",
   "simulation": true,
-  "source_fingerprint": "f5be3254763e5c95a7134132f1cfa2a048069bedeca7d474bc09b494c4aa6aa1",
+  "source_fingerprint": "5ca5e53a271d232a4239279afc0810f179cf9050b41fd678ef2dad6ad525ea24",
   "source_files": {
     "AGENTS.md": "feb55caebd69654fab044a93cc983ac669e4100289572eb03d5299824607e012",
     "backend/alembic/env.py": "3cf767a01267448ae7614bb54e1d1618415de3d1a020380222df5ca4a95ff0c7",
@@ -159,7 +159,7 @@
     "scripts/collect_evidence.py": "babd3a6f2a346d1d2da68d8a70ef085f480e91e8a33a63407c1af5de9fd25880",
     "scripts/container_start.sh": "391fcc6ebc87c7e590677f7addfe827e3008a843f0c3c8324950a2b3ae9a035a",
     "scripts/demo_segments.json": "0583be0bebe01a64ff9e3ec89509c0bc664ba63a7c4112310d00b699d5e9484d",
-    "scripts/export_contracts.py": "257d9b7315158488b9258b30affc65352cf5afaa1394e452e2d3f153349aeefa",
+    "scripts/export_contracts.py": "214baac5a3324043ab94351c8ac67b11f472bb110b3d18b42434a28832119ba5",
     "scripts/generate_demo_files.py": "54c7381aa8a4f998106a3576de4d05a415c0a3ec44ccf2a5b08dd81a1a1b9ee3",
     "scripts/mux_video.py": "a54003af209e7b4eff86696567d192eb4990f65e40b91988b1823933a7b3ed8c",
     "scripts/package_release.py": "07bf5c3f1cb71de3bd626db31a4a5f58d3893dce07ac66baf29481714985e7a6",
@@ -183,7 +183,7 @@
   "scenarios": [
     {
       "scenario_id": "A",
-      "executed_at": "2026-10-19T15:52:26.491926Z",
+      "executed_at": "2026-10-19T15:54:51.322806Z",
       "decision": "BLOCKED",
       "balance_before": "1000000.00",
       "balance_after": "1000000.00",
@@ -191,7 +191,7 @@
     },
     {
       "scenario_id": "B",
-      "executed_at": "2026-10-19T15:52:26.758980Z",
+      "executed_at": "2026-10-19T15:54:51.614138Z",
       "decision": "SETTLED",
       "balance_before": "1000000.00",
       "balance_after": "930000.00",
@@ -199,7 +199,7 @@
     },
     {
       "scenario_id": "C",
-      "executed_at": "2026-10-19T15:52:27.066521Z",
+      "executed_at": "2026-10-19T15:54:51.930016Z",
       "decision": "DUPLICATE_HELD",
       "balance_before": "1000000.00",
       "balance_after": "1000000.00",
@@ -207,7 +207,7 @@
     },
     {
       "scenario_id": "D",
-      "executed_at": "2026-10-19T15:52:27.210270Z",
+      "executed_at": "2026-10-19T15:54:52.068412Z",
       "decision": "BLOCKED",
       "balance_before": "1000000.00",
       "balance_after": "1000000.00",
@@ -215,7 +215,7 @@
     },
     {
       "scenario_id": "E",
-      "executed_at": "2026-10-19T15:52:27.473718Z",
+      "executed_at": "2026-10-19T15:54:52.416814Z",
       "decision": "BLOCKED",
       "balance_before": "150000.00",
       "balance_after": "150000.00",
@@ -223,7 +223,7 @@
     },
     {
       "scenario_id": "F",
-      "executed_at": "2026-10-19T15:52:27.737534Z",
+      "executed_at": "2026-10-19T15:54:52.829657Z",
       "decision": "BLOCKED",
       "balance_before": "1000000.00",
       "balance_after": "1000000.00",
@@ -231,7 +231,7 @@
     },
     {
       "scenario_id": "G",
-      "executed_at": "2026-10-19T15:52:27.993592Z",
+      "executed_at": "2026-10-19T15:54:53.196309Z",
       "decision": "UNAUTHORIZED_APPROVAL_DENIED",
       "balance_before": "1000000.00",
       "balance_after": "1000000.00",
@@ -239,7 +239,7 @@
     },
     {
       "scenario_id": "H",
-      "executed_at": "2026-10-19T15:52:28.286303Z",
+      "executed_at": "2026-10-19T15:54:53.609592Z",
       "decision": "SETTLED",
       "balance_before": "1000000.00",
       "balance_after": "930000.00",
@@ -250,8 +250,8 @@
     "valid": true,
     "checked_events": 509,
     "failed_event_id": null,
-    "head_hash": "4ede7fa5ef540e652c35c67af86bac8612041fd673e2e3cf5b75e895ac8ba50e",
+    "head_hash": "338cef4c45c2f7cbaf6719a65508b710cec3588ec6eafc791c2f6452191a8544",
     "limitation": "Local hash chain; an unrestricted database administrator can rewrite the complete chain."
   },
-  "runtime_database": "data\\evidence-9c0d093531\\buildtrust.db"
+  "runtime_database": "data\\evidence-b8f3f39acb\\buildtrust.db"
 }

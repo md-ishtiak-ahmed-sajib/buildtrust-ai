@@ -1,20 +1,186 @@
-INFO:     Started server process [19176]
+INFO:     Started server process [18604]
 INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
-INFO:     127.0.0.1:9372 - "GET /api/v1/health HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "2ee94e4d627b4bcb934c76acc6b2dc0b", "method": "GET", "path": "/api/v1/health", "status": 200, "duration_ms": 15, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "497b9eb45d6841659cab4629e1081092", "method": "POST", "path": "/api/v1/auth/login", "status": 200, "duration_ms": 63, "body_bytes": 68}
-INFO:     127.0.0.1:9372 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "a627de0e26b54631b46cc69b4735f90a", "method": "POST", "path": "/api/v1/auth/login", "status": 200, "duration_ms": 62, "body_bytes": 70}
-INFO:     127.0.0.1:9372 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "9ab61ad68f4444ccaaddb525923143d0", "method": "POST", "path": "/api/v1/auth/login", "status": 200, "duration_ms": 63, "body_bytes": 71}
-INFO:     127.0.0.1:9372 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "7867e215545349a0a2c8895e30c6e5ad", "method": "POST", "path": "/api/v1/auth/login", "status": 200, "duration_ms": 62, "body_bytes": 70}
+INFO:     127.0.0.1:11883 - "GET /api/v1/health HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "f84314df8a3d4f1f884a158380fe55c1", "method": "GET", "path": "/api/v1/health", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "7575091287bc40f8ba68ba8747c34a4a", "method": "POST", "path": "/api/v1/auth/login", "status": 200, "duration_ms": 63, "body_bytes": 68}
+INFO:     127.0.0.1:11883 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "9526f9aafd3f480e9fecc8819f98d466", "method": "POST", "path": "/api/v1/auth/login", "status": 200, "duration_ms": 62, "body_bytes": 70}
+INFO:     127.0.0.1:11883 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "132595af467d4f96b67ffe061c01aed9", "method": "POST", "path": "/api/v1/auth/login", "status": 200, "duration_ms": 47, "body_bytes": 71}
+INFO:     127.0.0.1:11883 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "90b662529a4045e7a32343965450b73c", "method": "POST", "path": "/api/v1/auth/login", "status": 200, "duration_ms": 63, "body_bytes": 70}
 {"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
 {"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 16}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+INFO:     127.0.0.1:11883 - "POST /api/v1/demo/reset HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "07466d3ec64c4dc0b88e0709ee237f88", "method": "POST", "path": "/api/v1/demo/reset", "status": 200, "duration_ms": 218, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/invoices?project_id=3 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "2bc015ad8d2540f9ba5a3d5a1cfa078c", "method": "GET", "path": "/api/v1/invoices", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/projects/3 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "cd1ffe1ee0244eb48403a9e4ac3e4d0b", "method": "GET", "path": "/api/v1/projects/3", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "678a929581b24fd5b21d60ae14fb44f2", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "POST /api/v1/agent/analyze HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:11883 - "GET /api/v1/agent/workflows/1 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "acdbc30ad5d845b69b07a79ea78fecc8", "method": "GET", "path": "/api/v1/agent/workflows/1", "status": 200, "duration_ms": 16, "body_bytes": 0}
+{"event": "job_finished", "kind": "workflow", "entity_id": 1, "attempt": 1, "status": "BLOCKED", "duration_ms": 42}
+{"event": "http_request", "request_id": "f9fc45af54514a559fd96a184762958c", "method": "POST", "path": "/api/v1/agent/analyze", "status": 202, "duration_ms": 47, "body_bytes": 16}
+INFO:     127.0.0.1:11883 - "GET /api/v1/agent/workflows/1 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "d0f3c43680564826ad3882ddc6d05005", "method": "GET", "path": "/api/v1/agent/workflows/1", "status": 200, "duration_ms": 16, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/projects/3 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "d4452be3996d40e690dbe0bd978bae65", "method": "GET", "path": "/api/v1/projects/3", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/audit/events?project_id=3&limit=1000 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "76e876c022ad40fb838ba99f6cb7221f", "method": "GET", "path": "/api/v1/audit/events", "status": 200, "duration_ms": 16, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "d91bc947bd0948118d2876fafc78974b", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/documents/14/extraction HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "2f90a7ca3c114c47952d7ec488bb03f1", "method": "GET", "path": "/api/v1/documents/14/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/documents/15/extraction HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "11fd80e0f3eb4f51bf96ed7fe6160f9e", "method": "GET", "path": "/api/v1/documents/15/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/documents/17/extraction HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "17a00a9ff73347f49a487908667ca174", "method": "GET", "path": "/api/v1/documents/17/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/documents/19/extraction HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "1049479f32ce4994ac280844371b0728", "method": "GET", "path": "/api/v1/documents/19/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+INFO:     127.0.0.1:11883 - "POST /api/v1/demo/reset HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "46448e7923164c36baaee7d7c9295497", "method": "POST", "path": "/api/v1/demo/reset", "status": 200, "duration_ms": 110, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/invoices?project_id=5 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "e50d2a18b79840ca94e2da59dcd3897a", "method": "GET", "path": "/api/v1/invoices", "status": 200, "duration_ms": 15, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/projects/5 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "5a74fcd0d8b64b4f8b5d645962099a22", "method": "GET", "path": "/api/v1/projects/5", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "484ae11be2d74a258718c14d5de79e2c", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "POST /api/v1/agent/analyze HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:11883 - "GET /api/v1/agent/workflows/2 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "3894ddc99cfd42c0b5e4881b6f98bc0e", "method": "GET", "path": "/api/v1/agent/workflows/2", "status": 200, "duration_ms": 0, "body_bytes": 0}
+{"event": "job_finished", "kind": "workflow", "entity_id": 2, "attempt": 1, "status": "AWAITING_APPROVAL", "duration_ms": 45}
+{"event": "http_request", "request_id": "9c14f6d9b678402cbca9d665fd55da8b", "method": "POST", "path": "/api/v1/agent/analyze", "status": 202, "duration_ms": 47, "body_bytes": 17}
+INFO:     127.0.0.1:11883 - "GET /api/v1/agent/workflows/2 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "f8e46dfaff7f48aabcf43d0318121267", "method": "GET", "path": "/api/v1/agent/workflows/2", "status": 200, "duration_ms": 15, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "POST /api/v1/payments/1/approve HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "b9bcaa49f609443b8944e164f6980603", "method": "POST", "path": "/api/v1/payments/1/approve", "status": 200, "duration_ms": 16, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "POST /api/v1/payments/1/execute HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "54ad20e1d9f34f4cabf0e927f88502ec", "method": "POST", "path": "/api/v1/payments/1/execute", "status": 200, "duration_ms": 15, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/projects/5 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "dd7d690a6e4646eeaea6d4e391162b2c", "method": "GET", "path": "/api/v1/projects/5", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/audit/events?project_id=5&limit=1000 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "7f3ff2b1c0074b4fb1e6088cfb6b54ae", "method": "GET", "path": "/api/v1/audit/events", "status": 200, "duration_ms": 16, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "2ed7bce107f44372967fb82b8cc99c37", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/documents/27/extraction HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "f5762b932cd94724839a125a97050a64", "method": "GET", "path": "/api/v1/documents/27/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/documents/29/extraction HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "54f10e71204e4ce4967c86968cb91660", "method": "GET", "path": "/api/v1/documents/29/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/documents/31/extraction HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "c2cc99f233c24525841a71adc8ce87c2", "method": "GET", "path": "/api/v1/documents/31/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/documents/33/extraction HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "d6c5735b3dbb4edeb65fad9a6a4f1a80", "method": "GET", "path": "/api/v1/documents/33/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+INFO:     127.0.0.1:11883 - "POST /api/v1/demo/reset HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "23c61f4c7189408896de0e7b83d8c136", "method": "POST", "path": "/api/v1/demo/reset", "status": 200, "duration_ms": 110, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/invoices?project_id=7 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "db212c082fa54b43bdba973ddc8a27eb", "method": "GET", "path": "/api/v1/invoices", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/projects/7 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "6f85e43a40054cb5ac26633e9f6d1c07", "method": "GET", "path": "/api/v1/projects/7", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "770f9b0707e048eab4bb610057c29945", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 0, "body_bytes": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+INFO:     127.0.0.1:11883 - "POST /api/v1/documents/upload HTTP/1.1" 201 Created
+{"event": "http_request", "request_id": "e9718070016b4eb883aa3306d34c6571", "method": "POST", "path": "/api/v1/documents/upload", "status": 201, "duration_ms": 15, "body_bytes": 848}
+INFO:     127.0.0.1:11883 - "GET /api/v1/invoices?project_id=7 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "26b521ba5812431eb8e5faeb35b3be67", "method": "GET", "path": "/api/v1/invoices", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/projects/7 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "5c543eb360ef48e7b1afc0c9481a8266", "method": "GET", "path": "/api/v1/projects/7", "status": 200, "duration_ms": 16, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/audit/events?project_id=7&limit=1000 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "80d2dcac3de74ed7b9faddc1328e48fc", "method": "GET", "path": "/api/v1/audit/events", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "0d712ba6398b47c1a88dd866a923d299", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/documents/46/extraction HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "da21d565be0a47428b61f8c5720909ce", "method": "GET", "path": "/api/v1/documents/46/extraction", "status": 200, "duration_ms": 16, "body_bytes": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+INFO:     127.0.0.1:11883 - "POST /api/v1/demo/reset HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "6e620a9feccd476d9da375f0bd9f28d4", "method": "POST", "path": "/api/v1/demo/reset", "status": 200, "duration_ms": 78, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/invoices?project_id=9 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "9026b18c487f4b94a8f2f3f0349d0c21", "method": "GET", "path": "/api/v1/invoices", "status": 200, "duration_ms": 15, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/projects/9 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "2d73636a01324e338678216e4800203a", "method": "GET", "path": "/api/v1/projects/9", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "7614b6c997b3425a944757c174d1e949", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "POST /api/v1/agent/analyze HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:11883 - "GET /api/v1/agent/workflows/3 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "1983e94e0d2f4898bb807f0ee249a0bf", "method": "GET", "path": "/api/v1/agent/workflows/3", "status": 200, "duration_ms": 0, "body_bytes": 0}
+{"event": "job_finished", "kind": "workflow", "entity_id": 3, "attempt": 1, "status": "BLOCKED", "duration_ms": 35}
+{"event": "http_request", "request_id": "bc446b4eb19e46b281302ef086b1b618", "method": "POST", "path": "/api/v1/agent/analyze", "status": 202, "duration_ms": 47, "body_bytes": 17}
+INFO:     127.0.0.1:11883 - "GET /api/v1/agent/workflows/3 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "056f29cd14e94e78ae5811a56467dca5", "method": "GET", "path": "/api/v1/agent/workflows/3", "status": 200, "duration_ms": 16, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/projects/9 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "f246d640eae7478699fc66631bfbd6b4", "method": "GET", "path": "/api/v1/projects/9", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/audit/events?project_id=9&limit=1000 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "2ca24bd73e3444c6ad6572354a33879e", "method": "GET", "path": "/api/v1/audit/events", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "fa2aec1c8b2b44d9b431f48bc95dd622", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/documents/54/extraction HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "7c5f0b31dde34f59a4dcc81eeb9b883e", "method": "GET", "path": "/api/v1/documents/54/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/documents/56/extraction HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "a1305283d89d48b2969dafd75b5effe7", "method": "GET", "path": "/api/v1/documents/56/extraction", "status": 200, "duration_ms": 15, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/documents/58/extraction HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "884c73816d0e4615b8ef9d28942a80ed", "method": "GET", "path": "/api/v1/documents/58/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/documents/61/extraction HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "fc9e8cfe20ea4c4f927f3eaa684aadf5", "method": "GET", "path": "/api/v1/documents/61/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
 {"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
 {"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
 {"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 15}
@@ -23,37 +189,37 @@ INFO:     127.0.0.1:9372 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
 {"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
 {"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
 {"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+INFO:     127.0.0.1:11883 - "POST /api/v1/demo/reset HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "d4f4d35452c24ef89bbc3f61d00c76d0", "method": "POST", "path": "/api/v1/demo/reset", "status": 200, "duration_ms": 172, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/invoices?project_id=12 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "4998746da6514bb5839bfc09badf735b", "method": "GET", "path": "/api/v1/invoices", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/projects/12 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "eb968d82dac04e3292fb20eeed3b0a7b", "method": "GET", "path": "/api/v1/projects/12", "status": 200, "duration_ms": 16, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "7eb0e2a1bbfa482f9b7825107a768689", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "POST /api/v1/agent/analyze HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:11883 - "GET /api/v1/agent/workflows/4 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "514ff9c317634ae28f724c4e9d89f37d", "method": "GET", "path": "/api/v1/agent/workflows/4", "status": 200, "duration_ms": 0, "body_bytes": 0}
+{"event": "job_finished", "kind": "workflow", "entity_id": 4, "attempt": 1, "status": "BLOCKED", "duration_ms": 69}
+{"event": "http_request", "request_id": "334d87e107fa4f49a21c0e2bafea7b91", "method": "POST", "path": "/api/v1/agent/analyze", "status": 202, "duration_ms": 78, "body_bytes": 17}
+INFO:     127.0.0.1:11883 - "GET /api/v1/agent/workflows/4 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "d26c26963d534b05bfc035b8174a4e70", "method": "GET", "path": "/api/v1/agent/workflows/4", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/projects/12 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "33e8b163639e4595989ac230afe4ec7f", "method": "GET", "path": "/api/v1/projects/12", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/audit/events?project_id=12&limit=1000 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "4a65dd74f8d440a9960e34a909247119", "method": "GET", "path": "/api/v1/audit/events", "status": 200, "duration_ms": 15, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "c5071ed28d5644a193a4b05df9360a2f", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 16, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/documents/76/extraction HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "d8ce2d0a860d4425ab0f8fa33384683e", "method": "GET", "path": "/api/v1/documents/76/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/documents/77/extraction HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "eb3f12cfba084d5489b931336d9e2bb2", "method": "GET", "path": "/api/v1/documents/77/extraction", "status": 200, "duration_ms": 16, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/documents/78/extraction HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "8b0eb59c180e4de88a66c0edec29fc66", "method": "GET", "path": "/api/v1/documents/78/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/documents/79/extraction HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "7a229593d0bf4ee9863a3c4ac45f37ef", "method": "GET", "path": "/api/v1/documents/79/extraction", "status": 200, "duration_ms": 15, "body_bytes": 0}
 {"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
 {"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-INFO:     127.0.0.1:9372 - "POST /api/v1/demo/reset HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "0e29c06e2bba4058bab614b9d92d57a5", "method": "POST", "path": "/api/v1/demo/reset", "status": 200, "duration_ms": 204, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/invoices?project_id=3 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "0f8389d9adb14848b0c805e707174f9f", "method": "GET", "path": "/api/v1/invoices", "status": 200, "duration_ms": 15, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/projects/3 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "02d65319bfc94d6981480ad19fc2d4e8", "method": "GET", "path": "/api/v1/projects/3", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "feec2866d9224387be2854374cf88da1", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "POST /api/v1/agent/analyze HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:9372 - "GET /api/v1/agent/workflows/1 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "e89b195ae7854aa194b202acde99d8e8", "method": "GET", "path": "/api/v1/agent/workflows/1", "status": 200, "duration_ms": 15, "body_bytes": 0}
-{"event": "job_finished", "kind": "workflow", "entity_id": 1, "attempt": 1, "status": "BLOCKED", "duration_ms": 40}
-{"event": "http_request", "request_id": "bb43ea67ed1746aa990b981f3bc10a9c", "method": "POST", "path": "/api/v1/agent/analyze", "status": 202, "duration_ms": 63, "body_bytes": 16}
-INFO:     127.0.0.1:9372 - "GET /api/v1/agent/workflows/1 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "6ee100a76efa467794ddf4e3042c1e43", "method": "GET", "path": "/api/v1/agent/workflows/1", "status": 200, "duration_ms": 16, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/projects/3 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "684aa6039c504fb5a64f3b3c33c4dc4c", "method": "GET", "path": "/api/v1/projects/3", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/audit/events?project_id=3&limit=1000 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "9192e8aed6944ce2a90103b9adba78c9", "method": "GET", "path": "/api/v1/audit/events", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "e5f14d3856f94977bc7fe0648896661e", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/documents/14/extraction HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "7779f224599b44779ea10466e3f924f2", "method": "GET", "path": "/api/v1/documents/14/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/documents/15/extraction HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "7222e5e0b7e8454e927748e13b58f622", "method": "GET", "path": "/api/v1/documents/15/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/documents/17/extraction HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "9f901dc9f98749f2955538df61eef01c", "method": "GET", "path": "/api/v1/documents/17/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/documents/19/extraction HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "ef396da67c3f434c9218a3e495e49216", "method": "GET", "path": "/api/v1/documents/19/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
 {"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
 {"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
 {"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
@@ -65,296 +231,133 @@ INFO:     127.0.0.1:9372 - "GET /api/v1/documents/19/extraction HTTP/1.1" 200 OK
 {"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
 {"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
 {"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-INFO:     127.0.0.1:9372 - "POST /api/v1/demo/reset HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "526449a9f5e947faae0d1a118fd26b90", "method": "POST", "path": "/api/v1/demo/reset", "status": 200, "duration_ms": 110, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/invoices?project_id=5 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "3daae23842344a00b670801e908cda95", "method": "GET", "path": "/api/v1/invoices", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/projects/5 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "8e06169294c04d8b9c2d1fa2bb3f320c", "method": "GET", "path": "/api/v1/projects/5", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "7cc76ca29eaf40a2b7958e5fc4607e96", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "POST /api/v1/agent/analyze HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:9372 - "GET /api/v1/agent/workflows/2 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "d79c1084ec174e1dbc3d8d9f66079d4a", "method": "GET", "path": "/api/v1/agent/workflows/2", "status": 200, "duration_ms": 0, "body_bytes": 0}
-{"event": "job_finished", "kind": "workflow", "entity_id": 2, "attempt": 1, "status": "AWAITING_APPROVAL", "duration_ms": 61}
-{"event": "http_request", "request_id": "9a961003c9b84172985061144d304d06", "method": "POST", "path": "/api/v1/agent/analyze", "status": 202, "duration_ms": 63, "body_bytes": 17}
-INFO:     127.0.0.1:9372 - "GET /api/v1/agent/workflows/2 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "de1226646b39444781ff5eec6d277eef", "method": "GET", "path": "/api/v1/agent/workflows/2", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "POST /api/v1/payments/1/approve HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "adea65cc518043e0bce1e07328471ba3", "method": "POST", "path": "/api/v1/payments/1/approve", "status": 200, "duration_ms": 15, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "POST /api/v1/payments/1/execute HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "dacc53d7b6624348bdf494de43e0e0cd", "method": "POST", "path": "/api/v1/payments/1/execute", "status": 200, "duration_ms": 32, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/projects/5 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "421b2f714c2b48fabb83659d8c3ebf08", "method": "GET", "path": "/api/v1/projects/5", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/audit/events?project_id=5&limit=1000 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "c364002cc61e4ea6a3cc1862c1b4e3ce", "method": "GET", "path": "/api/v1/audit/events", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "ad5da1d436164dd09c137aece02a348c", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 15, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/documents/27/extraction HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "d160042caf0d41f690e88cb582a031f6", "method": "GET", "path": "/api/v1/documents/27/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/documents/29/extraction HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "9ac9295800794c5b85d8447ecaef59ee", "method": "GET", "path": "/api/v1/documents/29/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/documents/31/extraction HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "b056457464844624b7b688c1f2dbe17f", "method": "GET", "path": "/api/v1/documents/31/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/documents/33/extraction HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "3cd603d2b69a49dc867535613f88369a", "method": "GET", "path": "/api/v1/documents/33/extraction", "status": 200, "duration_ms": 16, "body_bytes": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-INFO:     127.0.0.1:9372 - "POST /api/v1/demo/reset HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "28634b649a3d4022918c039ce786c1a4", "method": "POST", "path": "/api/v1/demo/reset", "status": 200, "duration_ms": 94, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/invoices?project_id=7 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "90cf0c93ef994deaa8065153b088fb7c", "method": "GET", "path": "/api/v1/invoices", "status": 200, "duration_ms": 15, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/projects/7 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "eae38e1bf20946e8bd73b087836f5934", "method": "GET", "path": "/api/v1/projects/7", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "fbb0bf37743647f788caf762625cfeee", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 0, "body_bytes": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-INFO:     127.0.0.1:9372 - "POST /api/v1/documents/upload HTTP/1.1" 201 Created
-{"event": "http_request", "request_id": "a7d137f7fbb04348a66a93634b78c67f", "method": "POST", "path": "/api/v1/documents/upload", "status": 201, "duration_ms": 16, "body_bytes": 848}
-INFO:     127.0.0.1:9372 - "GET /api/v1/invoices?project_id=7 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "665922f0f5e7453aaec9966b8193e0cb", "method": "GET", "path": "/api/v1/invoices", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/projects/7 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "f81c3fcc028d4eabb5e852efe3e895e5", "method": "GET", "path": "/api/v1/projects/7", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/audit/events?project_id=7&limit=1000 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "72a8364ede3c4ca89ee083cf4b1647c2", "method": "GET", "path": "/api/v1/audit/events", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "0edc8007265643d992c9cfe2b4d35611", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 16, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/documents/46/extraction HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "0ef36fbf92d5496a8576e9885e286ae7", "method": "GET", "path": "/api/v1/documents/46/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 15}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-INFO:     127.0.0.1:9372 - "POST /api/v1/demo/reset HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "750b1709e45444eb992030f976f9f3cc", "method": "POST", "path": "/api/v1/demo/reset", "status": 200, "duration_ms": 109, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/invoices?project_id=9 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "242fe98fcbe94c8095cc1d904b1e6151", "method": "GET", "path": "/api/v1/invoices", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/projects/9 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "6a08ba3cc3f844958953bc40abcea75d", "method": "GET", "path": "/api/v1/projects/9", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "14f5b5c4ec7c48d3b12bde9fc1015b53", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "POST /api/v1/agent/analyze HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:9372 - "GET /api/v1/agent/workflows/3 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "169876e4ca384812b168f284f579b30a", "method": "GET", "path": "/api/v1/agent/workflows/3", "status": 200, "duration_ms": 0, "body_bytes": 0}
-{"event": "job_finished", "kind": "workflow", "entity_id": 3, "attempt": 1, "status": "BLOCKED", "duration_ms": 39}
-{"event": "http_request", "request_id": "cc28db6a35d34b859570959a40c9440d", "method": "POST", "path": "/api/v1/agent/analyze", "status": 202, "duration_ms": 62, "body_bytes": 17}
-INFO:     127.0.0.1:9372 - "GET /api/v1/agent/workflows/3 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "8b3892279a2e4ec3b6a440ce21ee4e59", "method": "GET", "path": "/api/v1/agent/workflows/3", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/projects/9 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "e25b4055eebd4790a72da22141b5d5c7", "method": "GET", "path": "/api/v1/projects/9", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/audit/events?project_id=9&limit=1000 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "22714ffd81e04000aefe4617333c2806", "method": "GET", "path": "/api/v1/audit/events", "status": 200, "duration_ms": 16, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "8d300023ac3a406eb1fe7704d04f70c1", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/documents/54/extraction HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "693bb359fa974967ac8fa768d8bf733c", "method": "GET", "path": "/api/v1/documents/54/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/documents/56/extraction HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "0e368e84ab1346ef8488840479cfd9ce", "method": "GET", "path": "/api/v1/documents/56/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/documents/58/extraction HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "78b248dabc154959876f7a07af7a4d7a", "method": "GET", "path": "/api/v1/documents/58/extraction", "status": 200, "duration_ms": 15, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/documents/61/extraction HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "cbf42558d0f3456ca83cf6ada501ef17", "method": "GET", "path": "/api/v1/documents/61/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 16}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-INFO:     127.0.0.1:9372 - "POST /api/v1/demo/reset HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "ee7fdfca182541b4a96c1d6a8aef7054", "method": "POST", "path": "/api/v1/demo/reset", "status": 200, "duration_ms": 94, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/invoices?project_id=12 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "48a3000988a6498ba1ef1b6859ff0524", "method": "GET", "path": "/api/v1/invoices", "status": 200, "duration_ms": 16, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/projects/12 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "8e93864ceb204f08a005df7d127d6969", "method": "GET", "path": "/api/v1/projects/12", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "6e63dd7398394229bf3ee44c9dfb9473", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "POST /api/v1/agent/analyze HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:9372 - "GET /api/v1/agent/workflows/4 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "2540dd7b953149969b9e389aaf0a9d75", "method": "GET", "path": "/api/v1/agent/workflows/4", "status": 200, "duration_ms": 0, "body_bytes": 0}
-{"event": "job_finished", "kind": "workflow", "entity_id": 4, "attempt": 1, "status": "BLOCKED", "duration_ms": 40}
-{"event": "http_request", "request_id": "9ecea64dc16646e4ba18b54ae15734b9", "method": "POST", "path": "/api/v1/agent/analyze", "status": 202, "duration_ms": 46, "body_bytes": 17}
-INFO:     127.0.0.1:9372 - "GET /api/v1/agent/workflows/4 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "023e1d6f0b5e480d9c1d726dd2ca2d4e", "method": "GET", "path": "/api/v1/agent/workflows/4", "status": 200, "duration_ms": 16, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/projects/12 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "d1f2c10c3717415581b7422ef602d14f", "method": "GET", "path": "/api/v1/projects/12", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/audit/events?project_id=12&limit=1000 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "98424373e2f049dd8d40dcc80bd99577", "method": "GET", "path": "/api/v1/audit/events", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "e36ba023a6ef4c848c4467682d72e0de", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 15, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/documents/76/extraction HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "89d61838d081404ea08959defedf7702", "method": "GET", "path": "/api/v1/documents/76/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/documents/77/extraction HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "9e1fe534272e4718945bf39b2d8b0507", "method": "GET", "path": "/api/v1/documents/77/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/documents/78/extraction HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "3e29ed9c44cb4648b0ff3ce910d62241", "method": "GET", "path": "/api/v1/documents/78/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/documents/79/extraction HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "861b0cbc6d73434789f0bc000975f6ce", "method": "GET", "path": "/api/v1/documents/79/extraction", "status": 200, "duration_ms": 16, "body_bytes": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 16}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-INFO:     127.0.0.1:9372 - "POST /api/v1/demo/reset HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "90b65721e160415f836a0fd31e9af895", "method": "POST", "path": "/api/v1/demo/reset", "status": 200, "duration_ms": 94, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/invoices?project_id=13 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "4f2be9d72793449f86bf26c52926e57e", "method": "GET", "path": "/api/v1/invoices", "status": 200, "duration_ms": 15, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/projects/13 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "fee1f03c9ab349aab7fa611228f22f3e", "method": "GET", "path": "/api/v1/projects/13", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "804834c988df4ceda6bb31eebdb97f08", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "POST /api/v1/agent/analyze HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:9372 - "GET /api/v1/agent/workflows/5 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "357407067ad74d1f8a383d8fd3c305df", "method": "GET", "path": "/api/v1/agent/workflows/5", "status": 200, "duration_ms": 0, "body_bytes": 0}
-{"event": "job_finished", "kind": "workflow", "entity_id": 5, "attempt": 1, "status": "BLOCKED", "duration_ms": 38}
-{"event": "http_request", "request_id": "1a25f2e36d46428eaa5413a1827c1688", "method": "POST", "path": "/api/v1/agent/analyze", "status": 202, "duration_ms": 47, "body_bytes": 17}
-INFO:     127.0.0.1:9372 - "GET /api/v1/agent/workflows/5 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "4cbe00dacfa84e14acad8beb12a7c93b", "method": "GET", "path": "/api/v1/agent/workflows/5", "status": 200, "duration_ms": 15, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/projects/13 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "5a101b3b588744ae9a75ca67955ae5be", "method": "GET", "path": "/api/v1/projects/13", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/audit/events?project_id=13&limit=1000 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "7b22f82d73fa443ea5bf45fc2e75bf01", "method": "GET", "path": "/api/v1/audit/events", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "9ca715becfe54d92ab6dee03b102f90e", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/documents/80/extraction HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "479dce1f6f8146d38158fc3fbddf913b", "method": "GET", "path": "/api/v1/documents/80/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/documents/82/extraction HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "fe70e292283147c3ad7f906932132571", "method": "GET", "path": "/api/v1/documents/82/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/documents/84/extraction HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "d603c65cf6864f5d9e02c2f67df30f71", "method": "GET", "path": "/api/v1/documents/84/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/documents/88/extraction HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "d71a83e8f8964c84ae05e5226037ffc7", "method": "GET", "path": "/api/v1/documents/88/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-INFO:     127.0.0.1:9372 - "POST /api/v1/demo/reset HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "2f8a4b19858f42909faaa221c12bcadb", "method": "POST", "path": "/api/v1/demo/reset", "status": 200, "duration_ms": 94, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/invoices?project_id=15 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "6af9a0c3e3984f9ab60539b90e64540b", "method": "GET", "path": "/api/v1/invoices", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/projects/15 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "e80d2dd7e4e049fda37028d98b24fbf9", "method": "GET", "path": "/api/v1/projects/15", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "8cc6bb2add5443598dee440e916100a5", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "POST /api/v1/agent/analyze HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:9372 - "GET /api/v1/agent/workflows/6 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "88f66b43cb3641d682db7400b86daf12", "method": "GET", "path": "/api/v1/agent/workflows/6", "status": 200, "duration_ms": 31, "body_bytes": 0}
-{"event": "job_finished", "kind": "workflow", "entity_id": 6, "attempt": 1, "status": "AWAITING_APPROVAL", "duration_ms": 54}
-{"event": "http_request", "request_id": "31dbb51f3d124cf98e2028e1d0e0210f", "method": "POST", "path": "/api/v1/agent/analyze", "status": 202, "duration_ms": 78, "body_bytes": 17}
-INFO:     127.0.0.1:9372 - "GET /api/v1/agent/workflows/6 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "3e7bdbd3a8004b8d908d716e3accb5c6", "method": "GET", "path": "/api/v1/agent/workflows/6", "status": 200, "duration_ms": 16, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "POST /api/v1/payments/2/approve HTTP/1.1" 403 Forbidden
-{"event": "http_request", "request_id": "1a0b389868fb4f4688a1af45193171f4", "method": "POST", "path": "/api/v1/payments/2/approve", "status": 403, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/payments?project_id=15 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "1655071603d0482f879a4498bfcc9a2d", "method": "GET", "path": "/api/v1/payments", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/projects/15 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "bbecfac910cc4059b51e3325bd69d836", "method": "GET", "path": "/api/v1/projects/15", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/audit/events?project_id=15&limit=1000 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "ef436b3d3758493eb9026e254dfa5de5", "method": "GET", "path": "/api/v1/audit/events", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "9c677bfc761c408b8eacc9f812647bf0", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 16, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/documents/93/extraction HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "a822d222cae2438ebdcdbfc2436df9cd", "method": "GET", "path": "/api/v1/documents/93/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/documents/95/extraction HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "6f286d7eca92469f98131adc393bde65", "method": "GET", "path": "/api/v1/documents/95/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/documents/97/extraction HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "9369e244a7324622979b5177defbf9f8", "method": "GET", "path": "/api/v1/documents/97/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/documents/99/extraction HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "05f52060a80a4fd0aa514119960c584a", "method": "GET", "path": "/api/v1/documents/99/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-INFO:     127.0.0.1:9372 - "POST /api/v1/demo/reset HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "8faae72c4c6748309842f9c5b8107569", "method": "POST", "path": "/api/v1/demo/reset", "status": 200, "duration_ms": 109, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/invoices?project_id=17 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "f24ae119e8524c8fa34006531a99434e", "method": "GET", "path": "/api/v1/invoices", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/projects/17 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "05ab121f540043f391c5b69dc036d1fa", "method": "GET", "path": "/api/v1/projects/17", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "c4f916f69d824bccb04941aba4265cc9", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "POST /api/v1/agent/analyze HTTP/1.1" 202 Accepted
-INFO:     127.0.0.1:9372 - "GET /api/v1/agent/workflows/7 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "8807c7d25b33414eae4cb07ba67c8ae0", "method": "GET", "path": "/api/v1/agent/workflows/7", "status": 200, "duration_ms": 0, "body_bytes": 0}
-{"event": "job_finished", "kind": "workflow", "entity_id": 7, "attempt": 1, "status": "AWAITING_APPROVAL", "duration_ms": 46}
-{"event": "http_request", "request_id": "55c2ab155a954c03a7a7dfa9cee05c9b", "method": "POST", "path": "/api/v1/agent/analyze", "status": 202, "duration_ms": 47, "body_bytes": 17}
-INFO:     127.0.0.1:9372 - "GET /api/v1/agent/workflows/7 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "67d68e6426b641fbb86ce22abc269235", "method": "GET", "path": "/api/v1/agent/workflows/7", "status": 200, "duration_ms": 16, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "POST /api/v1/payments/3/approve HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "8254962b3cf6471684c67ed0f3b7541f", "method": "POST", "path": "/api/v1/payments/3/approve", "status": 200, "duration_ms": 16, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "POST /api/v1/payments/3/execute HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "9cc2013e78774d9483395c21b2b37534", "method": "POST", "path": "/api/v1/payments/3/execute", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "POST /api/v1/payments/3/execute HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "8a20be10d54545969b90e37efc81645c", "method": "POST", "path": "/api/v1/payments/3/execute", "status": 200, "duration_ms": 15, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/payments?project_id=17 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "3e8044bbf7ee43a7966a74c9bc8c28f3", "method": "GET", "path": "/api/v1/payments", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/projects/17 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "40bff51b32c74c9ea782212efc4e481a", "method": "GET", "path": "/api/v1/projects/17", "status": 200, "duration_ms": 16, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/audit/events?project_id=17&limit=1000 HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "5c797242e84b474cbcf67d66166a2ef9", "method": "GET", "path": "/api/v1/audit/events", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "975206f2c8854e6ab63995d7ffc694ec", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 16, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/documents/106/extraction HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "6c00667f235b4b489c48c3c48fd7ce34", "method": "GET", "path": "/api/v1/documents/106/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/documents/108/extraction HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "125df6ec16204d389d497712bea8ecc8", "method": "GET", "path": "/api/v1/documents/108/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/documents/110/extraction HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "fba0aa0622e5462b8c8691f5c4341f0e", "method": "GET", "path": "/api/v1/documents/110/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/documents/112/extraction HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "e5ebfd40f2b840da8f02c29f7b063262", "method": "GET", "path": "/api/v1/documents/112/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
-INFO:     127.0.0.1:9372 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
-{"event": "http_request", "request_id": "b305377b6baf4c5ab0ce6bf668d02ed4", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 31, "body_bytes": 0}
+{"event": "sqlite_lock_wait", "duration_ms": 125, "write": true}
+INFO:     127.0.0.1:11883 - "POST /api/v1/demo/reset HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "53f1f00c7fce4c5785265c455f37e06d", "method": "POST", "path": "/api/v1/demo/reset", "status": 200, "duration_ms": 172, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/invoices?project_id=13 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "fe5d1b7b4175470ca3676ea92874071d", "method": "GET", "path": "/api/v1/invoices", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/projects/13 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "62e9fbf12a734fb5a4771ba96d7dbb9f", "method": "GET", "path": "/api/v1/projects/13", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "7b872ee0a0354c03bce1658d4fa15e46", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 31, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "POST /api/v1/agent/analyze HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:11883 - "GET /api/v1/agent/workflows/5 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "48c8e82aa01c4000927dac3ff8b0e274", "method": "GET", "path": "/api/v1/agent/workflows/5", "status": 200, "duration_ms": 0, "body_bytes": 0}
+{"event": "job_finished", "kind": "workflow", "entity_id": 5, "attempt": 1, "status": "BLOCKED", "duration_ms": 66}
+{"event": "http_request", "request_id": "edea56e6918e46d0ae65d30194459f7d", "method": "POST", "path": "/api/v1/agent/analyze", "status": 202, "duration_ms": 62, "body_bytes": 17}
+INFO:     127.0.0.1:11883 - "GET /api/v1/agent/workflows/5 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "485213ddcf7548fab00f7653a657332d", "method": "GET", "path": "/api/v1/agent/workflows/5", "status": 200, "duration_ms": 16, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/projects/13 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "fc7f983542b34fc5bd503d0bedbeb559", "method": "GET", "path": "/api/v1/projects/13", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/audit/events?project_id=13&limit=1000 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "9c09717979844040bf64c35774f08e44", "method": "GET", "path": "/api/v1/audit/events", "status": 200, "duration_ms": 16, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "32ff158d600d4767b5c0c6d4b6a12491", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 15, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/documents/80/extraction HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "87da5a40650746c18c04806c9b3f39e3", "method": "GET", "path": "/api/v1/documents/80/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/documents/82/extraction HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "75beda68f4b843b9b0cac9550ffc8b07", "method": "GET", "path": "/api/v1/documents/82/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/documents/84/extraction HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "e0b7224ce9f845a286f10815a4f59aaa", "method": "GET", "path": "/api/v1/documents/84/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/documents/88/extraction HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "8e74cc90c1e347158e5b64c49c2735aa", "method": "GET", "path": "/api/v1/documents/88/extraction", "status": 200, "duration_ms": 16, "body_bytes": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+INFO:     127.0.0.1:11883 - "POST /api/v1/demo/reset HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "aead01ec62574f47b278ae35073bd16a", "method": "POST", "path": "/api/v1/demo/reset", "status": 200, "duration_ms": 156, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/invoices?project_id=15 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "87d2e40006a242b79f3b7f3195e76a5d", "method": "GET", "path": "/api/v1/invoices", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/projects/15 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "359be2ba42314e9c8102534229016e19", "method": "GET", "path": "/api/v1/projects/15", "status": 200, "duration_ms": 16, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "5ccfbdc451ab447a8bbc105ff0f0a198", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 15, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "POST /api/v1/agent/analyze HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:11883 - "GET /api/v1/agent/workflows/6 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "e0fc3a95e9754a48ae3a34792d0a6518", "method": "GET", "path": "/api/v1/agent/workflows/6", "status": 200, "duration_ms": 16, "body_bytes": 0}
+{"event": "job_finished", "kind": "workflow", "entity_id": 6, "attempt": 1, "status": "AWAITING_APPROVAL", "duration_ms": 73}
+{"event": "http_request", "request_id": "be6a0780575d4a3ea3146ce52c088eb3", "method": "POST", "path": "/api/v1/agent/analyze", "status": 202, "duration_ms": 94, "body_bytes": 17}
+INFO:     127.0.0.1:11883 - "GET /api/v1/agent/workflows/6 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "82301c4e9a0944a0a99b0c325787f80a", "method": "GET", "path": "/api/v1/agent/workflows/6", "status": 200, "duration_ms": 16, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "POST /api/v1/payments/2/approve HTTP/1.1" 403 Forbidden
+{"event": "http_request", "request_id": "2fdebe0ced4242ae9ccd309ab622574f", "method": "POST", "path": "/api/v1/payments/2/approve", "status": 403, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/payments?project_id=15 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "4e70953b59a149419102a7d6c187c20f", "method": "GET", "path": "/api/v1/payments", "status": 200, "duration_ms": 16, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/projects/15 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "2b46af2d467f4a1d89a1a074172a5037", "method": "GET", "path": "/api/v1/projects/15", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/audit/events?project_id=15&limit=1000 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "b6bfec6db8e849a0b5dfd0f6cd9dead8", "method": "GET", "path": "/api/v1/audit/events", "status": 200, "duration_ms": 15, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "54de41b8e51a4828adf9cbfa93f81a8c", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 16, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/documents/93/extraction HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "1be744cd7edb4e5fb9f1c180882f4b1c", "method": "GET", "path": "/api/v1/documents/93/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/documents/95/extraction HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "4eacde2b83974407ab2738f1ba4baa6c", "method": "GET", "path": "/api/v1/documents/95/extraction", "status": 200, "duration_ms": 15, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/documents/97/extraction HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "ff79dddc9cda4aa4b8866e8db49d58a1", "method": "GET", "path": "/api/v1/documents/97/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/documents/99/extraction HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "5c555b44cb314d59aef9a0c2244ceb16", "method": "GET", "path": "/api/v1/documents/99/extraction", "status": 200, "duration_ms": 16, "body_bytes": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+INFO:     127.0.0.1:11883 - "POST /api/v1/demo/reset HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "211b1d7b1eef4f87946d54dfaec1a41d", "method": "POST", "path": "/api/v1/demo/reset", "status": 200, "duration_ms": 172, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/invoices?project_id=17 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "f617d8cb8cac46bba0e28577ff4d2e06", "method": "GET", "path": "/api/v1/invoices", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/projects/17 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "7c88ba84b56f459aad44c1678f1aa18f", "method": "GET", "path": "/api/v1/projects/17", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "0c3af00628504f0094db0dd932f68019", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 31, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "POST /api/v1/agent/analyze HTTP/1.1" 202 Accepted
+INFO:     127.0.0.1:11883 - "GET /api/v1/agent/workflows/7 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "863437d2103c4bbfabc22a00124977aa", "method": "GET", "path": "/api/v1/agent/workflows/7", "status": 200, "duration_ms": 15, "body_bytes": 0}
+{"event": "job_finished", "kind": "workflow", "entity_id": 7, "attempt": 1, "status": "AWAITING_APPROVAL", "duration_ms": 116}
+INFO:     127.0.0.1:11883 - "GET /api/v1/agent/workflows/7 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "ee51628436f4407e8f431b6fbaaaefd0", "method": "GET", "path": "/api/v1/agent/workflows/7", "status": 200, "duration_ms": 0, "body_bytes": 0}
+{"event": "http_request", "request_id": "61ccdf47ea974bbaa299c3f51ac0ed08", "method": "POST", "path": "/api/v1/agent/analyze", "status": 202, "duration_ms": 125, "body_bytes": 17}
+INFO:     127.0.0.1:11883 - "GET /api/v1/agent/workflows/7 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "eb97c1187aeb45028fb2a4713ef72a63", "method": "GET", "path": "/api/v1/agent/workflows/7", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "POST /api/v1/payments/3/approve HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "8fc12acd43f5443aa2f08a422d8b8259", "method": "POST", "path": "/api/v1/payments/3/approve", "status": 200, "duration_ms": 31, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "POST /api/v1/payments/3/execute HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "40962602d7ac40c5bbbaefac5b98896f", "method": "POST", "path": "/api/v1/payments/3/execute", "status": 200, "duration_ms": 31, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "POST /api/v1/payments/3/execute HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "422156ca0ff84a1b9b4b29984ff7acd7", "method": "POST", "path": "/api/v1/payments/3/execute", "status": 200, "duration_ms": 16, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/payments?project_id=17 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "e17291ae2f734f4cb78ced620215162b", "method": "GET", "path": "/api/v1/payments", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/projects/17 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "5b55e09007f04d1ca6d0d816379ebe30", "method": "GET", "path": "/api/v1/projects/17", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/audit/events?project_id=17&limit=1000 HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "44b1cbbf21f349a7b76f0df3b1e6bc5d", "method": "GET", "path": "/api/v1/audit/events", "status": 200, "duration_ms": 15, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "49bad082385942fa8e405dab144743e7", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 16, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/documents/106/extraction HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "954f410c34304e44aa2a460660075c6c", "method": "GET", "path": "/api/v1/documents/106/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/documents/108/extraction HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "e00122dcbff44596a78cd49b83f4e244", "method": "GET", "path": "/api/v1/documents/108/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/documents/110/extraction HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "2253fc270dbb400798cc4209d38cd206", "method": "GET", "path": "/api/v1/documents/110/extraction", "status": 200, "duration_ms": 0, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/documents/112/extraction HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "5bba610841464275879a1e3888503156", "method": "GET", "path": "/api/v1/documents/112/extraction", "status": 200, "duration_ms": 16, "body_bytes": 0}
+INFO:     127.0.0.1:11883 - "GET /api/v1/audit/verify HTTP/1.1" 200 OK
+{"event": "http_request", "request_id": "812053aa48034a36a8596521cdc72212", "method": "GET", "path": "/api/v1/audit/verify", "status": 200, "duration_ms": 16, "body_bytes": 0}

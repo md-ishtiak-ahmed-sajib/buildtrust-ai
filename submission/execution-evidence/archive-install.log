@@ -1,5 +1,5 @@
 
-added 143 packages, and audited 144 packages in 5s
+added 143 packages, and audited 144 packages in 7s
 
 26 packages are looking for funding
   run `npm fund` for details
@@ -45,8 +45,8 @@ dist/assets/index-BNMtZzJu.js              374.63 kB │ gzip: 118.02 kB
 dist/assets/CashChart-DBK1HXfP.js          385.90 kB │ gzip: 110.29 kB
 
 ✓ built in 2.96s
-{'project_id': 1, 'liquidity_project_id': 2, 'run_id': 'c7a7fae1c3dd', 'fictional': True}
-Local credentials: D:\Project\buildtrust-ai\data\clean-checkout-f2b48a49\data\demo-credentials.json
+{'project_id': 1, 'liquidity_project_id': 2, 'run_id': 'dd7091db5ab8', 'fictional': True}
+Local credentials: D:\Project\buildtrust-ai\data\clean-checkout-56f15bb6\data\demo-credentials.json
 
 Demo accounts (local sandbox only):
 {
@@ -60,11 +60,11 @@ Ready. Run: .\scripts\run_demo.ps1
 warning: `VIRTUAL_ENV=D:\Project\buildtrust-ai\backend\.venv` does not match the project environment path `backend\.venv` and will be ignored; use `--active` to target the active environment instead
 Using CPython 3.12.10 interpreter at: C:\Users\ishti\AppData\Local\Programs\Python\Python312\python.exe
 Creating virtual environment at: backend\.venv
-Resolved 48 packages in 0.81ms
+Resolved 48 packages in 0.61ms
 warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
          If the cache and target directories are on different filesystems, hardlinking may not be supported.
          If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
-Installed 47 packages in 956ms
+Installed 47 packages in 1.14s
  + alembic==1.20.0
  + annotated-doc==0.0.5
  + annotated-types==0.8.0

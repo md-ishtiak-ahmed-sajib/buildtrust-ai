@@ -10,7 +10,7 @@
 ## Environments and independent assessment
 
 - [ ] **Owner: local environment administrator.** Start a working Docker engine and provide a separate authorized native Linux environment, then run platform checks. Docker CLI is installed, but its engine pipe is unavailable; WSL currently contains only Docker's managed distribution, which must remain untouched.
-- [ ] **Owner: user / GitHub repository administrator.** Complete and retain the hosted Windows/Linux CI run after publication. The first run is queued at https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39281396965; runner results are not yet available. A committed workflow file is not evidence of a hosted run.
+- [ ] **Owner: user / GitHub repository administrator.** Complete and retain the hosted Windows/Linux CI run after publication. The current source run is queued at https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39281590860; runner results are not yet available. The superseded initial run was cancelled. A committed workflow file is not evidence of a hosted run.
 - [ ] **Owner: accessibility reviewer / user.** Perform a genuine screen-reader and first-user assessment with suitable assistive technology and representative users. Automated scans, keyboard/modal checks and narrow-screen workflows cover a narrower verified scope.
 - [ ] **Owner: independent security reviewer.** Complete the deployment-specific penetration/security assessment if this sandbox is to progress toward deployment. Dependency scans, functional tests and local resource bounds are not an independent security attestation.
 

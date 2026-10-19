@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "setup_command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/setup.ps1",
+  "source_copy": "data\\clean-checkout-09928378",
+  "checks": [
+    "locked dependency setup",
+    "frontend production build",
+    "fresh migrations",
+    "generated credentials",
+    "static frontend served",
+    "steel discrepancy",
+    "independent approval",
+    "70000.00 settlement",
+    "930000.00 closing cash",
+    "audit integrity",
+    "upgrade material search and immutable selection",
+    "1480000.00 estimate and 520000.00 forecast"
+  ],
+  "simulation": true,
+  "archive_sha256": "bc863295cfe97a2c8eeeaea7df2d8e373c8fec42b645871b594e3ba9f8d8a398"
+}

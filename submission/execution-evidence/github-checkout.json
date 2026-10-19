@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "repository": "https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai",
+  "commit": "869c4e470d61430e46885d150e24dd6a127c9e92",
+  "critical_source_files_verified": 175,
+  "source_fingerprint": "5ca5e53a271d232a4239279afc0810f179cf9050b41fd678ef2dad6ad525ea24",
+  "private_runtime_excluded": true
+}

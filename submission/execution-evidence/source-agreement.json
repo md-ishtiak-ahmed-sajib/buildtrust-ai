@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "source_fingerprint": "5ca5e53a271d232a4239279afc0810f179cf9050b41fd678ef2dad6ad525ea24",
+  "video_application_fingerprint": "a15e085c6302a863a049b01c45088ba5953f26038aa12283f0135a1c89caf479",
+  "archive_sha256": "bc863295cfe97a2c8eeeaea7df2d8e373c8fec42b645871b594e3ba9f8d8a398",
+  "archive_member_checksums_valid": true,
+  "private_runtime_excluded": true,
+  "documentation_links_valid": true,
+  "final_archive_install_passed": true
+}

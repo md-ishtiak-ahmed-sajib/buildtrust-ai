@@ -16,6 +16,7 @@ The locally tested application is available at http://127.0.0.1:8000/. Settlemen
 | Private state preservation | Credentials, signing secret, legacy balances, approvals, settlements and receipts unchanged during migration | local-upgrade-preservation.json |
 | Source archive installation | Passed: unpacked archive checksums, locked setup, build, independent payment/estimating/audit smoke checks | archive-install.json; archive-install.log |
 | Fresh Windows setup | Passed on a new source copy, including payment, estimate and audit smoke tests | clean-install.json; clean-install logs |
+| GitHub source checkout | Fresh clone matches all 175 evidence-bound source files; no private runtime present | github-checkout.json; github-publication.json |
 | Contract drift | OpenAPI, document schema and generated frontend contracts agree | contract-drift.json |
 | Advisory scans | npm: 0 known vulnerabilities; Python: no known vulnerabilities found | npm-audit.log; python-audit.log |
 | Initial JavaScript | 116708 bytes gzip; 49.8% below the 232480-byte baseline | asset-budget.json |
@@ -51,3 +52,7 @@ Investigation identifies broad audit searches as the slow group (audit SQL p95 6
 ## Artifact evidence
 
 Presentation, video and archive checks have individual validation receipts. The video uses a newly seeded dedicated database and supplied local address; its recorder refuses the working app port and never calls reset. Video provenance includes actual decode/duration results and application source hashes. The release manifest binds packaged files, while the source checksum file identifies the final archive. The nine-slide presentation has speaker notes and inspected renders. The 272-second recording passed full playback decoding. The source archive passed checksum verification and an actual fresh Windows installation. Team identity, registration, rehearsal and competition upload await the user. The user has supplied and authorized the GitHub destination: https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai. The initial source publication is verified at commit `e3871e0383cfbb5f44e852e4631753a9441fe5d0` on the default branch `codex/verified-release`. Publication and hosted CI have separate receipts; Git history records subsequent documentation/package updates.
+
+## GitHub handoff
+
+Published source: https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai, default branch `codex/verified-release`. Remote revision `869c4e470d61430e46885d150e24dd6a127c9e92` was verified with Git. `github-publication.json` records the actual publication and `hosted-ci.json` records GitHub runner state. The hosted Windows/Linux jobs are queued; no hosted pass is claimed. Later documentation-only handoff commits do not change the application tested by this run. Competition registration and upload remain human actions.

@@ -1,7 +1,7 @@
 {
   "passed": true,
-  "archive_sha256": "9652ae1ec06e7b72e6c7a7abfe0cd24eb30e7398dcb364185f64d8bc52259701",
-  "source_fingerprint": "0c5acc530d992f4e69c1d927abcadf85bbd6350a85abcb362ae32caf0c2db32f",
+  "archive_sha256": "9a976c5bcb9088ee889840220d33c5e64192313bb976bb0e4381f41f94bbf9c8",
+  "source_fingerprint": "83b2c7dcdb48373bd068f0f8819d680ce91b2d1433cc9db9d0b33b323f2bf2a3",
   "packaged_files_checked": 465,
   "all_current_packaged_file_hashes_match": true,
   "excluded_postpackage_receipts": [

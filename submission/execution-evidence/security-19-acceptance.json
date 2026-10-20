@@ -118,7 +118,7 @@
       "limitation": "New vulnerabilities can appear; this is not a complete supply-chain or penetration assessment."
     }
   },
-  "source_fingerprint": "0c5acc530d992f4e69c1d927abcadf85bbd6350a85abcb362ae32caf0c2db32f",
+  "source_fingerprint": "83b2c7dcdb48373bd068f0f8819d680ce91b2d1433cc9db9d0b33b323f2bf2a3",
   "evidence_files": [
     "backend-tests.log",
     "frontend-tests.log",

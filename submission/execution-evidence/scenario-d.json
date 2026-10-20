@@ -1,7 +1,7 @@
 {
   "scenario_id": "D",
-  "executed_at": "2026-10-20T08:50:45.856133Z",
-  "run_id": "f6bfdfd6d7c6",
+  "executed_at": "2026-10-20T12:00:12.162446Z",
+  "run_id": "6556f5835ce1",
   "source_invoice": {
     "id": 23,
     "project_id": 9,
@@ -27,7 +27,7 @@
     "invoice_id": 23,
     "status": "BLOCKED",
     "error": null,
-    "created_at": "2026-10-20T08:50:45.867368Z",
+    "created_at": "2026-10-20T12:00:12.167610Z",
     "result": {
       "proposal_id": null,
       "verification": {
@@ -947,8 +947,8 @@
           "invoice_id": 23,
           "po_id": 14
         },
-        "started_at": "2026-10-20T08:50:45.889577Z",
-        "finished_at": "2026-10-20T08:50:45.890574Z"
+        "started_at": "2026-10-20T12:00:12.175346Z",
+        "finished_at": "2026-10-20T12:00:12.176395Z"
       },
       {
         "id": 20,
@@ -964,8 +964,8 @@
           "provenance_revisions": 1,
           "version": 1
         },
-        "started_at": "2026-10-20T08:50:45.895755Z",
-        "finished_at": "2026-10-20T08:50:45.897709Z"
+        "started_at": "2026-10-20T12:00:12.178551Z",
+        "finished_at": "2026-10-20T12:00:12.179552Z"
       },
       {
         "id": 21,
@@ -1024,8 +1024,8 @@
           "status": "BLOCKED",
           "verified_amount": "70000.00"
         },
-        "started_at": "2026-10-20T08:50:45.902453Z",
-        "finished_at": "2026-10-20T08:50:45.914034Z"
+        "started_at": "2026-10-20T12:00:12.181547Z",
+        "finished_at": "2026-10-20T12:00:12.188554Z"
       },
       {
         "id": 22,
@@ -1052,8 +1052,8 @@
           ],
           "payment_eligible": false
         },
-        "started_at": "2026-10-20T08:50:45.917033Z",
-        "finished_at": "2026-10-20T08:50:45.918030Z"
+        "started_at": "2026-10-20T12:00:12.190547Z",
+        "finished_at": "2026-10-20T12:00:12.191504Z"
       },
       {
         "id": 23,
@@ -1893,8 +1893,8 @@
             }
           ]
         },
-        "started_at": "2026-10-20T08:50:45.923250Z",
-        "finished_at": "2026-10-20T08:50:45.924248Z"
+        "started_at": "2026-10-20T12:00:12.193499Z",
+        "finished_at": "2026-10-20T12:00:12.193499Z"
       },
       {
         "id": 24,
@@ -1908,8 +1908,8 @@
           "explanation_source": "deterministic",
           "text": "Invoice INV-BENEFICIARY-CHANGE claims BDT 70000.00; supported amount is BDT 70000.00. Payment is blocked: BENEFICIARY_CHANGE"
         },
-        "started_at": "2026-10-20T08:50:45.929457Z",
-        "finished_at": "2026-10-20T08:50:45.930452Z"
+        "started_at": "2026-10-20T12:00:12.196546Z",
+        "finished_at": "2026-10-20T12:00:12.196546Z"
       },
       {
         "id": 25,
@@ -1923,8 +1923,8 @@
           "message": "No payable proposal prepared.",
           "status": "BLOCKED"
         },
-        "started_at": "2026-10-20T08:50:45.936692Z",
-        "finished_at": "2026-10-20T08:50:45.936692Z"
+        "started_at": "2026-10-20T12:00:12.198503Z",
+        "finished_at": "2026-10-20T12:00:12.198503Z"
       },
       {
         "id": 26,
@@ -1939,8 +1939,8 @@
           "proposal_id": null,
           "status": "BLOCKED"
         },
-        "started_at": "2026-10-20T08:50:45.942927Z",
-        "finished_at": "2026-10-20T08:50:45.943921Z"
+        "started_at": "2026-10-20T12:00:12.201502Z",
+        "finished_at": "2026-10-20T12:00:12.201502Z"
       },
       {
         "id": 27,
@@ -1952,10 +1952,10 @@
         },
         "output": {
           "audit_event_id": 278,
-          "event_hash": "6c5b2a039c8acb88184b87bdc3fd89022ba841c7a409d480babfc0a75b85b07b"
+          "event_hash": "44e1d91c365600bd49efde0682cdb8ff332a6715c5352f07e853855f4ff2668d"
         },
-        "started_at": "2026-10-20T08:50:45.947063Z",
-        "finished_at": "2026-10-20T08:50:45.949062Z"
+        "started_at": "2026-10-20T12:00:12.203554Z",
+        "finished_at": "2026-10-20T12:00:12.204557Z"
       }
     ]
   },
@@ -1988,9 +1988,9 @@
       "details": {
         "proposal_id": null
       },
-      "previous_hash": "01376aed293b99b2dabb531598edb5958294fd5d3fb6c59629730e3db93e0aaf",
-      "created_at": "2026-10-20T08:50:45.948061Z",
-      "event_hash": "6c5b2a039c8acb88184b87bdc3fd89022ba841c7a409d480babfc0a75b85b07b"
+      "previous_hash": "a2967b50bd5cb48dacaf7ba20336248c4d3b017a9eead1d8dff1add8dcdada6b",
+      "created_at": "2026-10-20T12:00:12.204557Z",
+      "event_hash": "44e1d91c365600bd49efde0682cdb8ff332a6715c5352f07e853855f4ff2668d"
     },
     {
       "id": 277,
@@ -2009,9 +2009,9 @@
         "status": "BLOCKED",
         "verified": "70000.00"
       },
-      "previous_hash": "ccc141d815575e4e621a153a290c128c6a8a2249d9ffd8f03d025ee55af71759",
-      "created_at": "2026-10-20T08:50:45.913029Z",
-      "event_hash": "01376aed293b99b2dabb531598edb5958294fd5d3fb6c59629730e3db93e0aaf"
+      "previous_hash": "94d5b343a1ae61429a272af67cb3f08ca3a5023a56906f03e5c0c9495b8524a1",
+      "created_at": "2026-10-20T12:00:12.187557Z",
+      "event_hash": "a2967b50bd5cb48dacaf7ba20336248c4d3b017a9eead1d8dff1add8dcdada6b"
     },
     {
       "id": 276,
@@ -2030,9 +2030,9 @@
         "status": "BLOCKED",
         "verified": "70000.00"
       },
-      "previous_hash": "fb59ca7b4dae5cfc1ff4016f2c20bf571990b989863f5fc5d7e784d21bedbce6",
-      "created_at": "2026-10-20T08:50:45.912035Z",
-      "event_hash": "ccc141d815575e4e621a153a290c128c6a8a2249d9ffd8f03d025ee55af71759"
+      "previous_hash": "a5343a9cd7a9f510953ccb63094409738feaecc407c4e45cf6c87147375287e7",
+      "created_at": "2026-10-20T12:00:12.187557Z",
+      "event_hash": "94d5b343a1ae61429a272af67cb3f08ca3a5023a56906f03e5c0c9495b8524a1"
     },
     {
       "id": 275,
@@ -2051,9 +2051,9 @@
         "status": "BLOCKED",
         "verified": "70000.00"
       },
-      "previous_hash": "c71f3814266cd5a14523d3acce0b41ee14111281a570a24d3134775c4f2d1c3b",
-      "created_at": "2026-10-20T08:50:45.912035Z",
-      "event_hash": "fb59ca7b4dae5cfc1ff4016f2c20bf571990b989863f5fc5d7e784d21bedbce6"
+      "previous_hash": "cd907d346935718aec20fe1a15d4248e140b2e000439a226439eb592ce1aa6bb",
+      "created_at": "2026-10-20T12:00:12.186550Z",
+      "event_hash": "a5343a9cd7a9f510953ccb63094409738feaecc407c4e45cf6c87147375287e7"
     },
     {
       "id": 274,
@@ -2067,9 +2067,9 @@
       "details": {
         "invoice_id": 23
       },
-      "previous_hash": "9a87ed89edccdd17a12df928a17d8890b70c2b3ac02b3936f6a7a8dd3e31d795",
-      "created_at": "2026-10-20T08:50:45.868404Z",
-      "event_hash": "c71f3814266cd5a14523d3acce0b41ee14111281a570a24d3134775c4f2d1c3b"
+      "previous_hash": "7dda80f56763b59426ca48a33e8fda949fb7c44193c4f5613567f6b8b2ed563b",
+      "created_at": "2026-10-20T12:00:12.167610Z",
+      "event_hash": "cd907d346935718aec20fe1a15d4248e140b2e000439a226439eb592ce1aa6bb"
     }
   ],
   "audit_event_ids": [
@@ -2083,7 +2083,7 @@
     "valid": true,
     "checked_events": 278,
     "failed_event_id": null,
-    "head_hash": "6c5b2a039c8acb88184b87bdc3fd89022ba841c7a409d480babfc0a75b85b07b",
+    "head_hash": "44e1d91c365600bd49efde0682cdb8ff332a6715c5352f07e853855f4ff2668d",
     "limitation": "Local hash chain; an unrestricted database administrator can rewrite the complete chain."
   },
   "source_records": [
@@ -2098,7 +2098,7 @@
         "version": 1,
         "reviewed_by": null,
         "confirmed_by": 1,
-        "created_at": "2026-10-20T08:50:45.678745Z"
+        "created_at": "2026-10-20T12:00:12.038443Z"
       },
       "data": {
         "beneficiary_fingerprint": "",
@@ -2449,7 +2449,7 @@
               "value": "70000"
             }
           ],
-          "created_at": "2026-10-20T08:50:45.679748Z"
+          "created_at": "2026-10-20T12:00:12.038443Z"
         }
       ]
     },
@@ -2464,7 +2464,7 @@
         "version": 1,
         "reviewed_by": null,
         "confirmed_by": 1,
-        "created_at": "2026-10-20T08:50:45.696045Z"
+        "created_at": "2026-10-20T12:00:12.052298Z"
       },
       "data": {
         "beneficiary_fingerprint": "",
@@ -2741,7 +2741,7 @@
               "value": "70000"
             }
           ],
-          "created_at": "2026-10-20T08:50:45.696045Z"
+          "created_at": "2026-10-20T12:00:12.052298Z"
         }
       ]
     },
@@ -2756,7 +2756,7 @@
         "version": 1,
         "reviewed_by": null,
         "confirmed_by": 1,
-        "created_at": "2026-10-20T08:50:45.710252Z"
+        "created_at": "2026-10-20T12:00:12.064237Z"
       },
       "data": {
         "beneficiary_fingerprint": "",
@@ -3033,7 +3033,7 @@
               "value": "70000"
             }
           ],
-          "created_at": "2026-10-20T08:50:45.711442Z"
+          "created_at": "2026-10-20T12:00:12.064237Z"
         }
       ]
     },
@@ -3048,7 +3048,7 @@
         "version": 1,
         "reviewed_by": null,
         "confirmed_by": null,
-        "created_at": "2026-10-20T08:50:45.728927Z"
+        "created_at": "2026-10-20T12:00:12.080935Z"
       },
       "data": {
         "beneficiary_fingerprint": "0f5c7984bee44ae4a7d87af3627c0134f553c9c2ad5b5e58d1ff2b2740554454",
@@ -3325,7 +3325,7 @@
               "value": "70000"
             }
           ],
-          "created_at": "2026-10-20T08:50:45.729921Z"
+          "created_at": "2026-10-20T12:00:12.080935Z"
         }
       ]
     }

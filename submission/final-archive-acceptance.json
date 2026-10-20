@@ -1,12 +1,12 @@
 {
   "passed": true,
-  "checked_at": "2026-10-20T09:00:24.331305+00:00",
-  "archive_sha256": "9652ae1ec06e7b72e6c7a7abfe0cd24eb30e7398dcb364185f64d8bc52259701",
-  "source_fingerprint": "0c5acc530d992f4e69c1d927abcadf85bbd6350a85abcb362ae32caf0c2db32f",
+  "checked_at": "2026-10-20T12:01:52.207088+00:00",
+  "archive_sha256": "9a976c5bcb9088ee889840220d33c5e64192313bb976bb0e4381f41f94bbf9c8",
+  "source_fingerprint": "83b2c7dcdb48373bd068f0f8819d680ce91b2d1433cc9db9d0b33b323f2bf2a3",
   "private_installation": {
     "passed": true,
     "setup_command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/setup.ps1",
-    "source_copy": "data\\clean-checkout-8d4c5a0e",
+    "source_copy": "data\\clean-checkout-07e24f7d",
     "checks": [
       "locked dependency setup",
       "frontend production build",
@@ -22,7 +22,7 @@
       "1480000.00 estimate and 520000.00 forecast"
     ],
     "simulation": true,
-    "archive_sha256": "9652ae1ec06e7b72e6c7a7abfe0cd24eb30e7398dcb364185f64d8bc52259701"
+    "archive_sha256": "9a976c5bcb9088ee889840220d33c5e64192313bb976bb0e4381f41f94bbf9c8"
   },
   "public_installation": {
     "passed": true,
@@ -43,7 +43,7 @@
   },
   "new_archive_secret_scan": {
     "passed": true,
-    "archive_sha256": "9652ae1ec06e7b72e6c7a7abfe0cd24eb30e7398dcb364185f64d8bc52259701",
+    "archive_sha256": "9a976c5bcb9088ee889840220d33c5e64192313bb976bb0e4381f41f94bbf9c8",
     "scanner_version": "8.30.1",
     "scanner_download_sha256": "d29144deff3a68aa93ced33dddf84b7fdc26070add4aa0f4513094c8332afc4e",
     "known_private_values_checked": 5,

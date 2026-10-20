@@ -4,7 +4,7 @@
   "browser_workflows": 20,
   "http_scenarios": 8,
   "audit_valid": true,
-  "source_fingerprint": "0c5acc530d992f4e69c1d927abcadf85bbd6350a85abcb362ae32caf0c2db32f",
+  "source_fingerprint": "83b2c7dcdb48373bd068f0f8819d680ce91b2d1433cc9db9d0b33b323f2bf2a3",
   "migration_head": "0019",
   "legacy_tables_preserved": 57,
   "browser_runtime": "data/advanced-browser-35a02811",

@@ -1,14 +1,14 @@
 {
-  "generated_at": "2026-10-20T08:50:47.942745Z",
+  "generated_at": "2026-10-20T12:00:13.598599Z",
   "transport": "Real local HTTP + persistent SQLite",
   "simulation": true,
-  "source_fingerprint": "0c5acc530d992f4e69c1d927abcadf85bbd6350a85abcb362ae32caf0c2db32f",
+  "source_fingerprint": "83b2c7dcdb48373bd068f0f8819d680ce91b2d1433cc9db9d0b33b323f2bf2a3",
   "source_files": {
     ".dockerignore": "b7fed4bc4ced7dfada7e5781c258d97a1f7753766e0d9a77bd81e34acb6f94b7",
     ".env.example": "0c097cb55fb243117f2947c1f61fa619b80b4a3b1a0c1a81cd12530a5fde2b12",
     ".github/workflows/checks.yml": "525ac0f5c48c67724069c5fe7db46c7523c2bfde252c993a59923c396c7daca3",
     ".gitignore": "c655ea2c18634a364adbb595f5fede18bc7def83cad01a9ee80541946794319e",
-    ".gitleaks.toml": "56c8b0b7e39fd42fca642257312aeb0aa22aa3658d81e68c2063e450eec73a7d",
+    ".gitleaks.toml": "9f5f840f8316b96fe49e2591a7bee1ff584629369e73afbe11f442db15708996",
     "backend/alembic/env.py": "3cf767a01267448ae7614bb54e1d1618415de3d1a020380222df5ca4a95ff0c7",
     "backend/alembic/versions/0001_initial.py": "c3550b9c9cbb5b666bbb4025c73f013f12b38e306f03876113492076f1f349b7",
     "backend/alembic/versions/0001_schema.sql": "78d82a249620cefa80df1cb7b0a68086e0116108d2d1ea46d07c712ac6ab5da7",
@@ -212,7 +212,7 @@
   "scenarios": [
     {
       "scenario_id": "A",
-      "executed_at": "2026-10-20T08:50:44.860944Z",
+      "executed_at": "2026-10-20T12:00:11.365805Z",
       "decision": "BLOCKED",
       "balance_before": "1000000.00",
       "balance_after": "1000000.00",
@@ -220,7 +220,7 @@
     },
     {
       "scenario_id": "B",
-      "executed_at": "2026-10-20T08:50:45.161232Z",
+      "executed_at": "2026-10-20T12:00:11.676413Z",
       "decision": "SETTLED",
       "balance_before": "1000000.00",
       "balance_after": "930000.00",
@@ -228,7 +228,7 @@
     },
     {
       "scenario_id": "C",
-      "executed_at": "2026-10-20T08:50:45.614472Z",
+      "executed_at": "2026-10-20T12:00:11.993934Z",
       "decision": "DUPLICATE_HELD",
       "balance_before": "1000000.00",
       "balance_after": "1000000.00",
@@ -236,7 +236,7 @@
     },
     {
       "scenario_id": "D",
-      "executed_at": "2026-10-20T08:50:45.856133Z",
+      "executed_at": "2026-10-20T12:00:12.162446Z",
       "decision": "BLOCKED",
       "balance_before": "1000000.00",
       "balance_after": "1000000.00",
@@ -244,7 +244,7 @@
     },
     {
       "scenario_id": "E",
-      "executed_at": "2026-10-20T08:50:46.309285Z",
+      "executed_at": "2026-10-20T12:00:12.441854Z",
       "decision": "BLOCKED",
       "balance_before": "150000.00",
       "balance_after": "150000.00",
@@ -252,7 +252,7 @@
     },
     {
       "scenario_id": "F",
-      "executed_at": "2026-10-20T08:50:46.750510Z",
+      "executed_at": "2026-10-20T12:00:12.725569Z",
       "decision": "BLOCKED",
       "balance_before": "1000000.00",
       "balance_after": "1000000.00",
@@ -260,7 +260,7 @@
     },
     {
       "scenario_id": "G",
-      "executed_at": "2026-10-20T08:50:47.225592Z",
+      "executed_at": "2026-10-20T12:00:13.063824Z",
       "decision": "UNAUTHORIZED_APPROVAL_DENIED",
       "balance_before": "1000000.00",
       "balance_after": "1000000.00",
@@ -268,7 +268,7 @@
     },
     {
       "scenario_id": "H",
-      "executed_at": "2026-10-20T08:50:47.639937Z",
+      "executed_at": "2026-10-20T12:00:13.375609Z",
       "decision": "SETTLED",
       "balance_before": "1000000.00",
       "balance_after": "930000.00",
@@ -279,8 +279,8 @@
     "valid": true,
     "checked_events": 509,
     "failed_event_id": null,
-    "head_hash": "81d32827625dc91c54e1a4a54f986e921db60981148b35d3dd8800bf9a21c851",
+    "head_hash": "0a4c61ef9d9c39b95072a1f7af96a65ef8531b89785d45984ec879425e12483a",
     "limitation": "Local hash chain; an unrestricted database administrator can rewrite the complete chain."
   },
-  "runtime_database": "data\\evidence-d52ed87abb\\buildtrust.db"
+  "runtime_database": "data\\evidence-a97627a620\\buildtrust.db"
 }

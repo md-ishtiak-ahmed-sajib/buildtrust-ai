@@ -15,4 +15,4 @@ description = "SHA-256 file checksums in the five release provenance maps, not c
 condition = "AND"
 regexTarget = "match"
 paths = ['''(^|/)(release-manifest\.json|execution-evidence/(contract-drift|load-measurements|manifest|video-provenance)\.json)$''']
-regexes = ['''[A-Za-z0-9_.-]+\.(py|ts|md|json|png)"\s*:\s*"[0-9a-f]{64}"''']
+regexes = ['''[A-Za-z0-9_.-]+\.(py|ts|md|json|png|mmd|svg)"\s*:\s*"[0-9a-f]{64}"''']

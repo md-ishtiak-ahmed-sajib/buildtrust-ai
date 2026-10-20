@@ -1,0 +1,341 @@
+{
+  "source_revision": "c997d6006256e24c4a4c8cb670f70016b8edc600",
+  "repository": "https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai",
+  "branch": "main",
+  "remote_source_download": {
+    "passed": true,
+    "revision": "c997d6006256e24c4a4c8cb670f70016b8edc600",
+    "tracked_file_count": 430,
+    "all_tracked_bytes_match": true,
+    "prompt_and_engineering_instructions_excluded": true,
+    "archive_sha256": "cc361e38684e0e0a7f6653dd236e9deca84f564c2e36c953e863cdb398b87a71"
+  },
+  "local_verification": {
+    "backend_tests": 225,
+    "backend_summary": "225 passed, 1 warning in 197.23s (0:03:17)",
+    "frontend_tests": 8,
+    "browser_workflows": 18,
+    "http_scenarios": 8,
+    "private_backup_restore_passed": true,
+    "private_data_preserved": true,
+    "readme_public_passwords_unchanged": true,
+    "fresh_archive_windows_acceptance": {
+      "passed": true,
+      "checked_at": "2026-10-20T00:52:43.035729+00:00",
+      "archive_sha256": "cc361e38684e0e0a7f6653dd236e9deca84f564c2e36c953e863cdb398b87a71",
+      "fresh_windows_install": {
+        "passed": true,
+        "setup_command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/setup.ps1",
+        "source_copy": "data\\clean-checkout-8af1fdc1",
+        "checks": [
+          "locked dependency setup",
+          "frontend production build",
+          "fresh migrations",
+          "generated credentials",
+          "static frontend served",
+          "steel discrepancy",
+          "independent approval",
+          "70000.00 settlement",
+          "930000.00 closing cash",
+          "audit integrity",
+          "upgrade material search and immutable selection",
+          "1480000.00 estimate and 520000.00 forecast"
+        ],
+        "simulation": true,
+        "archive_sha256": "cc361e38684e0e0a7f6653dd236e9deca84f564c2e36c953e863cdb398b87a71"
+      },
+      "public_demo": {
+        "passed": true,
+        "profile": "isolated public demo",
+        "port": 8003,
+        "four_readme_passwords_login": true,
+        "operator_self_approval_denied": true,
+        "auditor_write_denied": true,
+        "independent_payment_balance": "930000.00",
+        "audit_valid": true,
+        "repeat_prepare_preserved_records": true,
+        "occupied_port_failed_clearly": true,
+        "private_profile_unchanged": true,
+        "private_table_count": 61,
+        "simulation": true
+      },
+      "simulation": true
+    }
+  },
+  "secret_scan": {
+    "passed": true,
+    "scanner": "Gitleaks",
+    "version": "8.30.1",
+    "download_sha256": "d29144deff3a68aa93ced33dddf84b7fdc26070add4aa0f4513094c8332afc4e",
+    "results": [
+      {
+        "scope": "all-history",
+        "passed": true,
+        "findings": 0
+      },
+      {
+        "scope": "current-build-and-archives",
+        "passed": true,
+        "findings": 0
+      },
+      {
+        "scope": "historical-release-archives",
+        "passed": true,
+        "findings": 0
+      }
+    ],
+    "history_rewritten": false,
+    "paid_credentials_rotated": false,
+    "scope": "Pattern-based redacted scan; not proof that no undiscovered secret exists.",
+    "known_private_values_checked": 5,
+    "known_private_value_matches": []
+  },
+  "previous_hosted_attempt": {
+    "run_url": "https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39349247981",
+    "windows_result": "One test compared the Administrator SDDL alias with its full SID. The identity comparison was corrected and rerun.",
+    "linux_result": "Cancelled by matrix fail-fast after the Windows test failure."
+  },
+  "public_demo_test_note": "The first install check reached an existing public demo and recorded one fictional BDT 70000 payment. Private working data was untouched. The verifier now refuses an occupied port before requests, and isolated reruns passed. The existing audit entry was retained.",
+  "scope": "Post-package receipt beside the archive; no circular checksum. Hosted and downloaded-source results name their exact tested revision.",
+  "passed": true,
+  "checked_at": "2026-10-20T01:08:38.998684+00:00",
+  "hosted_checks": {
+    "run_id": 39350241762,
+    "url": "https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39350241762",
+    "head_sha": "c997d6006256e24c4a4c8cb670f70016b8edc600",
+    "status": "completed",
+    "conclusion": "success",
+    "jobs": [
+      {
+        "name": "verify (windows-latest)",
+        "conclusion": "success",
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-node@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run uv sync --project backend --frozen",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm --prefix frontend ci",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run uv run --project backend pytest backend/tests",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm --prefix frontend test",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm --prefix frontend run build",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run uv run --project backend python scripts/check_secrets.py",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run uv run --project backend python scripts/check_asset_budget.py",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run uv run --project backend python scripts/export_contracts.py",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm --prefix frontend run types:api",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run git diff --exit-code -- docs/openapi.json frontend/src/types/api.generated.ts demo/document.schema.json",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm --prefix frontend audit --audit-level=moderate",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run uv export --project backend --frozen --no-hashes --format requirements-txt --output-file audit-requirements.txt",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run uvx pip-audit -r audit-requirements.txt",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npx --prefix frontend playwright install chromium --with-deps",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run uv run --project backend python scripts/verify_upgrade_browser.py",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run uv run --project backend python scripts/collect_evidence.py",
+            "conclusion": "success"
+          },
+          {
+            "name": "Native Linux shell setup and startup",
+            "conclusion": "skipped"
+          },
+          {
+            "name": "Fresh Windows private and public setup",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/setup-node@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ]
+      },
+      {
+        "name": "verify (ubuntu-latest)",
+        "conclusion": "success",
+        "steps": [
+          {
+            "name": "Set up job",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run actions/setup-node@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run uv sync --project backend --frozen",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm --prefix frontend ci",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run uv run --project backend pytest backend/tests",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm --prefix frontend test",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm --prefix frontend run build",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run uv run --project backend python scripts/check_secrets.py",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run uv run --project backend python scripts/check_asset_budget.py",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run uv run --project backend python scripts/export_contracts.py",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm --prefix frontend run types:api",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run git diff --exit-code -- docs/openapi.json frontend/src/types/api.generated.ts demo/document.schema.json",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npm --prefix frontend audit --audit-level=moderate",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run uv export --project backend --frozen --no-hashes --format requirements-txt --output-file audit-requirements.txt",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run uvx pip-audit -r audit-requirements.txt",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run npx --prefix frontend playwright install chromium --with-deps",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run uv run --project backend python scripts/verify_upgrade_browser.py",
+            "conclusion": "success"
+          },
+          {
+            "name": "Run uv run --project backend python scripts/collect_evidence.py",
+            "conclusion": "success"
+          },
+          {
+            "name": "Native Linux shell setup and startup",
+            "conclusion": "success"
+          },
+          {
+            "name": "Fresh Windows private and public setup",
+            "conclusion": "skipped"
+          },
+          {
+            "name": "Post Run actions/setup-node@v4",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9",
+            "conclusion": "success"
+          },
+          {
+            "name": "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+            "conclusion": "success"
+          },
+          {
+            "name": "Complete job",
+            "conclusion": "success"
+          }
+        ]
+      }
+    ]
+  },
+  "hosted_output_summaries": [
+    "verify (windows-latest)\tRun uv run --project backend pytest backend/tests\t2026-10-20T00:59:36.6826986Z ============ 224 passed, 1 skipped, 1 warning in 338.42s (0:05:38) ============",
+    "verify (windows-latest)\tRun uv run --project backend python scripts/verify_upgrade_browser.py\t2026-10-20T01:06:24.3661268Z   18 passed (1.8m)",
+    "verify (windows-latest)\tRun uv run --project backend python scripts/collect_evidence.py\t2026-10-20T01:06:31.6884823Z All 8 scenarios passed against the running sandbox API.",
+    "verify (windows-latest)\tFresh Windows private and public setup\t2026-10-20T01:07:38.4589365Z Fresh Windows public-demo launcher, four logins, payment and preservation: PASS",
+    "verify (ubuntu-latest)\tRun uv run --project backend pytest backend/tests\t2026-10-20T00:56:46.0565833Z ============ 224 passed, 1 skipped, 1 warning in 210.38s (0:03:30) =============",
+    "verify (ubuntu-latest)\tRun uv run --project backend python scripts/verify_upgrade_browser.py\t2026-10-20T00:59:26.7705091Z   18 passed (1.7m)",
+    "verify (ubuntu-latest)\tRun uv run --project backend python scripts/collect_evidence.py\t2026-10-20T00:59:32.3485232Z All 8 scenarios passed against the running sandbox API.",
+    "verify (ubuntu-latest)\tNative Linux shell setup and startup\t2026-10-20T00:59:47.3403988Z Native Linux shell setup, launcher, four logins and audit: PASS"
+  ]
+}

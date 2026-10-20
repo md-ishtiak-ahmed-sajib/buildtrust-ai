@@ -1,15 +1,15 @@
-{'project_id': 1, 'liquidity_project_id': 2, 'run_id': 'ba50b68d8c07', 'fictional': True}
-Local credentials: D:\Project\buildtrust-ai\data\evidence-789026779f\demo-credentials.json
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{'project_id': 1, 'liquidity_project_id': 2, 'run_id': 'e827fb04e0c0', 'fictional': True}
+Local credentials: D:\Project\buildtrust-ai\data\evidence-b7b3dfc182\demo-credentials.json
 {"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
 {"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
 {"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
 {"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
 {"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
 {"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 15}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}

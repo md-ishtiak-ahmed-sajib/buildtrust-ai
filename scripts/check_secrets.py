@@ -116,7 +116,7 @@ def main():
         stage=Path(temp);seen=set()
         for line in objects.splitlines():
             bits=line.split(" ",1)
-            if len(bits)==2 and bits[1].endswith("BuildTrustAI_Source.zip") and bits[0] not in seen:
+            if len(bits)==2 and bits[1].endswith(("BuildTrustAI_Source.zip", "BuildTrustAI_Execution_Evidence.zip")) and bits[0] not in seen:
                 seen.add(bits[0]);(stage/(bits[0]+".zip")).write_bytes(subprocess.check_output(["git","cat-file","blob",bits[0]],cwd=ROOT))
         run("historical-release-archives",["dir",str(stage)])
     summary={"passed":all(r["passed"] for r in results),"scanner":"Gitleaks","version":VERSION,"download_sha256":checksum,"results":results,"history_rewritten":False,"paid_credentials_rotated":False,"scope":"Pattern-based redacted scan; not proof that no undiscovered secret exists."}

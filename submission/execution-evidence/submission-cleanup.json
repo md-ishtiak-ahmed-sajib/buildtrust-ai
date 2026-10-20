@@ -1,6 +1,6 @@
 {
   "passed": true,
-  "checked_at": "2026-10-20T13:41:08.420967+00:00",
+  "checked_at": "2026-10-20T13:44:33.882181+00:00",
   "scope": "Submission bundle synchronization and removal of redundant generated files; application behavior unchanged.",
   "import_source": "data/email-attachments-security-final",
   "delivery_files": 7,

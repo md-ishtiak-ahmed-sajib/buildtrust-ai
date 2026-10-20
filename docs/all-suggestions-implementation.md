@@ -81,3 +81,7 @@ The presentation, recording and archive have separate render, decode, fingerprin
 ## October 20 security extension
 
 The additional 20-item [security review](security-self-assessment.md) covers revocable sessions, offline recovery, persistent admission/provider budgets, secret scanning, private storage, CSP and private backup/restore. The four README passwords remain public-demo-only. New acceptance evidence is recorded separately from the original 42-item review.
+
+## Documentation-first security checkpoint
+
+The next 19-control checklist is distinct from the earlier 20-item review. Both current guides now include six editable security diagrams and readable PDF exports. New MFA and request checks are labelled planned until implementation and acceptance. Native database RLS is deferred while SQLite stays in use; incoming webhooks remain disabled. The four README credentials are unchanged. PDF rendering, page inspection and documentation checks are recorded in the report evidence.

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg role="img" aria-label="Protect browser actions" width="1000" height="330" preserveAspectRatio="xMinYMin meet" viewBox="0 0 1000 330" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>Protect browser actions</title>
+	<desc>New origin and marker checks are planned until tested. No authentication cookies are introduced.</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="1000" height="330"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-330)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="1000" height="330" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(96%,97%,96%); fill-rule: evenodd;"/>
+			<text x="26" y="291" style="font-family: Arial; font-size: 25px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,582) scale(1,-1)">Protect browser actions</text>
+			<rect x="26" y="113" width="172" height="137" rx="10" ry="0" style="stroke: rgb(56%,72%,66%); stroke-linecap: butt; stroke-width: 1; fill: rgb(89%,93%,92%); fill-rule: evenodd;"/>
+			<text x="38" y="222" style="font-family: Arial; font-size: 18px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,444) scale(1,-1)">Browser</text>
+			<text x="38" y="171" style="font-family: Arial; font-size: 15px;fill: rgb(20%,34%,31%); stroke:none;" transform="translate(0,342) scale(1,-1)">Send the explicit</text>
+			<text x="38" y="153" style="font-family: Arial; font-size: 15px;fill: rgb(20%,34%,31%); stroke:none;" transform="translate(0,306) scale(1,-1)">marker</text>
+			<path d="M 202,180 L 216,180 Z" style="stroke: rgb(15%,43%,38%); stroke-linecap: butt; stroke-width: 2;"/>
+			<polygon points="216 180, 210 184, 210 176" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(15%,43%,38%); fill-rule: evenodd;"/>
+			<rect x="222" y="113" width="172" height="137" rx="10" ry="0" style="stroke: rgb(56%,72%,66%); stroke-linecap: butt; stroke-width: 1; fill: rgb(89%,93%,92%); fill-rule: evenodd;"/>
+			<text x="234" y="222" style="font-family: Arial; font-size: 18px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,444) scale(1,-1)">Origin checks</text>
+			<text x="234" y="171" style="font-family: Arial; font-size: 15px;fill: rgb(20%,34%,31%); stroke:none;" transform="translate(0,342) scale(1,-1)">Trusted origin and</text>
+			<text x="234" y="153" style="font-family: Arial; font-size: 15px;fill: rgb(20%,34%,31%); stroke:none;" transform="translate(0,306) scale(1,-1)">metadata</text>
+			<path d="M 398,180 L 412,180 Z" style="stroke: rgb(15%,43%,38%); stroke-linecap: butt; stroke-width: 2;"/>
+			<polygon points="412 180, 406 184, 406 176" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(15%,43%,38%); fill-rule: evenodd;"/>
+			<rect x="418" y="113" width="172" height="137" rx="10" ry="0" style="stroke: rgb(56%,72%,66%); stroke-linecap: butt; stroke-width: 1; fill: rgb(89%,93%,92%); fill-rule: evenodd;"/>
+			<text x="430" y="222" style="font-family: Arial; font-size: 18px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,444) scale(1,-1)">Authentication</text>
+			<text x="430" y="171" style="font-family: Arial; font-size: 15px;fill: rgb(20%,34%,31%); stroke:none;" transform="translate(0,342) scale(1,-1)">Check the server</text>
+			<text x="430" y="153" style="font-family: Arial; font-size: 15px;fill: rgb(20%,34%,31%); stroke:none;" transform="translate(0,306) scale(1,-1)">session</text>
+			<path d="M 594,180 L 608,180 Z" style="stroke: rgb(15%,43%,38%); stroke-linecap: butt; stroke-width: 2;"/>
+			<polygon points="608 180, 602 184, 602 176" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(15%,43%,38%); fill-rule: evenodd;"/>
+			<rect x="614" y="113" width="172" height="137" rx="10" ry="0" style="stroke: rgb(56%,72%,66%); stroke-linecap: butt; stroke-width: 1; fill: rgb(89%,93%,92%); fill-rule: evenodd;"/>
+			<text x="626" y="222" style="font-family: Arial; font-size: 18px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,444) scale(1,-1)">Business rules</text>
+			<text x="626" y="171" style="font-family: Arial; font-size: 15px;fill: rgb(20%,34%,31%); stroke:none;" transform="translate(0,342) scale(1,-1)">Check role, record</text>
+			<text x="626" y="153" style="font-family: Arial; font-size: 15px;fill: rgb(20%,34%,31%); stroke:none;" transform="translate(0,306) scale(1,-1)">and version</text>
+			<path d="M 790,180 L 804,180 Z" style="stroke: rgb(15%,43%,38%); stroke-linecap: butt; stroke-width: 2;"/>
+			<polygon points="804 180, 798 184, 798 176" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(15%,43%,38%); fill-rule: evenodd;"/>
+			<rect x="810" y="113" width="172" height="137" rx="10" ry="0" style="stroke: rgb(56%,72%,66%); stroke-linecap: butt; stroke-width: 1; fill: rgb(89%,93%,92%); fill-rule: evenodd;"/>
+			<text x="822" y="222" style="font-family: Arial; font-size: 18px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,444) scale(1,-1)">Safe response</text>
+			<text x="822" y="171" style="font-family: Arial; font-size: 15px;fill: rgb(20%,34%,31%); stroke:none;" transform="translate(0,342) scale(1,-1)">Return a typed</text>
+			<text x="822" y="153" style="font-family: Arial; font-size: 15px;fill: rgb(20%,34%,31%); stroke:none;" transform="translate(0,306) scale(1,-1)">result or error</text>
+			<text x="26" y="75" style="font-family: Arial; font-size: 15px;fill: rgb(20%,34%,31%); stroke:none;" transform="translate(0,150) scale(1,-1)">New origin and marker checks are planned until tested. No authentication cookies are introduced.</text>
+		</g>
+	</g>
+</svg>

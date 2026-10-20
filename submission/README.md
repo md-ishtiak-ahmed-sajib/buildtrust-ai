@@ -4,6 +4,8 @@ This folder contains the prepared BuildTrust AI judge files. The app uses fictio
 
 | File or folder | What to use it for |
 |---|---|
+| BuildTrustAI_Security_Self_Assessment.pdf | Readable security report with the 19-control improvement checklist and honest status labels |
+| BuildTrustAI_Technical_Documentation.pdf | Readable architecture and technical guide with security diagrams |
 | BuildTrustAI_Presentation.pptx | Nine slides with speaker notes; target talk length eight to nine minutes |
 | BuildTrustAI_Demo.mp4 | Actual app demonstration below five minutes; local synthetic English narration is disclosed |
 | BuildTrustAI_Source.zip | Source, docs, sample files and verified submission materials, without private runtime data |

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg role="img" aria-label="Where protection happens" width="1000" height="460" preserveAspectRatio="xMinYMin meet" viewBox="0 0 1000 460" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>Where protection happens</title>
+	<desc>The API mediates access to records, private files and external providers.</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="1000" height="460"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-460)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="0" width="1000" height="460" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(96%,97%,96%); fill-rule: evenodd;"/>
+			<text x="26" y="421" style="font-family: Arial; font-size: 25px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,842) scale(1,-1)">Where protection happens</text>
+			<rect x="26" y="190" width="172" height="137" rx="10" ry="0" style="stroke: rgb(56%,72%,66%); stroke-linecap: butt; stroke-width: 1; fill: rgb(89%,93%,92%); fill-rule: evenodd;"/>
+			<text x="38" y="299" style="font-family: Arial; font-size: 18px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,598) scale(1,-1)">Browser</text>
+			<text x="38" y="248" style="font-family: Arial; font-size: 15px;fill: rgb(20%,34%,31%); stroke:none;" transform="translate(0,496) scale(1,-1)">Forms and memory-</text>
+			<text x="38" y="230" style="font-family: Arial; font-size: 15px;fill: rgb(20%,34%,31%); stroke:none;" transform="translate(0,460) scale(1,-1)">only access</text>
+			<rect x="250" y="190" width="172" height="137" rx="10" ry="0" style="stroke: rgb(56%,72%,66%); stroke-linecap: butt; stroke-width: 1; fill: rgb(89%,93%,92%); fill-rule: evenodd;"/>
+			<text x="262" y="299" style="font-family: Arial; font-size: 18px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,598) scale(1,-1)">Server API</text>
+			<text x="262" y="248" style="font-family: Arial; font-size: 15px;fill: rgb(20%,34%,31%); stroke:none;" transform="translate(0,496) scale(1,-1)">Identity,</text>
+			<text x="262" y="230" style="font-family: Arial; font-size: 15px;fill: rgb(20%,34%,31%); stroke:none;" transform="translate(0,460) scale(1,-1)">permissions and</text>
+			<text x="262" y="212" style="font-family: Arial; font-size: 15px;fill: rgb(20%,34%,31%); stroke:none;" transform="translate(0,424) scale(1,-1)">rules</text>
+			<rect x="500" y="260" width="172" height="137" rx="10" ry="0" style="stroke: rgb(56%,72%,66%); stroke-linecap: butt; stroke-width: 1; fill: rgb(89%,93%,92%); fill-rule: evenodd;"/>
+			<text x="512" y="369" style="font-family: Arial; font-size: 18px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,738) scale(1,-1)">SQLite</text>
+			<text x="512" y="318" style="font-family: Arial; font-size: 15px;fill: rgb(20%,34%,31%); stroke:none;" transform="translate(0,636) scale(1,-1)">Financial records</text>
+			<text x="512" y="300" style="font-family: Arial; font-size: 15px;fill: rgb(20%,34%,31%); stroke:none;" transform="translate(0,600) scale(1,-1)">and audit</text>
+			<rect x="500" y="100" width="172" height="137" rx="10" ry="0" style="stroke: rgb(56%,72%,66%); stroke-linecap: butt; stroke-width: 1; fill: rgb(89%,93%,92%); fill-rule: evenodd;"/>
+			<text x="512" y="209" style="font-family: Arial; font-size: 18px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,418) scale(1,-1)">Private files</text>
+			<text x="512" y="158" style="font-family: Arial; font-size: 15px;fill: rgb(20%,34%,31%); stroke:none;" transform="translate(0,316) scale(1,-1)">Originals, keys and</text>
+			<text x="512" y="140" style="font-family: Arial; font-size: 15px;fill: rgb(20%,34%,31%); stroke:none;" transform="translate(0,280) scale(1,-1)">backups</text>
+			<rect x="790" y="190" width="172" height="137" rx="10" ry="0" style="stroke: rgb(56%,72%,66%); stroke-linecap: butt; stroke-width: 1; fill: rgb(89%,93%,92%); fill-rule: evenodd;"/>
+			<text x="802" y="299" style="font-family: Arial; font-size: 18px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,598) scale(1,-1)">Providers</text>
+			<text x="802" y="248" style="font-family: Arial; font-size: 15px;fill: rgb(20%,34%,31%); stroke:none;" transform="translate(0,496) scale(1,-1)">Approved optional</text>
+			<text x="802" y="230" style="font-family: Arial; font-size: 15px;fill: rgb(20%,34%,31%); stroke:none;" transform="translate(0,460) scale(1,-1)">connections</text>
+			<path d="M 198,258 L 250,258 Z" style="stroke: rgb(15%,43%,38%); stroke-linecap: butt; stroke-width: 2;"/>
+			<polygon points="250 258, 242 262, 242 254" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(15%,43%,38%); fill-rule: evenodd;"/>
+			<path d="M 422,280 L 500,328 Z" style="stroke: rgb(15%,43%,38%); stroke-linecap: butt; stroke-width: 2;"/>
+			<polygon points="500 328, 492 332, 492 324" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(15%,43%,38%); fill-rule: evenodd;"/>
+			<path d="M 422,210 L 500,168 Z" style="stroke: rgb(15%,43%,38%); stroke-linecap: butt; stroke-width: 2;"/>
+			<polygon points="500 168, 492 172, 492 164" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(15%,43%,38%); fill-rule: evenodd;"/>
+			<path d="M 422,248 L 790,248 Z" style="stroke: rgb(15%,43%,38%); stroke-linecap: butt; stroke-width: 2;"/>
+			<polygon points="790 248, 782 252, 782 244" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(15%,43%,38%); fill-rule: evenodd;"/>
+			<text x="26" y="75" style="font-family: Arial; font-size: 15px;fill: rgb(20%,34%,31%); stroke:none;" transform="translate(0,150) scale(1,-1)">The API mediates access to records, private files and external providers.</text>
+		</g>
+	</g>
+</svg>

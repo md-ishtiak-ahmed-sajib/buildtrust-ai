@@ -1,0 +1,7 @@
+flowchart LR
+  N0["Upload: Enforce a bounded request"]
+  N1["Validate: Check format and signature"]
+  N2["Private original: Generate the storage name"]
+  N3["Bounded parser: Limit pages, time and output"]
+  N4["Human review: Confirm procurement authority"]
+  N0 --> N1 --> N2 --> N3 --> N4

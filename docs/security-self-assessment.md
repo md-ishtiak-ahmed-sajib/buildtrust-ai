@@ -83,3 +83,236 @@ Release date: October 20, 2026. “Verified” below means local automated accep
 | 20 | Test two accounts and anonymous access | Verified: anonymous business endpoints reject access and separate accounts cannot cross project/file boundaries | Security tests plus role/payment browser workflows; public health, sign-in, recovery redemption and static UI are intentionally reachable |
 
 See [account, recovery and backup instructions](account-security.md), [actual release verification](completion-verification.md) and the recorded test logs. Package publication is gated on the complete regression and fresh-install checks. Registration email was sent by the team; organizer confirmation and final project submission remain pending.
+<!-- security-upgrade-start -->
+# The 19-control security improvement checklist
+
+Documentation-first checkpoint: MFA and new request checks are planned. Existing evidence belongs to the recorded baseline; it does not prove unfinished work.
+
+Labels: **verified**, **implemented but unverified**, **planned**, **deferred**, **not applicable**. The previous 20-item review remains separate.
+
+## Read the trust boundaries
+
+![Where protection happens](assets/security-overview.png)
+
+The API mediates access to records, private files and external providers.
+
+![Password and authenticator](assets/security-login.png)
+
+MFA is planned until the new acceptance evidence is recorded. The public demo stays exempt.
+
+![Who may access this action?](assets/security-authorization.png)
+
+Project checks decide which records are accessible. Role checks decide which actions are permitted.
+
+![A document stays untrusted](assets/security-upload.png)
+
+A valid file format does not make its contents true. Review and supporting records are still required.
+
+![Protect browser actions](assets/security-requests.png)
+
+New origin and marker checks are planned until tested. No authentication cookies are introduced.
+
+![Private keys through recovery](assets/security-secrets.png)
+
+MFA uses a separate encryption key. Never put private backups or real setup QR codes in the submission.
+
+### I01 - SQL injection
+
+**Purpose:** Keep typed data separate from database commands.
+
+**Status:** implemented but unverified.
+
+**Current baseline:** ORM values are bound; maintenance queries use controlled schema names.
+
+**Acceptance and limit:** Expand malicious and ordinary-input tests across registers and imports.
+
+### I02 - Cross-site scripting (XSS)
+
+**Purpose:** Stop saved text from becoming a browser script.
+
+**Status:** implemented but unverified.
+
+**Current baseline:** React escapes text; PDF previews are images; CSP blocks inline scripts.
+
+**Acceptance and limit:** Exercise stored payloads in names, quotations, links and explanations.
+
+### I03 - Cross-site request forgery (CSRF)
+
+**Purpose:** Stop another website from submitting actions through a browser.
+
+**Status:** planned.
+
+**Current baseline:** Bearer tokens are held in memory; authentication cookies are not used.
+
+**Acceptance and limit:** Add request markers, exact browser-origin checks and Fetch Metadata checks.
+
+### I04 - File upload validation
+
+**Purpose:** Accept bounded supported documents and retain their evidence.
+
+**Status:** verified.
+
+**Current baseline:** Type/signature, file/body, page, expansion and worker limits already exist.
+
+**Acceptance and limit:** Extend disguised-file and private-path regression cases; no antivirus claim.
+
+### I05 - Server-side request forgery (SSRF)
+
+**Purpose:** Keep outbound connections within intended destinations.
+
+**Status:** implemented but unverified.
+
+**Current baseline:** Providers use fixed hosts and no redirects; Ollama is loopback-only.
+
+**Acceptance and limit:** Require exact HTTPS origins, safe ports, no URL credentials or implicit proxies.
+
+### A01 - Object-level authorization
+
+**Purpose:** Check which project owns every requested record.
+
+**Status:** implemented but unverified.
+
+**Current baseline:** Membership and resource helpers protect assigned project records.
+
+**Acceptance and limit:** Expand parent/child, export, attachment, archive and publisher tests.
+
+### A02 - Rate limiting
+
+**Purpose:** Bound repeated sign-ins and expensive operations.
+
+**Status:** verified.
+
+**Current baseline:** Persistent account/IP and operation buckets survive restarts.
+
+**Acceptance and limit:** Include MFA challenges and factor-management operations.
+
+### A03 - Password hashing
+
+**Purpose:** Store a slow password hash instead of the password.
+
+**Status:** verified.
+
+**Current baseline:** Private database passwords use Argon2; hashing stays outside financial writers.
+
+**Acceptance and limit:** Retain existing hashes and generic login errors.
+
+### A04 - Multi-factor authentication (MFA)
+
+**Purpose:** Require a password and an authenticator for privileged private users.
+
+**Status:** planned.
+
+**Current baseline:** Authenticator enrollment and verification are not implemented in the baseline.
+
+**Acceptance and limit:** Require private Admin/Finance MFA; optional for other roles; public demo exempt.
+
+### A05 - Server-side permissions
+
+**Purpose:** Check whether the current role may perform the action.
+
+**Status:** verified.
+
+**Current baseline:** The server reloads active account, role, membership and payment authority.
+
+**Acceptance and limit:** Add current-role MFA assurance checks without weakening financial approval.
+
+### A06 - Native row-level security (RLS)
+
+**Purpose:** Let the database itself enforce row-access policies.
+
+**Status:** deferred.
+
+**Current baseline:** SQLite project filters operate in the application, not as native database RLS.
+
+**Acceptance and limit:** A future PostgreSQL release needs its own migration, policies and acceptance.
+
+### S01 - JWT signing secrets
+
+**Purpose:** Prevent forged or stale server sessions.
+
+**Status:** implemented but unverified.
+
+**Current baseline:** Random private signing material, fixed JWT checks and revocable sessions exist.
+
+**Acceptance and limit:** Validate key strength; keep strong existing keys and revoke old sessions for MFA.
+
+### S02 - Server-only API secrets
+
+**Purpose:** Keep provider credentials outside the browser and public source.
+
+**Status:** verified.
+
+**Current baseline:** Backend settings, disabled paid defaults and secret scanning protect keys.
+
+**Acceptance and limit:** Extend exclusions and backups for the separate MFA encryption key.
+
+### S03 - No persistent browser tokens
+
+**Purpose:** Avoid leaving credentials in browser storage.
+
+**Status:** verified.
+
+**Current baseline:** Access tokens stay in memory; only harmless view filters use sessionStorage.
+
+**Acceptance and limit:** Ensure MFA challenges, setup secrets and recovery codes also stay in memory.
+
+### C01 - Tight CORS and trusted origins
+
+**Purpose:** Allow the intended local browser application only.
+
+**Status:** implemented but unverified.
+
+**Current baseline:** Same-origin API and the development proxy need no wildcard CORS.
+
+**Acceptance and limit:** Add trusted-host and explicit per-launcher browser-origin enforcement.
+
+### C02 - Webhook signatures
+
+**Purpose:** Authenticate incoming integration callbacks before processing them.
+
+**Status:** not applicable.
+
+**Current baseline:** There are no incoming webhook integrations or real payment callbacks.
+
+**Acceptance and limit:** Keep callbacks disabled; require provider-specific verification if introduced.
+
+### C03 - Production source maps
+
+**Purpose:** Do not publish browser debug maps with the running app.
+
+**Status:** implemented but unverified.
+
+**Current baseline:** The current production directory contains no map files.
+
+**Acceptance and limit:** Set the build policy explicitly and reject map requests without SPA fallback.
+
+### C04 - Logs and lockfile hygiene
+
+**Purpose:** Keep private values out of diagnostics and dependency records.
+
+**Status:** verified.
+
+**Current baseline:** Fixed-metadata logs, redacted errors and source/archive scans already exist.
+
+**Acceptance and limit:** Add MFA values and credential-bearing dependency URLs to regression checks.
+
+### C05 - Dependency vulnerabilities
+
+**Purpose:** Check published advisories and install reproducible versions.
+
+**Status:** verified.
+
+**Current baseline:** The recorded baseline npm and Python scans reported no known advisories.
+
+**Acceptance and limit:** Rescan new dependencies; update affected compatible versions and retain locks.
+
+## Important distinctions
+
+- XSS means content runs as a script. CSRF means a different website tries to submit an action. They require different controls.
+- Project isolation is enforced by this application. Native database RLS remains deferred while SQLite is used.
+- Incoming webhooks stay disabled. No real payment callback or signature-verification claim is made.
+- Private Admin and Finance accounts will require MFA; the four marked public-demo accounts keep their README passwords and simple login.
+- Logs and dependency lockfiles must exclude private values. A dependency scan is not an independent security assessment.
+
+Sources: [OWASP CSRF](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html), [OWASP MFA](https://cheatsheetseries.owasp.org/cheatsheets/Multifactor_Authentication_Cheat_Sheet.html), [OWASP SSRF](https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html), [PyOTP](https://pyauth.github.io/pyotp/).
+

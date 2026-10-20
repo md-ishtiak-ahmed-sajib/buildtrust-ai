@@ -1,0 +1,7 @@
+flowchart LR
+  N0["Browser: Send the explicit marker"]
+  N1["Origin checks: Trusted origin and metadata"]
+  N2["Authentication: Check the server session"]
+  N3["Business rules: Check role, record and version"]
+  N4["Safe response: Return a typed result or error"]
+  N0 --> N1 --> N2 --> N3 --> N4

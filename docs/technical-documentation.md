@@ -72,3 +72,47 @@ Use [isolated test commands](test-results.md). Recordings require a dedicated da
 Read [current results](completion-verification.md) for actual counts, measurements and external limits. The project uses AGPL-3.0-only with dependency attribution.
 
 See [account security](account-security.md) for private storage permissions, provider limits and backup/restore commands. Paid-provider credentials alone do not enable requests.
+<!-- security-upgrade-start -->
+# Security architecture extension
+
+Documentation-first checkpoint: MFA and new request checks are planned. Existing evidence belongs to the recorded baseline; it does not prove unfinished work.
+
+The current application uses memory-only bearer tokens and revocable server sessions. The next migration adds encrypted MFA factors, restricted challenges, hashed recovery codes and session assurance. Planned MFA is not part of the baseline evidence.
+
+![Where protection happens](assets/security-overview.png)
+
+The API mediates access to records, private files and external providers.
+
+![Password and authenticator](assets/security-login.png)
+
+Password -> Restricted step -> Authenticator -> Server checks -> Full session.
+
+![Who may access this action?](assets/security-authorization.png)
+
+Active account -> Membership -> Current role -> Record checks -> Allowed action.
+
+![A document stays untrusted](assets/security-upload.png)
+
+Upload -> Validate -> Private original -> Bounded parser -> Human review.
+
+![Protect browser actions](assets/security-requests.png)
+
+Browser -> Origin checks -> Authentication -> Business rules -> Safe response.
+
+![Private keys through recovery](assets/security-secrets.png)
+
+Generate -> Protect -> Use on server -> Private backup -> Isolated restore.
+
+## Interfaces and operating rules
+
+- Mutating requests will require X-BuildTrust-Request: 1 and explicit origin checks. No authentication cookies are introduced.
+- MFA challenges are restricted to setup or verification; they must never authorize financial actions.
+- TOTP uses six digits and 30-second periods. Used periods and recovery codes cannot be replayed.
+- A separate private key encrypts MFA factors. Backup and restore must include it; missing keys fail closed.
+- Only the local owner may reset MFA. Password recovery alone cannot remove it.
+- SQLite keeps project isolation in server queries. Native PostgreSQL RLS is a separate deferred release.
+- No incoming webhook receiver is enabled.
+- The public-demo credentials in README remain unchanged and exempt from MFA.
+
+See the [19 distinct control entries](security-self-assessment.md#the-19-control-security-improvement-checklist) and [recorded verification](completion-verification.md).
+

@@ -1,0 +1,7 @@
+flowchart LR
+  N0["Active account: Is this session still valid?"]
+  N1["Membership: Is this the right project?"]
+  N2["Current role: May this person do this?"]
+  N3["Record checks: Sources and approval match?"]
+  N4["Allowed action: Write once with audit evidence"]
+  N0 --> N1 --> N2 --> N3 --> N4

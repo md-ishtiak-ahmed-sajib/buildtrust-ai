@@ -1,0 +1,7 @@
+flowchart LR
+  N0["Password: Confirm the first factor"]
+  N1["Restricted step: No project access yet"]
+  N2["Authenticator: Enter a short-lived code"]
+  N3["Server checks: Expiry, replay and current role"]
+  N4["Full session: Access only after all checks"]
+  N0 --> N1 --> N2 --> N3 --> N4

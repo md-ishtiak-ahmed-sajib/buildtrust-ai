@@ -37,3 +37,10 @@ New to the app? Start with the [README](../README.md), [feature list](../feature
 - [Submission checklist](../submission/submission-checklist.md) separates prepared files from human submission steps.
 
 All payments are simulated. Public passwords work only in the separate public demo. Keep private runtime files out of Git.
+
+## Ready-to-read submission reports
+
+- [Security self-assessment PDF](../submission/BuildTrustAI_Security_Self_Assessment.pdf)
+- [Technical documentation PDF](../submission/BuildTrustAI_Technical_Documentation.pdf)
+
+The documentation-first checkpoint distinguishes current protections from planned MFA and request checks. Native database RLS is deferred; incoming webhooks are not enabled. Each report includes simple diagrams and the same status language as its editable Markdown guide.

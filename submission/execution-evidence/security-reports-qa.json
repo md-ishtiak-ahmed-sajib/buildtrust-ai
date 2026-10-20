@@ -1,0 +1,42 @@
+{
+  "outputs": [
+    {
+      "file": "BuildTrustAI_Security_Self_Assessment.pdf",
+      "pages": 10,
+      "sha256": "9192199bd1908b288fda27eb01c4ac92a9a2f2d41d93bd4ce130d3c3d6d3822c",
+      "text_extraction_passed": true,
+      "verified_upgrade": false,
+      "visually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "hyperlinks": 9
+    },
+    {
+      "file": "BuildTrustAI_Technical_Documentation.pdf",
+      "pages": 5,
+      "sha256": "183f7f5fc82f56e1dbf6ea78b5ad955b54c0fecb5902c8c1c3a2bec867977520",
+      "text_extraction_passed": true,
+      "verified_upgrade": false,
+      "visually_inspected_pages": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "hyperlinks": 11
+    }
+  ],
+  "passed": true,
+  "phase": "Documentation first; new MFA/request controls still planned",
+  "visual_review": "All pages inspected as rendered contact sheets; final text bounds and hyperlinks checked."
+}

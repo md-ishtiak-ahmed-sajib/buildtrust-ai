@@ -1,13 +1,17 @@
 {
   "passed": true,
-  "archive_sha256": "d8b99c0c3a4bf9d9813db04758e1b572fb1467b6c2a26a5dd27a025de7637d20",
-  "source_fingerprint": "7c8b818feaadbd50ad8ba66ae12f099d96de75e865501e48a1dad1a66cb8161f",
-  "packaged_files_checked": 468,
+  "archive_sha256": "647967570dbe473d910623d2cc328e8a9c70b29190aae57bedbd8e60795d7a79",
+  "source_fingerprint": "27dfac74684d5363ebcfbc3b0dec3ce723065febe9dd5f07a869fa5b52a580ce",
+  "packaged_files_checked": 469,
   "all_current_packaged_file_hashes_match": true,
   "excluded_postpackage_receipts": [
     "final-archive-acceptance.json",
     "final-archive-acceptance.log",
     "final-source-agreement.json",
     "security-publication.json"
+  ],
+  "standalone_delivery_files_excluded_to_avoid_recursion": [
+    "BuildTrustAI_Execution_Evidence.zip",
+    "checksums.json"
   ]
 }

@@ -193,6 +193,7 @@ The first browser run needs Chromium: `npm --prefix frontend exec playwright ins
 - [All features](features.md), [judge guide](docs/judges-quickstart.md) and [financial rules](docs/financial-rules.md)
 - [Technical guide](docs/technical-documentation.md), [API guide](docs/api-reference.md) and [security review](docs/security-self-assessment.md)
 - [Submission files and reading guide](submission/README.md)
+- [Execution-evidence ZIP](submission/BuildTrustAI_Execution_Evidence.zip) and [delivery checksums](submission/checksums.json)
 - [Presentation](submission/BuildTrustAI_Presentation.pptx), [demo video](submission/BuildTrustAI_Demo.mp4), [source archive](submission/BuildTrustAI_Source.zip) and [submission checklist](submission/submission-checklist.md)
 - [Remaining tasks and their owners](docs/remaining-work.md)
 

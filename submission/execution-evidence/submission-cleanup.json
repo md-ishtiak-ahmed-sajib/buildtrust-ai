@@ -1,0 +1,27 @@
+{
+  "passed": true,
+  "checked_at": "2026-10-20T13:41:08.420967+00:00",
+  "scope": "Submission bundle synchronization and removal of redundant generated files; application behavior unchanged.",
+  "import_source": "data/email-attachments-security-final",
+  "delivery_files": 7,
+  "duplicate_logs_removed": [
+    {
+      "removed": "submission/execution-evidence/browser-tests-final.log",
+      "retained": "submission/execution-evidence/browser-tests.log"
+    },
+    {
+      "removed": "submission/execution-evidence/final-archive-acceptance.log",
+      "retained": "submission/final-archive-acceptance.log"
+    }
+  ],
+  "old_test_installations_removed": 27,
+  "cache_directories_removed": 3,
+  "temporary_presentation_logs_removed": 2,
+  "logical_file_bytes_removed": 9823908225,
+  "retained_prior_installation": "clean-checkout-18bc0327",
+  "application_files_verified_unchanged": 160,
+  "original_private_files_verified_unchanged": 155,
+  "working_data_and_private_backups_preserved": true,
+  "installed_app_dependencies_preserved": true,
+  "outer_archives_excluded_from_source_zip_to_avoid_recursion": true
+}

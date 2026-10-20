@@ -171,6 +171,12 @@ excluded_files = {
     "BuildTrustAI_Source.zip.sha256",
     "release-manifest.json",
 }
+# These are assembled after the source ZIP. Including either would create
+# circular archive/checksum references and duplicate the retained evidence.
+standalone_delivery_files = {
+    "submission/BuildTrustAI_Execution_Evidence.zip",
+    "submission/checksums.json",
+}
 files = []
 for directory in [
     "backend",
@@ -191,6 +197,7 @@ for directory in [
             and item.suffix.lower() not in (".pem", ".key", ".db", ".sqlite", ".sqlite3")
             and not set(relative.parts).intersection(excluded)
             and item.name not in excluded_files
+            and relative.as_posix() not in standalone_delivery_files
             and item.suffix not in (".pyc", ".tsbuildinfo")
         ):
             files.append(item)

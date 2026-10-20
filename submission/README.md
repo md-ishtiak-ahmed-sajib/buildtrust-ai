@@ -21,10 +21,12 @@ The application is implemented. Security hardening and the recorded local and ho
 | Presentation | [Nine-slide deck](BuildTrustAI_Presentation.pptx) | The problem, working examples and evidence, with notes for an eight-to-nine-minute talk |
 | Demonstration | [4:18 video](BuildTrustAI_Demo.mp4) | Actual isolated app interactions with disclosed local synthetic English narration |
 | Source code | [Source ZIP](BuildTrustAI_Source.zip) and [GitHub](https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai) | Source, setup instructions, tests, samples, AGPL license and attribution |
-| Execution evidence | [Evidence folder](execution-evidence/README.md) | Actual requests, results, balances, audit references, scans and test output |
+| Execution evidence | [Execution-evidence ZIP](BuildTrustAI_Execution_Evidence.zip) and [readable index](execution-evidence/README.md) | Actual requests, results, balances, audit references, scans and test output |
 | Optional introduction | [Project overview](BuildTrustAI_Project_Overview.pdf) | A short explanation for readers who want the main idea first |
 
-The local email-attachment bundle also contains a separate execution-evidence ZIP. The [archive checksum](BuildTrustAI_Source.zip.sha256), release manifest and post-package receipts identify the tested files. Source ZIP and GitHub exclude private runtime data, `prompt/` and `AGENTS.md`; existing Git history is retained.
+All seven delivery files are available directly in this folder. The local email-attachment folder contains the same files. [Delivery checksums](checksums.json), the [source archive checksum](BuildTrustAI_Source.zip.sha256), release manifest and post-package receipts identify the verified files. Source ZIP and GitHub exclude private runtime data, `prompt/` and `AGENTS.md`; existing Git history is retained.
+
+To refresh the standalone evidence ZIP and keep the email folder identical after packaging and acceptance, run `uv run --project backend python scripts/sync_submission.py --refresh --sync-email`. The source ZIP excludes the standalone evidence ZIP and delivery checksums to avoid duplicate contents and circular hashes.
 
 ## Completed verification
 

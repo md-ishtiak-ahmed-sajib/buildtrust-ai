@@ -1,8 +1,8 @@
 {
-  "generated_at": "2026-10-20T12:38:16.790625Z",
+  "generated_at": "2026-10-20T13:39:48.914029Z",
   "transport": "Real local HTTP + persistent SQLite",
   "simulation": true,
-  "source_fingerprint": "7c8b818feaadbd50ad8ba66ae12f099d96de75e865501e48a1dad1a66cb8161f",
+  "source_fingerprint": "27dfac74684d5363ebcfbc3b0dec3ce723065febe9dd5f07a869fa5b52a580ce",
   "source_files": {
     ".dockerignore": "b7fed4bc4ced7dfada7e5781c258d97a1f7753766e0d9a77bd81e34acb6f94b7",
     ".env.example": "0c097cb55fb243117f2947c1f61fa619b80b4a3b1a0c1a81cd12530a5fde2b12",
@@ -185,7 +185,7 @@
     "scripts/generate_demo_files.py": "54c7381aa8a4f998106a3576de4d05a415c0a3ec44ccf2a5b08dd81a1a1b9ee3",
     "scripts/manage_security.py": "0d2217928fba9e41d532471f6df158c54d3491fe91e7fe2ab37249baee57c62b",
     "scripts/mux_video.py": "a54003af209e7b4eff86696567d192eb4990f65e40b91988b1823933a7b3ed8c",
-    "scripts/package_release.py": "2a815029a62a41c82d499839fe8647f0e783d87a79ddb625ebb276a3de05beb3",
+    "scripts/package_release.py": "bb1bc92e41b39ecfd063a2cbd54dbc6ec68dab5f85e319d89ad502c0fffaf3eb",
     "scripts/prepare_narration.py": "10e638402e2527c04759b2a6abb3431816dac55041140daded75baec169d0151",
     "scripts/record_demo.mjs": "26ad30aea9facd18e42480c84a765691022acfc0ba8ff9a07fb1fb79c8aee6cd",
     "scripts/record_demo.py": "1db785756d1ba3fbdb24c896c9e88782ad9b21d48c597184b97b8bb8b51c6542",
@@ -196,6 +196,7 @@
     "scripts/setup.ps1": "06cb5d7b2de11c6c63f3d9e7a087aab92de369e5cc0b6704a0f4f5acd20a243c",
     "scripts/setup.sh": "78b5a9d6f46e4a364c7ef6e96b2e0d470f858d9b97cf555e14684f0db75bd666",
     "scripts/setup_ocr.py": "870d0be02aedc8c25d5901f4c91943c73c95291911bee9363457958f3074fb20",
+    "scripts/sync_submission.py": "a6f360f982fc37f56f05f82e52eb3d1af7879199dee34f3cd273bd03d7c56ff1",
     "scripts/synthesize_narration.ps1": "4255a0133e915b764ba7f5644c65db288bf13d54290a530b77b3009339fb85a8",
     "scripts/try_demo.ps1": "6235fb0df1181d59fb86fce203adeaedc6874ca0b732bd432dc47948e59f2229",
     "scripts/verification_client.py": "8bcf2b055381d7546788cce753fbb3a9d1a29ec53b59991e3e8738d5a319b278",
@@ -212,7 +213,7 @@
   "scenarios": [
     {
       "scenario_id": "A",
-      "executed_at": "2026-10-20T12:38:14.594453Z",
+      "executed_at": "2026-10-20T13:39:46.076832Z",
       "decision": "BLOCKED",
       "balance_before": "1000000.00",
       "balance_after": "1000000.00",
@@ -220,7 +221,7 @@
     },
     {
       "scenario_id": "B",
-      "executed_at": "2026-10-20T12:38:14.889967Z",
+      "executed_at": "2026-10-20T13:39:46.387736Z",
       "decision": "SETTLED",
       "balance_before": "1000000.00",
       "balance_after": "930000.00",
@@ -228,7 +229,7 @@
     },
     {
       "scenario_id": "C",
-      "executed_at": "2026-10-20T12:38:15.215377Z",
+      "executed_at": "2026-10-20T13:39:46.740489Z",
       "decision": "DUPLICATE_HELD",
       "balance_before": "1000000.00",
       "balance_after": "1000000.00",
@@ -236,7 +237,7 @@
     },
     {
       "scenario_id": "D",
-      "executed_at": "2026-10-20T12:38:15.390799Z",
+      "executed_at": "2026-10-20T13:39:46.959161Z",
       "decision": "BLOCKED",
       "balance_before": "1000000.00",
       "balance_after": "1000000.00",
@@ -244,7 +245,7 @@
     },
     {
       "scenario_id": "E",
-      "executed_at": "2026-10-20T12:38:15.683665Z",
+      "executed_at": "2026-10-20T13:39:47.345812Z",
       "decision": "BLOCKED",
       "balance_before": "150000.00",
       "balance_after": "150000.00",
@@ -252,7 +253,7 @@
     },
     {
       "scenario_id": "F",
-      "executed_at": "2026-10-20T12:38:15.956503Z",
+      "executed_at": "2026-10-20T13:39:47.741649Z",
       "decision": "BLOCKED",
       "balance_before": "1000000.00",
       "balance_after": "1000000.00",
@@ -260,7 +261,7 @@
     },
     {
       "scenario_id": "G",
-      "executed_at": "2026-10-20T12:38:16.284200Z",
+      "executed_at": "2026-10-20T13:39:48.178382Z",
       "decision": "UNAUTHORIZED_APPROVAL_DENIED",
       "balance_before": "1000000.00",
       "balance_after": "1000000.00",
@@ -268,7 +269,7 @@
     },
     {
       "scenario_id": "H",
-      "executed_at": "2026-10-20T12:38:16.576881Z",
+      "executed_at": "2026-10-20T13:39:48.626610Z",
       "decision": "SETTLED",
       "balance_before": "1000000.00",
       "balance_after": "930000.00",
@@ -279,8 +280,8 @@
     "valid": true,
     "checked_events": 509,
     "failed_event_id": null,
-    "head_hash": "6dfeb406d68e050fd0143f3c57f115a3d7b1a860197b3c13469a7dc0854fec24",
+    "head_hash": "e777c73748316b9bd8a0e35f8841aafe7b35b8295211a01c24dbc862b993721c",
     "limitation": "Local hash chain; an unrestricted database administrator can rewrite the complete chain."
   },
-  "runtime_database": "data\\evidence-845c1cac92\\buildtrust.db"
+  "runtime_database": "data\\evidence-789026779f\\buildtrust.db"
 }

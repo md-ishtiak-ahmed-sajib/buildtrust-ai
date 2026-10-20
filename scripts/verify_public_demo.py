@@ -6,6 +6,7 @@ import json
 import os
 from pathlib import Path
 import sqlite3
+import socket
 import subprocess
 import time
 
@@ -52,6 +53,13 @@ def main():
         raise SystemExit(
             "Use a fresh source copy under data/, not your working project."
         )
+    # Never run acceptance requests against an unrelated listener. The launcher
+    # has its own port check, but it can exit after our first health request.
+    with socket.socket() as probe:
+        try:
+            probe.bind(("127.0.0.1", 8003))
+        except OSError as exc:
+            raise SystemExit("Port 8003 is occupied. Stop the existing demo before isolated verification.") from exc
     output.mkdir(parents=True, exist_ok=True)
     before = snapshot(target / "data")
     command = [
@@ -70,7 +78,8 @@ def main():
                 if server.poll() is not None:
                     raise RuntimeError("Public launcher failed; see its isolated log.")
                 try:
-                    if client.get("/api/v1/health").is_success:
+                    if ((target / "data/public-demo/buildtrust.db").is_file()
+                            and client.get("/api/v1/health").is_success):
                         break
                 except httpx.HTTPError:
                     pass

@@ -38,6 +38,10 @@ required = [
     "submission/execution-evidence/clean-install.json",
     "submission/execution-evidence/public-demo-install.json",
     "submission/execution-evidence/documentation-check.json",
+    ".gitleaks.toml",
+    "submission/execution-evidence/security-secret-scan.json",
+    "submission/execution-evidence/security-private-preservation.json",
+    "submission/execution-evidence/security-private-backup-restore.json",
 ]
 for name in required:
     assert (ROOT / name).is_file(), f"Missing deliverable: {name}"
@@ -123,7 +127,8 @@ Deadline: October 20, 2026, 21:59 Dhaka / 23:59 Beijing. Target upload readiness
 
 ## Team actions still needed
 
-- [ ] Confirm registration with the competition organizer
+- [x] Registration email sent by the team
+- [ ] Receive registration confirmation from the competition organizer
 - [ ] Add the real team/presenter details and rehearse the talk within ten minutes
 - [ ] Upload the required reports, source link/archive, presentation, video and evidence; keep confirmation
 
@@ -149,6 +154,12 @@ excluded_files = {
     "agents.md",
     "presentation-validation.json",
     "presentation-build.log",
+    # These receipts are created after packaging/publication. Keeping them
+    # beside the archive avoids circular checksums and stale embedded receipts.
+    "final-archive-acceptance.json",
+    "final-archive-acceptance.log",
+    "final-source-agreement.json",
+    "security-publication.json",
     "BuildTrustAI_Source.zip",
     "BuildTrustAI_Source.zip.sha256",
     "release-manifest.json",
@@ -168,6 +179,9 @@ for directory in [
         relative = item.relative_to(ROOT)
         if (
             item.is_file()
+            and not item.name.startswith(".env")
+            and not any(value in item.name.lower() for value in ("credentials", "signing-secret", ".private.zip"))
+            and item.suffix.lower() not in (".pem", ".key", ".db", ".sqlite", ".sqlite3")
             and not set(relative.parts).intersection(excluded)
             and item.name not in excluded_files
             and item.suffix not in (".pyc", ".tsbuildinfo")
@@ -176,7 +190,9 @@ for directory in [
 files.extend(
     p
     for p in ROOT.iterdir()
-    if p.is_file() and p.name not in excluded_files and p.name != ".env"
+    if p.is_file() and p.name not in excluded_files and (not p.name.startswith(".env") or p.name == ".env.example")
+    and not any(value in p.name.lower() for value in ("credentials", "signing-secret", ".private.zip"))
+    and p.suffix.lower() not in (".pem", ".key", ".db", ".sqlite", ".sqlite3")
 )
 files = sorted(set(files))
 checksums = {
@@ -196,6 +212,7 @@ release = {
     "repository": repository,
     "git_remote_published": published,
     "github_publication": publication,
+    "github_publication_scope": "Historical tested revision; current archive publication is verified separately in security-publication.json beside the archive.",
     "competition_submitted": False,
 }
 manifest = submission / "release-manifest.json"

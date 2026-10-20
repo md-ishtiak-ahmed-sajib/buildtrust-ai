@@ -23,7 +23,7 @@ Only unfinished tasks belong here. Completed work and test evidence are recorded
 
 | Task | Owner | What is needed next |
 |---|---|---|
-| Confirm registration and team details | Team | Supply actual registration confirmation, team identity and presenter details. |
+| Obtain organizer confirmation and finalize presenter details | Team | Registration email sent by the team. Await organizer confirmation and finalize the presenter information. |
 | Rehearse | Presenter/team | Run the nine-slide talk and demonstration, check timing and add the real team introduction. |
 | Upload the final package | Team | Supply the authorized destination, upload the required files and keep confirmation before the supplied deadline. |
 

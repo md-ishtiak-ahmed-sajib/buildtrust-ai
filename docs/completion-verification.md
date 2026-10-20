@@ -8,21 +8,21 @@ All links below refer to actual logs or receipts in [execution evidence](../subm
 
 | Check | Actual result | Evidence file |
 |---|---|---|
-| Backend suite | 203 passed; one existing Starlette/httpx deprecation warning | backend-tests.log |
+| Backend suite | 225 passed; one existing Starlette/httpx deprecation warning | backend-tests.log |
 | Frontend tests | 8 passed | frontend-tests.log |
 | Production build | Passed | frontend-build.log |
-| Browser workflows | 16 passed | browser-tests.log; screenshots |
+| Browser workflows | 18 passed | browser-tests.log; screenshots |
 | Public browser logins | Four README accounts passed real browser login/navigation | public-demo-browser.json |
 | Public launcher | Fresh Windows setup, four logins, permissions, payment, repeat preparation and occupied-port checks passed | public-demo-install.json |
-| Working profile preservation | 57 tables and 155 private files unchanged; credentials, secret and uploads preserved | public-demo-private-preservation.json |
+| Working profile preservation | 56 legacy tables and 155 private files preserved; credentials and secret unchanged | security-private-preservation.json |
 | Private setup | Fresh setup, migrations, generated credentials, payment/estimate and audit checks passed | clean-install.json; clean-install.log |
 | Original HTTP examples | A–H results and source fingerprint are recorded by the isolated collector | manifest.json; scenario-a through scenario-h.json |
 | Contracts | Repeat generation agrees with OpenAPI/document/frontend types | contract-drift.json |
 | Documentation | Render, links, images, mobile layouts, Mermaid diagrams and five SVG checks | documentation-check.json |
-| Hosted Windows and Ubuntu | Both jobs passed, including native Linux shell startup and fresh Windows private/public setup | hosted-ci.json; hosted-ci-summary.json |
-| Initial JavaScript | 116708 gzip bytes; 49.8% below the 232480-byte baseline | asset-budget.json |
+| Hosted Windows and Ubuntu | Earlier revision passed both platforms. Matching security-release status is recorded after publication. | hosted-ci.json; security-publication.json beside the archive |
+| Initial JavaScript | 117423 gzip bytes; 49.49% below the 232480-byte baseline | asset-budget.json |
 
-Public tests cover published passwords, actual role denial, independent payment and clear refusal of unrelated/changed data. Private setup still generates random passwords. No new database migration is needed for this update.
+Public tests cover published passwords, actual role denial, independent payment and clear refusal of unrelated/changed data. Private setup still generates random passwords. Security migration 0018 adds revocable sessions, recovery, persistent throttles and usage reservations. Earlier tokens require a fresh login.
 
 The historical migration to head **0017** preserved 54 legacy table/column fingerprints, original credentials, receipts and audit history. The documentation/public-demo change checks working-profile preservation separately; it does not claim to rerun that earlier migration on the user's database.
 
@@ -61,8 +61,12 @@ A live free Frankfurter USD/BDT observation of **123.27**, dated **2026-10-19**,
 
 The presentation has nine visually inspected slides, nine speaker-note parts and two editable tables, with structural validation. The final recording is **4 minutes 18 seconds**. It uses actual app interactions, a dedicated database and a disclosed local synthetic voice. Full decoding and application-source agreement passed. Archive manifests identify packaged files; archive-install receipts identify the exact tested archive. Final post-package acceptance files are kept beside the archive in GitHub to avoid a circular checksum. Read their individual current receipts instead of inferring acceptance from file existence.
 
-The authorized repository is [md-ishtiak-ahmed-sajib/buildtrust-ai](https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai). Refreshed source revision `9d2f3a48f6ac48ab71a2dbcaed52eeeb37d1034e` passed both jobs in [the actual hosted run](https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39289544488). This includes native Linux shell setup/startup and fresh Windows private/public installation. A fresh download matched all 182 evidence-bound source files and 411 other tracked file bytes before later metadata-only updates. Remote, checkout and hosted receipts retain their tested revision; later documentation/package commits do not change application code.
+The authorized repository is [md-ishtiak-ahmed-sajib/buildtrust-ai](https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai). Earlier source revision `9d2f3a48f6ac48ab71a2dbcaed52eeeb37d1034e` passed both jobs in [the actual hosted run](https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39289544488). This includes native Linux shell setup/startup and fresh Windows private/public installation. A fresh download matched all 182 evidence-bound source files and 411 other tracked file bytes before later metadata-only updates. These remote, checkout and hosted receipts describe that earlier revision. They do not validate the later security changes. The current publication receipt names the exact security revision and its actual checks.
 
 Docker's engine is unavailable. Professional rule acceptance, representative Bengali documents, assistive-technology review, independent deployment security review and final team actions remain separate. No real payment, external audit immutability or professional certification is claimed.
 
-Private planning files and local engineering instructions are excluded from the current public source and archive. Public remaining tasks are in [remaining work](remaining-work.md). The latest scope-only update passed all eight HTTP scenarios and rendered 33 documentation pages and five SVGs. Earlier remote receipts retain the actual source revision they tested.
+Private planning files and local engineering instructions are excluded from the current public source and archive. Public remaining tasks are in [remaining work](remaining-work.md). The current local security update passed all eight HTTP scenarios and rendered 34 documentation pages and five SVGs. Earlier remote receipts retain the actual source revision they tested.
+
+## October 20 security acceptance
+
+All 20 controls are mapped in the [security report](security-self-assessment.md). The current local release passed 225 backend tests, 8 frontend tests, 18 browser workflows and all A–H HTTP scenarios. Secret scanning covers all available Git refs, current/build assets, nested historical archives and five exact private values; no findings remained after narrowly identifying provenance checksums. Private backup/restore and 0018 migration preserve 56 legacy tables, 155 private files and the original audit prefix. The post-package security-publication.json receipt records the matching commit and actual hosted-check status; a queued job is not a pass.

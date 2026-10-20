@@ -177,7 +177,8 @@ def create_router(settings, engine, app):
     ):
         with context(request) as (session, user):
             document = entity(session, user, m.Document, document_id)
-            path = settings.data_dir / "uploads" / document.storage_name
+            from .private_storage import private_path
+            path = private_path(settings.data_dir, "uploads", document.storage_name)
             if path.suffix == ".pdf":
                 import subprocess, sys, base64
 

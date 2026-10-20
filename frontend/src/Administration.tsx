@@ -4,6 +4,7 @@ import { useWorkspace } from "./App";
 import { api, post, titleCase } from "./api";
 import { PageTitle, Panel, ConfirmButton, Loading, ErrorState } from "./ui";
 import { Field, useAction } from "./advanced/shared";
+import { usePasswordOptions } from "./AccountSecurity";
 
 type Account = { id: number; name: string; email: string; role: string; active: boolean; version: number };
 const roles = ["OPERATOR", "FINANCE_MANAGER", "ADMIN", "AUDITOR"];
@@ -12,6 +13,8 @@ export function AdministrationPage() {
   const [name, setName] = useState(""), [email, setEmail] = useState(""), [password, setPassword] = useState("");
   const [role, setRole] = useState("OPERATOR"), [filter, setFilter] = useState("");
   const [changes, setChanges] = useState<Record<number, { role: string; active: boolean }>>({});
+  const options=usePasswordOptions();
+  const [recovery,setRecovery]=useState<{token:string;expires_at:string;email:string}|null>(null);
   const accounts = useQuery({ queryKey: ["local-accounts"], enabled: user.role === "ADMIN",
     queryFn: () => api<Account[]>("/administration/users") });
   const members = useQuery({ queryKey: ["project-members", project.id], enabled: user.role === "ADMIN",
@@ -22,6 +25,7 @@ export function AdministrationPage() {
     <PageTitle eyebrow="LOCAL ACCOUNTS & PROJECT ACCESS" title="Team & Access"
       description="Create individual accounts for independent preparation, checking, approval and audit. Permissions are checked by the backend on every request." />
     {action.feedback}
+    {recovery && <Panel title="Recovery token — share privately once"><p>Verify {recovery.email} before sharing. Expires: {recovery.expires_at}. It is not stored in browser history.</p><label>Single-use token<input readOnly value={recovery.token} autoComplete="off" /></label><button className="button" onClick={()=>setRecovery(null)}>Hide and clear token</button></Panel>}
     <Panel title="Create local account">
       <form className="advanced-grid" onSubmit={event => { event.preventDefault(); void action.run(async () => {
         await post("/administration/users", { name, email, password, role });
@@ -51,7 +55,7 @@ export function AdministrationPage() {
                 description={`${account.name} ${member ? "will lose" : "will gain"} access to ${project.name}.`}
                 disabled={action.busy || !project.active || !account.active}
                 onConfirm={() => action.run(async () => { await post(`/administration/members?project_id=${project.id}`, { user_id: account.id, member: !member }); await reload(); }, "Project membership updated").then(() => {})}>{member ? "Remove access" : "Assign access"}</ConfirmButton></td>
-              <td><ConfirmButton title="Apply account authority changes?" description={`Update role and active status for ${account.name}. Existing financial approvals are rechecked against current authority.`}
+              <td>{options.data?.password_management_enabled && account.role !== "ADMIN" && account.active && <button className="button" disabled={action.busy} onClick={()=>void action.run(async()=>{const r=await post<{token:string;expires_at:string}>(`/administration/users/${account.id}/recovery`);setRecovery({...r,email:account.email});},"Recovery token issued. Verify the recipient before sharing.")}>Issue recovery token</button>}<ConfirmButton title="Apply account authority changes?" description={`Update role and active status for ${account.name}. Existing financial approvals are rechecked against current authority.`}
                 disabled={action.busy || !project.active || (selected.role === account.role && selected.active === account.active)}
                 onConfirm={() => action.run(async () => { await api(`/administration/users/${account.id}`, { method: "PATCH", body: JSON.stringify({ ...selected, expected_version: account.version }) }); setChanges(value => { const next = { ...value }; delete next[account.id]; return next; }); await reload(); }, "Account authority updated").then(() => {})}>Apply changes</ConfirmButton></td></tr>;
           })}</tbody></table></div>}

@@ -59,3 +59,15 @@ def approved(env):
     )
     assert response.status_code == 200, response.text
     return proposal
+
+
+@pytest.fixture
+def paid_fixture(env):
+    """Explicit fixture-only budgets; callers still supply fake keys and mocks."""
+    settings = env[0].state.settings
+    settings.paid_providers_enabled = True
+    settings.paid_user_daily_calls = 100
+    settings.paid_project_daily_calls = 100
+    settings.paid_provider_daily_calls = 100
+    settings.paid_operation_ceiling = "0.10"
+    settings.paid_daily_budget = "10.00"

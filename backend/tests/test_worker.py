@@ -51,9 +51,11 @@ def price_task(env, state):
         return record.id
 
 
-def test_known_remote_task_is_retrieved_without_repeating_paid_submission(env, monkeypatch):
+def test_known_remote_task_is_retrieved_without_repeating_paid_submission(env, monkeypatch, paid_fixture):
     identity = price_task(env, {"status": "WAITING", "remote_id": "fixture-remote-42"})
     app, _, _ = env
+    app.state.settings.dataforseo_login = "fixture"
+    app.state.settings.dataforseo_password = "fixture"
     calls = []
     async def retrieve(self, remote, request, settings):
         calls.append(remote)
@@ -80,9 +82,11 @@ def test_uncertain_paid_submission_stays_held_for_reconciliation(env):
         assert session.scalar(select(func.count()).select_from(JobAttempt)) == 0
 
 
-def test_old_worker_cannot_overwrite_current_owner_result(env, monkeypatch):
+def test_old_worker_cannot_overwrite_current_owner_result(env, monkeypatch, paid_fixture):
     identity = price_task(env, {"status": "WAITING", "remote_id": "fixture-fenced"})
     app, _, _ = env
+    app.state.settings.dataforseo_login = "fixture"
+    app.state.settings.dataforseo_password = "fixture"
     async def transfer_owner(self, remote, request, settings):
         with transaction(app.state.engine, True) as session:
             attempt = session.scalar(select(JobAttempt).where(JobAttempt.kind == "price_search", JobAttempt.entity_id == identity))

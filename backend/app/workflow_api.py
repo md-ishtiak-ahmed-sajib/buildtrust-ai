@@ -20,6 +20,16 @@ from .schemas import (
 
 
 from .api_support import context, entity
+from pydantic import BaseModel, JsonValue
+
+
+class AgentAnswer(BaseModel):
+    answer: str
+    explanation_source: str
+    document_ids: list[int]
+    facts: JsonValue
+    notice: str
+    model_status: str
 
 
 def create_router(settings, engine, app):
@@ -84,8 +94,22 @@ def create_router(settings, engine, app):
         background_tasks.add_task(workflow.run_workflow, engine, settings, workflow_id)
         return {"workflow_id": workflow_id, "status": "QUEUED"}
 
-    @router.post("/api/v1/agent/ask")
+    @router.post("/api/v1/agent/ask", response_model=AgentAnswer)
     def ask_agent(body: AskRequest, request: Request):
+        llm_allowed = False
+        reservation = None
+        if settings.llm_provider == "ollama" and settings.ollama_model:
+            with context(request) as (session, actor):
+                project_access(session, actor, body.project_id)
+                actor_id = actor.id
+            from .admission import reserve_usage
+            import uuid
+            try:
+                reservation = reserve_usage(engine, settings, "ollama", uuid.uuid4().hex, actor_id, body.project_id)
+                llm_allowed = True
+            except DomainError as exc:
+                if exc.code != "PROVIDER_BUDGET":
+                    raise
         with context(request) as (session, user):
             project = project_access(session, user, body.project_id)
             invoice = (
@@ -99,6 +123,11 @@ def create_router(settings, engine, app):
                     "PROJECT_MISMATCH",
                     "Invoice must belong to the selected project.",
                 )
-            return workflow.ask(session, settings, project, body.question, invoice)
+            result = workflow.ask(session, settings, project, body.question, invoice, llm_allowed=llm_allowed)
+        if reservation:
+            from .admission import mark_usage
+            mark_usage(engine, reservation, "CONSUMED")
+        result["model_status"] = "USED" if result["explanation_source"] == "ollama" else "BUDGET_EXHAUSTED" if settings.llm_provider == "ollama" and settings.ollama_model and not llm_allowed else "UNAVAILABLE_OR_DISABLED"
+        return result
 
     return router

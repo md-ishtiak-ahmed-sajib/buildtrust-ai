@@ -1,4 +1,4 @@
-import { test, expect, type Page, type APIRequestContext } from '@playwright/test';
+import { test, expect, type Page, type APIRequestContext } from './fixtures';
 import fs from 'node:fs';
 import path from 'node:path';
 const credentials = JSON.parse(fs.readFileSync(process.env.BUILDTRUST_E2E_CREDENTIALS!, 'utf8'));

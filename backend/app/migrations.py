@@ -26,7 +26,7 @@ def migrate(engine):
             )
             if version and version[0] != head:
                 backup_dir = database.parent / "backups"
-                backup_dir.mkdir(exist_ok=True)
+                backup_dir.mkdir(exist_ok=True, mode=0o700)
                 name = (
                     "pre-advanced-"
                     + datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
@@ -35,6 +35,8 @@ def migrate(engine):
                     + ".db"
                 )
                 with sqlite3.connect(backup_dir / name) as dest:
+                    from .private_storage import protect_file
+                    protect_file(backup_dir / name)
                     source.backup(dest)
                     if dest.execute("PRAGMA integrity_check").fetchone()[0] != "ok":
                         raise RuntimeError("Migration backup integrity check failed")

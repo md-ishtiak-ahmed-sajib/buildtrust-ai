@@ -1,15 +1,14 @@
 {
   "passed": true,
-  "duration_seconds": 258,
+  "duration_seconds": 258.0,
   "full_decode_passed": true,
   "application_source_hashes_match": true,
-  "video_sha256": "1b206cfb6f25c29fae063ca1f461a993a2ed66e9eb0bf78f78d59e2739e41b72",
+  "video_sha256": "470c40516ca02d660c7337d27f86de91bd0a5bb45a31c3ee5b19353962929298",
   "source": "Actual isolated app recording, not a fabricated UI",
   "sample_frames_visually_reviewed_seconds": [
     20,
     90,
     170,
-    195,
     235
   ]
 }

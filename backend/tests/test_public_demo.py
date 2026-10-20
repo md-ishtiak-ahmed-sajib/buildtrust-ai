@@ -35,6 +35,10 @@ def test_public_passwords_login_with_real_permissions_and_independent_payment(tm
                 headers[account["role"]] = {
                     "Authorization": "Bearer " + r.json()["access_token"]
                 }
+            assert client.get("/api/v1/auth/options").json()["password_management_enabled"] is False
+            for role in headers:
+                denied = client.post("/api/v1/auth/password/change", headers=headers[role], json={"current_password":"unused", "new_password":"Must-Not-Replace-Demo!"})
+                assert denied.status_code == 403
             operator, manager, auditor = (
                 headers[r] for r in ("OPERATOR", "FINANCE_MANAGER", "AUDITOR")
             )

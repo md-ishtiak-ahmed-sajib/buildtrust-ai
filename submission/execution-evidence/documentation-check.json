@@ -16,6 +16,12 @@
       "mobile_checked": true
     },
     {
+      "document": "docs/account-security.md",
+      "mermaid_diagrams": 0,
+      "images": 0,
+      "rendered": true
+    },
+    {
       "document": "docs/accounting-and-controls.md",
       "mermaid_diagrams": 0,
       "images": 0,

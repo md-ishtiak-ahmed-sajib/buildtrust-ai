@@ -153,6 +153,8 @@ def seed(session, settings, reset=False, test_password=None, public_demo=False):
         (settings.data_dir / "demo-credentials.json").write_text(
             json.dumps(credentials, indent=2), encoding="utf-8"
         )
+        from .private_storage import protect_file
+        protect_file(settings.data_dir / "demo-credentials.json")
     run_id = uuid.uuid4().hex[:12]
     project = Project(
         code=f"METRO-{run_id}",

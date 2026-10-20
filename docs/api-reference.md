@@ -66,3 +66,16 @@ Control kinds cover accounting, supplier changes, measurement rules, performance
 `CONTRACT_ESTIMATE_LINK` binds whole lines or components, quantities, source/target offsets, source versions, schedules, retention-release dates and supported advance assignments. Reject overlaps and stale authority. The shared forecast response keeps cost, tax, retention, recovery, cash and unscheduled requirements separate.
 
 Current calculation/source views have explicit response models. Original stored audit, approval and receipt bodies remain historical evidence. Regenerate contracts with `scripts/export_contracts.py` and `npm --prefix frontend run types:api`; check drift before release.
+
+
+## Account security additions
+
+| Method and route | Access and behavior |
+|---|---|
+| GET /api/v1/auth/options | Public; exposes only whether password management is available and whether this is the public demo |
+| POST /api/v1/auth/logout | Authenticated; revokes the current server session |
+| POST /api/v1/auth/password/change | Authenticated private account; current_password and new_password; revokes all affected sessions |
+| POST /api/v1/auth/password/reset | Single-use token and new_password; generic invalid/expired response; no email or user ID supplied |
+| POST /api/v1/administration/users/{id}/recovery | Current Admin; non-Admin target; returns a token once with its expiry |
+
+Passwords require 12–128 characters. The public demo's fixed accounts reject password changes/recovery. Admin recovery uses the local-owner command. A 401 requires fresh authentication; 403 denies authority, 409 reports a changed record and 429 includes Retry-After. The agent answer also reports model_status without granting financial authority. See generated OpenAPI for exact contracts and [the account guide](account-security.md) for limits.

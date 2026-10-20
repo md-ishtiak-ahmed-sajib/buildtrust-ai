@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "migration_head": "0018",
+  "legacy_tables_preserved": 56,
+  "private_files_preserved": 155,
+  "original_audit_prefix_preserved": true,
+  "audit_valid": true,
+  "credentials_and_signing_secret_unchanged": true,
+  "working_database_reset": false
+}

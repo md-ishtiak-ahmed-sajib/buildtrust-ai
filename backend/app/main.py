@@ -95,6 +95,7 @@ def create_app(settings=None, initialize=True):
 
     app = FastAPI(
         title="BuildTrust AI",
+        debug=False,
         version="0.2.0",
         lifespan=lifespan,
         responses={
@@ -109,19 +110,24 @@ def create_app(settings=None, initialize=True):
         settings.signing_secret(),
     )
     app.state.execution_failure_hook = None
-    app.state.login_throttle = LoginThrottle()
+    from .admission import DurableLoginThrottle
+    app.state.login_throttle = DurableLoginThrottle(engine)
     app.add_middleware(RequestBoundary, max_body=settings.max_upload_bytes + 128 * 1024)
     # Static archive routes precede the legacy /projects/{project_id} route.
     app.include_router(operations_router(context))
 
     @app.exception_handler(ValueError)
     async def invalid_financial_input(request, exc):
+        message = str(exc)[:600]
+        for secret in (settings.serpapi_key, settings.dataforseo_password, app.state.secret):
+            if secret:
+                message = message.replace(secret, "[redacted]")
         return JSONResponse(
             status_code=422,
             content={
                 "error": {
                     "code": "INVALID_INPUT",
-                    "message": str(exc)[:600],
+                    "message": message,
                     "fields": getattr(exc, "fields", []),
                     "request_id": request.scope.get("request_id"),
                 }
@@ -260,6 +266,8 @@ def create_app(settings=None, initialize=True):
         response.headers["X-Content-Type-Options"] = "nosniff"
         response.headers["X-Frame-Options"] = "DENY"
         response.headers["Referrer-Policy"] = "no-referrer"
+        response.headers["Content-Security-Policy"] = "default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'"
+        response.headers["Permissions-Policy"] = "camera=(), microphone=(), geolocation=(), payment=()"
         if request.url.path.startswith("/api/"):
             response.headers["Cache-Control"] = "no-store"
         return response
@@ -307,7 +315,7 @@ def create_app(settings=None, initialize=True):
             request.state.actor_id = user.id
             audit.append(session, user, "USER_LOGIN", "user", user.id)
             return {
-                "access_token": token_for(user, app.state.secret),
+                "access_token": token_for(user, app.state.secret, session),
                 "token_type": "bearer",
                 "expires_in": 1800,
                 "user": user_view(user, settings),
@@ -454,6 +462,8 @@ def create_app(settings=None, initialize=True):
     app.include_router(commercial_router(context))
     app.include_router(reporting_router(context))
     app.include_router(administration_router(context))
+    from .auth_api import create_router as auth_router
+    app.include_router(auth_router(context))
     app.include_router(advanced_router(context))
 
     static = ROOT / "frontend" / "dist"

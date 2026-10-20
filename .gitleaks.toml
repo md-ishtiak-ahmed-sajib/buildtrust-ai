@@ -1,0 +1,18 @@
+title = "BuildTrust source scan"
+[extend]
+useDefault = true
+
+# AND combines exact sample values with their documented source locations.
+[[allowlists]]
+description = "The four deliberately public localhost demo passwords"
+condition = "AND"
+regexTarget = "secret"
+regexes = ['''^BuildTrust-(Operator|Manager|Admin|Auditor)-2026!$''']
+paths = ['''(^|/)(README\.md|demo/public-accounts\.json)$''']
+
+[[allowlists]]
+description = "SHA-256 file checksums in the five release provenance maps, not credential fields"
+condition = "AND"
+regexTarget = "match"
+paths = ['''(^|/)(release-manifest\.json|execution-evidence/(contract-drift|load-measurements|manifest|video-provenance)\.json)$''']
+regexes = ['''[A-Za-z0-9_.-]+\.(py|ts|md|json|png)"\s*:\s*"[0-9a-f]{64}"''']

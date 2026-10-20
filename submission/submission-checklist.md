@@ -11,7 +11,7 @@ Deadline: October 20, 2026, 21:59 Dhaka / 23:59 Beijing. Target upload readiness
 - [x] Cash reserve checks, exact approval evidence, rollback and one payment on retry
 - [x] Accounting, estimates, quantity tools, prices, contracts and reviewed corrections
 - [x] Local audit verification and preserved archived demo runs
-- [x] 203 backend tests, separately recorded frontend/browser checks and A–H HTTP examples
+- [x] 225 backend tests, separately recorded frontend/browser checks and A–H HTTP examples
 - [x] Fresh Windows setup, public logins, payment and estimating checks
 - [x] Simple-English README, feature list, glossary and technical/security/judge guides
 - [x] Real screenshots, labelled charts, flowcharts and readable data tables
@@ -22,7 +22,8 @@ Deadline: October 20, 2026, 21:59 Dhaka / 23:59 Beijing. Target upload readiness
 
 ## Team actions still needed
 
-- [ ] Confirm registration with the competition organizer
+- [x] Registration email sent by the team
+- [ ] Receive registration confirmation from the competition organizer
 - [ ] Add the real team/presenter details and rehearse the talk within ten minutes
 - [ ] Upload the required reports, source link/archive, presentation, video and evidence; keep confirmation
 

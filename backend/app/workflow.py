@@ -1,6 +1,9 @@
 import json
 import re
 import httpx
+import threading
+import time
+from concurrent.futures import ThreadPoolExecutor, TimeoutError as ModelTimeout
 from sqlalchemy import select
 from . import audit, jobs
 from .database import transaction
@@ -9,6 +12,41 @@ from .finance import analyze, forecast
 from .payments import create_proposal, proposal_view
 from .security import project_access, require_role
 from .money import canonical, utcnow
+
+MODEL_SLOTS = threading.BoundedSemaphore(2)
+MODEL_EXECUTOR = ThreadPoolExecutor(max_workers=2, thread_name_prefix="local-explanation")
+MODEL_RESPONSE_SECONDS = 10
+
+
+def model_response(settings, payload):
+    from urllib.parse import urlsplit
+    parsed = urlsplit(settings.ollama_url)
+    if parsed.scheme != "http" or parsed.hostname not in ("127.0.0.1", "localhost", "::1") or parsed.username or parsed.password:
+        raise ValueError("Only an explicitly configured local model is supported")
+    if not MODEL_SLOTS.acquire(blocking=False):
+        raise ValueError("Local model is busy")
+    future = MODEL_EXECUTOR.submit(_read_model, settings, payload)
+    try:
+        return future.result(timeout=MODEL_RESPONSE_SECONDS)
+    except ModelTimeout:
+        if future.cancel():
+            MODEL_SLOTS.release()
+        raise ValueError("Local model exceeded the response deadline") from None
+
+
+def _read_model(settings, payload):
+    try:
+        started = time.monotonic()
+        with httpx.stream("POST", settings.ollama_url.rstrip("/") + "/api/chat", timeout=10, json=payload, follow_redirects=False) as response:
+            response.raise_for_status()
+            raw = bytearray()
+            for chunk in response.iter_bytes():
+                raw.extend(chunk)
+                if len(raw) > 128 * 1024 or time.monotonic()-started > 10:
+                    raise ValueError("Local model response exceeded its bounds")
+            return json.loads(raw)
+    finally:
+        MODEL_SLOTS.release()
 
 
 def workflow_view(session, workflow):
@@ -199,7 +237,7 @@ def _run_workflow(engine, settings, workflow_id, attempt):
                 )
 
 
-def ask(session, settings, project, question, invoice=None):
+def ask(session, settings, project, question, invoice=None, *, llm_allowed=False):
     q = question.lower()
     citations, facts = [], {}
     report = None
@@ -271,7 +309,7 @@ def ask(session, settings, project, question, invoice=None):
     else:
         text = "Select an analyzed invoice to ask why it was blocked, how much it exceeds entitlement, or whether it can be paid. You can also ask about delayed receivables or pending approvals."
     source = "deterministic"
-    if settings.llm_provider == "ollama" and settings.ollama_model:
+    if llm_allowed and settings.llm_provider == "ollama" and settings.ollama_model:
         try:
             schema = {
                 "type": "object",
@@ -281,12 +319,10 @@ def ask(session, settings, project, question, invoice=None):
                 },
                 "required": ["text", "document_ids"],
             }
-            response = httpx.post(
-                settings.ollama_url.rstrip("/") + "/api/chat",
-                timeout=10,
-                json={
+            response = model_response(settings, {
                     "model": settings.ollama_model,
                     "stream": False,
+                    "options": {"num_predict": 1024},
                     "format": schema,
                     "messages": [
                         {
@@ -305,10 +341,8 @@ def ask(session, settings, project, question, invoice=None):
                             ),
                         },
                     ],
-                },
-            )
-            response.raise_for_status()
-            result = json.loads(response.json()["message"]["content"])
+                })
+            result = json.loads(response["message"]["content"])
             if result["text"] and set(result["document_ids"]).issubset(set(citations)):
                 text, source = result["text"][:4000], "ollama"
         except (httpx.HTTPError, KeyError, ValueError, TypeError):

@@ -28,16 +28,17 @@ def material_view(mat):
 
 
 def provider_status(settings):
+    from .admission import paid_ready
     return [
         {
             "id": "serpapi",
             "source_type": "ONLINE_LISTING",
-            "enabled": bool(settings.serpapi_key),
+            "enabled": paid_ready(settings, "serpapi"),
         },
         {
             "id": "dataforseo",
             "source_type": "ONLINE_LISTING",
-            "enabled": bool(settings.dataforseo_login and settings.dataforseo_password),
+            "enabled": paid_ready(settings, "dataforseo"),
         },
         {"id": "supplier", "source_type": "SUPPLIER_QUOTE", "enabled": True},
         {"id": "reference", "source_type": "OFFICIAL_REFERENCE", "enabled": True},
@@ -542,10 +543,17 @@ async def _run_search(engine, settings, identity, attempt):
         state = states[provider.name]
         if state["status"] in ("DISABLED", "COMPLETE", "EMPTY", "UNKNOWN_SUBMISSION"):
             continue
+        reservation = None
         try:
+            from .admission import reserve_usage, mark_usage
+            reservation = reserve_usage(engine, settings, provider.name, f"price-search:{identity}", actor.id, record.project_id)
             with transaction(engine, True) as session:
                 jobs.heartbeat(session, attempt)
             if provider.name == "serpapi":
+                state["status"] = "SUBMITTING"
+                with transaction(engine, True) as session:
+                    jobs.heartbeat(session, attempt)
+                    session.get(a.PriceSearch, identity).states_json = canonical(states)
                 offers = await provider.search(request, settings)
             else:
                 remote_id = state.get("remote_id")
@@ -601,7 +609,13 @@ async def _run_search(engine, settings, identity, attempt):
                 state.update(
                     status="COMPLETE" if offers else "EMPTY", count=len(offers)
                 )
+            mark_usage(engine, reservation, "CONSUMED")
         except Exception as exc:
+            if provider.name == "serpapi" and state["status"] == "SUBMITTING":
+                state["status"] = "UNKNOWN_SUBMISSION"
+                state["failure_kind"] = "TIMEOUT" if isinstance(exc, httpx.TimeoutException) else "PROVIDER_ERROR"
+            if reservation:
+                mark_usage(engine, reservation, "UNKNOWN" if state["status"] == "UNKNOWN_SUBMISSION" else "CONSUMED")
             # Never leak request URLs containing API keys or Basic credentials.
             if state["status"] != "UNKNOWN_SUBMISSION":
                 state["status"] = (

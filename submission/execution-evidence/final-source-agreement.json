@@ -1,9 +1,9 @@
 {
   "passed": true,
-  "archive_sha256": "8b5424f5e738e2f9268fdd59989227ea4639067cfc8d6e17bd8e0a952cdce379",
-  "source_fingerprint": "24df4ef55f0ed47ebb47e12845b24b7b8cdb3d33f896c7347c75282b2cd13fb4",
-  "source_file_count": 181,
-  "archive_file_count": 405,
+  "archive_sha256": "b80747d0354824341d1c03fe17f86ec29cf61dddd86667b6c941364ab6c0d744",
+  "source_fingerprint": "e06508d9bbcb444f1f06feff600c2a25ca2f0d87a983040549620559fb8be36e",
+  "source_file_count": 196,
+  "archive_file_count": 425,
   "current_and_archive_bytes_match": true,
   "fresh_windows_install_passed": true,
   "public_demo_acceptance_passed": true,

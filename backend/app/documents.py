@@ -435,8 +435,10 @@ def prepare_upload(settings, filename, content):
     if extension == ".pdf" and not content.startswith(b"%PDF-"):
         raise DomainError(415, "INVALID_SIGNATURE", "The content is not a PDF.")
     storage_name = uuid.uuid4().hex + extension
-    path = settings.data_dir / "uploads" / storage_name
+    from .private_storage import private_path, protect_file
+    path = private_path(settings.data_dir, "uploads", storage_name)
     path.write_bytes(content)
+    protect_file(path)
     try:
         extracted = parse_file(path, extension, settings)
     except (ValueError, UnicodeError, subprocess.SubprocessError, KeyError, AttributeError) as exc:
@@ -449,7 +451,8 @@ def upload(session, settings, actor, project_id, filename, content, prepared=Non
     project_access(session, actor, project_id, write=True)
     require_role(actor, "OPERATOR", "FINANCE_MANAGER", "ADMIN")
     storage_name, extracted = prepared or prepare_upload(settings, filename, content)
-    path = settings.data_dir / "uploads" / storage_name
+    from .private_storage import private_path
+    path = private_path(settings.data_dir, "uploads", storage_name)
     sha = hashlib.sha256(content).hexdigest()
     duplicate = session.scalar(
         select(Document).where(

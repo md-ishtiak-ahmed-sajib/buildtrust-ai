@@ -2825,3 +2825,11 @@ td .strong {
 .evidence-items { padding-left: 20px; margin: 6px 0; }
 .evidence-items > li { padding: 5px 0; }
 .audit-fields { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 12px; max-width: 100%; }
+/* Password forms use native keyboard-accessible disclosure controls. */
+.account-security { position: relative; font-size: 13px; }
+.account-security summary, .recovery-panel summary { cursor: pointer; padding: 10px; }
+.account-security-card { position: absolute; right: 0; top: 40px; width: min(340px, 90vw); padding: 20px; background: white; border: 1px solid #b8cfc5; border-radius: 12px; z-index: 60; box-shadow: 0 8px 28px #19343f22; }
+.account-security-card label, .recovery-panel label { display: grid; gap: 6px; margin: 12px 0; }
+.recovery-panel { max-width: 440px; margin: 18px auto; }
+.signout-notice { position: fixed; bottom: 16px; left: 5%; right: 5%; padding: 14px; background: #edf3ef; border: 1px solid #286e62; z-index: 100; }
+@media (max-width: 600px) { .topbar-right .account-security { max-width: 86px; } .account-security summary { white-space: normal; padding: 5px; font-size: 12px; } .topbar-right .user-avatar { display: none; } }

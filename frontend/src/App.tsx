@@ -36,6 +36,7 @@ import {
   PackageSearch,
 } from "lucide-react";
 import { api, post, setToken, titleCase } from "./api";
+import { PasswordChange, PasswordRecovery } from "./AccountSecurity";
 import type { Project, User } from "./types";
 import { Loading, ErrorState } from "./ui";
 const OverviewPage = lazy(() =>
@@ -136,13 +137,19 @@ export default function App() {
     [...(projects.data || []), ...(archived.data || [])].find(
       (p) => p.id === projectId,
     ) || projects.data?.[0];
-  const logout = () => {
+  const [signoutNotice, setSignoutNotice] = useState("");
+  const clearAccount = () => {
     setToken("");
     setUser(null);
     setProjectId(0);
     client.clear();
   };
-  if (!user) return <Login onLogin={setUser} />;
+  const logout = async () => {
+    try { await post("/auth/logout"); setSignoutNotice("Signed out. The server session was revoked."); }
+    catch { setSignoutNotice("Local sign-out finished, but server revocation could not be confirmed. The server token expires within 30 minutes."); }
+    finally { clearAccount(); }
+  };
+  if (!user) return <><Login onLogin={u=>{setSignoutNotice("");setUser(u);}} />{signoutNotice && <p className="signout-notice" role="status">{signoutNotice}</p>}</>;
   if (projects.isPending) return <Loading />;
   if (projects.error) return <ErrorState error={projects.error} onRetry={() => { void projects.refetch(); }} />;
   if (!project)
@@ -230,6 +237,7 @@ export default function App() {
               </span>
             </div>
             <div className="topbar-right">
+              <PasswordChange onChanged={()=>{setSignoutNotice("Password changed. All sessions were revoked; sign in again.");clearAccount();}} />
               <span className="simulation">
                 <span />
                 SIMULATION
@@ -447,6 +455,7 @@ function Login({ onLogin }: { onLogin: (u: User) => void }) {
             </p>
           </div>
         </form>
+        <PasswordRecovery />
       </section>
     </div>
   );

@@ -27,6 +27,14 @@ class Settings(BaseSettings):
     serpapi_key: str = ""
     dataforseo_login: str = ""
     dataforseo_password: str = ""
+    paid_providers_enabled: bool = False
+    paid_user_daily_calls: int = Field(default=0, ge=0)
+    paid_project_daily_calls: int = Field(default=0, ge=0)
+    paid_provider_daily_calls: int = Field(default=0, ge=0)
+    paid_operation_ceiling: str = "0"
+    paid_daily_budget: str = "0"
+    llm_user_daily_calls: int = Field(default=20, ge=1)
+    llm_project_daily_calls: int = Field(default=100, ge=1)
     price_timeout_seconds: int = 15
     ocr_enabled: bool = False
     ocr_tessdata_dir: Path | None = None
@@ -40,6 +48,8 @@ class Settings(BaseSettings):
         ).resolve()
         self.data_dir.mkdir(parents=True, exist_ok=True)
         (self.data_dir / "uploads").mkdir(exist_ok=True)
+        from .private_storage import protect_runtime
+        protect_runtime(self.data_dir)
 
     def signing_secret(self):
         path = self.data_dir / "signing-secret"
@@ -49,6 +59,8 @@ class Settings(BaseSettings):
                     f.write(secrets.token_urlsafe(48))
             except FileExistsError:
                 pass
+        from .private_storage import protect_file
+        protect_file(path)
         return path.read_text(encoding="utf-8").strip()
 
 

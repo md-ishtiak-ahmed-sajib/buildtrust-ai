@@ -124,6 +124,8 @@ def create_router(context):
             row.role, row.active = data.role, data.active
             row.version += 1
             if authority_changed:
+                from .security import revoke_sessions
+                revoke_sessions(session, row.id)
                 payments.invalidate_authority(session, actor, row.id)
             audit.append(
                 session,

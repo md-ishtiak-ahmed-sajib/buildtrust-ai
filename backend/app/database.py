@@ -15,6 +15,8 @@ def make_engine(path: Path):
 
     @event.listens_for(engine, "connect")
     def configure(connection, _):
+        from .private_storage import protect_file
+        protect_file(path)
         connection.isolation_level = None
         connection.execute("PRAGMA foreign_keys=ON")
         connection.execute("PRAGMA busy_timeout=10000")

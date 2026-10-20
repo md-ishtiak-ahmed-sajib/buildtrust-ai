@@ -48,6 +48,9 @@ class RequestBoundary:
                                             "request_id": request_id}}).encode()
             await send({"type": "http.response.start", "status": status,
                         "headers": [(b"content-type", b"application/json"),
+                                    (b"cache-control", b"no-store"),
+                                    (b"x-content-type-options", b"nosniff"),
+                                    (b"content-security-policy", b"default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' blob: data:; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'"),
                                     (b"x-request-id", request_id.encode())]})
             await send({"type": "http.response.body", "body": payload})
             log.info(json.dumps({"event": "http_request", "request_id": request_id,
@@ -87,10 +90,12 @@ class RequestBoundary:
             return chunks.popleft() if chunks else await receive()
 
         status = 500
+        response_started = False
 
         async def tagged_send(message):
-            nonlocal status
+            nonlocal status, response_started
             if message["type"] == "http.response.start":
+                response_started = True
                 status = message["status"]
                 message.setdefault("headers", []).append(
                     (b"x-request-id", request_id.encode())
@@ -99,6 +104,14 @@ class RequestBoundary:
 
         try:
             await self.app(scope, bounded_receive, tagged_send)
+        except Exception:
+            # Handle failures inside the boundary so the ASGI server cannot log
+            # an exception containing credentials, request bodies or URLs.
+            log.error(json.dumps({"event": "request_failed", "request_id": request_id}))
+            if not response_started:
+                status = 500
+                return await reject(500, "INTERNAL_ERROR", "The operation could not be completed. Use the request ID when reporting it.")
+            await send({"type": "http.response.body", "body": b"", "more_body": False})
         finally:
             log.info(
                 json.dumps(

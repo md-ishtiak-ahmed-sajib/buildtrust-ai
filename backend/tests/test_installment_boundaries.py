@@ -82,7 +82,7 @@ def test_installment_rechecks_current_authority_balance_and_expiry(env, kind, ch
         f"/api/v1/payments/{proposal['id']}/execute",
         headers={**h["manager"], "Idempotency-Key": "edge-" + change},
     )
-    assert denied.status_code in (403, 409), denied.text
+    assert denied.status_code in (401, 403, 409), denied.text
     with transaction(app.state.engine) as session:
         assert session.get(m.Project, project).balance_minor == 100000000
         assert session.scalar(select(func.count()).select_from(m.Payment)) == 0

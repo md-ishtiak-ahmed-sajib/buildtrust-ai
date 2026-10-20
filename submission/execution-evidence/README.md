@@ -32,3 +32,5 @@ Archive receipts name the archive tested. The final acceptance files are created
 Published public passwords are deliberately fictional sample data. Private credentials, signing secrets, databases and uploads are excluded. Do not edit raw results to make a failure look successful. Rerun the checks and retain actual results.
 
 See [verification](../../docs/completion-verification.md), [security limits](../../docs/security-self-assessment.md) and [remaining work](../../docs/remaining-work.md).
+
+Security release evidence: `security-secret-scan.json`, `security-private-preservation.json`, `security-private-backup-restore.json`, `security-migration.log` and the current backend/browser logs. Private backup archives and raw recovery tokens are excluded.

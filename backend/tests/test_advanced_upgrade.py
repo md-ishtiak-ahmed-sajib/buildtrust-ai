@@ -568,7 +568,7 @@ def test_rate_buildup_rounding_and_source_tamper(env):
     assert result.json()["total"] == "25.41"  # 20 × 1 × 1.10 × 1.10 × 1.05
 
 
-def test_provider_timeout_isolation_and_remote_task_resume(env, monkeypatch):
+def test_provider_timeout_isolation_and_remote_task_resume(env, monkeypatch, paid_fixture):
     import httpx
 
     app, client, h = env
@@ -583,7 +583,8 @@ def test_provider_timeout_isolation_and_remote_task_resume(env, monkeypatch):
     current = client.get(
         f"/api/v1/prices/searches/{task['id']}", headers=h["operator"]
     ).json()
-    assert current["states"]["serpapi"]["status"] == "TIMEOUT"
+    assert current["states"]["serpapi"]["status"] == "UNKNOWN_SUBMISSION"
+    assert current["states"]["serpapi"]["failure_kind"] == "TIMEOUT"
     assert client.get("/api/v1/health").status_code == 200
 
 
@@ -703,7 +704,7 @@ def test_material_change_and_revoked_checker_block_approval(env):
     )
 
 
-def test_remote_task_resume_does_not_resubmit(env, monkeypatch):
+def test_remote_task_resume_does_not_resubmit(env, monkeypatch, paid_fixture):
     app, client, h = env
     data = demo(env)
     app.state.settings.dataforseo_login = "fixture"
@@ -742,7 +743,7 @@ def test_remote_task_resume_does_not_resubmit(env, monkeypatch):
     assert len(submissions) == 1
 
 
-def test_uncertain_paid_submission_is_not_repeated(env, monkeypatch):
+def test_uncertain_paid_submission_is_not_repeated(env, monkeypatch, paid_fixture):
     import httpx
 
     app, client, h = env

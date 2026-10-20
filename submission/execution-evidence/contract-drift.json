@@ -1,9 +1,8 @@
 {
   "passed": true,
-  "checksums": {
-    "docs/openapi.json": "a07a6ae6f6c531666795e75a7002d6c058b51946cefa76a48291fb71cfe64f76",
-    "demo/document.schema.json": "8b7622c4963c890961ca2c41c7962f350d452b1093ab0b93434618cfd4cbdfc6",
-    "frontend/src/types/api.generated.ts": "11cf87246137162aef8696e5e062a4e919bb31e6a54805ec02f7faf2d248156b"
-  },
-  "generated_json_line_ending": "LF on Windows and Linux"
+  "files": {
+    "docs/openapi.json": "ae94babf04e530aba888ea42a88bacf9a03276c8347a4e47babe9df5e3fbd6b8",
+    "frontend/src/types/api.generated.ts": "15cfedc0a5898e65724e5609f404cd7ccb9f9731b9a9fa4446b5770f8fc10f8a",
+    "demo/document.schema.json": "8b7622c4963c890961ca2c41c7962f350d452b1093ab0b93434618cfd4cbdfc6"
+  }
 }

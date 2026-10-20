@@ -1,9 +1,9 @@
 {
   "baseline_gzip_bytes": 232480,
-  "initial_javascript_gzip_bytes": 116708,
-  "reduction_percent": 49.8,
+  "initial_javascript_gzip_bytes": 117423,
+  "reduction_percent": 49.49,
   "scripts": {
-    "/assets/index-BqljExCd.js": 116708
+    "/assets/index-CG03Mxeh.js": 117423
   },
   "passed": true
 }

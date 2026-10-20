@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "./fixtures";
 import fs from "node:fs";
 import path from "node:path";
 const evidenceDir = process.env.BUILDTRUST_E2E_OUTPUT || "../data/e2e-baseline";

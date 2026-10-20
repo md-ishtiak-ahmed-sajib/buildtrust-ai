@@ -22,7 +22,12 @@ def stamp():
 
 def source_manifest():
     paths = [
-
+        ROOT / ".gitleaks.toml",
+        ROOT / ".gitignore",
+        ROOT / ".dockerignore",
+        ROOT / ".env.example",
+        ROOT / ".github" / "workflows" / "checks.yml",
+        ROOT / "demo" / "public-accounts.json",
         ROOT / "backend" / "pyproject.toml",
         ROOT / "backend" / "uv.lock",
         ROOT / "frontend" / "package.json",

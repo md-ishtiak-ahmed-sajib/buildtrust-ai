@@ -173,3 +173,5 @@ Paid price services need keys and separate live checks. OCR needs local models a
 ## License
 
 **AGPL-3.0-only.** See [LICENSE](LICENSE) and [dependency attribution](THIRD_PARTY_NOTICES.md). This project retains PyMuPDF under its open-source license.
+
+Private accounts support server-side sign-out, password changes and one-time offline recovery. The four public demo passwords above stay fixed. See [account security and private backups](docs/account-security.md) and the [20-item security review](docs/security-self-assessment.md).

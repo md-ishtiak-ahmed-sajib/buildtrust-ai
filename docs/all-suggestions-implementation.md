@@ -77,3 +77,7 @@ The recorded synthetic workload contains 2,000 invoices, 500 estimates, 10,000 q
 A free USD/BDT observation was fetched and persisted with date/provider attribution. Paid providers, real model acceptance, representative documents, professional reviews and human submission retain their own prerequisites.
 
 The presentation, recording and archive have separate render, decode, fingerprint, checksum and installation records. The user authorized publishing to [the GitHub repository](https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai). Actual remote revisions and hosted status are recorded in the execution evidence. Competition upload remains a separate human action.
+
+## October 20 security extension
+
+The additional 20-item [security review](security-self-assessment.md) covers revocable sessions, offline recovery, persistent admission/provider budgets, secret scanning, private storage, CSP and private backup/restore. The four README passwords remain public-demo-only. New acceptance evidence is recorded separately from the original 42-item review.

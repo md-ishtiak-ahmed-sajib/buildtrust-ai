@@ -13,6 +13,7 @@ import httpx
 import uuid
 from fastapi import APIRouter, Request, BackgroundTasks, UploadFile, File, Form
 from fastapi.responses import FileResponse
+from .private_storage import private_path
 from pydantic import ValidationError
 from sqlalchemy import select
 from sqlalchemy.orm import object_session
@@ -680,8 +681,10 @@ def create_router(context):
         if extension == ".pdf" and not contents.startswith(b"%PDF-"):
             raise ValueError("Invalid PDF content")
         storage = uuid.uuid4().hex + extension
-        path = settings.data_dir / "uploads" / storage
+        from .private_storage import private_path, protect_file
+        path = private_path(settings.data_dir, "uploads", storage)
         path.write_bytes(contents)
+        protect_file(path)
         try:
             if extension == ".pdf":
                 suggestions, evidence = await run_in_threadpool(
@@ -743,7 +746,7 @@ def create_router(context):
             if not record.storage_name:
                 raise DomainError(404, "NOT_FOUND", "No attachment is stored.")
             return FileResponse(
-                request.app.state.settings.data_dir / "uploads" / record.storage_name,
+                private_path(request.app.state.settings.data_dir, "uploads", record.storage_name),
                 filename=record.original_filename,
                 media_type="application/octet-stream",
             )

@@ -1,7 +1,7 @@
 {
   "scenario_id": "E",
-  "executed_at": "2026-10-19T17:17:48.880245Z",
-  "run_id": "6b852f0b4e9c",
+  "executed_at": "2026-10-20T00:40:03.815134Z",
+  "run_id": "40454264d80c",
   "source_invoice": {
     "id": 30,
     "project_id": 12,
@@ -27,13 +27,13 @@
     "invoice_id": 30,
     "status": "BLOCKED",
     "error": null,
-    "created_at": "2026-10-19T17:17:48.881244Z",
+    "created_at": "2026-10-20T00:40:03.819526Z",
     "result": {
       "proposal_id": null,
       "verification": {
         "analysis_version": 1,
         "cashflow": {
-          "as_of": "2026-10-19",
+          "as_of": "2026-10-20",
           "assumption_notice": "Scheduled internal records and configurable scenarios; not independently verified market forecasts.",
           "available_cash": "150000.00",
           "cost_pressure_percent": "10",
@@ -53,14 +53,6 @@
               "days": [
                 {
                   "closing": "80000.00",
-                  "date": "2026-10-19",
-                  "inflows": "0.00",
-                  "obligations": [],
-                  "opening": "80000.00",
-                  "outflows": "0.00"
-                },
-                {
-                  "closing": "80000.00",
                   "date": "2026-10-20",
                   "inflows": "0.00",
                   "obligations": [],
@@ -286,6 +278,14 @@
                 {
                   "closing": "80000.00",
                   "date": "2026-11-17",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "80000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "80000.00",
+                  "date": "2026-11-18",
                   "inflows": "0.00",
                   "obligations": [],
                   "opening": "80000.00",
@@ -294,20 +294,12 @@
               ],
               "lowest_balance": "80000.00",
               "name": "base",
-              "pressure_date": "2026-10-19",
+              "pressure_date": "2026-10-20",
               "reserve_maintained": false,
               "shortfall_obligations": []
             },
             {
               "days": [
-                {
-                  "closing": "80000.00",
-                  "date": "2026-10-19",
-                  "inflows": "0.00",
-                  "obligations": [],
-                  "opening": "80000.00",
-                  "outflows": "0.00"
-                },
                 {
                   "closing": "80000.00",
                   "date": "2026-10-20",
@@ -535,6 +527,14 @@
                 {
                   "closing": "80000.00",
                   "date": "2026-11-17",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "80000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "80000.00",
+                  "date": "2026-11-18",
                   "inflows": "0.00",
                   "obligations": [],
                   "opening": "80000.00",
@@ -543,20 +543,12 @@
               ],
               "lowest_balance": "80000.00",
               "name": "delayed_receivables",
-              "pressure_date": "2026-10-19",
+              "pressure_date": "2026-10-20",
               "reserve_maintained": false,
               "shortfall_obligations": []
             },
             {
               "days": [
-                {
-                  "closing": "80000.00",
-                  "date": "2026-10-19",
-                  "inflows": "0.00",
-                  "obligations": [],
-                  "opening": "80000.00",
-                  "outflows": "0.00"
-                },
                 {
                   "closing": "80000.00",
                   "date": "2026-10-20",
@@ -788,11 +780,19 @@
                   "obligations": [],
                   "opening": "80000.00",
                   "outflows": "0.00"
+                },
+                {
+                  "closing": "80000.00",
+                  "date": "2026-11-18",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "80000.00",
+                  "outflows": "0.00"
                 }
               ],
               "lowest_balance": "80000.00",
               "name": "cost_pressure",
-              "pressure_date": "2026-10-19",
+              "pressure_date": "2026-10-20",
               "reserve_maintained": false,
               "shortfall_obligations": []
             }
@@ -895,8 +895,8 @@
           "invoice_id": 30,
           "po_id": 18
         },
-        "started_at": "2026-10-19T17:17:48.890843Z",
-        "finished_at": "2026-10-19T17:17:48.890843Z"
+        "started_at": "2026-10-20T00:40:03.827714Z",
+        "finished_at": "2026-10-20T00:40:03.827714Z"
       },
       {
         "id": 29,
@@ -912,8 +912,8 @@
           "provenance_revisions": 1,
           "version": 1
         },
-        "started_at": "2026-10-19T17:17:48.893145Z",
-        "finished_at": "2026-10-19T17:17:48.894132Z"
+        "started_at": "2026-10-20T00:40:03.830720Z",
+        "finished_at": "2026-10-20T00:40:03.831700Z"
       },
       {
         "id": 30,
@@ -972,8 +972,8 @@
           "status": "BLOCKED",
           "verified_amount": "70000.00"
         },
-        "started_at": "2026-10-19T17:17:48.896132Z",
-        "finished_at": "2026-10-19T17:17:48.902497Z"
+        "started_at": "2026-10-20T00:40:03.833324Z",
+        "finished_at": "2026-10-20T00:40:03.840197Z"
       },
       {
         "id": 31,
@@ -1012,8 +1012,8 @@
           ],
           "payment_eligible": false
         },
-        "started_at": "2026-10-19T17:17:48.906965Z",
-        "finished_at": "2026-10-19T17:17:48.907967Z"
+        "started_at": "2026-10-20T00:40:03.840197Z",
+        "finished_at": "2026-10-20T00:40:03.840197Z"
       },
       {
         "id": 32,
@@ -1024,7 +1024,7 @@
           "invoice_id": 30
         },
         "output": {
-          "as_of": "2026-10-19",
+          "as_of": "2026-10-20",
           "assumption_notice": "Scheduled internal records and configurable scenarios; not independently verified market forecasts.",
           "available_cash": "150000.00",
           "cost_pressure_percent": "10",
@@ -1044,14 +1044,6 @@
               "days": [
                 {
                   "closing": "80000.00",
-                  "date": "2026-10-19",
-                  "inflows": "0.00",
-                  "obligations": [],
-                  "opening": "80000.00",
-                  "outflows": "0.00"
-                },
-                {
-                  "closing": "80000.00",
                   "date": "2026-10-20",
                   "inflows": "0.00",
                   "obligations": [],
@@ -1277,6 +1269,14 @@
                 {
                   "closing": "80000.00",
                   "date": "2026-11-17",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "80000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "80000.00",
+                  "date": "2026-11-18",
                   "inflows": "0.00",
                   "obligations": [],
                   "opening": "80000.00",
@@ -1285,20 +1285,12 @@
               ],
               "lowest_balance": "80000.00",
               "name": "base",
-              "pressure_date": "2026-10-19",
+              "pressure_date": "2026-10-20",
               "reserve_maintained": false,
               "shortfall_obligations": []
             },
             {
               "days": [
-                {
-                  "closing": "80000.00",
-                  "date": "2026-10-19",
-                  "inflows": "0.00",
-                  "obligations": [],
-                  "opening": "80000.00",
-                  "outflows": "0.00"
-                },
                 {
                   "closing": "80000.00",
                   "date": "2026-10-20",
@@ -1526,6 +1518,14 @@
                 {
                   "closing": "80000.00",
                   "date": "2026-11-17",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "80000.00",
+                  "outflows": "0.00"
+                },
+                {
+                  "closing": "80000.00",
+                  "date": "2026-11-18",
                   "inflows": "0.00",
                   "obligations": [],
                   "opening": "80000.00",
@@ -1534,20 +1534,12 @@
               ],
               "lowest_balance": "80000.00",
               "name": "delayed_receivables",
-              "pressure_date": "2026-10-19",
+              "pressure_date": "2026-10-20",
               "reserve_maintained": false,
               "shortfall_obligations": []
             },
             {
               "days": [
-                {
-                  "closing": "80000.00",
-                  "date": "2026-10-19",
-                  "inflows": "0.00",
-                  "obligations": [],
-                  "opening": "80000.00",
-                  "outflows": "0.00"
-                },
                 {
                   "closing": "80000.00",
                   "date": "2026-10-20",
@@ -1779,18 +1771,26 @@
                   "obligations": [],
                   "opening": "80000.00",
                   "outflows": "0.00"
+                },
+                {
+                  "closing": "80000.00",
+                  "date": "2026-11-18",
+                  "inflows": "0.00",
+                  "obligations": [],
+                  "opening": "80000.00",
+                  "outflows": "0.00"
                 }
               ],
               "lowest_balance": "80000.00",
               "name": "cost_pressure",
-              "pressure_date": "2026-10-19",
+              "pressure_date": "2026-10-20",
               "reserve_maintained": false,
               "shortfall_obligations": []
             }
           ]
         },
-        "started_at": "2026-10-19T17:17:48.909983Z",
-        "finished_at": "2026-10-19T17:17:48.910982Z"
+        "started_at": "2026-10-20T00:40:03.840197Z",
+        "finished_at": "2026-10-20T00:40:03.840197Z"
       },
       {
         "id": 33,
@@ -1804,8 +1804,8 @@
           "explanation_source": "deterministic",
           "text": "Invoice INV-LIQUIDITY-070 claims BDT 70000.00; supported amount is BDT 70000.00. Payment is blocked: INSUFFICIENT_FUNDS"
         },
-        "started_at": "2026-10-19T17:17:48.912924Z",
-        "finished_at": "2026-10-19T17:17:48.912924Z"
+        "started_at": "2026-10-20T00:40:03.840197Z",
+        "finished_at": "2026-10-20T00:40:03.840197Z"
       },
       {
         "id": 34,
@@ -1819,8 +1819,8 @@
           "message": "No payable proposal prepared.",
           "status": "BLOCKED"
         },
-        "started_at": "2026-10-19T17:17:48.914921Z",
-        "finished_at": "2026-10-19T17:17:48.915918Z"
+        "started_at": "2026-10-20T00:40:03.840197Z",
+        "finished_at": "2026-10-20T00:40:03.840197Z"
       },
       {
         "id": 35,
@@ -1835,8 +1835,8 @@
           "proposal_id": null,
           "status": "BLOCKED"
         },
-        "started_at": "2026-10-19T17:17:48.917918Z",
-        "finished_at": "2026-10-19T17:17:48.917918Z"
+        "started_at": "2026-10-20T00:40:03.840197Z",
+        "finished_at": "2026-10-20T00:40:03.840197Z"
       },
       {
         "id": 36,
@@ -1848,10 +1848,10 @@
         },
         "output": {
           "audit_event_id": 333,
-          "event_hash": "c03fc327fb741b09b483cc52341f33bf13a4e6f9224fccc10f164c88b149373d"
+          "event_hash": "5d92c52a0597a4fc093c50cf435478b10337480f542f44a5d4c10d634f406c17"
         },
-        "started_at": "2026-10-19T17:17:48.918618Z",
-        "finished_at": "2026-10-19T17:17:48.920998Z"
+        "started_at": "2026-10-20T00:40:03.854699Z",
+        "finished_at": "2026-10-20T00:40:03.855803Z"
       }
     ]
   },
@@ -1896,9 +1896,9 @@
       "details": {
         "proposal_id": null
       },
-      "previous_hash": "f015fb62331f22c98190713674da9c8e02a3357dc9e157992e3eb3d1fa458722",
-      "created_at": "2026-10-19T17:17:48.920998Z",
-      "event_hash": "c03fc327fb741b09b483cc52341f33bf13a4e6f9224fccc10f164c88b149373d"
+      "previous_hash": "be766c2c88da57185a04b349d80d7ad089825fc89b5a6c0d05fec3d52e624361",
+      "created_at": "2026-10-20T00:40:03.855803Z",
+      "event_hash": "5d92c52a0597a4fc093c50cf435478b10337480f542f44a5d4c10d634f406c17"
     },
     {
       "id": 332,
@@ -1918,9 +1918,9 @@
         "status": "BLOCKED",
         "verified": "70000.00"
       },
-      "previous_hash": "f8d1fc5daa2a9a716522bfb10d790529ee661295689d8ba29de4ac1a8bf38ba5",
-      "created_at": "2026-10-19T17:17:48.902497Z",
-      "event_hash": "f015fb62331f22c98190713674da9c8e02a3357dc9e157992e3eb3d1fa458722"
+      "previous_hash": "d3d51bf3e1c0d0ca5e611c338b93e0c165b36502033ca453d5daf94853fcb648",
+      "created_at": "2026-10-20T00:40:03.840197Z",
+      "event_hash": "be766c2c88da57185a04b349d80d7ad089825fc89b5a6c0d05fec3d52e624361"
     },
     {
       "id": 331,
@@ -1940,9 +1940,9 @@
         "status": "BLOCKED",
         "verified": "70000.00"
       },
-      "previous_hash": "16ec71c6047b9849cd71dcd5c67ac0d1bba7313d6007fe09a742db4f312dcf68",
-      "created_at": "2026-10-19T17:17:48.902497Z",
-      "event_hash": "f8d1fc5daa2a9a716522bfb10d790529ee661295689d8ba29de4ac1a8bf38ba5"
+      "previous_hash": "85a3b40025aebeef39d33dad53a08a8b5fd08f4426af551a2b6d2ab5c8dee478",
+      "created_at": "2026-10-20T00:40:03.839304Z",
+      "event_hash": "d3d51bf3e1c0d0ca5e611c338b93e0c165b36502033ca453d5daf94853fcb648"
     },
     {
       "id": 330,
@@ -1962,9 +1962,9 @@
         "status": "BLOCKED",
         "verified": "70000.00"
       },
-      "previous_hash": "9188abb7268a2d8fc06d147803ea2c31a6958b74d7297a308a6172ac8469ae2f",
-      "created_at": "2026-10-19T17:17:48.900491Z",
-      "event_hash": "16ec71c6047b9849cd71dcd5c67ac0d1bba7313d6007fe09a742db4f312dcf68"
+      "previous_hash": "dcb1e62814efa2ce9b85de4fafb245ce1ca55bbc4e53a5c287b8edb5b916bb24",
+      "created_at": "2026-10-20T00:40:03.839304Z",
+      "event_hash": "85a3b40025aebeef39d33dad53a08a8b5fd08f4426af551a2b6d2ab5c8dee478"
     },
     {
       "id": 329,
@@ -1978,9 +1978,9 @@
       "details": {
         "invoice_id": 30
       },
-      "previous_hash": "9285342f028b79dc88d4ac3924e4c9e4df95bbf9800da1a3d6014b22eb136188",
-      "created_at": "2026-10-19T17:17:48.883400Z",
-      "event_hash": "9188abb7268a2d8fc06d147803ea2c31a6958b74d7297a308a6172ac8469ae2f"
+      "previous_hash": "db12095739b08bc85bf0cfca622cbb7683f2f8e41803ec91a3cb35b75954fd6b",
+      "created_at": "2026-10-20T00:40:03.820711Z",
+      "event_hash": "dcb1e62814efa2ce9b85de4fafb245ce1ca55bbc4e53a5c287b8edb5b916bb24"
     }
   ],
   "audit_event_ids": [
@@ -1994,7 +1994,7 @@
     "valid": true,
     "checked_events": 333,
     "failed_event_id": null,
-    "head_hash": "c03fc327fb741b09b483cc52341f33bf13a4e6f9224fccc10f164c88b149373d",
+    "head_hash": "5d92c52a0597a4fc093c50cf435478b10337480f542f44a5d4c10d634f406c17",
     "limitation": "Local hash chain; an unrestricted database administrator can rewrite the complete chain."
   },
   "source_records": [
@@ -2009,7 +2009,7 @@
         "version": 1,
         "reviewed_by": null,
         "confirmed_by": 1,
-        "created_at": "2026-10-19T17:17:48.839759Z"
+        "created_at": "2026-10-20T00:40:03.766747Z"
       },
       "data": {
         "beneficiary_fingerprint": "",
@@ -2286,7 +2286,7 @@
               "value": "70000"
             }
           ],
-          "created_at": "2026-10-19T17:17:48.839759Z"
+          "created_at": "2026-10-20T00:40:03.766747Z"
         }
       ]
     },
@@ -2301,7 +2301,7 @@
         "version": 1,
         "reviewed_by": null,
         "confirmed_by": 1,
-        "created_at": "2026-10-19T17:17:48.843773Z"
+        "created_at": "2026-10-20T00:40:03.774748Z"
       },
       "data": {
         "beneficiary_fingerprint": "",
@@ -2578,7 +2578,7 @@
               "value": "70000"
             }
           ],
-          "created_at": "2026-10-19T17:17:48.844775Z"
+          "created_at": "2026-10-20T00:40:03.774748Z"
         }
       ]
     },
@@ -2593,7 +2593,7 @@
         "version": 1,
         "reviewed_by": null,
         "confirmed_by": 1,
-        "created_at": "2026-10-19T17:17:48.847777Z"
+        "created_at": "2026-10-20T00:40:03.780668Z"
       },
       "data": {
         "beneficiary_fingerprint": "",
@@ -2870,7 +2870,7 @@
               "value": "70000"
             }
           ],
-          "created_at": "2026-10-19T17:17:48.848777Z"
+          "created_at": "2026-10-20T00:40:03.781677Z"
         }
       ]
     },
@@ -2885,7 +2885,7 @@
         "version": 1,
         "reviewed_by": null,
         "confirmed_by": null,
-        "created_at": "2026-10-19T17:17:48.851839Z"
+        "created_at": "2026-10-20T00:40:03.786240Z"
       },
       "data": {
         "beneficiary_fingerprint": "d9413b828e4752e3c57c4bfbd09203f9ff2866e56a6096550d36f70bc0ce984d",
@@ -3162,7 +3162,7 @@
               "value": "70000"
             }
           ],
-          "created_at": "2026-10-19T17:17:48.852836Z"
+          "created_at": "2026-10-20T00:40:03.786240Z"
         }
       ]
     }

@@ -67,3 +67,5 @@ English and Bengali Tesseract models come from [tesseract-ocr/tessdata_fast](htt
 ## Automated accessibility tooling
 
 Development-only `@axe-core/playwright` and `axe-core` by Deque Systems are used for automated accessibility checks under MPL-2.0. See https://github.com/dequelabs/axe-core-npm and the pinned frontend lockfile. They are not imported by the production application bundle. Automated checks do not establish complete accessibility conformance.
+
+Optional security scanning uses Gitleaks 8.30.1 (MIT license), downloaded with pinned checksums by the verification tool. Its executable is not included in the source archive. Source and license: https://github.com/gitleaks/gitleaks.

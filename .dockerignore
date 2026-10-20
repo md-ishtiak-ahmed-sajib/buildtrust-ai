@@ -5,6 +5,14 @@ frontend/node_modules
 frontend/dist
 submission
 .env
+.env.*
+!.env.example
+*.pem
+*.key
+**/*credentials*.json
+**/signing-secret
+prompt
+AGENTS.md
 **/__pycache__
 **/.pytest_cache
 **/test-results

@@ -7,6 +7,12 @@ import json
 import re
 from urllib.parse import urlsplit
 import httpx
+import logging
+
+# HTTPX INFO messages include complete query URLs. Paid search credentials must
+# never enter those diagnostic messages, even if a host enables root INFO logs.
+logging.getLogger("httpx").setLevel(logging.WARNING)
+logging.getLogger("httpcore").setLevel(logging.WARNING)
 
 LIMITERS = {}
 
@@ -44,6 +50,10 @@ async def api_json(method, url, settings, retry_safe=True, **kwargs):
     origin = urlsplit(url).hostname
     if origin not in ("serpapi.com", "api.dataforseo.com", "api.frankfurter.dev"):
         raise ValueError("Unapproved provider origin")
+    if origin in ("serpapi.com", "api.dataforseo.com"):
+        from .admission import paid_ready
+        if not paid_ready(settings, "serpapi" if origin == "serpapi.com" else "dataforseo"):
+            raise ValueError("Paid providers are disabled or have no bounded budget")
     limiter = LIMITERS.setdefault(
         (id(asyncio.get_running_loop()), origin), asyncio.Semaphore(2)
     )

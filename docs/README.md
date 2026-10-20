@@ -20,6 +20,7 @@ New to the app? Start with the [README](../README.md), [feature list](../feature
 | [Architecture](architecture.md) | How the services connect |
 | [API guide](api-reference.md) | Routes, authentication, errors and contracts |
 | [Generated OpenAPI](openapi.json) | Exact request and response definitions |
+| [Accounts and private backups](account-security.md) | Sign-out, one-time recovery, usage limits and restore |
 | [Security self-assessment](security-self-assessment.md) | Controls and known risks |
 | [Threat model](threat-model.md) | Trust boundaries and possible misuse |
 | [Current verification](completion-verification.md) | Actual test results and release evidence |

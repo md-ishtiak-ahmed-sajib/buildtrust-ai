@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "restored_private_logins": 4,
+  "legacy_tables_checked": 56,
+  "financial_records_preserved": true,
+  "source_database_untouched": true,
+  "audit_valid": true,
+  "copied_sessions_revoked": true,
+  "simulation": true
+}

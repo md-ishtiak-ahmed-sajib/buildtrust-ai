@@ -35,7 +35,7 @@ Users, memberships, suppliers, documents, revisions, procurement, acceptances, i
 
 SQLite enables foreign keys, WAL and bounded lock waits. Financial writes use BEGIN IMMEDIATE. Settlement commits cash, payment, allocations, payable changes, ledger, receipt and success audit together. Failure rolls back money; denied/failed attempts are audited separately.
 
-The migration head is **0017**. Startup takes a consistent online backup before upgrading a populated database. Migration 0008 rebuilt payment constraints for installments; later migrations add procurement/correction records and indexes. Original payments, receipts and audit history remain unchanged. Rehearse backup, migration, integrity and recovery on a copy first.
+The migration head is **0018**. The security migration adds sessions, recovery tokens, admission counters and usage reservations. Sign in again after upgrading; earlier tokens are rejected. Startup takes a consistent online backup before upgrading a populated database. Migration 0008 rebuilt payment constraints for installments; later migrations add procurement/correction records and indexes. Original payments, receipts and audit history remain unchanged. Rehearse backup, migration, integrity and recovery on a copy first.
 
 ## Documents, imports and OCR
 
@@ -70,3 +70,5 @@ Hosted Windows/Ubuntu checks passed for the recorded release. These include nati
 Use [isolated test commands](test-results.md). Recordings require a dedicated database/address and reject the working app port. Packaging checks source fingerprints, actual HTTP results, media evidence and private-file exclusion. Fresh archive installation checks setup, payment, estimating and public-demo behavior.
 
 Read [current results](completion-verification.md) for actual counts, measurements and external limits. The project uses AGPL-3.0-only with dependency attribution.
+
+See [account security](account-security.md) for private storage permissions, provider limits and backup/restore commands. Paid-provider credentials alone do not enable requests.

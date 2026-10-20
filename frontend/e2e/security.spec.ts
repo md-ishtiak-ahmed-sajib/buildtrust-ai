@@ -1,0 +1,61 @@
+import { test, expect } from "./fixtures";
+import fs from "node:fs";
+import path from "node:path";
+const credentials=JSON.parse(fs.readFileSync(process.env.BUILDTRUST_E2E_CREDENTIALS!,"utf8"));
+
+test("server logout revokes the captured token and CSP blocks inline scripts",async({page,request})=>{
+  let token="";
+  page.on("response",async response=>{if(response.url().endsWith("/auth/login")&&response.ok())token=(await response.json()).access_token;});
+  const navigation=await page.goto("/");
+  expect(navigation?.headers()["content-security-policy"]).toContain("script-src 'self'");
+  await page.evaluate(()=>{const script=document.createElement("script");script.textContent="window.__inlineSecurityMarker = true";document.body.append(script);});
+  expect(await page.evaluate(()=>Reflect.get(window,"__inlineSecurityMarker"))).toBeUndefined();
+  await page.getByLabel("Email address").fill("operator@buildtrust.demo");
+  await page.getByLabel("Password",{exact:true}).fill(credentials["operator@buildtrust.demo"]);
+  await page.getByRole("button",{name:"Sign in to workspace"}).click();
+  await expect(page.getByLabel("Select project")).toBeVisible();
+  await expect.poll(()=>token.length).toBeGreaterThan(20);
+  await page.getByRole("button",{name:"Sign out",exact:true}).click();
+  await expect(page.getByRole("status")).toContainText("server session was revoked");
+  expect((await request.get("/api/v1/auth/me",{headers:{Authorization:`Bearer ${token}`}})).status()).toBe(401);
+  await page.screenshot({path:path.join(process.env.BUILDTRUST_E2E_OUTPUT!,"security-logout.png")});
+});
+
+test("Admin issues a one-time recovery token and the member resets and changes their password",async({page,request})=>{
+  const auth=await request.post("/api/v1/auth/login",{data:{email:"admin@buildtrust.demo",password:credentials["admin@buildtrust.demo"]}});
+  const headers={Authorization:`Bearer ${(await auth.json()).access_token}`};
+  const projects=await (await request.get("/api/v1/projects",{headers})).json();
+  const email=`security-browser-${Date.now()}@example.test`;
+  const account=await request.post("/api/v1/administration/users",{headers,data:{name:"Security browser member",email,role:"OPERATOR",password:"Browser-Initial-Fixture-2026!"}});
+  expect(account.status()).toBe(201);
+  const identity=(await account.json()).id;
+  expect((await request.post(`/api/v1/administration/members?project_id=${projects[0].id}`,{headers,data:{user_id:identity,member:true}})).ok()).toBeTruthy();
+  await page.goto("/");
+  await page.getByLabel("Email address").fill("admin@buildtrust.demo");
+  await page.getByLabel("Password",{exact:true}).fill(credentials["admin@buildtrust.demo"]);
+  await page.getByRole("button",{name:"Sign in to workspace"}).click();
+  await page.getByRole("link",{name:"Team & Access",exact:true}).click();
+  await page.getByLabel("Search team accounts").fill(email);
+  await page.getByRole("button",{name:"Issue recovery token",exact:true}).click();
+  const token=await page.getByLabel("Single-use token",{exact:true}).inputValue();
+  expect(token.length).toBeGreaterThan(20);
+  // Do not capture the visible token in screenshots or test logs.
+  await page.getByRole("button",{name:"Hide and clear token"}).click();
+  await page.getByRole("button",{name:"Sign out",exact:true}).click();
+  await page.getByText("Recover a forgotten password",{exact:true}).click();
+  await page.getByLabel("Recovery token",{exact:true}).fill(token);
+  await page.getByLabel("New password",{exact:true}).fill("Browser-Recovered-Fixture-2026!");
+  await page.getByRole("button",{name:"Reset password",exact:true}).click();
+  await expect(page.locator(".recovery-panel [role=status]")).toContainText("Password reset");
+  await page.getByLabel("Email address").fill(email);
+  await page.getByLabel("Password",{exact:true}).fill("Browser-Recovered-Fixture-2026!");
+  await page.getByRole("button",{name:"Sign in to workspace"}).click();
+  await expect(page.getByLabel("Select project")).toBeVisible();
+  await page.getByText("Account security",{exact:true}).click();
+  await page.getByLabel("Current password",{exact:true}).fill("Browser-Recovered-Fixture-2026!");
+  await page.getByLabel("New password (12–128 characters)",{exact:true}).fill("Browser-Changed-Fixture-2026!");
+  await page.getByRole("button",{name:"Change password and sign out"}).click();
+  await expect(page.getByRole("button",{name:"Sign in to workspace"})).toBeVisible();
+  expect((await request.post("/api/v1/auth/password/reset",{data:{token,new_password:"Browser-Replayed-Fixture-2026!"}})).status()).toBe(422);
+  await page.screenshot({path:path.join(process.env.BUILDTRUST_E2E_OUTPUT!,"security-password-complete.png")});
+});

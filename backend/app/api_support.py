@@ -77,6 +77,27 @@ def invoice_view(session, invoice):
 
 @contextmanager
 def context(request, write=False):
+    # Admission commits before opening the business transaction. Never nest a
+    # quota writer inside an existing financial writer lock.
+    if not getattr(request.state, "admission_checked", False):
+        request.state.admission_checked = True
+        path, method = request.url.path, request.method
+        group, limit = None, 10
+        if path.endswith("/preview"):
+            group, limit = "preview", 30
+        elif method == "POST" and path.endswith("/prices/refresh"):
+            group, limit = "price", 5
+        elif method == "POST" and path == "/api/v1/administration/users":
+            group, limit = "account-create", 5
+        elif (method == "POST" and any(p in path for p in ("/documents", "/import", "/agent/analyze", "/retry", "/agent/ask", "/copilot"))) or any(p in path for p in ("/export", "/attachment")):
+            group = "expensive"
+        if group:
+            header = request.headers.get("authorization", "")
+            with transaction(request.app.state.engine) as pre:
+                actor = authenticate(pre, header[7:] if header.startswith("Bearer ") else "", request.app.state.secret)
+                actor_id = actor.id
+            from .admission import consume
+            consume(request.app.state.engine, [(f"{group}:{actor_id}", limit, 60)])
     with transaction(request.app.state.engine, write) as session:
         session.info["api_write"] = write
         header = request.headers.get("authorization", "")

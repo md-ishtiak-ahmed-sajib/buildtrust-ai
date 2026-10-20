@@ -1,8 +1,8 @@
 {
   "passed": true,
-  "source_fingerprint": "24df4ef55f0ed47ebb47e12845b24b7b8cdb3d33f896c7347c75282b2cd13fb4",
-  "source_file_count": 181,
+  "source_fingerprint": "e06508d9bbcb444f1f06feff600c2a25ca2f0d87a983040549620559fb8be36e",
+  "source_file_count": 196,
   "private_runtime_excluded": true,
   "video_application_hashes_match": true,
-  "archive_receipt_scope": "Prior archive installation is recorded separately. Current archive acceptance is recorded after packaging in final-source-agreement.json."
+  "archive_receipt_scope": "Current archive acceptance is recorded separately after packaging in final-source-agreement.json."
 }

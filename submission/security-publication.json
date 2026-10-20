@@ -1,13 +1,13 @@
 {
   "passed": true,
-  "checked_at": "2026-10-20T12:59:14.900686+00:00",
-  "tested_source_revision": "8c3de3941f168ea81ba34b17181ba7d9fdec1739",
-  "run_url": "https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39424366511",
+  "checked_at": "2026-10-20T14:07:44.286585+00:00",
+  "tested_source_revision": "96745ef2f124f6beb8d480934c6c9a32a3f2c487",
+  "run_url": "https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39433309824",
   "conclusion": "success",
   "platforms": [
     {
       "platform": "windows",
-      "job_url": "https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39424366511/job/118633037931",
+      "job_url": "https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39433309824/job/118663697958",
       "conclusion": "success",
       "backend_test_output": [
         [
@@ -16,7 +16,7 @@
         ]
       ],
       "optional_skips": [
-        "2026-10-20T12:47:45.4592780Z SKIPPED [1] backend\\tests\\test_governance_and_trades.py:218: Optional pinned OCR models are not installed; no runtime download"
+        "2026-10-20T13:54:00.7091311Z SKIPPED [1] backend\\tests\\test_governance_and_trades.py:218: Optional pinned OCR models are not installed; no runtime download"
       ],
       "frontend_tests": 10,
       "private_browser_workflows": 20,
@@ -55,7 +55,7 @@
     },
     {
       "platform": "linux",
-      "job_url": "https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39424366511/job/118633038164",
+      "job_url": "https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39433309824/job/118663697982",
       "conclusion": "success",
       "backend_test_output": [
         [
@@ -64,7 +64,7 @@
         ]
       ],
       "optional_skips": [
-        "2026-10-20T12:46:34.2696877Z SKIPPED [1] backend/tests/test_governance_and_trades.py:218: Optional pinned OCR models are not installed; no runtime download"
+        "2026-10-20T13:52:03.3858975Z SKIPPED [1] backend/tests/test_governance_and_trades.py:218: Optional pinned OCR models are not installed; no runtime download"
       ],
       "frontend_tests": 10,
       "private_browser_workflows": 20,
@@ -102,14 +102,14 @@
       ]
     }
   ],
-  "source_fingerprint": "7c8b818feaadbd50ad8ba66ae12f099d96de75e865501e48a1dad1a66cb8161f",
-  "source_archive_sha256": "d8b99c0c3a4bf9d9813db04758e1b572fb1467b6c2a26a5dd27a025de7637d20",
+  "source_fingerprint": "67dd28b97adc044bfa1919db7a764b5b155de34ab07d3a7c2e3f956c74de2641",
+  "source_archive_sha256": "7276a1ff1bebc65d4c37c0db43210c5b4eaf8c807255a2e9745a54624d193e5c",
   "fresh_archive_installation_passed": true,
   "remote_source_verification": {
     "passed": true,
-    "revision": "8c3de3941f168ea81ba34b17181ba7d9fdec1739",
+    "revision": "96745ef2f124f6beb8d480934c6c9a32a3f2c487",
     "remote_current_branch_verified": true,
-    "tracked_files_checked": 479,
+    "tracked_files_checked": 481,
     "all_remote_file_bytes_match": true,
     "planning_and_engineering_instruction_files_excluded": true
   },
@@ -124,13 +124,19 @@
     "presentation_slides_reviewed": 9,
     "video_seconds": 258
   },
-  "scope": "Hosted checks apply to tested_source_revision. This documentation release preserves the 160 recorded application-source file hashes. Three updated PDFs and the deck state the implemented status. The post-package publication receipt is excluded from the source archive and does not change application files.",
+  "scope": "Hosted checks apply to tested_source_revision. Submission synchronization and generated-file cleanup preserve all 160 recorded application-source file hashes. The standalone evidence ZIP and checksums are excluded from the source ZIP to avoid recursion. The post-package publication receipt is excluded from the source archive and does not change application files.",
   "deferred": [
     "Native database RLS requires PostgreSQL.",
     "Phone enrollment, live paid providers, representative documents and independent reviews remain external."
   ],
   "webhooks": "Disabled; signature verification not applicable.",
   "history_rewritten": false,
+  "cleanup_evidence": "execution-evidence/submission-cleanup.json",
+  "superseded_workflow": {
+    "run_id": 39432799842,
+    "conclusion": "cancelled",
+    "reason": "Superseded by the final scanner update, which also inspects historical standalone evidence ZIPs."
+  },
   "documentation_refresh": {
     "application_files_unchanged": 160,
     "pdfs": 3,

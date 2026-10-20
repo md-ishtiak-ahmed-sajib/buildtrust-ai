@@ -1,6 +1,6 @@
 # Scenario C
 
-Run time (UTC): 2026-10-20T12:00:11.993934Z
+Run time (UTC): 2026-10-20T12:38:15.215377Z
 
 Result: **DUPLICATE_HELD**
 

@@ -131,6 +131,12 @@
       "rendered": true
     },
     {
+      "document": "docs/project-overview.md",
+      "mermaid_diagrams": 0,
+      "images": 1,
+      "rendered": true
+    },
+    {
       "document": "docs/quantity-surveying-standards.md",
       "mermaid_diagrams": 0,
       "images": 0,

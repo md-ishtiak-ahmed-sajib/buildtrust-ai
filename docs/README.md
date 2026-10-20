@@ -1,4 +1,6 @@
-# Documentation guide
+# Your guide to BuildTrust AI
+
+**The application and its security hardening are implemented and tested.** Read the [project overview](project-overview.md) for a short introduction, or jump into a guide below.
 
 New to the app? Start with the [README](../README.md), [feature list](../features.md) and [judge guide](judges-quickstart.md). Use the [glossary](glossary.md) for unfamiliar terms.
 

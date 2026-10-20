@@ -1,8 +1,10 @@
-# Technical guide
+# Technical documentation
 
-BuildTrust AI is a local construction finance sandbox built with React/TypeScript, FastAPI/Python, SQLAlchemy, Alembic and SQLite. It reads real file contents and uses deterministic calculations. It never connects to a bank.
+**The implemented system behind the demonstration.**
 
-Start with the [README](../README.md), [features](../features.md), [architecture](architecture.md) and [API guide](api-reference.md).
+BuildTrust AI connects construction evidence to deterministic financial decisions. The React workspace sends requests to FastAPI, where current account, project, role and record checks protect each operation. SQLite stores exact money and linked evidence. Payments remain simulations.
+
+The application and security hardening are implemented. Migration 0019, private privileged-account MFA, safe browser requests, bounded providers and backup/restore have passed the recorded acceptance checks. Hosted Windows and Linux checks passed on October 20. The following pages explain the working system and its limits.
 
 ## Profiles and installation
 
@@ -77,7 +79,7 @@ Logs record request IDs, method/path/status/duration, parser/job timing and mate
 
 Use `.env.example` for private settings. Never publish private runtime data, uploads, signing secrets or credentials. Back up the database consistently with its private files, signing material and the separate MFA encryption key.
 
-Hosted Windows/Ubuntu checks passed for the recorded release. These include native Linux shell setup/startup and fresh Windows private/public installation. Docker configuration is included, but its engine/container validation remains pending. See [remaining work](../docs/remaining-work.md). Do not alter Docker's managed WSL distribution for Linux testing.
+The [October 20 hosted Windows/Linux checks](https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39419213954) passed for the implemented security release. These include native Linux shell setup/startup and fresh Windows private/public installation. Docker configuration is included, but its engine/container validation remains pending. See [remaining work](../docs/remaining-work.md). Do not alter Docker's managed WSL distribution for Linux testing.
 
 Use [isolated test commands](test-results.md). Recordings require a dedicated database/address and reject the working app port. Packaging checks source fingerprints, actual HTTP results, media evidence and private-file exclusion. Fresh archive installation checks setup, payment, estimating and public-demo behavior.
 
@@ -85,9 +87,9 @@ Read [current results](completion-verification.md) for actual counts, measuremen
 
 See [account security](account-security.md) for private storage permissions, provider limits and backup/restore commands. Paid-provider credentials alone do not enable requests.
 <!-- security-upgrade-start -->
-# Security architecture extension
+## Implemented security architecture
 
-New controls have passed the recorded acceptance checks.
+Security hardening is implemented. The recorded local security checks and the October 20 hosted Windows/Linux run passed. The local suite passed 251 backend tests, 10 frontend tests, 20 browser workflows and all eight original HTTP scenarios. Each hosted runner passed 250 backend tests and skipped one optional OCR model check. [Read the actual hosted results](https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39419213954).
 
 MFA adds encrypted factors, restricted challenges, hashed recovery codes and server-checked session assurance. Current evidence identifies the tested revision and results.
 

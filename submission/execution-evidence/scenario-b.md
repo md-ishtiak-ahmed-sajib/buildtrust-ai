@@ -1,6 +1,6 @@
 # Scenario B
 
-Run time (UTC): 2026-10-20T12:00:11.676413Z
+Run time (UTC): 2026-10-20T12:38:14.889967Z
 
 Result: **SETTLED**
 

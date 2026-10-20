@@ -135,5 +135,15 @@
     "url": "https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39397631299",
     "conclusion": "failure",
     "cause": "Two SHA-256 diagram file checksums in the release manifest matched the generic API-key rule. The provenance-only checksum exception now also covers Mermaid and SVG extensions. Both platform core test suites passed in that run; later steps were skipped after the scan failed."
+  },
+  "documentation_refresh": {
+    "passed": true,
+    "scope": "Documentation and submission authoring changed; application source remains identical to the tested security revision. A matching hosted run of the documentation revision is recorded separately after publication.",
+    "application_files_verified_unchanged": 160,
+    "current_archive_sha256": "d8b99c0c3a4bf9d9813db04758e1b572fb1467b6c2a26a5dd27a025de7637d20",
+    "fresh_current_archive_installation_passed": true,
+    "current_source_fingerprint": "7c8b818feaadbd50ad8ba66ae12f099d96de75e865501e48a1dad1a66cb8161f",
+    "current_pdf_pages_reviewed": 19,
+    "current_presentation_slides_reviewed": 9
   }
 }

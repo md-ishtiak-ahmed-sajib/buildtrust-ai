@@ -1,8 +1,8 @@
 {
   "passed": true,
-  "archive_sha256": "9a976c5bcb9088ee889840220d33c5e64192313bb976bb0e4381f41f94bbf9c8",
-  "source_fingerprint": "83b2c7dcdb48373bd068f0f8819d680ce91b2d1433cc9db9d0b33b323f2bf2a3",
-  "packaged_files_checked": 465,
+  "archive_sha256": "d8b99c0c3a4bf9d9813db04758e1b572fb1467b6c2a26a5dd27a025de7637d20",
+  "source_fingerprint": "7c8b818feaadbd50ad8ba66ae12f099d96de75e865501e48a1dad1a66cb8161f",
+  "packaged_files_checked": 468,
   "all_current_packaged_file_hashes_match": true,
   "excluded_postpackage_receipts": [
     "final-archive-acceptance.json",

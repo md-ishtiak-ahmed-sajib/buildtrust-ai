@@ -36,6 +36,10 @@ A different sample project has two million taka in cash. It estimates twenty ton
 
 ## 3:50 - Evidence and limits
 
-The audit screen checks the saved chain. Other areas cover measurements, accounting, contracts, installments and reviewed corrections. Tests and source files are included in the package. Paid searches and professional acceptance need separate evidence. A person with full database access can rewrite a local audit chain. Real registration, rehearsal and competition upload remain team actions.
+The audit screen checks the saved chain. Other areas cover measurements, accounting, contracts, installments and reviewed corrections. Tests and source files are included in the package. Paid searches and professional acceptance need separate evidence. A person with full database access can rewrite a local audit chain. The team has sent its registration email. Organizer confirmation, rehearsal and final competition submission remain team actions.
 
 For a new recording, use the isolated recording wrapper and its own generated accounts. Follow these scenes and stay below five minutes. Do not reset the working database. For a personal trial, use the separate public launcher and README passwords.
+
+## Current implementation status
+
+The recorded application already includes the implemented security hardening. Private privileged sign-in uses an authenticator. Local tests and the October 20 Windows/Linux hosted run passed. This narration describes working behavior, not a proposed build. The existing 4:18 recording remains valid because the application source is unchanged by this documentation refresh.

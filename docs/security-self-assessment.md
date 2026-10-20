@@ -1,6 +1,10 @@
 # Security self-assessment
 
-BuildTrust AI is a local payment simulator. This report describes implemented controls and known risks. It is not a penetration-test certificate, regulatory approval or proof that the app is ready for public hosting.
+**Security hardening is implemented, and the recorded security checks are complete.**
+
+This assessment explains what protects the working application, how those protections were tested and where their limits remain. Private privileged accounts require MFA. The public judge demo keeps its four documented passwords in a separate profile.
+
+The October 20 checks passed locally and on hosted Windows/Linux. The local backend suite passed all 251 tests. Each hosted runner passed 250 and skipped one optional OCR model test. This is evidence for the local sandbox, not a penetration-test certificate or public-hosting approval.
 
 ## Accounts and public passwords
 
@@ -82,13 +86,13 @@ Release date: October 20, 2026. “Verified” below means local automated accep
 | 19 | Back up and restore | Verified locally: consistent database plus referenced files, signing material and the separate MFA encryption key, checksummed private archive and isolated restore | Restore checks hashes, foreign keys and audit integrity; copied sessions/recovery tokens are revoked before fresh login. Never overwrites working data |
 | 20 | Test two accounts and anonymous access | Verified: anonymous business endpoints reject access and separate accounts cannot cross project/file boundaries | Security tests plus role/payment browser workflows; public health, sign-in, recovery redemption and static UI are intentionally reachable |
 
-See [account, recovery and backup instructions](account-security.md), [actual release verification](completion-verification.md) and the recorded test logs. Package publication is gated on the complete regression and fresh-install checks. Registration email was sent by the team; organizer confirmation and final project submission remain pending.
+See [account, recovery and backup instructions](account-security.md), [actual release verification](completion-verification.md) and the recorded test logs. The regression, security, hosted-platform and fresh-install checks are complete for the recorded release. Registration email was sent by the team; organizer confirmation and final project submission remain pending.
 <!-- security-upgrade-start -->
-# The 19-control security improvement checklist
+## The 19-control security improvement checklist
 
-New controls have passed the recorded acceptance checks.
+Security hardening is implemented. The recorded local security checks and the October 20 hosted Windows/Linux run passed. The local suite passed 251 backend tests, 10 frontend tests, 20 browser workflows and all eight original HTTP scenarios. Each hosted runner passed 250 backend tests and skipped one optional OCR model check. [Read the actual hosted results](https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39419213954).
 
-Labels: **verified**, **implemented but unverified**, **planned**, **deferred**, **not applicable**. The previous 20-item review remains separate.
+Current labels: **verified**, **deferred** and **not applicable**. Seventeen controls are verified. Native database RLS is deferred and incoming webhooks are not applicable. The previous 20-item review remains separate.
 
 ## Read the trust boundaries
 
@@ -98,7 +102,7 @@ The API mediates access to records, private files and external providers.
 
 ![Password and authenticator](assets/security-login.png)
 
-MFA has local acceptance evidence. The public demo stays exempt.
+MFA is implemented and has passed acceptance checks. The public demo stays exempt.
 
 ![Who may access this action?](assets/security-authorization.png)
 
@@ -110,7 +114,7 @@ A valid file format does not make its contents true. Review and supporting recor
 
 ![Protect browser actions](assets/security-requests.png)
 
-Origin and marker checks have local acceptance evidence. No authentication cookies are introduced.
+Origin and marker checks are implemented and tested. Authentication does not use cookies.
 
 ![Private keys through recovery](assets/security-secrets.png)
 
@@ -126,7 +130,7 @@ MFA uses a separate encryption key. Never put private backups or real setup QR c
 
 **Evidence:** Malicious login/register strings, literal apostrophes and invalid sorting tests; source query inventory.
 
-**Remaining work and limit:** No independent penetration test; future raw SQL needs the same review.
+**Boundary:** No independent penetration test; future raw SQL needs the same review.
 
 ### I02 - Cross-site scripting (XSS)
 
@@ -138,7 +142,7 @@ MFA uses a separate encryption key. Never put private backups or real setup QR c
 
 **Evidence:** Stored names, filenames, document descriptions and quotations; explicitly mocked malicious explanation response; upload and CSP tests.
 
-**Remaining work and limit:** XSS on a trusted origin can still read memory; these cases do not prove all future views safe.
+**Boundary:** XSS on a trusted origin can still read memory; these cases do not prove all future views safe.
 
 ### I03 - Cross-site request forgery (CSRF)
 
@@ -150,7 +154,7 @@ MFA uses a separate encryption key. Never put private backups or real setup QR c
 
 **Evidence:** Missing marker, foreign origin and cross-site metadata rejection tests; valid browser and API workflows.
 
-**Remaining work and limit:** An allowed-origin script remains trusted; a stolen bearer token is not prevented by CSRF controls.
+**Boundary:** An allowed-origin script remains trusted; a stolen bearer token is not prevented by CSRF controls.
 
 ### I04 - File upload validation
 
@@ -162,7 +166,7 @@ MFA uses a separate encryption key. Never put private backups or real setup QR c
 
 **Evidence:** Disguised executable/PDF/JSON fixtures, parser bounds and protected preview tests.
 
-**Remaining work and limit:** No antivirus or complete malware-sandbox claim; human evidence can still be false.
+**Boundary:** No antivirus or complete malware-sandbox claim; human evidence can still be false.
 
 ### I05 - Server-side request forgery (SSRF)
 
@@ -174,7 +178,7 @@ MFA uses a separate encryption key. Never put private backups or real setup QR c
 
 **Evidence:** Disallowed schemes, hosts, ports and credentials tests; local-model normalization and mocked provider boundaries.
 
-**Remaining work and limit:** Paid/live providers and a real local model retain separate external acceptance.
+**Boundary:** Paid/live providers and a real local model retain separate external acceptance.
 
 ### A01 - Object-level authorization
 
@@ -186,7 +190,7 @@ MFA uses a separate encryption key. Never put private backups or real setup QR c
 
 **Evidence:** Separate-project and anonymous API tests plus financial, archived-run and file browser workflows.
 
-**Remaining work and limit:** This is application isolation, not native SQLite RLS or protection against an unrestricted DB owner.
+**Boundary:** This is application isolation, not native SQLite RLS or protection against an unrestricted DB owner.
 
 ### A02 - Rate limiting
 
@@ -198,7 +202,7 @@ MFA uses a separate encryption key. Never put private backups or real setup QR c
 
 **Evidence:** Restart/limit, five-attempt, expiry and concurrent usage tests; browser clients honor Retry-After.
 
-**Remaining work and limit:** Shared local IPs may share admission limits; this is a single-process local release.
+**Boundary:** Shared local IPs may share admission limits; this is a single-process local release.
 
 ### A03 - Password hashing
 
@@ -210,7 +214,7 @@ MFA uses a separate encryption key. Never put private backups or real setup QR c
 
 **Evidence:** Login, recovery and hash-preservation tests; populated-copy migration comparison.
 
-**Remaining work and limit:** Public-demo passwords are intentionally public; offline setup needs OS protection.
+**Boundary:** Public-demo passwords are intentionally public; offline setup needs OS protection.
 
 ### A04 - Multi-factor authentication (MFA)
 
@@ -222,7 +226,7 @@ MFA uses a separate encryption key. Never put private backups or real setup QR c
 
 **Evidence:** Enrollment, restricted access, replay, expiry, concurrent code use, role changes, reset and MFA backup/restore tests; real browser enrollment/sign-in.
 
-**Remaining work and limit:** Local automated TOTP and browser evidence is not an independent phone/interoperability or phishing-resistance assessment. Public demo is exempt.
+**Boundary:** Local automated TOTP and browser evidence is not an independent phone/interoperability or phishing-resistance assessment. Public demo is exempt.
 
 ### A05 - Server-side permissions
 
@@ -234,7 +238,7 @@ MFA uses a separate encryption key. Never put private backups or real setup QR c
 
 **Evidence:** Forged/weak-assurance sessions, current-role checks and original financial/permission regression tests.
 
-**Remaining work and limit:** OS/database owner remains trusted. The copilot cannot approve or settle.
+**Boundary:** OS/database owner remains trusted. The copilot cannot approve or settle.
 
 ### A06 - Native row-level security (RLS)
 
@@ -246,7 +250,7 @@ MFA uses a separate encryption key. Never put private backups or real setup QR c
 
 **Evidence:** Architecture and project-isolation tests establish the implemented boundary only.
 
-**Remaining work and limit:** Deferred: a future PostgreSQL migration needs native policies and acceptance.
+**Boundary:** Deferred: a future PostgreSQL migration needs native policies and acceptance.
 
 ### S01 - JWT signing secrets
 
@@ -258,7 +262,7 @@ MFA uses a separate encryption key. Never put private backups or real setup QR c
 
 **Evidence:** Signing/session checks, old-session revocation and preserved-key migration/restore evidence.
 
-**Remaining work and limit:** An unrestricted host owner can read signing material; TLS is required before any remote deployment.
+**Boundary:** An unrestricted host owner can read signing material; TLS is required before any remote deployment.
 
 ### S02 - Server-only API secrets
 
@@ -270,7 +274,7 @@ MFA uses a separate encryption key. Never put private backups or real setup QR c
 
 **Evidence:** Current/history/bundle/archive scanning, private-path/exclusion tests and restored-factor access.
 
-**Remaining work and limit:** No genuine exposed provider key was found; unavailable provider ownership would still block a required rotation.
+**Boundary:** No genuine exposed provider key was found; unavailable provider ownership would still block a required rotation.
 
 ### S03 - No persistent browser tokens
 
@@ -282,7 +286,7 @@ MFA uses a separate encryption key. Never put private backups or real setup QR c
 
 **Evidence:** Browser storage inspection after MFA enrollment and frontend session tests.
 
-**Remaining work and limit:** A page refresh requires sign-in; memory storage alone cannot defeat XSS.
+**Boundary:** A page refresh requires sign-in; memory storage alone cannot defeat XSS.
 
 ### C01 - Tight CORS and trusted origins
 
@@ -294,7 +298,7 @@ MFA uses a separate encryption key. Never put private backups or real setup QR c
 
 **Evidence:** Foreign Origin/Host/Fetch Metadata rejection; actual isolated browser, recording and proxy configuration.
 
-**Remaining work and limit:** A future hosted address needs deliberate configuration and HTTPS review.
+**Boundary:** A future hosted address needs deliberate configuration and HTTPS review.
 
 ### C02 - Webhook signatures
 
@@ -306,7 +310,7 @@ MFA uses a separate encryption key. Never put private backups or real setup QR c
 
 **Evidence:** Route inventory and sandbox architecture.
 
-**Remaining work and limit:** Not applicable now. Any future webhook needs provider-specific signatures and replay controls.
+**Boundary:** Not applicable now. Any future webhook needs provider-specific signatures and replay controls.
 
 ### C03 - Production source maps
 
@@ -318,7 +322,7 @@ MFA uses a separate encryption key. Never put private backups or real setup QR c
 
 **Evidence:** Built-assets check finds no map files/directives; map-request regression.
 
-**Remaining work and limit:** Public source is intentionally available under AGPL; hiding maps is not an access-control boundary.
+**Boundary:** Public source is intentionally available under AGPL; hiding maps is not an access-control boundary.
 
 ### C04 - Logs and lockfile hygiene
 
@@ -330,7 +334,7 @@ MFA uses a separate encryption key. Never put private backups or real setup QR c
 
 **Evidence:** Synthetic-marker log/error tests and pinned scanner output.
 
-**Remaining work and limit:** Pattern scans cannot guarantee discovery of every possible secret format.
+**Boundary:** Pattern scans cannot guarantee discovery of every possible secret format.
 
 ### C05 - Dependency vulnerabilities
 
@@ -342,7 +346,7 @@ MFA uses a separate encryption key. Never put private backups or real setup QR c
 
 **Evidence:** Dated npm and pip-audit runs report no known advisories.
 
-**Remaining work and limit:** New vulnerabilities can appear; this is not a complete supply-chain or penetration assessment.
+**Boundary:** New vulnerabilities can appear; this is not a complete supply-chain or penetration assessment.
 
 ## Important distinctions
 

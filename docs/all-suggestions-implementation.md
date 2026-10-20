@@ -84,7 +84,7 @@ The additional 20-item [security review](security-self-assessment.md) covers rev
 
 ## Documentation-first security checkpoint
 
-The next 19-control checklist is distinct from the earlier 20-item review. Both current guides now include six editable security diagrams and readable PDF exports. New MFA and request checks are labelled planned until implementation and acceptance. Native database RLS is deferred while SQLite stays in use; incoming webhooks remain disabled. The four README credentials are unchanged. PDF rendering, page inspection and documentation checks are recorded in the report evidence.
+The next 19-control checklist is distinct from the earlier 20-item review. Both current guides now include six editable security diagrams and readable PDF exports. That historical checkpoint preceded implementation. MFA and request protection are now implemented and verified in the current reports. Native database RLS is deferred while SQLite stays in use; incoming webhooks remain disabled. The four README credentials are unchanged. PDF rendering, page inspection and documentation checks are recorded in the report evidence.
 
 ## Accepted MFA and request-security release
 
@@ -95,3 +95,7 @@ Executed results: 251 backend tests, 10 frontend tests, 20 browser workflows and
 The final public-launch check found and corrected a module-entry profile identity issue. The launcher now uses its canonical validated public-profile factory. A regression test and raw public sign-ins prevent test helpers from hiding an unwanted MFA challenge. Fresh Windows public setup and all four browser logins pass without MFA; private privileged accounts still require it.
 
 The first hosted MFA release passed both platform test suites, then the history scanner flagged two diagram SHA-256 checksums in the release manifest. The provenance-only checksum exception now includes Mermaid and SVG files. Full history, current assets and nested historical archives pass with no findings; no credential exception was added and history was retained. The final matching hosted result is recorded in `submission/security-publication.json`.
+
+## Reader-focused documentation refresh
+
+Current submission reports, the README and feature guide now state that application implementation and the security checks are complete for the local judge package. The October 20 hosted run passed Windows and Linux; optional OCR model skips remain explicit. Original logs and historical receipts are retained. External reviews, optional-service checks and human submission steps remain in the remaining-work register.

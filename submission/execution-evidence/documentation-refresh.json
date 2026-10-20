@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "checked_at": "2026-10-20T12:38:10.353784+00:00",
+  "scope": "Documentation and submission refresh; no application behavior changed.",
+  "baseline_application_revision": "0009a198bf9ce7583cd2c870953e21d82a584739",
+  "baseline_hosted_run": "https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39419213954",
+  "application_files_checked": 160,
+  "application_file_hashes_unchanged": true,
+  "private_accounts_and_data_unchanged": true,
+  "public_passwords_unchanged": true,
+  "prior_raw_test_results_preserved": true,
+  "pdf_pages_reviewed": 19,
+  "deck_slides_reviewed": 9,
+  "recording_reused_reason": "The existing actual 4:18 demonstration describes implemented behavior and matches all recorded application file hashes.",
+  "external_limits_preserved": true
+}

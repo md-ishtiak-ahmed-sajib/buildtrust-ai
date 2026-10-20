@@ -17,6 +17,7 @@
   ],
   "design_preserved": true,
   "native_powerpoint_execution_claimed": false,
-  "presentation_sha256": "d1aa2b845b13f941d8ecec10acde87d4543c1cb888a66a06f34738909c643f4b",
-  "checked_at": "2026-10-20T08:56:05.493067+00:00"
+  "presentation_sha256": "ddb89f15f2299e347f313986d8134b0ea391cdebe314f224da1d9c6b4fc45c95",
+  "checked_at": "2026-10-20T12:38:10.353784+00:00",
+  "implemented_status_verified": true
 }

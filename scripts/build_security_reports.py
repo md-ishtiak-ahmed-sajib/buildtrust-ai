@@ -27,10 +27,10 @@ if FONT == 'Arial':
 
 DIAGRAMS = [
  ('security-overview', 'Where protection happens', [('Browser', 'Forms and memory-only access'), ('Server API', 'Identity, permissions and rules'), ('SQLite', 'Financial records and audit'), ('Private files', 'Originals, keys and backups'), ('Providers', 'Approved optional connections')], 'The API mediates access to records, private files and external providers.'),
- ('security-login', 'Password and authenticator', [('Password', 'Confirm the first factor'), ('Restricted step', 'No project access yet'), ('Authenticator', 'Enter a short-lived code'), ('Server checks', 'Expiry, replay and current role'), ('Full session', 'Access only after all checks')], 'MFA is planned until the new acceptance evidence is recorded. The public demo stays exempt.'),
+ ('security-login', 'Password and authenticator', [('Password', 'Confirm the first factor'), ('Restricted step', 'No project access yet'), ('Authenticator', 'Enter a short-lived code'), ('Server checks', 'Expiry, replay and current role'), ('Full session', 'Access only after all checks')], 'MFA is implemented and has passed acceptance checks. The public demo stays exempt.'),
  ('security-authorization', 'Who may access this action?', [('Active account', 'Is this session still valid?'), ('Membership', 'Is this the right project?'), ('Current role', 'May this person do this?'), ('Record checks', 'Sources and approval match?'), ('Allowed action', 'Write once with audit evidence')], 'Project checks decide which records are accessible. Role checks decide which actions are permitted.'),
  ('security-upload', 'A document stays untrusted', [('Upload', 'Enforce a bounded request'), ('Validate', 'Check format and signature'), ('Private original', 'Generate the storage name'), ('Bounded parser', 'Limit pages, time and output'), ('Human review', 'Confirm procurement authority')], 'A valid file format does not make its contents true. Review and supporting records are still required.'),
- ('security-requests', 'Protect browser actions', [('Browser', 'Send the explicit marker'), ('Origin checks', 'Trusted origin and metadata'), ('Authentication', 'Check the server session'), ('Business rules', 'Check role, record and version'), ('Safe response', 'Return a typed result or error')], 'New origin and marker checks are planned until tested. No authentication cookies are introduced.'),
+ ('security-requests', 'Protect browser actions', [('Browser', 'Send the explicit marker'), ('Origin checks', 'Trusted origin and metadata'), ('Authentication', 'Check the server session'), ('Business rules', 'Check role, record and version'), ('Safe response', 'Return a typed result or error')], 'Origin and marker checks are implemented and tested. Authentication does not use cookies.'),
  ('security-secrets', 'Private keys through recovery', [('Generate', 'Use random local material'), ('Protect', 'Private files and permissions'), ('Use on server', 'Never expose provider keys'), ('Private backup', 'Copy consistent data and keys'), ('Isolated restore', 'Verify hashes; revoke sessions')], 'MFA uses a separate encryption key. Never put private backups or real setup QR codes in the submission.')
 ]
 
@@ -86,6 +86,8 @@ def pdf(source,target):
     styles['Heading1'].fontSize=22;styles['Heading1'].leading=27
     styles['Heading2'].fontSize=15;styles['Heading2'].leading=20
     styles['Heading3'].fontSize=12;styles['Heading3'].leading=16
+    for name in ('Heading1','Heading2','Heading3'):
+        styles[name].textColor=colors.HexColor('#19343f')
     styles.add(ParagraphStyle('Cell',fontName=FONT,fontSize=8.5,leading=11,alignment=TA_LEFT))
     def rich(text):
         links=[]
@@ -120,7 +122,13 @@ def pdf(source,target):
             while i<len(lines) and lines[i].strip().startswith('|'):rows.append(lines[i].strip());i+=1
             cells=[[Paragraph(rich(v.strip()),styles['Cell']) for v in row.strip('|').split('|')] for row in rows if not re.fullmatch(r'[|\s:\-]+',row)]
             table=Table(cells,colWidths=[(A4[0]-84)/len(cells[0])]*len(cells[0]),repeatRows=1,hAlign='LEFT')
-            table.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,0),colors.HexColor('#e5efeb')),('VALIGN',(0,0),(-1,-1),'TOP'),('GRID',(0,0),(-1,-1),.4,colors.HexColor('#b5c8c0')),('LEFTPADDING',(0,0),(-1,-1),6),('RIGHTPADDING',(0,0),(-1,-1),6),('TOPPADDING',(0,0),(-1,-1),6),('BOTTOMPADDING',(0,0),(-1,-1),6)]));story.extend([table,Spacer(1,10)]);continue
+            table.setStyle(TableStyle([('BACKGROUND',(0,0),(-1,0),colors.HexColor('#e5efeb')),('VALIGN',(0,0),(-1,-1),'TOP'),('GRID',(0,0),(-1,-1),.4,colors.HexColor('#b5c8c0')),('LEFTPADDING',(0,0),(-1,-1),6),('RIGHTPADDING',(0,0),(-1,-1),6),('TOPPADDING',(0,0),(-1,-1),6),('BOTTOMPADDING',(0,0),(-1,-1),6)]))
+            if source.name=='project-overview.md':
+                heading=[story.pop()] if story and isinstance(story[-1],Paragraph) and story[-1].style.name.startswith('Heading') else []
+                story.append(KeepTogether([*heading,table,Spacer(1,10)]))
+            else:
+                story.extend([table,Spacer(1,10)])
+            continue
         image=re.match(r'!\[([^]]*)\]\(([^)]+)\)',line)
         if image:
             path=source.parent/image[2];path=path.with_suffix('.png') if path.suffix=='.svg' else path
@@ -144,14 +152,14 @@ def pdf(source,target):
     SimpleDocTemplate(str(target),pagesize=A4,rightMargin=42,leftMargin=42,topMargin=40,bottomMargin=42,title=source.stem.replace('-',' ').title(),author='BuildTrust AI Team').build(story,onFirstPage=footer,onLaterPages=footer)
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('--verified-receipt',type=Path);args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('--verified-receipt',type=Path,required=True);args=parser.parse_args()
     BUILD.mkdir(parents=True,exist_ok=True)
     data=json.loads((ASSETS/'security-controls.json').read_text());verified=False
     if args.verified_receipt:
         receipt=json.loads(args.verified_receipt.read_text());assert receipt['passed'];assert set(receipt['verified_controls'])=={r[0] for r in data['controls'] if r[0] not in ('A06','C02')};verified=True
     diagrams(verified)
-    summary='New controls have passed the recorded acceptance checks.' if verified else 'Documentation-first checkpoint: MFA and new request checks are planned. Existing evidence belongs to the recorded baseline; it does not prove unfinished work.'
-    section='# The 19-control security improvement checklist\n\n'+summary+'\n\nLabels: **verified**, **implemented but unverified**, **planned**, **deferred**, **not applicable**. The previous 20-item review remains separate.\n\n'
+    summary='Security hardening is implemented. The recorded local security checks and the October 20 hosted Windows/Linux run passed. The local suite passed 251 backend tests, 10 frontend tests, 20 browser workflows and all eight original HTTP scenarios. Each hosted runner passed 250 backend tests and skipped one optional OCR model check. [Read the actual hosted results](https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39419213954).'
+    section='## The 19-control security improvement checklist\n\n'+summary+'\n\nCurrent labels: **verified**, **deferred** and **not applicable**. Seventeen controls are verified. Native database RLS is deferred and incoming webhooks are not applicable. The previous 20-item review remains separate.\n\n'
     section+='## Read the trust boundaries\n\n'
     for name,title,nodes,caption in DIAGRAMS:
         section+=f'![{title}](assets/{name}.png)\n\n{caption if not verified else caption.replace("MFA is planned until the new acceptance evidence is recorded.","MFA has local acceptance evidence.").replace("New origin and marker checks are planned until tested.","Origin and marker checks have local acceptance evidence.")}\n\n'
@@ -161,11 +169,11 @@ def main():
         current=facts['implementation'] if facts else current
         work=facts['limitation'] if facts else work
         evidence=facts['evidence'] if facts else 'Recorded baseline only; new acceptance is pending.'
-        section+=f'### {ident} - {title}\n\n**Purpose:** {purpose}\n\n**Status:** {shown}.\n\n**Current implementation:** {current}\n\n**Evidence:** {evidence}\n\n**Remaining work and limit:** {work}\n\n'
+        section+=f'### {ident} - {title}\n\n**Purpose:** {purpose}\n\n**Status:** {shown}.\n\n**Current implementation:** {current}\n\n**Evidence:** {evidence}\n\n**Boundary:** {work}\n\n'
     section+='## Important distinctions\n\n- XSS means content runs as a script. CSRF means a different website tries to submit an action. They require different controls.\n- Project isolation is enforced by this application. Native database RLS remains deferred while SQLite is used.\n- Incoming webhooks stay disabled. No real payment callback or signature-verification claim is made.\n- Private Admin and Finance accounts will require MFA; the four marked public-demo accounts keep their README passwords and simple login.\n- Logs and dependency lockfiles must exclude private values. A dependency scan is not an independent security assessment.\n\nSources: [OWASP CSRF](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html), [OWASP MFA](https://cheatsheetseries.owasp.org/cheatsheets/Multifactor_Authentication_Cheat_Sheet.html), [OWASP SSRF](https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html), [PyOTP](https://pyauth.github.io/pyotp/).\n'
     if verified:section=section.replace('will require MFA','require MFA')
     append_section(ROOT/'docs/security-self-assessment.md',section)
-    technical='# Security architecture extension\n\n'+summary+'\n\n'
+    technical='## Implemented security architecture\n\n'+summary+'\n\n'
     technical+='The current application uses memory-only bearer tokens and revocable server sessions. The next migration adds encrypted MFA factors, restricted challenges, hashed recovery codes and session assurance. Planned MFA is not part of the baseline evidence.\n\n' if not verified else 'MFA adds encrypted factors, restricted challenges, hashed recovery codes and server-checked session assurance. Current evidence identifies the tested revision and results.\n\n'
     for name,title,nodes,caption in DIAGRAMS:
         technical+=f'![{title}](assets/{name}.png)\n\n'+(caption if name=='security-overview' else ' -> '.join(n[0] for n in nodes)+'.')+'\n\n'
@@ -173,7 +181,7 @@ def main():
     if verified:technical=technical.replace('will require','require')
     append_section(ROOT/'docs/technical-documentation.md',technical)
     outputs=[]
-    for source,name in [('security-self-assessment.md','BuildTrustAI_Security_Self_Assessment.pdf'),('technical-documentation.md','BuildTrustAI_Technical_Documentation.pdf')]:
+    for source,name in [('security-self-assessment.md','BuildTrustAI_Security_Self_Assessment.pdf'),('technical-documentation.md','BuildTrustAI_Technical_Documentation.pdf'),('project-overview.md','BuildTrustAI_Project_Overview.pdf')]:
         target=ROOT/'submission'/name;pdf(ROOT/'docs'/source,target)
         with fitz.open(target) as doc:
             text=''.join(p.get_text() for p in doc);assert len(text)>2000

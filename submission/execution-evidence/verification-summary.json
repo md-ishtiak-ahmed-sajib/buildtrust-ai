@@ -4,7 +4,7 @@
   "browser_workflows": 20,
   "http_scenarios": 8,
   "audit_valid": true,
-  "source_fingerprint": "83b2c7dcdb48373bd068f0f8819d680ce91b2d1433cc9db9d0b33b323f2bf2a3",
+  "source_fingerprint": "7c8b818feaadbd50ad8ba66ae12f099d96de75e865501e48a1dad1a66cb8161f",
   "migration_head": "0019",
   "legacy_tables_preserved": 57,
   "browser_runtime": "data/advanced-browser-35a02811",
@@ -14,13 +14,13 @@
   "app_source_fingerprint": "b5fafc608f872643271de314e332c1364ac82d91cce65aee10df4830c31d3603",
   "public_demo_browser_logins": 4,
   "public_demo_install_passed": true,
-  "hosted_ci_conclusion": "pending current source publication",
-  "hosted_ci_source_revision": null,
-  "native_linux_startup_passed": null,
-  "hosted_windows_fresh_setup_passed": null,
+  "hosted_ci_conclusion": "success",
+  "hosted_ci_source_revision": "0009a198bf9ce7583cd2c870953e21d82a584739",
+  "native_linux_startup_passed": true,
+  "hosted_windows_fresh_setup_passed": true,
   "security_review_items": 20,
   "security_tests": "test_security_hardening.py + test_mfa_request_security.py + public-demo and financial suites",
-  "hosted_security_release": "Pending publication of this MFA source revision; earlier hosted results are historical.",
+  "hosted_security_release": "Implemented security release passed both platforms on October 20, 2026.",
   "security_new_checklist_controls": 19,
   "security_new_controls_verified": 17,
   "public_demo_mfa_exemption_verified": true,
@@ -30,5 +30,5 @@
     "native_linux_startup_passed": true,
     "hosted_windows_fresh_setup_passed": true
   },
-  "hosted_results_scope": "Current matching hosted results are recorded after publication in security-publication.json beside the archive."
+  "hosted_results_scope": "Application behavior tested at the recorded revision; documentation refresh does not change application source. Current package publication is recorded beside the archive."
 }

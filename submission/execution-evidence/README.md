@@ -1,5 +1,8 @@
 # Execution evidence
 
+**The security implementation and its acceptance checks are complete.** The [October 20 hosted run](https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39419213954) passed Windows and Linux for application revision `0009a19`. Later documentation changes retain their own source/package receipts. Raw outputs below remain unchanged records of the checks they describe.
+
+
 These are actual local sandbox and hosted-check results. They do not show real bank transfers. Raw logs and JSON keep their technical field names so a reviewer can trace the results.
 
 | Start here | What it shows |

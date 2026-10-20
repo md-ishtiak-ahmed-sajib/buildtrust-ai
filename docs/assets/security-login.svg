@@ -4,7 +4,7 @@
   'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
 <svg role="img" aria-label="Password and authenticator" width="1000" height="330" preserveAspectRatio="xMinYMin meet" viewBox="0 0 1000 330" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
 	<title>Password and authenticator</title>
-	<desc>MFA has local acceptance evidence. The public demo stays exempt.</desc>
+	<desc>MFA is implemented and has passed acceptance checks. The public demo stays exempt.</desc>
 	<clipPath id="clip">
 		<rect x="0" y="0" width="1000" height="330"/>
 	</clipPath>
@@ -40,7 +40,7 @@
 			<text x="822" y="222" style="font-family: Arial; font-size: 18px;fill: rgb(9%,20%,24%); stroke:none;" transform="translate(0,444) scale(1,-1)">Full session</text>
 			<text x="822" y="171" style="font-family: Arial; font-size: 15px;fill: rgb(20%,34%,31%); stroke:none;" transform="translate(0,342) scale(1,-1)">Access only after</text>
 			<text x="822" y="153" style="font-family: Arial; font-size: 15px;fill: rgb(20%,34%,31%); stroke:none;" transform="translate(0,306) scale(1,-1)">all checks</text>
-			<text x="26" y="75" style="font-family: Arial; font-size: 15px;fill: rgb(20%,34%,31%); stroke:none;" transform="translate(0,150) scale(1,-1)">MFA has local acceptance evidence. The public demo stays exempt.</text>
+			<text x="26" y="75" style="font-family: Arial; font-size: 15px;fill: rgb(20%,34%,31%); stroke:none;" transform="translate(0,150) scale(1,-1)">MFA is implemented and has passed acceptance checks. The public demo stays exempt.</text>
 		</g>
 	</g>
 </svg>

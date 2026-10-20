@@ -36,6 +36,7 @@ required = [
     "submission/BuildTrustAI_Demo.mp4",
     "submission/BuildTrustAI_Security_Self_Assessment.pdf",
     "submission/BuildTrustAI_Technical_Documentation.pdf",
+    "submission/BuildTrustAI_Project_Overview.pdf",
     "submission/execution-evidence/security-19-acceptance.json",
     "submission/execution-evidence/manifest.json",
     "submission/execution-evidence/clean-install.json",
@@ -121,7 +122,10 @@ Deadline: October 20, 2026, 21:59 Dhaka / 23:59 Beijing. Target upload readiness
 - [x] Local audit verification and preserved archived demo runs
 - [x] {backend_count} backend tests, separately recorded frontend/browser checks and A–H HTTP examples
 - [x] Fresh Windows setup, public logins, payment and estimating checks
+- [x] Implemented security hardening: private privileged MFA, request/access protections, scans and private backup/restore
+- [x] Hosted Windows and Linux security release passed; each skipped one optional OCR model check
 - [x] Simple-English README, feature list, glossary and technical/security/judge guides
+- [x] Short project overview explains the implemented app, tested examples and current limits
 - [x] Real screenshots, labelled charts, flowcharts and readable data tables
 - [x] Nine-slide presentation with speaker notes and editable comparison/evidence tables
 - [x] {video_label} real app recording with a clearly disclosed local synthetic English voice

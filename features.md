@@ -1,8 +1,21 @@
 # BuildTrust AI features
 
-BuildTrust AI is a local construction finance and estimating app. It works with fictional projects and simulated payments. This page describes the current application. [Remaining external and human tasks](docs/remaining-work.md) are listed separately.
+**Follow a cost from its source document to its final receipt.**
+
+Start with a drawing or a supplier invoice. Measure the work, compare prices, review the budget and check the cash. When a payment is ready, a different person approves it. BuildTrust AI keeps that story connected across 14 application areas.
+
+These features are implemented in the local application. The examples use fictional projects and simulated payments. Security hardening and the recorded local and hosted checks are complete. [External and human tasks](docs/remaining-work.md) have their own list.
 
 [Try the demo and see the four passwords](README.md#try-the-public-demo) · [Documentation](docs/README.md) · [Glossary](docs/glossary.md) · [Actual test results](docs/completion-verification.md)
+
+## Explore a complete workflow
+
+| What you want to answer | Where the app helps |
+|---|---|
+| Does this invoice match what we ordered and received? | Documents, Invoice Intelligence and the source comparison |
+| What changes if a material price rises? | Materials & Prices, BOQ & Estimates and forecast previews |
+| Can we pay without falling below the cash reserve? | Cash-Flow Forecast and Payment Center |
+| Who reviewed this decision, and what did they use? | Review Inbox, approval snapshots, receipts and Audit & Security |
 
 ## The 14 application areas
 
@@ -158,6 +171,19 @@ Balanced journals, source versions, cost codes and cumulative limits connect the
 - Use saved jobs, leases, bounded retry and restart recovery. Hold uncertain paid submissions for manual review.
 - Use paginated registers, search, stable sorting, draft guards, field errors and protected downloads.
 - Provide keyboard/mobile workflows, modal focus and tables alongside cash charts. Automated checks do not replace a full screen-reader assessment.
+
+## Security that supports the workflow
+
+| Implemented protection | What it means for the user |
+|---|---|
+| Private Admin and Finance MFA | A password alone cannot open a privileged private session |
+| Current server permissions and project checks | Changing an ID or role in the browser does not grant access |
+| Safe browser requests and escaped content | Foreign-site mutations are blocked; user text stays text |
+| Bounded uploads and private evidence | Original documents remain protected and need human confirmation |
+| Server-only secrets and memory-only access tokens | Private credentials stay out of the frontend and browser storage |
+| Recovery, usage caps and private backups | Single-use recovery, spending controls and isolated restoration have acceptance evidence |
+
+Local acceptance passed 251 backend tests, 10 frontend tests, 20 browser workflows, four public-demo browser logins and all eight original payment scenarios. The [hosted Windows/Linux run](https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39419213954) also passed, with one optional OCR test skipped on each runner. Native database RLS is deferred. Incoming webhooks are disabled, so signature verification is not applicable. See the [full security assessment](docs/security-self-assessment.md).
 
 ## Roles
 

@@ -1,5 +1,8 @@
 # Judge quickstart
 
+**Ready to try:** the local application, its security hardening and the recorded checks are complete. The public trial uses fictional projects, fixed README passwords and no MFA. Private Admin and Finance accounts require MFA. For the short story, read the [project overview](project-overview.md).
+
+
 BuildTrust AI is a working local sandbox. All sample companies and payments are fictional. No bank is connected.
 
 ## Start the easy public demo

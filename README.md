@@ -1,14 +1,26 @@
 # BuildTrust AI
 
-**Check construction costs, plan cash and review payments in one local app.**
+**See why a construction payment is safe before you approve it.**
 
-BuildTrust AI helps a project team compare documents, measure work, build estimates and review supplier payments. People approve financial actions. All payments are simulations. No bank, card or real money is connected.
+A supplier claims 95 tonnes of steel. The records support 80. BuildTrust AI shows the difference, explains the BDT 1,050,000 excess and blocks the payment. A valid BDT 70,000 invoice follows a different path: a person reviews it, another person approves it, and the app records one simulated payment.
+
+The same workspace helps your team measure work, compare material prices and see how a changed estimate affects future cash. Every financial action keeps its supporting evidence.
+
+**Implemented and verified on October 20, 2026.** The local application and its security hardening are complete for the judge package. [Windows and Linux checks passed](https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39419213954) for application revision `0009a19`. External service trials, professional review and team submission actions remain separate.
 
 [All features](features.md) · [Documentation](docs/README.md) · [Test evidence](docs/completion-verification.md) · [Remaining work](docs/remaining-work.md)
 
 ![The real public demo overview, showing project cash, invoice status and recent activity](submission/screenshots/public-demo-overview.png)
 
 *Actual app screenshot from a fictional test project. Your new demo may show different dates and record IDs.*
+
+## Choose your first look
+
+| Your time | A useful place to start |
+|---|---|
+| One minute | [Project overview](docs/project-overview.md): the problem, the working solution and its results |
+| Five minutes | Start the public demo below and follow the two walkthroughs |
+| A detailed review | [Features](features.md), [security report](docs/security-self-assessment.md) and [technical guide](docs/technical-documentation.md) |
 
 ## Try the public demo
 
@@ -146,9 +158,22 @@ This setup generates random passwords in `data/demo-credentials.json`. It does n
 
 Defaults: BDT currency, Asia/Dhaka business dates, BDT 100,000 reserve, 30-minute payment approvals and a 15-day delayed-receivables check. Base and delayed scenarios must both keep the reserve. A cost-pressure shortfall produces a warning.
 
-## Checks and evidence
+## Implemented, checked and ready to explore
 
-Read [the current results](docs/completion-verification.md) for actual test counts, dates and limits. Payment examples A–H, browser screenshots, audit results, migration checks and release checks are included in the submission package.
+The security work is implemented. Private Admin and Finance accounts use authenticator MFA. The server checks project access and permissions on every protected request, protects uploads and browser actions, keeps secrets private and rejects replayed recovery codes.
+
+| Executed local check | Result |
+|---|---|
+| Backend tests | 251 passed |
+| Frontend tests | 10 passed |
+| Browser workflows | 20 passed |
+| Public demo browser logins | All four passed without MFA |
+| Original payment scenarios A–H | All eight passed |
+| Build, secret scans, dependency audits and backup/restore | Passed within the recorded scope |
+
+[Hosted Windows and Linux checks also passed](https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39419213954). Each runner passed 250 backend tests and skipped the optional OCR model test because its language files were absent. The local Windows run included that test and passed all 251. Read [the evidence guide](docs/completion-verification.md) for dates, source revisions and limits.
+
+The newer security checklist has **17 verified controls**, **one deferred control** (native database RLS) and **one not applicable control** (disabled incoming webhooks). These are evidence labels, not a security score.
 
 Use isolated checks so your working records stay separate:
 
@@ -167,6 +192,7 @@ The first browser run needs Chromium: `npm --prefix frontend exec playwright ins
 - [Documentation index](docs/README.md) and [plain-English glossary](docs/glossary.md)
 - [All features](features.md), [judge guide](docs/judges-quickstart.md) and [financial rules](docs/financial-rules.md)
 - [Technical guide](docs/technical-documentation.md), [API guide](docs/api-reference.md) and [security review](docs/security-self-assessment.md)
+- [Submission files and reading guide](submission/README.md)
 - [Presentation](submission/BuildTrustAI_Presentation.pptx), [demo video](submission/BuildTrustAI_Demo.mp4), [source archive](submission/BuildTrustAI_Source.zip) and [submission checklist](submission/submission-checklist.md)
 - [Remaining tasks and their owners](docs/remaining-work.md)
 

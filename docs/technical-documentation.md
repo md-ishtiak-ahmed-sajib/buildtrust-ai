@@ -31,11 +31,23 @@ Events use UTC timestamps. Business dates use Asia/Dhaka. BDT is the default cur
 
 Users, memberships, suppliers, documents, revisions, procurement, acceptances, invoices, proposals, reservations, balances, payments, journals, workflows and audit retain source links. Estimate versions, observations/selections, measurements, controls and approvals keep their own evidence. Legacy receipt bodies and audit payloads are preserved.
 
+## Deterministic financial decisions
+
+Match the project, supplier, item code, specification and compatible units before comparing quantities. Supported quantity is the lowest remaining approved BOQ scope, effective PO authorization and confirmed accepted delivery, bounded at zero. Existing allocations and active reservations reduce those balances. Revalidation excludes the proposal's own reservation. One tonne is 1,000 kilograms; quantity and rate convert together.
+
+Verified quantity cannot exceed the claim or supported quantity. The verified line uses the contracted PO rate and cannot exceed the remaining approved BOQ value. Round each line before summing explicit tax, retention and discount. Invoice text cannot change the approved supplier beneficiary. The steel example claims 95 tonnes against 80 supported: the 15-tonne excess is 18.75%, and BDT 1,050,000 is blocked.
+
+Cash decisions use current recorded cash minus other live reservations. A payment needs cash now and must preserve BDT 100,000 on every day of both the 30-day base forecast and the 15-day receivables-delay scenario. Cost pressure produces a warning. Expected receipts are not settled cash. Canonical obligations and installment links count an outflow once; costs without dates remain unscheduled.
+
+Approval binds the exact supplier, beneficiary, amount, currency, record versions, policy and expiry. A contributor cannot approve their own work. Payment approval normally lasts 30 minutes. Default ceilings are BDT 100,000 for Finance Manager and BDT 1,000,000 for Admin. Execution rechecks all rules and uses an idempotency key so an identical retry returns the original receipt.
+
+Estimates keep cost and selling totals separate. Price selections preserve evidence snapshots. An approved estimate changes a budget baseline; it cannot change an existing PO, delivered quantity or settled payment. See [financial formulas and correction rules](financial-rules.md) for the full calculation reference.
+
 ## Transactions and upgrades
 
 SQLite enables foreign keys, WAL and bounded lock waits. Financial writes use BEGIN IMMEDIATE. Settlement commits cash, payment, allocations, payable changes, ledger, receipt and success audit together. Failure rolls back money; denied/failed attempts are audited separately.
 
-The migration head is **0018**. The security migration adds sessions, recovery tokens, admission counters and usage reservations. Sign in again after upgrading; earlier tokens are rejected. Startup takes a consistent online backup before upgrading a populated database. Migration 0008 rebuilt payment constraints for installments; later migrations add procurement/correction records and indexes. Original payments, receipts and audit history remain unchanged. Rehearse backup, migration, integrity and recovery on a copy first.
+The migration head is **0019**. Migration 0018 adds sessions, password-recovery tokens, admission counters and usage reservations. Migration 0019 adds encrypted MFA factors, restricted challenges, recovery-code hashes and session assurance. Sign in again after upgrading; earlier tokens are rejected. Startup takes a consistent online backup before upgrading a populated database. Migration 0008 rebuilt payment constraints for installments; later migrations add procurement/correction records and indexes. Original payments, receipts and audit history remain unchanged. Rehearse backup, migration, integrity and recovery on a copy first.
 
 ## Documents, imports and OCR
 
@@ -63,7 +75,7 @@ Logs record request IDs, method/path/status/duration, parser/job timing and mate
 
 ## Configuration and release
 
-Use `.env.example` for private settings. Never publish private runtime data, uploads, signing secrets or credentials. Back up the database consistently with its private files and signing material.
+Use `.env.example` for private settings. Never publish private runtime data, uploads, signing secrets or credentials. Back up the database consistently with its private files, signing material and the separate MFA encryption key.
 
 Hosted Windows/Ubuntu checks passed for the recorded release. These include native Linux shell setup/startup and fresh Windows private/public installation. Docker configuration is included, but its engine/container validation remains pending. See [remaining work](../docs/remaining-work.md). Do not alter Docker's managed WSL distribution for Linux testing.
 
@@ -75,9 +87,9 @@ See [account security](account-security.md) for private storage permissions, pro
 <!-- security-upgrade-start -->
 # Security architecture extension
 
-Documentation-first checkpoint: MFA and new request checks are planned. Existing evidence belongs to the recorded baseline; it does not prove unfinished work.
+New controls have passed the recorded acceptance checks.
 
-The current application uses memory-only bearer tokens and revocable server sessions. The next migration adds encrypted MFA factors, restricted challenges, hashed recovery codes and session assurance. Planned MFA is not part of the baseline evidence.
+MFA adds encrypted factors, restricted challenges, hashed recovery codes and server-checked session assurance. Current evidence identifies the tested revision and results.
 
 ![Where protection happens](assets/security-overview.png)
 
@@ -105,7 +117,7 @@ Generate -> Protect -> Use on server -> Private backup -> Isolated restore.
 
 ## Interfaces and operating rules
 
-- Mutating requests will require X-BuildTrust-Request: 1 and explicit origin checks. No authentication cookies are introduced.
+- Mutating requests require X-BuildTrust-Request: 1 and explicit origin checks. No authentication cookies are introduced.
 - MFA challenges are restricted to setup or verification; they must never authorize financial actions.
 - TOTP uses six digits and 30-second periods. Used periods and recovery codes cannot be replayed.
 - A separate private key encrypts MFA factors. Backup and restore must include it; missing keys fail closed.

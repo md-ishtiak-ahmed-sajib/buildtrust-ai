@@ -34,6 +34,9 @@ required = [
     "docs/judges-quickstart.md",
     "submission/BuildTrustAI_Presentation.pptx",
     "submission/BuildTrustAI_Demo.mp4",
+    "submission/BuildTrustAI_Security_Self_Assessment.pdf",
+    "submission/BuildTrustAI_Technical_Documentation.pdf",
+    "submission/execution-evidence/security-19-acceptance.json",
     "submission/execution-evidence/manifest.json",
     "submission/execution-evidence/clean-install.json",
     "submission/execution-evidence/public-demo-install.json",
@@ -180,7 +183,7 @@ for directory in [
         if (
             item.is_file()
             and not item.name.startswith(".env")
-            and not any(value in item.name.lower() for value in ("credentials", "signing-secret", ".private.zip"))
+            and not any(value in item.name.lower() for value in ("credentials", "signing-secret", "mfa-encryption-key", ".private.zip"))
             and item.suffix.lower() not in (".pem", ".key", ".db", ".sqlite", ".sqlite3")
             and not set(relative.parts).intersection(excluded)
             and item.name not in excluded_files
@@ -191,10 +194,14 @@ files.extend(
     p
     for p in ROOT.iterdir()
     if p.is_file() and p.name not in excluded_files and (not p.name.startswith(".env") or p.name == ".env.example")
-    and not any(value in p.name.lower() for value in ("credentials", "signing-secret", ".private.zip"))
+    and not any(value in p.name.lower() for value in ("credentials", "signing-secret", "mfa-encryption-key", ".private.zip"))
     and p.suffix.lower() not in (".pem", ".key", ".db", ".sqlite", ".sqlite3")
 )
 files = sorted(set(files))
+for item in files:
+    if item.suffix.lower()=='.zip':
+        with zipfile.ZipFile(item) as candidate:
+            assert not any(Path(n).name in ('private-manifest.json','signing-secret','mfa-encryption-key','demo-credentials.json') for n in candidate.namelist()), 'Private backup cannot be packaged as public source.'
 checksums = {
     p.relative_to(ROOT).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
     for p in files

@@ -14,7 +14,7 @@ Read [current verification](completion-verification.md) for actual local results
 | Forecast | Dated assumptions drive schedules. Unknown dates stay unscheduled. Stale/unresolved mappings cannot silently lower requirements. Forecasts cannot authorize payments. |
 | Prices/FX | Unknown specifications/charges remain unknown. Paid providers need live acceptance. Recorded FX has a date and attribution; it is not a guaranteed bank execution rate. |
 | Operations | One local process is supported. Saved job recovery is not a validated distributed system. Uncertain paid submissions need manual reconciliation. |
-| Identity | Roles/memberships and last-Admin protection exist. MFA, SSO and enterprise account recovery are outside this local release. |
+| Identity | Roles, memberships, last-Admin protection and private authenticator MFA are implemented. SSO, hardware-backed phishing-resistant authentication and enterprise recovery remain outside this local release. |
 | Audit | A local chain detects inconsistent retained events. A full database owner can rewrite or truncate it without an independent checkpoint. |
 | Assessment | Actual synthetic load results are a local baseline, not production capacity. Parser quotas are not antivirus. Independent security and full assistive-technology reviews remain separate. |
 | Platforms | Local Windows installation and hosted Windows/Ubuntu checks passed, including native Linux shell startup. Docker still needs an available engine and actual container checks. Live Ollama remains unverified. |

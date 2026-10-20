@@ -1,6 +1,6 @@
 # Tests and evidence
 
-The latest local run passed **225 backend tests**, **8 frontend tests** and **18 browser workflows**. Four additional browser logins verified the README's public accounts. One existing Starlette/httpx dependency deprecation warning remains.
+The latest local run passed **251 backend tests**, **10 frontend tests** and **20 browser workflows**. Four additional browser logins verified the README's public accounts. One existing Starlette/httpx dependency deprecation warning remains.
 
 Read [completion verification](completion-verification.md) for exact evidence, artifact checks and platform status. The evidence folder contains actual output, not invented results.
 
@@ -19,3 +19,5 @@ The browser wrapper starts a private test server on port 8010. The HTTP collecto
 The fresh Windows installer checks the ordinary private setup, then launches the public profile in the same isolated source copy. It verifies four public logins, denied writes/self-approval, the BDT 70,000 payment, audit integrity, repeat preparation, occupied-port handling and unchanged private records.
 
 Contract generation must leave OpenAPI/document/frontend contracts unchanged. Advisory scans report known issues at execution time; they are not a security certificate. An earlier [hosted Windows/Ubuntu run](https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39289544488) passed both jobs, including platform startup checks. Its receipt records that earlier tested revision. See the post-package security-publication.json for the matching security release. Queued jobs must not be described as passing.
+
+Public-demo tests use unassisted sign-in: a restricted MFA challenge fails the check. A module-launch regression covers the same entry point as the Windows launcher. All four README accounts also pass real browser login without MFA. Private verification clients complete actual MFA endpoints and never bypass server controls.

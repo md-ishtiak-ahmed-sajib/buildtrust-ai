@@ -14,6 +14,7 @@ import uuid
 import re
 import hashlib
 import httpx
+from verification_client import VerificationClient
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "backend"))
@@ -198,6 +199,7 @@ def main():
         "BUILDTRUST_DATA_DIR": str(runtime),
         "BUILDTRUST_BACKGROUND_JOBS": "false",
         "BUILDTRUST_LLM_PROVIDER": "none",
+        "BUILDTRUST_TRUSTED_ORIGINS": json.dumps([f"http://127.0.0.1:{args.port}"]),
     }
     with (runtime / "server.log").open("w", encoding="utf-8") as log:
         server = subprocess.Popen(
@@ -217,7 +219,7 @@ def main():
                 except httpx.HTTPError:
                     pass
                 time.sleep(0.15)
-            with httpx.Client(base_url=base, timeout=60) as client:
+            with VerificationClient(base_url=base, timeout=60) as client:
                 login = client.post(
                     "/auth/login",
                     json={
@@ -232,7 +234,7 @@ def main():
 
                 def worker(index):
                     samples = []
-                    with httpx.Client(
+                    with VerificationClient(
                         base_url=base, headers=headers, timeout=60
                     ) as client:
                         for n in range(30):

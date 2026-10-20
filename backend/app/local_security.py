@@ -39,7 +39,7 @@ def backup(settings, output):
                 for name in names:
                     if name:
                         files["uploads/"+name] = private_path(settings.data_dir, "uploads", name)
-                for name in ("signing-secret", "public-demo-profile.json", "demo-credentials.json"):
+                for name in ("signing-secret", "mfa-encryption-key", "public-demo-profile.json", "demo-credentials.json"):
                     file = private_path(settings.data_dir, name)
                     if file.is_file():
                         files[name] = file
@@ -108,6 +108,7 @@ def main():
     b=sub.add_parser("backup");b.add_argument("--output",required=True,type=Path)
     r=sub.add_parser("restore");r.add_argument("--archive",required=True,type=Path);r.add_argument("--target",required=True,type=Path)
     p=sub.add_parser("recover");p.add_argument("--email",required=True)
+    p=sub.add_parser("mfa-reset");p.add_argument("--email",required=True)
     args=parser.parse_args()
     if args.command=="restore":result=restore(args.archive,args.target)
     else:
@@ -121,7 +122,11 @@ def main():
                 with transaction(engine,True) as session:
                     user=session.scalar(select(User).where(User.email==args.email.strip().lower()))
                     if not user:raise SystemExit("Account not found")
-                    result=issue_recovery(session,settings,user,owner=True)
+                    if args.command=='mfa-reset':
+                        from .mfa import reset_factor
+                        reset_factor(session,user,owner=True)
+                        result={'message':'MFA reset by the local owner. Sessions revoked; required roles must enroll again.'}
+                    else:result=issue_recovery(session,settings,user,owner=True)
             finally:engine.dispose()
     print(json.dumps(result,indent=2))
 

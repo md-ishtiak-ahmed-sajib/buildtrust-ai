@@ -67,7 +67,7 @@ def diagrams(verified):
         renderSVG.drawToFile(d,str(ASSETS/(name+'.svg')))
         svg=(ASSETS/(name+'.svg')).read_text()
         svg=svg.replace('<svg ', '<svg role="img" aria-label="'+escape(title,quote=True)+'" ',1)
-        svg=svg.replace('<title>...</title>','<title>'+xml_escape(title)+'</title>').replace('<desc>...</desc>','<desc>'+xml_escape(caption)+'</desc>')
+        svg=svg.replace('<title>...</title>','<title>'+xml_escape(title)+'</title>').replace('<desc>...</desc>','<desc>'+xml_escape(note)+'</desc>')
         (ASSETS/(name+'.svg')).write_text(svg,encoding='utf-8')
         renderPDF.drawToFile(d,str(BUILD/(name+'.pdf')))
         with fitz.open(BUILD/(name+'.pdf')) as doc:doc[0].get_pixmap(matrix=fitz.Matrix(1.5,1.5)).save(ASSETS/(name+'.png'))
@@ -108,6 +108,13 @@ def pdf(source,target):
         line=lines[i].strip();i+=1
         if line.startswith('```'):code=not code;continue
         if not line or line.startswith('<!--'):continue
+        if re.match(r'^### [A-Z][0-9]{2} - ',line) or line in ('## Important distinctions','## Interfaces and operating rules'):
+            important=line.startswith('## ')
+            group=[Paragraph(rich(line[3:] if important else line[4:]),styles['Heading2' if important else 'Heading3'])]
+            while i<len(lines) and not lines[i].lstrip().startswith('#'):
+                value=lines[i].strip();i+=1
+                if value:group.append(Paragraph(rich(value),styles['Normal']))
+            story.append(KeepTogether(group));continue
         if line.startswith('|'):
             rows=[line]
             while i<len(lines) and lines[i].strip().startswith('|'):rows.append(lines[i].strip());i+=1
@@ -119,7 +126,13 @@ def pdf(source,target):
             path=source.parent/image[2];path=path.with_suffix('.png') if path.suffix=='.svg' else path
             if path.exists():
                 from PIL import Image as PILImage
-                w,h=PILImage.open(path).size;story.extend([Image(str(path),width=A4[0]-84,height=(A4[0]-84)*h/w),Paragraph(rich(image[1]),styles['Cell']),Spacer(1,12)])
+                w,h=PILImage.open(path).size
+                group=[Image(str(path),width=A4[0]-84,height=(A4[0]-84)*h/w),Paragraph(rich(image[1]),styles['Cell'])]
+                j=i
+                while j<len(lines) and not lines[j].strip():j+=1
+                if j<len(lines) and not lines[j].lstrip().startswith(('#','![','|','<!--')):
+                    group.append(Paragraph(rich(lines[j].strip()),styles['Normal']));i=j+1
+                group.append(Spacer(1,12));story.append(KeepTogether(group))
             continue
         level=len(line)-len(line.lstrip('#'))
         style=styles.get(f'Heading{min(level,3)}') if level else styles['Normal']
@@ -144,8 +157,13 @@ def main():
         section+=f'![{title}](assets/{name}.png)\n\n{caption if not verified else caption.replace("MFA is planned until the new acceptance evidence is recorded.","MFA has local acceptance evidence.").replace("New origin and marker checks are planned until tested.","Origin and marker checks have local acceptance evidence.")}\n\n'
     for ident,title,purpose,status,current,work in data['controls']:
         shown='verified' if verified and ident not in ('A06','C02') else status
-        section+=f'### {ident} - {title}\n\n**Purpose:** {purpose}\n\n**Status:** {shown}.\n\n**Current baseline:** {current}\n\n**Acceptance and limit:** {work}\n\n'
+        facts=receipt['controls'][ident] if verified else None
+        current=facts['implementation'] if facts else current
+        work=facts['limitation'] if facts else work
+        evidence=facts['evidence'] if facts else 'Recorded baseline only; new acceptance is pending.'
+        section+=f'### {ident} - {title}\n\n**Purpose:** {purpose}\n\n**Status:** {shown}.\n\n**Current implementation:** {current}\n\n**Evidence:** {evidence}\n\n**Remaining work and limit:** {work}\n\n'
     section+='## Important distinctions\n\n- XSS means content runs as a script. CSRF means a different website tries to submit an action. They require different controls.\n- Project isolation is enforced by this application. Native database RLS remains deferred while SQLite is used.\n- Incoming webhooks stay disabled. No real payment callback or signature-verification claim is made.\n- Private Admin and Finance accounts will require MFA; the four marked public-demo accounts keep their README passwords and simple login.\n- Logs and dependency lockfiles must exclude private values. A dependency scan is not an independent security assessment.\n\nSources: [OWASP CSRF](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html), [OWASP MFA](https://cheatsheetseries.owasp.org/cheatsheets/Multifactor_Authentication_Cheat_Sheet.html), [OWASP SSRF](https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html), [PyOTP](https://pyauth.github.io/pyotp/).\n'
+    if verified:section=section.replace('will require MFA','require MFA')
     append_section(ROOT/'docs/security-self-assessment.md',section)
     technical='# Security architecture extension\n\n'+summary+'\n\n'
     technical+='The current application uses memory-only bearer tokens and revocable server sessions. The next migration adds encrypted MFA factors, restricted challenges, hashed recovery codes and session assurance. Planned MFA is not part of the baseline evidence.\n\n' if not verified else 'MFA adds encrypted factors, restricted challenges, hashed recovery codes and server-checked session assurance. Current evidence identifies the tested revision and results.\n\n'

@@ -1,0 +1,536 @@
+{
+  "passed": true,
+  "checked_at": "2026-10-20T08:34:01.277070+00:00",
+  "sql_call_inventory": [
+    {
+      "file": "backend/app/accounting.py",
+      "line": 821,
+      "method": "execute",
+      "argument_kind": "Call"
+    },
+    {
+      "file": "backend/app/admission.py",
+      "line": 16,
+      "method": "execute",
+      "argument_kind": "Call"
+    },
+    {
+      "file": "backend/app/commercial.py",
+      "line": 435,
+      "method": "execute",
+      "argument_kind": "Call"
+    },
+    {
+      "file": "backend/app/commercial_api.py",
+      "line": 93,
+      "method": "execute",
+      "argument_kind": "Call"
+    },
+    {
+      "file": "backend/app/control_api.py",
+      "line": 443,
+      "method": "execute",
+      "argument_kind": "Call"
+    },
+    {
+      "file": "backend/app/cost_coding.py",
+      "line": 194,
+      "method": "execute",
+      "argument_kind": "Call"
+    },
+    {
+      "file": "backend/app/cost_coding.py",
+      "line": 218,
+      "method": "execute",
+      "argument_kind": "Call"
+    },
+    {
+      "file": "backend/app/cost_coding.py",
+      "line": 79,
+      "method": "execute",
+      "argument_kind": "Call"
+    },
+    {
+      "file": "backend/app/coverage.py",
+      "line": 91,
+      "method": "execute",
+      "argument_kind": "Call"
+    },
+    {
+      "file": "backend/app/coverage.py",
+      "line": 57,
+      "method": "execute",
+      "argument_kind": "Call"
+    },
+    {
+      "file": "backend/app/database.py",
+      "line": 21,
+      "method": "execute",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/app/database.py",
+      "line": 22,
+      "method": "execute",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/app/database.py",
+      "line": 23,
+      "method": "execute",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/app/database.py",
+      "line": 28,
+      "method": "exec_driver_sql",
+      "argument_kind": "IfExp"
+    },
+    {
+      "file": "backend/app/finance.py",
+      "line": 256,
+      "method": "execute",
+      "argument_kind": "Call"
+    },
+    {
+      "file": "backend/app/finance.py",
+      "line": 224,
+      "method": "execute",
+      "argument_kind": "Call"
+    },
+    {
+      "file": "backend/app/finance.py",
+      "line": 231,
+      "method": "execute",
+      "argument_kind": "Call"
+    },
+    {
+      "file": "backend/app/forecasting.py",
+      "line": 322,
+      "method": "execute",
+      "argument_kind": "Call"
+    },
+    {
+      "file": "backend/app/forecasting.py",
+      "line": 347,
+      "method": "execute",
+      "argument_kind": "Call"
+    },
+    {
+      "file": "backend/app/forecast_links.py",
+      "line": 127,
+      "method": "execute",
+      "argument_kind": "Call"
+    },
+    {
+      "file": "backend/app/local_security.py",
+      "line": 86,
+      "method": "execute",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/app/local_security.py",
+      "line": 36,
+      "method": "execute",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/app/local_security.py",
+      "line": 86,
+      "method": "execute",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/app/local_security.py",
+      "line": 37,
+      "method": "execute",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/app/local_security.py",
+      "line": 35,
+      "method": "execute",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/app/main.py",
+      "line": 281,
+      "method": "execute",
+      "argument_kind": "Call"
+    },
+    {
+      "file": "backend/app/mfa.py",
+      "line": 61,
+      "method": "execute",
+      "argument_kind": "Call"
+    },
+    {
+      "file": "backend/app/mfa.py",
+      "line": 96,
+      "method": "execute",
+      "argument_kind": "Call"
+    },
+    {
+      "file": "backend/app/mfa.py",
+      "line": 104,
+      "method": "execute",
+      "argument_kind": "Call"
+    },
+    {
+      "file": "backend/app/mfa.py",
+      "line": 105,
+      "method": "execute",
+      "argument_kind": "Call"
+    },
+    {
+      "file": "backend/app/mfa_api.py",
+      "line": 159,
+      "method": "execute",
+      "argument_kind": "Call"
+    },
+    {
+      "file": "backend/app/mfa_api.py",
+      "line": 159,
+      "method": "execute",
+      "argument_kind": "Call"
+    },
+    {
+      "file": "backend/app/migrations.py",
+      "line": 50,
+      "method": "execute",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/app/migrations.py",
+      "line": 61,
+      "method": "execute",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/app/migrations.py",
+      "line": 19,
+      "method": "execute",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/app/migrations.py",
+      "line": 23,
+      "method": "execute",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/app/migrations.py",
+      "line": 55,
+      "method": "exec_driver_sql",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/app/migrations.py",
+      "line": 41,
+      "method": "execute",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/app/payment_api.py",
+      "line": 85,
+      "method": "execute",
+      "argument_kind": "Name"
+    },
+    {
+      "file": "backend/app/pricing.py",
+      "line": 676,
+      "method": "execute",
+      "argument_kind": "Call"
+    },
+    {
+      "file": "backend/app/pricing.py",
+      "line": 691,
+      "method": "execute",
+      "argument_kind": "Call"
+    },
+    {
+      "file": "backend/app/procurement.py",
+      "line": 48,
+      "method": "execute",
+      "argument_kind": "Call"
+    },
+    {
+      "file": "backend/app/procurement.py",
+      "line": 320,
+      "method": "execute",
+      "argument_kind": "Call"
+    },
+    {
+      "file": "backend/alembic/versions/0001_initial.py",
+      "line": 15,
+      "method": "exec_driver_sql",
+      "argument_kind": "Name"
+    },
+    {
+      "file": "backend/alembic/versions/0002_active_proposal_guard.py",
+      "line": 10,
+      "method": "exec_driver_sql",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/alembic/versions/0003_estimating.py",
+      "line": 12,
+      "method": "exec_driver_sql",
+      "argument_kind": "Name"
+    },
+    {
+      "file": "backend/alembic/versions/0004_estimate_snapshot.py",
+      "line": 9,
+      "method": "exec_driver_sql",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/alembic/versions/0005_review_controls.py",
+      "line": 10,
+      "method": "exec_driver_sql",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/alembic/versions/0005_review_controls.py",
+      "line": 14,
+      "method": "exec_driver_sql",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/alembic/versions/0005_review_controls.py",
+      "line": 25,
+      "method": "exec_driver_sql",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/alembic/versions/0005_review_controls.py",
+      "line": 31,
+      "method": "exec_driver_sql",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/alembic/versions/0005_review_controls.py",
+      "line": 40,
+      "method": "exec_driver_sql",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/alembic/versions/0005_review_controls.py",
+      "line": 22,
+      "method": "exec_driver_sql",
+      "argument_kind": "JoinedStr"
+    },
+    {
+      "file": "backend/alembic/versions/0006_operations.py",
+      "line": 9,
+      "method": "exec_driver_sql",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/alembic/versions/0006_operations.py",
+      "line": 14,
+      "method": "exec_driver_sql",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/alembic/versions/0006_operations.py",
+      "line": 15,
+      "method": "exec_driver_sql",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/alembic/versions/0007_accounting.py",
+      "line": 10,
+      "method": "exec_driver_sql",
+      "argument_kind": "Name"
+    },
+    {
+      "file": "backend/alembic/versions/0008_installments.py",
+      "line": 17,
+      "method": "exec_driver_sql",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/alembic/versions/0008_installments.py",
+      "line": 18,
+      "method": "exec_driver_sql",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/alembic/versions/0009_invoice_entitlement.py",
+      "line": 7,
+      "method": "exec_driver_sql",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/alembic/versions/0009_invoice_entitlement.py",
+      "line": 12,
+      "method": "exec_driver_sql",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/alembic/versions/0010_obligations.py",
+      "line": 8,
+      "method": "exec_driver_sql",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/alembic/versions/0010_obligations.py",
+      "line": 14,
+      "method": "exec_driver_sql",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/alembic/versions/0010_obligations.py",
+      "line": 15,
+      "method": "exec_driver_sql",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/alembic/versions/0011_user_versions.py",
+      "line": 7,
+      "method": "exec_driver_sql",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/alembic/versions/0012_commercial.py",
+      "line": 9,
+      "method": "exec_driver_sql",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/alembic/versions/0012_commercial.py",
+      "line": 14,
+      "method": "exec_driver_sql",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/alembic/versions/0013_certificate_payments.py",
+      "line": 18,
+      "method": "execute",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/alembic/versions/0014_recognition_allocations.py",
+      "line": 10,
+      "method": "exec_driver_sql",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/alembic/versions/0014_recognition_allocations.py",
+      "line": 16,
+      "method": "exec_driver_sql",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/alembic/versions/0015_procurement_amendments.py",
+      "line": 9,
+      "method": "exec_driver_sql",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/alembic/versions/0015_procurement_amendments.py",
+      "line": 14,
+      "method": "exec_driver_sql",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/alembic/versions/0016_receivable_corrections.py",
+      "line": 9,
+      "method": "exec_driver_sql",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/alembic/versions/0016_receivable_corrections.py",
+      "line": 10,
+      "method": "exec_driver_sql",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "backend/alembic/versions/0019_mfa.py",
+      "line": 16,
+      "method": "execute",
+      "argument_kind": "Call"
+    },
+    {
+      "file": "scripts/verify_local_load.py",
+      "line": 100,
+      "method": "execute",
+      "argument_kind": "Call"
+    },
+    {
+      "file": "scripts/verify_local_load.py",
+      "line": 111,
+      "method": "execute",
+      "argument_kind": "Call"
+    },
+    {
+      "file": "scripts/verify_local_load.py",
+      "line": 137,
+      "method": "execute",
+      "argument_kind": "Call"
+    },
+    {
+      "file": "scripts/verify_local_load.py",
+      "line": 182,
+      "method": "execute",
+      "argument_kind": "Call"
+    },
+    {
+      "file": "scripts/verify_public_demo.py",
+      "line": 24,
+      "method": "execute",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "scripts/verify_public_demo.py",
+      "line": 27,
+      "method": "execute",
+      "argument_kind": "JoinedStr"
+    },
+    {
+      "file": "scripts/verify_upgrade_migration.py",
+      "line": 30,
+      "method": "execute",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "scripts/verify_upgrade_migration.py",
+      "line": 47,
+      "method": "execute",
+      "argument_kind": "BinOp"
+    },
+    {
+      "file": "scripts/verify_upgrade_migration.py",
+      "line": 41,
+      "method": "execute",
+      "argument_kind": "BinOp"
+    },
+    {
+      "file": "scripts/verify_upgrade_migration.py",
+      "line": 82,
+      "method": "execute",
+      "argument_kind": "Constant"
+    },
+    {
+      "file": "scripts/verify_upgrade_migration.py",
+      "line": 84,
+      "method": "execute",
+      "argument_kind": "Constant"
+    }
+  ],
+  "review": [
+    "Application values use SQLAlchemy predicates/bind parameters. Register ordering uses enumerated columns/direction.",
+    "Raw application SQL is static PRAGMA/health/backup/migration handling.",
+    "Migration 0005 interpolates two fixed repository table/column tuples, not request data.",
+    "Maintenance snapshots quote catalog-derived identifiers and do not accept HTTP query fragments.",
+    "Some .execute calls are domain settlement functions, not SQL execution.",
+    "Current frontend source has no dangerous HTML/eval sinks; browser payload tests remain the behavioral evidence."
+  ],
+  "unsafe_frontend_sinks": [],
+  "lockfiles_in_secret_scan": [
+    "backend/uv.lock",
+    "frontend/package-lock.json"
+  ],
+  "limitation": "Source inventory and local regression tests are not an independent penetration test."
+}

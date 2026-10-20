@@ -24,7 +24,9 @@ def main():
         "BUILDTRUST_DATAFORSEO_LOGIN": "",
         "BUILDTRUST_DATAFORSEO_PASSWORD": "",
         "BUILDTRUST_E2E_BASE_URL": "http://127.0.0.1:8010",
+        "BUILDTRUST_TRUSTED_ORIGINS": '["http://127.0.0.1:8010"]',
         "BUILDTRUST_E2E_CREDENTIALS": str(runtime / "demo-credentials.json"),
+        "BUILDTRUST_E2E_MFA_CACHE": str(runtime / "mfa-testing-credentials.json"),
         "BUILDTRUST_E2E_OUTPUT": str(runtime / "screenshots"),
     }
     subprocess.run(
@@ -68,21 +70,26 @@ def main():
                     pass
                 time.sleep(0.15)
             npm = "npm.cmd" if os.name == "nt" else "npm"
-            result = subprocess.run(
-                [npm, "run", "test:e2e"],
+            process = subprocess.Popen(
+                [npm, "run", "test:e2e", *(["--", *sys.argv[1:]] if len(sys.argv)>1 else [])],
                 cwd=ROOT / "frontend",
                 env=env,
-                capture_output=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
                 text=True,
                 encoding="utf-8",
                 errors="replace",
             )
-            output = result.stdout + result.stderr
+            chunks=[]
+            with (runtime/'browser-tests.log').open('w',encoding='utf-8') as progress:
+                for line in process.stdout:
+                    chunks.append(line);progress.write(line);progress.flush();print(line,end='',flush=True)
+            process.wait()
+            output = ''.join(chunks)
             (runtime / "browser-tests.log").write_text(output, encoding="utf-8")
-            print(output)
             print("Actual browser artifacts:", runtime)
-            if result.returncode:
-                raise SystemExit(result.returncode)
+            if process.returncode:
+                raise SystemExit(process.returncode)
         finally:
             server.terminate()
             try:

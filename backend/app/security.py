@@ -27,12 +27,12 @@ class DomainError(Exception):
         self.fields, self.retry_after = fields or [], retry_after
 
 
-def token_for(user, secret, session):
+def token_for(user, secret, session, *, mfa_verified=False):
     now = datetime.now(timezone.utc)
     from .hardening_models import AuthSession
     identity = secrets.token_urlsafe(32)
     session.add(AuthSession(id=hashlib.sha256(identity.encode()).hexdigest(), user_id=user.id,
-                            user_version=user.version, expires_at=(now + timedelta(minutes=30)).isoformat().replace("+00:00", "Z")))
+                            user_version=user.version, mfa_verified=mfa_verified, expires_at=(now + timedelta(minutes=30)).isoformat().replace("+00:00", "Z")))
     return jwt.encode(
         {
             "sub": str(user.id),
@@ -47,7 +47,7 @@ def token_for(user, secret, session):
     )
 
 
-def authenticate(session, token, secret):
+def authenticate(session, token, secret, settings=None):
     try:
         claims = jwt.decode(
             token,
@@ -68,6 +68,9 @@ def authenticate(session, token, secret):
         raise DomainError(401, "UNAUTHENTICATED", "Sign in again.")
     if not user or not user.active:
         raise DomainError(401, "UNAUTHENTICATED", "Account is inactive or unavailable.")
+    from .mfa import needs_second_factor
+    if needs_second_factor(session, settings, user) and not auth.mfa_verified:
+        raise DomainError(401, "MFA_REQUIRED", "Sign in with your authenticator to continue.")
     return user
 
 

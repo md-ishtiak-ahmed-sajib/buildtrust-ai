@@ -12,6 +12,8 @@ BuildTrust AI is a working local sandbox. All sample companies and payments are 
 
 The public demo uses `data/public-demo` and keeps records on later starts. The original private app uses port 8000 and random local passwords. Public passwords do not change those private accounts.
 
+The four public accounts do not need an authenticator. Private Admin and Finance Manager accounts do. Their first sign-in opens local authenticator setup and shows ten recovery codes once. See [account security](account-security.md). Use the public profile for the simplest judge trial.
+
 ## Stop an inflated claim
 
 1. Sign in as Operator and select the Metro Commercial Building project.

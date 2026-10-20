@@ -73,7 +73,7 @@ def main():
     with (output / "public-demo-launcher.log").open("w", encoding="utf-8") as log:
         server = subprocess.Popen(command, cwd=target, stdout=log, stderr=log)
         try:
-            client = httpx.Client(base_url="http://127.0.0.1:8003", timeout=30)
+            client = httpx.Client(base_url="http://127.0.0.1:8003", timeout=30,headers={'X-BuildTrust-Request':'1'})
             for _ in range(900):
                 if server.poll() is not None:
                     raise RuntimeError("Public launcher failed; see its isolated log.")
@@ -99,6 +99,7 @@ def main():
                     json={"email": account["email"], "password": account["password"]},
                 )
                 response.raise_for_status()
+                assert 'access_token' in response.json() and 'challenge_token' not in response.json(), 'Public README accounts must not require MFA.'
                 headers[account["role"]] = {
                     "Authorization": "Bearer " + response.json()["access_token"]
                 }
@@ -152,6 +153,13 @@ def main():
                 occupied.returncode
                 and "already in use" in occupied.stdout + occupied.stderr
             )
+            browser=subprocess.run(
+                ['node',str(ROOT/'scripts/verify_public_demo.mjs')],cwd=ROOT,
+                capture_output=True,text=True,encoding='utf-8',errors='replace',timeout=120,
+            )
+            (output/'public-demo-browser.log').write_text(browser.stdout+browser.stderr,encoding='utf-8')
+            assert browser.returncode==0, 'Four public browser logins failed; see the isolated browser log.'
+            (output/'public-demo-browser.json').write_bytes((ROOT/'data/public-demo-browser/result.json').read_bytes())
             client.close()
         finally:
             if os.name == "nt":
@@ -182,6 +190,8 @@ def main():
         "profile": "isolated public demo",
         "port": 8003,
         "four_readme_passwords_login": True,
+        "four_browser_logins": True,
+        "public_demo_mfa_exempt": True,
         "operator_self_approval_denied": True,
         "auditor_write_denied": True,
         "independent_payment_balance": "930000.00",

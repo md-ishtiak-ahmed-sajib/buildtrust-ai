@@ -8,19 +8,19 @@ All links below refer to actual logs or receipts in [execution evidence](../subm
 
 | Check | Actual result | Evidence file |
 |---|---|---|
-| Backend suite | 225 passed; one existing Starlette/httpx deprecation warning | backend-tests.log |
-| Frontend tests | 8 passed | frontend-tests.log |
+| Backend suite | 251 passed; one existing Starlette/httpx deprecation warning | backend-tests.log |
+| Frontend tests | 10 passed | frontend-tests.log |
 | Production build | Passed | frontend-build.log |
-| Browser workflows | 18 passed | browser-tests.log; screenshots |
+| Browser workflows | 20 passed | browser-tests.log; screenshots |
 | Public browser logins | Four README accounts passed real browser login/navigation | public-demo-browser.json |
 | Public launcher | Fresh Windows setup, four logins, permissions, payment, repeat preparation and occupied-port checks passed | public-demo-install.json |
-| Working profile preservation | 56 legacy tables and 155 private files preserved; credentials and secret unchanged | security-private-preservation.json |
+| Working profile preservation | Both profiles upgraded to 0019; 59 pre-upgrade tables retained in each, except required session revocation; credentials and signing keys unchanged | security-working-upgrade.json |
 | Private setup | Fresh setup, migrations, generated credentials, payment/estimate and audit checks passed | clean-install.json; clean-install.log |
 | Original HTTP examples | A–H results and source fingerprint are recorded by the isolated collector | manifest.json; scenario-a through scenario-h.json |
 | Contracts | Repeat generation agrees with OpenAPI/document/frontend types | contract-drift.json |
-| Documentation | Render, links, images, mobile layouts, Mermaid diagrams and five SVG checks | documentation-check.json |
+| Documentation | Render, links, images, mobile layouts, Mermaid diagrams and eleven SVG checks | documentation-check.json |
 | Hosted Windows and Ubuntu | Earlier revision passed both platforms. Matching security-release status is recorded after publication. | hosted-ci.json; security-publication.json beside the archive |
-| Initial JavaScript | 117423 gzip bytes; 49.49% below the 232480-byte baseline | asset-budget.json |
+| Initial JavaScript | 118881 gzip bytes; 48.86% below the 232480-byte baseline | asset-budget.json |
 
 Public tests cover published passwords, actual role denial, independent payment and clear refusal of unrelated/changed data. Private setup still generates random passwords. Security migration 0018 adds revocable sessions, recovery, persistent throttles and usage reservations. Earlier tokens require a fresh login.
 
@@ -55,7 +55,7 @@ The earlier isolated workload used 2,000 invoices, 500 estimates, 10,000 quotati
 
 SQL median was 0.285 ms, p95 5.909 ms and maximum 793.832 ms. Three writer waits reached the 50 ms logging threshold; maximum 156 ms. Broad audit text search was the slow group. There is no earlier comparable baseline, so these are not regression or production-capacity claims. See load-measurements.json.
 
-A live free Frankfurter USD/BDT observation of **123.27**, dated **2026-10-19**, was stored with provider attribution and a valid audit result. That dated check is not a current bank quote. Paid providers and a real optional model still need their own acceptance. Known-advisory scans are dated checks, not complete security assurance.
+A live free Frankfurter USD/BDT observation of **123.57**, dated **2026-10-20**, was stored with provider attribution and a valid audit result. That dated check is not a current bank quote. Paid providers and a real optional model still need their own acceptance. Known-advisory scans are dated checks, not complete security assurance.
 
 ## Artifacts, platforms and publication
 
@@ -65,8 +65,14 @@ The authorized repository is [md-ishtiak-ahmed-sajib/buildtrust-ai](https://gith
 
 Docker's engine is unavailable. Professional rule acceptance, representative Bengali documents, assistive-technology review, independent deployment security review and final team actions remain separate. No real payment, external audit immutability or professional certification is claimed.
 
-Private planning files and local engineering instructions are excluded from the current public source and archive. Public remaining tasks are in [remaining work](remaining-work.md). The current local security update passed all eight HTTP scenarios and rendered 34 documentation pages and five SVGs. Earlier remote receipts retain the actual source revision they tested.
+Private planning files and local engineering instructions are excluded from the current public source and archive. Public remaining tasks are in [remaining work](remaining-work.md). The current local security update passed all eight HTTP scenarios and rendered 34 documentation pages and eleven SVGs. Earlier remote receipts retain the actual source revision they tested.
 
 ## October 20 security acceptance
 
-All 20 controls are mapped in the [security report](security-self-assessment.md). The current local release passed 225 backend tests, 8 frontend tests, 18 browser workflows and all A–H HTTP scenarios. Secret scanning covers all available Git refs, current/build assets, nested historical archives and five exact private values; no findings remained after narrowly identifying provenance checksums. Private backup/restore and 0018 migration preserve 56 legacy tables, 155 private files and the original audit prefix. The post-package security-publication.json receipt records the matching commit and actual hosted-check status; a queued job is not a pass.
+The original 20 controls and the separate 19-control improvement checklist are mapped in the [security report](security-self-assessment.md). The current local release passed 251 backend tests, 10 frontend tests, 20 browser workflows and all A–H HTTP scenarios. Secret scanning covers all available Git refs, current/build assets, nested historical archives and five exact private values; no findings remained after narrowly identifying provenance checksums. Private backup/restore and 0018 migration preserve 56 legacy tables, 155 private files and the original audit prefix. The post-package security-publication.json receipt records the matching commit and actual hosted-check status; a queued job is not a pass.
+
+## Authenticator and request hardening
+
+Migration 0019 and the new security controls passed the current 251-test backend suite, 10 frontend tests, 20 browser workflows and A–H HTTP examples. The earlier 0018 preservation evidence remains historical. The new populated-copy rehearsal preserved 57 legacy tables and the original audit prefix. Both working profiles were then upgraded without resetting data; their immediate pre-upgrade comparison preserved 59 tables per profile apart from required session revocation.
+
+Private Admin/Finance accounts require MFA; public README accounts remain exempt. New acceptance covers encryption, restricted challenges, expiry, replay, concurrent recovery-code use, optional factor management, owner reset, restored factors, trusted requests, SSRF limits and inert stored browser payloads. All 18 final PDF pages were inspected. Native database RLS is deferred and incoming webhooks are not applicable. The dated secret scan and dependency audits do not establish complete security. Hosted results for this source revision are recorded after publication.

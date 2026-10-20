@@ -47,8 +47,10 @@ def safe_url(url):
 
 async def api_json(method, url, settings, retry_safe=True, **kwargs):
     # All callers supply compile-time API origins, never user URLs.
-    origin = urlsplit(url).hostname
-    if origin not in ("serpapi.com", "api.dataforseo.com", "api.frankfurter.dev"):
+    parsed = urlsplit(url)
+    origin = parsed.hostname
+    if (parsed.scheme != 'https' or parsed.port not in (None,443) or parsed.username or parsed.password
+            or parsed.fragment or origin not in ("serpapi.com", "api.dataforseo.com", "api.frankfurter.dev")):
         raise ValueError("Unapproved provider origin")
     if origin in ("serpapi.com", "api.dataforseo.com"):
         from .admission import paid_ready
@@ -59,6 +61,7 @@ async def api_json(method, url, settings, retry_safe=True, **kwargs):
     )
     async with limiter:
         async with httpx.AsyncClient(
+            trust_env=False,
             timeout=httpx.Timeout(settings.price_timeout_seconds, connect=3),
             follow_redirects=False,
         ) as client:

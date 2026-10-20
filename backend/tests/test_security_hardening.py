@@ -8,7 +8,7 @@ import time
 import jwt
 import pytest
 from sqlalchemy import select, func
-from fastapi.testclient import TestClient
+from conftest import GuardedTestClient as TestClient
 from app import models as m
 from app.database import transaction
 from app.main import create_app

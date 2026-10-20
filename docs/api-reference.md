@@ -79,3 +79,20 @@ Current calculation/source views have explicit response models. Original stored 
 | POST /api/v1/administration/users/{id}/recovery | Current Admin; non-Admin target; returns a token once with its expiry |
 
 Passwords require 12–128 characters. The public demo's fixed accounts reject password changes/recovery. Admin recovery uses the local-owner command. A 401 requires fresh authentication; 403 denies authority, 409 reports a changed record and 429 includes Retry-After. The agent answer also reports model_status without granting financial authority. See generated OpenAPI for exact contracts and [the account guide](account-security.md) for limits.
+
+## Browser request and MFA contracts
+
+All mutating API requests, including sign-in, require `X-BuildTrust-Request: 1`. Browser origins must match an explicit launcher setting. Cross-site Fetch Metadata and untrusted hosts are rejected. Command-line clients also send the marker. Authentication uses memory-only bearer tokens, not cookies. Development uses the Vite proxy.
+
+Password sign-in returns either the existing successful-login fields or a typed restricted challenge: `status`, `challenge_token`, and `expires_in`. A challenge expires after five minutes and cannot access business endpoints. Complete the relevant second factor to obtain a full session.
+
+| Method and path under `/api/v1/auth/mfa` | Purpose |
+|---|---|
+| `GET /status` | Current factor, required-role policy and unused-code count |
+| `POST /enroll/start` | Restricted setup, or authenticated password/factor-confirmed replacement; local QR |
+| `POST /enroll/confirm` | Confirm the setup code and return ten recovery codes once |
+| `POST /verify` | Complete a restricted sign-in with a fresh TOTP or unused recovery code |
+| `POST /recovery-codes/regenerate` | Replace codes using current password and second factor; revoke earlier sessions |
+| `POST /disable` | Optional roles only, with current password and second factor |
+
+There is no web MFA-reset route. Only the local owner can reset a lost setup. Password recovery does not remove MFA. Tokens, challenges, factors and recovery codes must never be saved to browser storage, URLs or logs. A 429 response includes `Retry-After`; wait before retrying.

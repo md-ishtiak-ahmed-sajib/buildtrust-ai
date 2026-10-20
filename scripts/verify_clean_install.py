@@ -1,12 +1,14 @@
 """Verify the Windows setup script from a fresh source copy, excluding all runtime state."""
 
 import json
+import os
 from pathlib import Path
 import shutil
 import subprocess
 import time
 import uuid
 import httpx
+from verification_client import VerificationClient
 import argparse
 import hashlib
 import zipfile
@@ -100,11 +102,12 @@ server = subprocess.Popen(
         "warning",
     ],
     cwd=target / "backend",
+    env={**os.environ,"BUILDTRUST_TRUSTED_ORIGINS":'["http://127.0.0.1:8002"]'},
     stdout=subprocess.DEVNULL,
     stderr=subprocess.DEVNULL,
 )
 try:
-    c = httpx.Client(base_url="http://127.0.0.1:8002", timeout=30)
+    c = VerificationClient(base_url="http://127.0.0.1:8002", timeout=30)
     for _ in range(100):
         try:
             if c.get("/api/v1/health").is_success:

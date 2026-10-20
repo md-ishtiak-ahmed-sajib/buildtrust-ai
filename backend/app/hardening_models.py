@@ -12,6 +12,7 @@ class AuthSession(Base):
     user_version: Mapped[int]
     expires_at: Mapped[str]
     revoked_at: Mapped[str | None]
+    mfa_verified: Mapped[bool] = mapped_column(default=False)
     created_at: Mapped[str] = mapped_column(default=utcnow)
 
 

@@ -11,7 +11,7 @@ Deadline: October 20, 2026, 21:59 Dhaka / 23:59 Beijing. Target upload readiness
 - [x] Cash reserve checks, exact approval evidence, rollback and one payment on retry
 - [x] Accounting, estimates, quantity tools, prices, contracts and reviewed corrections
 - [x] Local audit verification and preserved archived demo runs
-- [x] 225 backend tests, separately recorded frontend/browser checks and A–H HTTP examples
+- [x] 251 backend tests, separately recorded frontend/browser checks and A–H HTTP examples
 - [x] Fresh Windows setup, public logins, payment and estimating checks
 - [x] Simple-English README, feature list, glossary and technical/security/judge guides
 - [x] Real screenshots, labelled charts, flowcharts and readable data tables

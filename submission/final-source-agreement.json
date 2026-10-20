@@ -1,0 +1,13 @@
+{
+  "passed": true,
+  "archive_sha256": "9652ae1ec06e7b72e6c7a7abfe0cd24eb30e7398dcb364185f64d8bc52259701",
+  "source_fingerprint": "0c5acc530d992f4e69c1d927abcadf85bbd6350a85abcb362ae32caf0c2db32f",
+  "packaged_files_checked": 465,
+  "all_current_packaged_file_hashes_match": true,
+  "excluded_postpackage_receipts": [
+    "final-archive-acceptance.json",
+    "final-archive-acceptance.log",
+    "final-source-agreement.json",
+    "security-publication.json"
+  ]
+}

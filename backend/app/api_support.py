@@ -94,7 +94,7 @@ def context(request, write=False):
         if group:
             header = request.headers.get("authorization", "")
             with transaction(request.app.state.engine) as pre:
-                actor = authenticate(pre, header[7:] if header.startswith("Bearer ") else "", request.app.state.secret)
+                actor = authenticate(pre, header[7:] if header.startswith("Bearer ") else "", request.app.state.secret, request.app.state.settings)
                 actor_id = actor.id
             from .admission import consume
             consume(request.app.state.engine, [(f"{group}:{actor_id}", limit, 60)])
@@ -103,7 +103,7 @@ def context(request, write=False):
         header = request.headers.get("authorization", "")
         if not header.startswith("Bearer "):
             raise DomainError(401, "UNAUTHENTICATED", "Sign in to continue.")
-        user = authenticate(session, header[7:], request.app.state.secret)
+        user = authenticate(session, header[7:], request.app.state.secret, request.app.state.settings)
         request.state.actor_id = user.id
         if write:
             payments.expire(session)

@@ -59,4 +59,15 @@ describe("API authority and retry contract", () => {
       "Reserve would be breached.",
     );
   });
+  it('marks every mutating request without introducing cookie authority',async()=>{
+    const fetcher=vi.fn().mockImplementation(()=>Promise.resolve(new Response('{}',{status:200})));vi.stubGlobal('fetch',fetcher);
+    for(const method of ['POST','PUT','PATCH','DELETE'])await api('/example',{method});
+    for(const [,options] of fetcher.mock.calls){expect(options.headers.get('X-BuildTrust-Request')).toBe('1');expect(options.credentials).toBeUndefined();}
+  });
+  it('keeps a failed MFA step distinct from an expired full session',async()=>{
+    const dispatch=vi.fn();vi.stubGlobal('window',{dispatchEvent:dispatch});
+    vi.stubGlobal('fetch',vi.fn().mockResolvedValueOnce(new Response(JSON.stringify({error:{code:'MFA_CODE_INVALID',message:'Use a fresh code.'}}),{status:401})).mockResolvedValueOnce(new Response(JSON.stringify({error:{code:'UNAUTHENTICATED',message:'Sign in again.'}}),{status:401})));
+    await expect(post('/auth/mfa/verify',{challenge_token:'restricted-step',code:'123456'})).rejects.toThrow('Use a fresh code.');expect(dispatch).not.toHaveBeenCalled();
+    await expect(api('/projects')).rejects.toThrow('Sign in again.');expect(dispatch).toHaveBeenCalledOnce();
+  });
 });

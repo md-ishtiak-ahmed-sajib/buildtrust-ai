@@ -1,4 +1,45 @@
 
+> buildtrust-ai-ui@0.2.0 build
+> tsc -b && vite build
+
+vite v8.3.4 building client environment for production...
+transforming...
+✓ 2233 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                              0.54 kB │ gzip:   0.35 kB
+dist/assets/index-CNba3so9.css              45.90 kB │ gzip:  11.14 kB
+dist/assets/plus-BxZOes-8.js                 0.14 kB │ gzip:   0.14 kB
+dist/assets/info-Dc8g1OMs.js                 0.19 kB │ gzip:   0.17 kB
+dist/assets/external-link-CQogJnH1.js        0.23 kB │ gzip:   0.18 kB
+dist/assets/upload-JwNd9ag5.js               0.24 kB │ gzip:   0.20 kB
+dist/assets/save-Dx7JaQeJ.js                 0.31 kB │ gzip:   0.21 kB
+dist/assets/shared-DCHvcQyf.js               0.33 kB │ gzip:   0.25 kB
+dist/assets/file-check-2-V8I7UjcH.js         0.36 kB │ gzip:   0.24 kB
+dist/assets/sparkles-CS0i7I3z.js             0.49 kB │ gzip:   0.28 kB
+dist/assets/fingerprint-Bstp2al4.js          0.59 kB │ gzip:   0.33 kB
+dist/assets/ForecastBreakdown-s2wxdAXz.js    1.00 kB │ gzip:   0.52 kB
+dist/assets/shared-CJ8gb8Wv.js               2.78 kB │ gzip:   1.30 kB
+dist/assets/CashFlow-SWJ5ix3O.js             3.56 kB │ gzip:   1.58 kB
+dist/assets/Audit-CH_t5-_F.js                4.84 kB │ gzip:   1.84 kB
+dist/assets/Performance-hIDyezXP.js          5.66 kB │ gzip:   2.11 kB
+dist/assets/Operations-CS-bMQYM.js           5.68 kB │ gzip:   2.18 kB
+dist/assets/Administration-pHz_bcUQ.js       5.76 kB │ gzip:   2.21 kB
+dist/assets/Overview-BEoGSD4_.js             6.18 kB │ gzip:   2.40 kB
+dist/assets/Documents-Cq7MJEn4.js            7.77 kB │ gzip:   3.00 kB
+dist/assets/Payments-BliFx98n.js             8.60 kB │ gzip:   2.94 kB
+dist/assets/Invoices-DqQfTHAq.js             9.18 kB │ gzip:   3.33 kB
+dist/assets/Prices-CYw9oQej.js              11.13 kB │ gzip:   3.66 kB
+dist/assets/Takeoff-sPyALNAl.js             12.73 kB │ gzip:   4.27 kB
+dist/assets/PriceDrawer-D4ZYXRy9.js         18.18 kB │ gzip:   5.45 kB
+dist/assets/Estimates-CB8jNHEs.js           23.70 kB │ gzip:   7.04 kB
+dist/assets/Controls-D7lvoEHe.js            40.51 kB │ gzip:  10.83 kB
+dist/assets/index-ChK3a2M3.js              383.67 kB │ gzip: 120.19 kB
+dist/assets/CashChart-B_f-PnMF.js          385.90 kB │ gzip: 110.29 kB
+
+✓ built in 302ms
+
+
 > buildtrust-ai-ui@0.2.0 test
 > vitest run
 
@@ -7,48 +48,7 @@
 
 
  Test Files  2 passed (2)
-      Tests  8 passed (8)
-   Start at  22:21:47
-   Duration  347ms (tests 48%, import 27%, transform 16%, worker 9%)
+      Tests  10 passed (10)
+   Start at  14:10:42
+   Duration  173ms (tests 43%, import 27%, transform 22%, worker 8%)
 
-
-
-> buildtrust-ai-ui@0.2.0 build
-> tsc -b && vite build
-
-vite v8.3.4 building client environment for production...
-transforming...
-✓ 2231 modules transformed.
-rendering chunks...
-computing gzip size...
-dist/index.html                              0.54 kB │ gzip:   0.35 kB
-dist/assets/index-BWIfoU0B.css              44.68 kB │ gzip:  10.85 kB
-dist/assets/plus-BLJESdJo.js                 0.14 kB │ gzip:   0.14 kB
-dist/assets/info-d-iKA_t2.js                 0.19 kB │ gzip:   0.17 kB
-dist/assets/external-link-BfS05VVj.js        0.23 kB │ gzip:   0.19 kB
-dist/assets/upload-BmmisyK-.js               0.24 kB │ gzip:   0.20 kB
-dist/assets/save-D9mVn5Ih.js                 0.31 kB │ gzip:   0.22 kB
-dist/assets/shared-BakS8eYO.js               0.33 kB │ gzip:   0.25 kB
-dist/assets/file-check-2-B4iNAHK3.js         0.36 kB │ gzip:   0.24 kB
-dist/assets/sparkles-B2skos-K.js             0.49 kB │ gzip:   0.29 kB
-dist/assets/fingerprint-DWmirnhW.js          0.59 kB │ gzip:   0.34 kB
-dist/assets/ForecastBreakdown-DdWQD4pb.js    1.00 kB │ gzip:   0.52 kB
-dist/assets/shared-Dab9_HpQ.js               2.78 kB │ gzip:   1.30 kB
-dist/assets/CashFlow-D9wzgnzA.js             3.55 kB │ gzip:   1.58 kB
-dist/assets/Audit-DvMi_nQ1.js                4.83 kB │ gzip:   1.83 kB
-dist/assets/Administration-DyQstjqk.js       4.97 kB │ gzip:   1.92 kB
-dist/assets/Performance-DM8i9IDv.js          5.66 kB │ gzip:   2.11 kB
-dist/assets/Operations-yF3oylHl.js           5.68 kB │ gzip:   2.17 kB
-dist/assets/Overview-QelogRDz.js             6.18 kB │ gzip:   2.39 kB
-dist/assets/Documents-BQDyw5KK.js            7.77 kB │ gzip:   2.99 kB
-dist/assets/Payments-DDPOB_ho.js             8.61 kB │ gzip:   2.95 kB
-dist/assets/Invoices-BszgzKwi.js             9.18 kB │ gzip:   3.33 kB
-dist/assets/Prices-WrrufAgq.js              11.13 kB │ gzip:   3.64 kB
-dist/assets/Takeoff-BGJxAQ35.js             12.73 kB │ gzip:   4.27 kB
-dist/assets/PriceDrawer-DbHfprdK.js         18.18 kB │ gzip:   5.45 kB
-dist/assets/Estimates-Ck0NPmF5.js           23.70 kB │ gzip:   7.04 kB
-dist/assets/Controls-BBP2WFp8.js            40.51 kB │ gzip:  10.82 kB
-dist/assets/index-BqljExCd.js              374.63 kB │ gzip: 118.02 kB
-dist/assets/CashChart-Bi8f8zEY.js          385.90 kB │ gzip: 110.29 kB
-
-✓ built in 876ms

@@ -4,7 +4,8 @@ if (!process.env.BUILDTRUST_E2E_BASE_URL || !process.env.BUILDTRUST_E2E_CREDENTI
 export default defineConfig({
   testDir: "./e2e",
   timeout: 60000,
-  expect: { timeout: 10000 },
+  // Fast role switching can legitimately wait for the real MFA Retry-After.
+  expect: { timeout: 90000 },
   workers: 1,
   reporter: [["list"]],
   use: {

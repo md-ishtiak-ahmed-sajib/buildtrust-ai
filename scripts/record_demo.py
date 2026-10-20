@@ -10,6 +10,7 @@ import time
 import uuid
 import hashlib
 import httpx
+from verification_client import VerificationClient
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -33,6 +34,7 @@ def main():
         "BUILDTRUST_DATAFORSEO_LOGIN": "",
         "BUILDTRUST_DATAFORSEO_PASSWORD": "",
         "BUILDTRUST_RECORDING_BASE_URL": base,
+        "BUILDTRUST_TRUSTED_ORIGINS": json.dumps([base]),
         "BUILDTRUST_RECORDING_RUNTIME": str(runtime),
     }
     subprocess.run(
@@ -103,6 +105,18 @@ def main():
                 except httpx.HTTPError:
                     pass
                 time.sleep(0.15)
+            # Enroll only this isolated fixture before recording. The browser
+            # still performs its visible real second-factor sign-in below.
+            credentials=json.loads((runtime/'demo-credentials.json').read_text())
+            with VerificationClient(base_url=base,timeout=30) as verifier:
+                for role in ('admin','manager'):
+                    email=role+'@buildtrust.demo'
+                    verifier.post('/api/v1/auth/login',json={'email':email,'password':credentials[email]}).raise_for_status()
+                cache=runtime/'mfa-testing-credentials.json'
+                cache.write_text(json.dumps(verifier.mfa_cache))
+                sys.path.insert(0,str(ROOT/'backend'))
+                from app.private_storage import protect_file
+                protect_file(cache)
             subprocess.run(
                 ["node", str(ROOT / "scripts/record_demo.mjs")],
                 cwd=ROOT,

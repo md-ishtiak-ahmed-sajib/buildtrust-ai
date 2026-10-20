@@ -18,7 +18,8 @@ export class ApiError extends Error {
 async function checkResponse(response: Response, path: string) {
   if (response.ok) return;
   const body = await response.json().catch(() => ({}));
-  if (response.status === 401 && !path.includes("/auth/login"))
+  if (response.status === 401 && !path.includes("/auth/login")
+      && !['MFA_CODE_INVALID','MFA_CHALLENGE_INVALID'].includes(body.error?.code))
     window.dispatchEvent(new Event("session-expired"));
   throw new ApiError(
     body.error?.message || `Request failed (${response.status})`,
@@ -34,6 +35,8 @@ export async function api<T>(
   options: RequestInit = {},
 ): Promise<T> {
   const headers = new Headers(options.headers);
+  if (['POST','PUT','PATCH','DELETE'].includes((options.method || 'GET').toUpperCase()))
+    headers.set('X-BuildTrust-Request','1');
   if (accessToken) headers.set("Authorization", `Bearer ${accessToken}`);
   if (options.body && !(options.body instanceof FormData))
     headers.set("Content-Type", "application/json");

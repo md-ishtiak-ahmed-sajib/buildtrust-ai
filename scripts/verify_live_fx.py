@@ -15,6 +15,7 @@ from app.database import transaction
 from app.seed import seed
 from app import advanced_models as a, audit
 from sqlalchemy import select
+from verification_client import complete_login
 
 
 def main():
@@ -31,7 +32,8 @@ def main():
     app = create_app(settings)
     with transaction(app.state.engine, True) as session:
         seed(session, settings, test_password="Isolated-Free-FX-2026!")
-    with TestClient(app) as client:
+    app.state.settings.trusted_hosts.append('testserver')
+    with TestClient(app,headers={'X-BuildTrust-Request':'1'}) as client:
         login = client.post(
             "/api/v1/auth/login",
             json={
@@ -40,6 +42,7 @@ def main():
             },
         )
         assert login.status_code == 200
+        login=complete_login(client,login,'manager@buildtrust.demo','Isolated-Free-FX-2026!',{})
         headers = {"Authorization": "Bearer " + login.json()["access_token"]}
         project = client.get("/api/v1/projects", headers=headers).json()[0]["id"]
         response = client.post(

@@ -3,29 +3,30 @@
 > playwright test
 
 
-Running 18 tests using 1 worker
+Running 20 tests using 1 worker
 
-  ok  1 e2e\00-archives.spec.ts:6:1 › archived runs retain evidence and are read only; register filters survive navigation (1.5s)
-  ok  2 e2e\accessibility.spec.ts:6:1 › automated accessibility checks across application screens and review forms (9.8s)
-  ok  3 e2e\accounting.spec.ts:53:1 › accounting controls, independent review, revenue margin and accessible forecast (7.1s)
-  ok  4 e2e\advanced.spec.ts:29:1 › BOQ price comparison, forecast, independent checking and approval (3.6s)
-  ok  5 e2e\advanced.spec.ts:137:1 › mobile quantity takeoff calculates and saves actual geometry (1.3s)
-  ok  6 e2e\commercial.spec.ts:33:1 › commercial contract and cumulative certificate use independent browser approval (5.9s)
-  ok  7 e2e\commercial.spec.ts:100:1 › Admin creates a local reviewer and assigns project access through the UI (1.5s)
-  ok  8 e2e\completion.spec.ts:57:1 › component contract forecast preserves labour and shows separate tax and retention (3.0s)
-  ok  9 e2e\completion.spec.ts:88:1 › PO authorization and unreceived amendment retain original purchase evidence (4.7s)
-  ok 10 e2e\completion.spec.ts:116:1 › customer certificate correction changes revenue without refunding cash (2.7s)
-  ok 11 e2e\completion.spec.ts:134:1 › sensitivity and maturity compare saved historical estimates in the browser (34.7s)
-  ok 12 e2e\security.spec.ts:6:1 › server logout revokes the captured token and CSP blocks inline scripts (604ms)
-  ok 13 e2e\security.spec.ts:24:1 › Admin issues a one-time recovery token and the member resets and changes their password (1.7s)
-  ok 14 e2e\stabilization.spec.ts:18:1 › failed register loading retries without leaving the current workspace (2.0s)
-  ok 15 e2e\stabilization.spec.ts:34:1 › takeoff inputs invalidate old results and recalculate (717ms)
-  ok 16 e2e\stabilization.spec.ts:53:1 › unsaved estimate Save Discard Stay and printable BOQ content (2.9s)
-  ok 17 e2e\workflow.spec.ts:40:1 › review, approve, settle, receipt, and verify integrity (5.2s)
-  ok 18 e2e\workflow.spec.ts:119:1 › upload content and responsive document review (2.3s)
-
-  18 passed (1.5m)
-(node:9392) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(node:15076) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
 (Use `node --trace-warnings ...` to show where the warning was created)
+  ok  1 e2e\00-archives.spec.ts:6:1 › archived runs retain evidence and are read only; register filters survive navigation (1.4s)
+  ok  2 e2e\accessibility.spec.ts:6:1 › automated accessibility checks across application screens and review forms (9.7s)
+  ok  3 e2e\accounting.spec.ts:53:1 › accounting controls, independent review, revenue margin and accessible forecast (7.5s)
+  ok  4 e2e\advanced.spec.ts:29:1 › BOQ price comparison, forecast, independent checking and approval (54.8s)
+  ok  5 e2e\advanced.spec.ts:137:1 › mobile quantity takeoff calculates and saves actual geometry (991ms)
+  ok  6 e2e\commercial.spec.ts:33:1 › commercial contract and cumulative certificate use independent browser approval (46.2s)
+  ok  7 e2e\commercial.spec.ts:100:1 › Admin creates a local reviewer and assigns project access through the UI (4.0s)
+  ok  8 e2e\completion.spec.ts:57:1 › component contract forecast preserves labour and shows separate tax and retention (14.7s)
+  ok  9 e2e\completion.spec.ts:88:1 › PO authorization and unreceived amendment retain original purchase evidence (57.3s)
+  ok 10 e2e\completion.spec.ts:116:1 › customer certificate correction changes revenue without refunding cash (3.8s)
+  ok 11 e2e\completion.spec.ts:134:1 › sensitivity and maturity compare saved historical estimates in the browser (58.4s)
+  ok 12 e2e\mfa.spec.ts:21:1 › private Finance login requires visible authenticator enrollment and blocks cross-site requests (41.6s)
+  ok 13 e2e\mfa.spec.ts:51:1 › stored malicious project text stays text under CSP (3.7s)
+  ok 14 e2e\security.spec.ts:6:1 › server logout revokes the captured token and CSP blocks inline scripts (534ms)
+  ok 15 e2e\security.spec.ts:24:1 › Admin issues a one-time recovery token and the member resets and changes their password (17.3s)
+  ok 16 e2e\stabilization.spec.ts:18:1 › failed register loading retries without leaving the current workspace (1.9s)
+  ok 17 e2e\stabilization.spec.ts:34:1 › takeoff inputs invalidate old results and recalculate (668ms)
+  ok 18 e2e\stabilization.spec.ts:53:1 › unsaved estimate Save Discard Stay and printable BOQ content (2.5s)
+  ok 19 e2e\workflow.spec.ts:40:1 › review, approve, settle, receipt, and verify integrity (39.2s)
+  ok 20 e2e\workflow.spec.ts:119:1 › upload content and responsive document review (1.8s)
 
-Actual browser artifacts: D:\Project\buildtrust-ai\data\advanced-browser-0882c349
+  20 passed (6.2m)
+Actual browser artifacts: D:\Project\buildtrust-ai\data\advanced-browser-35a02811

@@ -69,3 +69,5 @@ English and Bengali Tesseract models come from [tesseract-ocr/tessdata_fast](htt
 Development-only `@axe-core/playwright` and `axe-core` by Deque Systems are used for automated accessibility checks under MPL-2.0. See https://github.com/dequelabs/axe-core-npm and the pinned frontend lockfile. They are not imported by the production application bundle. Automated checks do not establish complete accessibility conformance.
 
 Optional security scanning uses Gitleaks 8.30.1 (MIT license), downloaded with pinned checksums by the verification tool. Its executable is not included in the source archive. Source and license: https://github.com/gitleaks/gitleaks.
+
+Authenticator security uses PyOTP 2.10.0 (MIT), cryptography 50.0.2 (Apache-2.0 OR BSD-3-Clause), and qrcode 8.2 (BSD, with its upstream license retained in the installed distribution). QR codes are generated locally. The locked dependencies retain their upstream copyright and license files. Sources: https://github.com/pyauth/pyotp, https://github.com/pyca/cryptography, https://github.com/lincolnloop/python-qrcode.

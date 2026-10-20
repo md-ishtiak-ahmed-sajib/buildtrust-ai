@@ -33,6 +33,7 @@ class AuthResult(BaseModel):
 class AuthOptions(BaseModel):
     password_management_enabled: bool
     public_demo: bool
+    mfa_required_roles: list[str]
 
 
 class RecoveryResult(BaseModel):
@@ -85,7 +86,7 @@ def create_router(context):
     def options(request: Request):
         from .public_demo import PublicDemoSettings
         public = isinstance(request.app.state.settings, PublicDemoSettings)
-        return {"password_management_enabled": not public, "public_demo": public}
+        return {"password_management_enabled": not public, "public_demo": public,'mfa_required_roles':[] if public else ['ADMIN','FINANCE_MANAGER']}
 
     @router.post("/auth/logout", response_model=AuthResult)
     def logout(request: Request):

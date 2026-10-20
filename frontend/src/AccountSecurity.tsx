@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { api, post } from "./api";
+import {MfaSettings} from './MfaSecurity';
 
 export function usePasswordOptions() {
   return useQuery({queryKey:["password-options"], queryFn:()=>api<{password_management_enabled:boolean;public_demo:boolean}>("/auth/options")});
@@ -17,6 +18,7 @@ export function PasswordChange({onChanged}:{onChanged:()=>void}) {
       <button className="button primary" disabled={busy}>Change password and sign out</button>
       <p role="status">{message}</p>
     </form>}
+    <MfaSettings onSignedOut={onChanged}/>
   </div></details>;
 }
 

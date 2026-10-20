@@ -52,6 +52,7 @@
 | WAL | SQLite write-ahead logging, used with consistent backups and transaction controls |
 | Rollback | Undoing an unsuccessful transaction before it becomes a saved financial change |
 | Checksum / fingerprint | A hash used to compare file contents or saved evidence |
-| MFA / TLS | Multi-factor login / encrypted network transport, needed in a separately reviewed wider deployment |
+| MFA | Multi-factor authentication: a password plus an authenticator or one-time recovery code. Required for private Admin and Finance accounts. |
+| TLS | Encrypted network transport. Required before any remote deployment; the judge package binds to localhost. |
 
 See [financial rules](financial-rules.md) for formulas and [features](../features.md) for examples.

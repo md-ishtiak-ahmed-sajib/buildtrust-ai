@@ -11,6 +11,7 @@ submission
 *.key
 **/*credentials*.json
 **/signing-secret
+**/mfa-encryption-key
 prompt
 AGENTS.md
 **/__pycache__

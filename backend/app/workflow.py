@@ -18,11 +18,18 @@ MODEL_EXECUTOR = ThreadPoolExecutor(max_workers=2, thread_name_prefix="local-exp
 MODEL_RESPONSE_SECONDS = 10
 
 
-def model_response(settings, payload):
+def local_model_url(settings):
     from urllib.parse import urlsplit
     parsed = urlsplit(settings.ollama_url)
-    if parsed.scheme != "http" or parsed.hostname not in ("127.0.0.1", "localhost", "::1") or parsed.username or parsed.password:
+    if (parsed.scheme != "http" or parsed.hostname not in ("127.0.0.1", "localhost", "::1")
+            or parsed.username or parsed.password or parsed.query or parsed.fragment or parsed.path not in ('','/')):
         raise ValueError("Only an explicitly configured local model is supported")
+    host='[::1]' if parsed.hostname=='::1' else '127.0.0.1'
+    return f'http://{host}'+(f':{parsed.port}' if parsed.port else '')+'/api/chat'
+
+
+def model_response(settings, payload):
+    local_model_url(settings)
     if not MODEL_SLOTS.acquire(blocking=False):
         raise ValueError("Local model is busy")
     future = MODEL_EXECUTOR.submit(_read_model, settings, payload)
@@ -37,7 +44,7 @@ def model_response(settings, payload):
 def _read_model(settings, payload):
     try:
         started = time.monotonic()
-        with httpx.stream("POST", settings.ollama_url.rstrip("/") + "/api/chat", timeout=10, json=payload, follow_redirects=False) as response:
+        with httpx.stream("POST", local_model_url(settings), timeout=10, json=payload, follow_redirects=False,trust_env=False) as response:
             response.raise_for_status()
             raw = bytearray()
             for chunk in response.iter_bytes():

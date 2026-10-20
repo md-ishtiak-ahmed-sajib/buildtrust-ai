@@ -1,15 +1,15 @@
-{'project_id': 1, 'liquidity_project_id': 2, 'run_id': 'c5425b63adc5', 'fictional': True}
-Local credentials: D:\Project\buildtrust-ai\data\evidence-512d8b692e\demo-credentials.json
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{'project_id': 1, 'liquidity_project_id': 2, 'run_id': '042faf11f003', 'fictional': True}
+Local credentials: D:\Project\buildtrust-ai\data\evidence-d52ed87abb\demo-credentials.json
 {"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 16}
 {"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
 {"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
 {"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
 {"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 15}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 16}
 {"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
-{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 16}
+{"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 16}
 {"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
 {"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}
 {"event": "document_parser", "outcome": "COMPLETE", "duration_ms": 0}

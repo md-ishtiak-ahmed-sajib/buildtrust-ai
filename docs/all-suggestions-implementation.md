@@ -85,3 +85,11 @@ The additional 20-item [security review](security-self-assessment.md) covers rev
 ## Documentation-first security checkpoint
 
 The next 19-control checklist is distinct from the earlier 20-item review. Both current guides now include six editable security diagrams and readable PDF exports. New MFA and request checks are labelled planned until implementation and acceptance. Native database RLS is deferred while SQLite stays in use; incoming webhooks remain disabled. The four README credentials are unchanged. PDF rendering, page inspection and documentation checks are recorded in the report evidence.
+
+## Accepted MFA and request-security release
+
+The documentation-first checkpoint was published before application changes. Migration 0019 now provides encrypted factors, hashed restricted challenges and recovery codes, current-role session assurance and owner-only reset. Request markers, explicit origin/host checks, strict outbound origins and source-map denial are accepted. The four README passwords and public MFA exemption remain unchanged.
+
+Executed results: 251 backend tests, 10 frontend tests, 20 browser workflows and eight original HTTP scenarios passed. Separate migration/restore and working-profile preservation receipts retain financial history and private credentials. The new 19-control checklist records 17 locally verified controls, native RLS deferred and webhooks not applicable. These results do not replace independent security, real-device or provider acceptance.
+
+The final public-launch check found and corrected a module-entry profile identity issue. The launcher now uses its canonical validated public-profile factory. A regression test and raw public sign-ins prevent test helpers from hiding an unwanted MFA challenge. Fresh Windows public setup and all four browser logins pass without MFA; private privileged accounts still require it.

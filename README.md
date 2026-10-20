@@ -50,6 +50,8 @@ These four passwords are intentionally public. They work in the **separate publi
 | Admin | `admin@buildtrust.demo` | `BuildTrust-Admin-2026!` | Approve independently checked budgets and controls; payment limit BDT 1,000,000 |
 | Auditor | `auditor@buildtrust.demo` | `BuildTrust-Auditor-2026!` | Read records, receipts and audit evidence |
 
+Private Admin and Finance Manager accounts require an authenticator. The separate public demo is exempt, so the four passwords above keep working. See [account security](docs/account-security.md) for setup and owner-only recovery.
+
 Passwords come from [one public sample file](demo/public-accounts.json). Private passwords, signing secrets and databases stay out of Git and the source archive. The public launcher disables paid price services and uses the built-in explanation tools.
 
 **A person cannot approve their own payment.** An estimate needs a preparer, a different checker and a separate Admin approver. Sign out before changing accounts. Refreshing the browser requires another login because tokens stay in memory.

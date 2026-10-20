@@ -10,6 +10,7 @@ import time
 import uuid
 
 import httpx
+from verification_client import VerificationClient
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -43,7 +44,7 @@ def main():
             start_new_session=True,
         )
         try:
-            client = httpx.Client(base_url="http://127.0.0.1:8000", timeout=30)
+            client = VerificationClient(base_url="http://127.0.0.1:8000", timeout=30)
             for _ in range(200):
                 if process.poll() is not None:
                     raise RuntimeError("Linux launcher stopped before health was ready")

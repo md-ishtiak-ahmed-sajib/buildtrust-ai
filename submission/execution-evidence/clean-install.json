@@ -1,7 +1,7 @@
 {
   "passed": true,
   "setup_command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/setup.ps1",
-  "source_copy": "data\\clean-checkout-c15ed5db",
+  "source_copy": "data\\clean-checkout-764dbc46",
   "checks": [
     "locked dependency setup",
     "frontend production build",

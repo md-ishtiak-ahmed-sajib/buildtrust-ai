@@ -1,0 +1,26 @@
+{
+  "passed": true,
+  "profiles": [
+    {
+      "profile": "private",
+      "passed": true,
+      "legacy_tables_preserved": 59,
+      "original_audit_prefix_preserved": true,
+      "credentials_and_signing_key_unchanged": true,
+      "old_sessions_revoked": true,
+      "migration_head": "0019"
+    },
+    {
+      "profile": "public-demo",
+      "passed": true,
+      "legacy_tables_preserved": 59,
+      "original_audit_prefix_preserved": true,
+      "credentials_and_signing_key_unchanged": true,
+      "old_sessions_revoked": true,
+      "migration_head": "0019"
+    }
+  ],
+  "sandbox": true,
+  "working_data_reset": false,
+  "original_private_files_preserved": 155
+}

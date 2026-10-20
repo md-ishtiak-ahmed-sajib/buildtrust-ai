@@ -13,6 +13,7 @@ frontend/dist/
 *.key
 *credentials*.json
 signing-secret
+mfa-encryption-key
 *.private.zip
 data/
 backend/data/

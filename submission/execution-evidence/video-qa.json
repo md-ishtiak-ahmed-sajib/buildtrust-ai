@@ -3,11 +3,12 @@
   "duration_seconds": 258.0,
   "full_decode_passed": true,
   "application_source_hashes_match": true,
-  "video_sha256": "470c40516ca02d660c7337d27f86de91bd0a5bb45a31c3ee5b19353962929298",
-  "source": "Actual isolated app recording, not a fabricated UI",
+  "video_sha256": "ecb65f87e4ed3088d3e8263064b65b19134fae42371a553158ffbf30fea0321e",
+  "source": "Actual isolated app recording with visible private second-factor sign-in and masked code input.",
   "sample_frames_visually_reviewed_seconds": [
     20,
     90,
+    140,
     170,
     235
   ]

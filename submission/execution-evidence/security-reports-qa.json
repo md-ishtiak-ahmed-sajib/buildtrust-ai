@@ -2,10 +2,11 @@
   "outputs": [
     {
       "file": "BuildTrustAI_Security_Self_Assessment.pdf",
-      "pages": 10,
-      "sha256": "9192199bd1908b288fda27eb01c4ac92a9a2f2d41d93bd4ce130d3c3d6d3822c",
+      "pages": 12,
+      "sha256": "c93d28acfbe4129773049e2446911e7cd0819e590d4a5fa07af834627e093637",
       "text_extraction_passed": true,
-      "verified_upgrade": false,
+      "verified_upgrade": true,
+      "hyperlinks": 8,
       "visually_inspected_pages": [
         1,
         2,
@@ -16,27 +17,29 @@
         7,
         8,
         9,
-        10
-      ],
-      "hyperlinks": 9
+        10,
+        11,
+        12
+      ]
     },
     {
       "file": "BuildTrustAI_Technical_Documentation.pdf",
-      "pages": 5,
-      "sha256": "183f7f5fc82f56e1dbf6ea78b5ad955b54c0fecb5902c8c1c3a2bec867977520",
+      "pages": 6,
+      "sha256": "f23e53205a51c9f545b6adcbe741435edca4c54cf027c80679100f75f6230fdc",
       "text_extraction_passed": true,
-      "verified_upgrade": false,
+      "verified_upgrade": true,
+      "hyperlinks": 12,
       "visually_inspected_pages": [
         1,
         2,
         3,
         4,
-        5
-      ],
-      "hyperlinks": 11
+        5,
+        6
+      ]
     }
   ],
   "passed": true,
-  "phase": "Documentation first; new MFA/request controls still planned",
-  "visual_review": "All pages inspected as rendered contact sheets; final text bounds and hyperlinks checked."
+  "phase": "Final locally accepted release",
+  "visual_review": "All 18 pages inspected; text extraction, links and bounds passed; diagrams and control entries stay together."
 }

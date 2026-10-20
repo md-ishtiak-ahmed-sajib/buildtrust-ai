@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "checked_at": "2026-10-20T09:00:24.331305+00:00",
+  "archive_sha256": "9652ae1ec06e7b72e6c7a7abfe0cd24eb30e7398dcb364185f64d8bc52259701",
+  "source_fingerprint": "0c5acc530d992f4e69c1d927abcadf85bbd6350a85abcb362ae32caf0c2db32f",
+  "private_installation": {
+    "passed": true,
+    "setup_command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/setup.ps1",
+    "source_copy": "data\\clean-checkout-8d4c5a0e",
+    "checks": [
+      "locked dependency setup",
+      "frontend production build",
+      "fresh migrations",
+      "generated credentials",
+      "static frontend served",
+      "steel discrepancy",
+      "independent approval",
+      "70000.00 settlement",
+      "930000.00 closing cash",
+      "audit integrity",
+      "upgrade material search and immutable selection",
+      "1480000.00 estimate and 520000.00 forecast"
+    ],
+    "simulation": true,
+    "archive_sha256": "9652ae1ec06e7b72e6c7a7abfe0cd24eb30e7398dcb364185f64d8bc52259701"
+  },
+  "public_installation": {
+    "passed": true,
+    "profile": "isolated public demo",
+    "port": 8003,
+    "four_readme_passwords_login": true,
+    "four_browser_logins": true,
+    "public_demo_mfa_exempt": true,
+    "operator_self_approval_denied": true,
+    "auditor_write_denied": true,
+    "independent_payment_balance": "930000.00",
+    "audit_valid": true,
+    "repeat_prepare_preserved_records": true,
+    "occupied_port_failed_clearly": true,
+    "private_profile_unchanged": true,
+    "private_table_count": 64,
+    "simulation": true
+  },
+  "new_archive_secret_scan": {
+    "passed": true,
+    "archive_sha256": "9652ae1ec06e7b72e6c7a7abfe0cd24eb30e7398dcb364185f64d8bc52259701",
+    "scanner_version": "8.30.1",
+    "scanner_download_sha256": "d29144deff3a68aa93ced33dddf84b7fdc26070add4aa0f4513094c8332afc4e",
+    "known_private_values_checked": 5,
+    "private_values_or_private_backup_members_present": false,
+    "nested_archive_depth": 4
+  },
+  "working_profile_used": false
+}

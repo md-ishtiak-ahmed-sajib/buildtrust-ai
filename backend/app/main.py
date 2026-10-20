@@ -58,6 +58,7 @@ from .document_api import create_router as document_api_router
 from .invoice_api import create_router as invoice_api_router
 from .payment_api import create_router as payment_api_router
 from .workflow_api import create_router as workflow_api_router
+from .mfa_api import MfaChallengeResponse
 
 
 def create_app(settings=None, initialize=True):
@@ -112,6 +113,8 @@ def create_app(settings=None, initialize=True):
     app.state.execution_failure_hook = None
     from .admission import DurableLoginThrottle
     app.state.login_throttle = DurableLoginThrottle(engine)
+    from .request_security import RequestSecurity
+    app.add_middleware(RequestSecurity,settings=settings)
     app.add_middleware(RequestBoundary, max_body=settings.max_upload_bytes + 128 * 1024)
     # Static archive routes precede the legacy /projects/{project_id} route.
     app.include_router(operations_router(context))
@@ -283,7 +286,7 @@ def create_app(settings=None, initialize=True):
             "llm_provider": settings.llm_provider,
         }
 
-    @app.post("/api/v1/auth/login", response_model=LoginResponse)
+    @app.post("/api/v1/auth/login", response_model=LoginResponse | MfaChallengeResponse)
     def login(body: LoginRequest, request: Request):
         address = request.client.host if request.client else "local"
         identifier = body.email.strip().lower()
@@ -313,6 +316,10 @@ def create_app(settings=None, initialize=True):
                     401, "INVALID_LOGIN", "Email or password is incorrect."
                 )
             request.state.actor_id = user.id
+            from . import mfa
+            if mfa.needs_second_factor(session,settings,user):
+                from .mfa_models import MfaFactor
+                return mfa.issue(session,user,'VERIFY' if session.get(MfaFactor,user.id) else 'ENROLL')
             audit.append(session, user, "USER_LOGIN", "user", user.id)
             return {
                 "access_token": token_for(user, app.state.secret, session),
@@ -464,6 +471,8 @@ def create_app(settings=None, initialize=True):
     app.include_router(administration_router(context))
     from .auth_api import create_router as auth_router
     app.include_router(auth_router(context))
+    from .mfa_api import create_router as mfa_router
+    app.include_router(mfa_router(context))
     app.include_router(advanced_router(context))
 
     static = ROOT / "frontend" / "dist"

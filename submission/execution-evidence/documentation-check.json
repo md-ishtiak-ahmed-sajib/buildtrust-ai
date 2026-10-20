@@ -152,13 +152,13 @@
     {
       "document": "docs/security-self-assessment.md",
       "mermaid_diagrams": 0,
-      "images": 0,
+      "images": 6,
       "rendered": true
     },
     {
       "document": "docs/technical-documentation.md",
       "mermaid_diagrams": 0,
-      "images": 0,
+      "images": 6,
       "rendered": true
     },
     {
@@ -229,6 +229,30 @@
     },
     {
       "name": "payment-flow.svg",
+      "text_within_bounds": true
+    },
+    {
+      "name": "security-authorization.svg",
+      "text_within_bounds": true
+    },
+    {
+      "name": "security-login.svg",
+      "text_within_bounds": true
+    },
+    {
+      "name": "security-overview.svg",
+      "text_within_bounds": true
+    },
+    {
+      "name": "security-requests.svg",
+      "text_within_bounds": true
+    },
+    {
+      "name": "security-secrets.svg",
+      "text_within_bounds": true
+    },
+    {
+      "name": "security-upload.svg",
       "text_within_bounds": true
     }
   ],

@@ -2833,3 +2833,11 @@ td .strong {
 .recovery-panel { max-width: 440px; margin: 18px auto; }
 .signout-notice { position: fixed; bottom: 16px; left: 5%; right: 5%; padding: 14px; background: #edf3ef; border: 1px solid #286e62; z-index: 100; }
 @media (max-width: 600px) { .topbar-right .account-security { max-width: 86px; } .account-security summary { white-space: normal; padding: 5px; font-size: 12px; } .topbar-right .user-avatar { display: none; } }
+
+/* Authenticator steps remain readable on a narrow screen. */
+.mfa-panel { display: grid; gap: 12px; max-width: 100%; }
+.mfa-panel form, .mfa-panel label { display: grid; gap: 8px; }
+.mfa-panel input { min-width: 0; width: 100%; }
+.mfa-qr { width: 210px; max-width: 100%; height: auto; justify-self: center; }
+.mfa-codes { white-space: pre-wrap; overflow-wrap: anywhere; padding: 12px; background: var(--bg, #f3f7f4); max-height: 320px; overflow: auto; font-size: 13px; }
+.mfa-actions { display: flex; gap: 8px; flex-wrap: wrap; }

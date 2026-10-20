@@ -3,6 +3,8 @@
   "profile": "isolated public demo",
   "port": 8003,
   "four_readme_passwords_login": true,
+  "four_browser_logins": true,
+  "public_demo_mfa_exempt": true,
   "operator_self_approval_denied": true,
   "auditor_write_denied": true,
   "independent_payment_balance": "930000.00",
@@ -10,6 +12,6 @@
   "repeat_prepare_preserved_records": true,
   "occupied_port_failed_clearly": true,
   "private_profile_unchanged": true,
-  "private_table_count": 61,
+  "private_table_count": 64,
   "simulation": true
 }

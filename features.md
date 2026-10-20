@@ -22,7 +22,7 @@ BuildTrust AI is a local construction finance and estimating app. It works with 
 | **Review Inbox** | Find pending work, next steps, expiry warnings and first-run guidance | Project and role determine available actions | Local; no email/SMS service |
 | **Cost Control & Accounting** | Review cost codes, accepted cost, accruals, invoices, liabilities, certificates, receipts, credits and retention | Operator prepares; independent Manager checks; separate Admin approves | Local; historical gaps need evidenced opening records |
 | **Commercial Management** | Prepare contracts, RFQs, bids, awards, POs, work acceptances, certificates, variations, amendments and corrections | Independent checking and Admin approval; source and quantity limits apply | Local; no external RFQ messages |
-| **Team & Access** | Manage users and project membership; review supplier/beneficiary changes; protect the last active Admin | Admin manages access; supplier changes need independent review | Local; real identity/beneficiary verification is human work |
+| **Team & Access** | Manage users and membership; review supplier changes; protect the last Admin; manage private account security | Admin manages access; supplier changes need independent review; only the local owner can reset lost MFA | Private Admin/Finance require an authenticator; public demo is exempt; real identity verification is human work |
 | **Performance & Scenarios** | View extended forecasts, earned value, margins, aging, retention and ratios; compare sensitivity and maturity evidence | Reviewed baselines, progress and scenarios | Local; missing inputs stay unavailable |
 
 ## How the areas connect

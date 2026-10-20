@@ -43,4 +43,4 @@ All payments are simulated. Public passwords work only in the separate public de
 - [Security self-assessment PDF](../submission/BuildTrustAI_Security_Self_Assessment.pdf)
 - [Technical documentation PDF](../submission/BuildTrustAI_Technical_Documentation.pdf)
 
-The documentation-first checkpoint distinguishes current protections from planned MFA and request checks. Native database RLS is deferred; incoming webhooks are not enabled. Each report includes simple diagrams and the same status language as its editable Markdown guide.
+The reports separate the earlier 20-item review from the newer 19-control checklist. MFA and request protections now have local acceptance evidence. Native database RLS remains deferred; incoming webhooks are not applicable. Each report includes six simple diagrams and the same status language as its editable Markdown guide.

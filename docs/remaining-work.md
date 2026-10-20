@@ -15,6 +15,7 @@ Only unfinished tasks belong here. Completed work and test evidence are recorded
 
 | Task | Owner | What is needed next |
 |---|---|---|
+| Confirm MFA on the team authenticator | Private account owner | Enroll with the actual phone, confirm its clock and store the recovery codes privately. Automated TOTP/browser checks passed; representative phone acceptance is separate. |
 | Validate Docker | Local environment administrator | Start a working Docker engine, then run the isolated checks. The installed CLI currently cannot reach its engine. Do not modify Docker's managed WSL distribution. |
 | Perform a real screen-reader and first-user assessment | Accessibility reviewer and representative users | Use suitable assistive technology and actual users. Keyboard/mobile and automated scans cover a narrower scope. |
 | Obtain an independent deployment security review | Independent security reviewer | Review the proposed hosting environment before any wider deployment. Local tests and known-advisory scans are not a penetration-test certificate. |
@@ -27,3 +28,7 @@ Only unfinished tasks belong here. Completed work and test evidence are recorded
 | Rehearse | Presenter/team | Run the nine-slide talk and demonstration, check timing and add the real team introduction. |
 | Upload the final package | Team | Supply the authorized destination, upload the required files and keep confirmation before the supplied deadline. |
 
+
+## Deferred database protection
+
+Native database RLS requires a future PostgreSQL release, new policies, migrations and acceptance. SQLite currently uses tested server-side project isolation. Incoming webhooks remain disabled; signature verification is not applicable.

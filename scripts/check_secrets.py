@@ -27,6 +27,8 @@ def known_private_values():
     if credentials.exists():values.extend(json.loads(credentials.read_text()).values())
     secret=ROOT/"data/signing-secret"
     if secret.exists():values.append(secret.read_text().strip())
+    mfa_key=ROOT/'data/mfa-encryption-key'
+    if mfa_key.exists():values.append(mfa_key.read_text().strip())
     sys.path.insert(0,str(ROOT/"backend"))
     from app.config import Settings
     settings=Settings()
@@ -41,6 +43,7 @@ def contains_private(data, values, depth=0):
         try:
             with zipfile.ZipFile(io.BytesIO(data)) as z:
                 if sum(i.file_size for i in z.infolist())>500*1024*1024:raise ValueError("Archive exceeds private-value scan bound")
+                if any(Path(i.filename).name in ('private-manifest.json','signing-secret','mfa-encryption-key','demo-credentials.json') for i in z.infolist()):return True
                 return any(contains_private(z.read(i),values,depth+1) for i in z.infolist() if not i.is_dir())
         except zipfile.BadZipFile:pass
     return False

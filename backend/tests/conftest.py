@@ -1,9 +1,27 @@
 import pytest
+import sys
+from pathlib import Path
 from fastapi.testclient import TestClient
 from app.config import Settings
 from app.main import create_app
 from app.database import transaction
 from app.seed import seed
+sys.path.insert(0,str(Path(__file__).resolve().parents[2]/'scripts'))
+from verification_client import complete_login,MARKER
+
+
+class GuardedTestClient(TestClient):
+    def __init__(self,app,**kwargs):
+        app.state.settings.trusted_hosts=[*app.state.settings.trusted_hosts,'testserver']
+        kwargs['headers']={**kwargs.get('headers',{}),**MARKER}
+        super().__init__(app,**kwargs);self.mfa_cache={}
+
+    def post(self,url,*,complete_mfa=True,**kwargs):
+        result=super().post(url,**kwargs)
+        if complete_mfa and str(url).endswith('/auth/login'):
+            data=kwargs.get('json') or {}
+            return complete_login(self,result,data.get('email'),data.get('password'),self.mfa_cache)
+        return result
 
 
 @pytest.fixture
@@ -12,7 +30,7 @@ def env(tmp_path):
     app = create_app(settings)
     with transaction(app.state.engine, True) as session:
         seed(session, settings, test_password="Test-Demo-Password!2026")
-    with TestClient(app) as client:
+    with GuardedTestClient(app) as client:
         headers = {}
         for role in ("operator", "manager", "admin", "auditor"):
             response = client.post(

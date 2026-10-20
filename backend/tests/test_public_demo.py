@@ -2,7 +2,7 @@ import json
 import socket
 
 import pytest
-from fastapi.testclient import TestClient
+from conftest import GuardedTestClient as TestClient
 from sqlalchemy import select, text
 
 from app.config import Settings
@@ -20,6 +20,35 @@ from app.security import passwords
 from app.seed import seed
 
 
+def test_module_launcher_retains_public_profile_identity_without_mfa(tmp_path,monkeypatch):
+    import runpy,sys,uvicorn
+    from fastapi.testclient import TestClient as RawClient
+    from app import public_demo,mfa
+    original=public_demo.prepare_public_demo
+    monkeypatch.setattr(public_demo,'prepare_public_demo',lambda:original(tmp_path/'public-demo'))
+    captured={}
+    monkeypatch.setattr(uvicorn,'run',lambda app,**kwargs:captured.update(app=app,**kwargs))
+    with socket.socket() as listener:
+        listener.bind(('127.0.0.1',0));port=listener.getsockname()[1]
+    monkeypatch.setattr(sys,'argv',['public-demo','--port',str(port)])
+    with pytest.warns(RuntimeWarning,match='found in sys.modules'):
+        runpy.run_module('app.public_demo',run_name='__main__')
+    app=captured['app']
+    try:
+        assert captured['host']=='127.0.0.1' and captured['port']==port
+        assert mfa.public_profile(app.state.settings)
+        app.state.settings.trusted_hosts.append('testserver')
+        with RawClient(app,headers={'X-BuildTrust-Request':'1'}) as client:
+            for account in load_accounts():
+                response=client.post('/api/v1/auth/login',json={'email':account['email'],'password':account['password']})
+                assert response.status_code==200 and 'access_token' in response.json() and 'challenge_token' not in response.json()
+                headers={'Authorization':'Bearer '+response.json()['access_token']}
+                status=client.get('/api/v1/auth/mfa/status',headers=headers).json()
+                assert status['public_demo'] is True and status['required'] is False
+                assert client.post('/api/v1/auth/mfa/enroll/start',headers=headers,json={'current_password':account['password']}).status_code==403
+    finally:app.state.engine.dispose()
+
+
 def test_public_passwords_login_with_real_permissions_and_independent_payment(tmp_path):
     settings, _ = prepare_public_demo(tmp_path / "public-demo")
     app = create_app(settings)
@@ -30,8 +59,10 @@ def test_public_passwords_login_with_real_permissions_and_independent_payment(tm
                 r = client.post(
                     "/api/v1/auth/login",
                     json={"email": account["email"], "password": account["password"]},
+                    complete_mfa=False,
                 )
                 assert r.status_code == 200
+                assert 'access_token' in r.json() and 'challenge_token' not in r.json()
                 headers[account["role"]] = {
                     "Authorization": "Bearer " + r.json()["access_token"]
                 }

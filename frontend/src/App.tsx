@@ -38,6 +38,7 @@ import {
 import { api, post, setToken, titleCase } from "./api";
 import { PasswordChange, PasswordRecovery } from "./AccountSecurity";
 import type { Project, User } from "./types";
+import {MfaLogin,type LoginComplete,type LoginChallenge} from './MfaSecurity';
 import { Loading, ErrorState } from "./ui";
 const OverviewPage = lazy(() =>
   import("./pages/Overview").then((m) => ({ default: m.OverviewPage })),
@@ -357,6 +358,7 @@ export default function App() {
   );
 }
 function Login({ onLogin }: { onLogin: (u: User) => void }) {
+  const [challenge,setChallenge]=useState<LoginChallenge|null>(null);
   const [email, setEmail] = useState("operator@buildtrust.demo"),
     [password, setPassword] = useState(""),
     [error, setError] = useState(""),
@@ -397,18 +399,19 @@ function Login({ onLogin }: { onLogin: (u: User) => void }) {
         <small>2026 Shenzhen FinTechathon · Topic E: SME Finance Copilot</small>
       </section>
       <section className="login-form-area">
-        <form
+        {challenge?<MfaLogin challenge={challenge} onCancel={()=>setChallenge(null)} onComplete={r=>{setToken(r.access_token);setChallenge(null);onLogin(r.user);}}/>:<form
           onSubmit={async (e) => {
             e.preventDefault();
             setBusy(true);
             setError("");
             try {
-              const r = await post<{ access_token: string; user: User }>(
+              const r = await post<LoginComplete | LoginChallenge>(
                 "/auth/login",
                 { email, password },
               );
-              setToken(r.access_token);
-              onLogin(r.user);
+              setPassword('');
+              if('access_token' in r){setToken(r.access_token);onLogin(r.user);}
+              else setChallenge(r);
             } catch (e) {
               setError((e as Error).message);
             } finally {
@@ -454,8 +457,8 @@ function Login({ onLogin }: { onLogin: (u: User) => void }) {
               simulated and require an authorized approver.
             </p>
           </div>
-        </form>
-        <PasswordRecovery />
+        </form>}
+        {!challenge&&<PasswordRecovery />}
       </section>
     </div>
   );

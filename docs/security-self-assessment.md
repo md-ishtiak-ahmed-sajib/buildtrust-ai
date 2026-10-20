@@ -23,7 +23,7 @@ Retained contributors survive edits and revisions. Approvals bind exact snapshot
 
 | Risk | Implemented protection | Remaining boundary |
 |---|---|---|
-| Password theft/login abuse | Argon2, generic errors, normalized account/IP failure buckets, expiry and Retry-After | Persistent SQLite limits and offline one-use recovery; no MFA/SSO or email recovery |
+| Password theft/login abuse | Argon2, generic errors, normalized account/IP failure buckets, expiry and Retry-After | Persistent limits, offline one-use recovery and required private Admin/Finance MFA; no SSO or email recovery |
 | Forged/stale token | Fixed signing policy, expiry, issuer/audience and current database access | Host compromise can expose signing material |
 | Untrusted document | Private files, explicit human confirmation, escaped text and image previews | Human review may be wrong; parser vulnerabilities remain possible |
 | Beneficiary substitution | Source-linked supplier changes with separate checking/approval | Real identity/callback evidence needs people |
@@ -52,7 +52,7 @@ See [actual verification](completion-verification.md) for tests, HTTP/browser wo
 
 Recordings use isolated databases and addresses. Their provenance binds application source, duration and decoding. Packaging excludes private credentials, databases and uploads. The public sample-password fixture is intentionally included and labelled.
 
-Before any wider deployment, independently review hosting, TLS, identity lifecycle, MFA, OS isolation, malware handling, backups, external audit checkpoints, monitoring, data retention and incident response. See [remaining work](../docs/remaining-work.md). No real bank transfer, professional standards certification or security certification is claimed.
+Before any wider deployment, independently review hosting, TLS, identity lifecycle, authenticator operations, OS isolation, malware handling, backups, external audit checkpoints, monitoring, data retention and incident response. See [remaining work](../docs/remaining-work.md). No real bank transfer, professional standards certification or security certification is claimed.
 
 
 ## Twenty-item security review
@@ -79,14 +79,14 @@ Release date: October 20, 2026. “Verified” below means local automated accep
 | 16 | Limit uploads | Verified: file allowlists/signatures, 10 MB file bound, 50 PDF pages, pre-parser body bounds and bounded workers | Existing parser/upload tests; not an antivirus or complete malware sandbox |
 | 17 | Verify payments before paid-feature access | Not applicable: this app has no subscription billing or paid-feature unlock endpoint | Sandbox project settlement is revalidated on the server. No real gateway/webhook or real payment verification is claimed |
 | 18 | Disable debug and redact errors | Verified locally: debug=False, generic unexpected-error responses with request IDs and fixed metadata logging | Synthetic-secret error/log test and scanner output; no request bodies, tokens or provider URLs are logged |
-| 19 | Back up and restore | Verified locally: consistent database plus referenced files/signing material, checksummed private archive and isolated restore | Restore checks hashes, foreign keys and audit integrity; copied sessions/recovery tokens are revoked before fresh login. Never overwrites working data |
+| 19 | Back up and restore | Verified locally: consistent database plus referenced files, signing material and the separate MFA encryption key, checksummed private archive and isolated restore | Restore checks hashes, foreign keys and audit integrity; copied sessions/recovery tokens are revoked before fresh login. Never overwrites working data |
 | 20 | Test two accounts and anonymous access | Verified: anonymous business endpoints reject access and separate accounts cannot cross project/file boundaries | Security tests plus role/payment browser workflows; public health, sign-in, recovery redemption and static UI are intentionally reachable |
 
 See [account, recovery and backup instructions](account-security.md), [actual release verification](completion-verification.md) and the recorded test logs. Package publication is gated on the complete regression and fresh-install checks. Registration email was sent by the team; organizer confirmation and final project submission remain pending.
 <!-- security-upgrade-start -->
 # The 19-control security improvement checklist
 
-Documentation-first checkpoint: MFA and new request checks are planned. Existing evidence belongs to the recorded baseline; it does not prove unfinished work.
+New controls have passed the recorded acceptance checks.
 
 Labels: **verified**, **implemented but unverified**, **planned**, **deferred**, **not applicable**. The previous 20-item review remains separate.
 
@@ -98,7 +98,7 @@ The API mediates access to records, private files and external providers.
 
 ![Password and authenticator](assets/security-login.png)
 
-MFA is planned until the new acceptance evidence is recorded. The public demo stays exempt.
+MFA has local acceptance evidence. The public demo stays exempt.
 
 ![Who may access this action?](assets/security-authorization.png)
 
@@ -110,7 +110,7 @@ A valid file format does not make its contents true. Review and supporting recor
 
 ![Protect browser actions](assets/security-requests.png)
 
-New origin and marker checks are planned until tested. No authentication cookies are introduced.
+Origin and marker checks have local acceptance evidence. No authentication cookies are introduced.
 
 ![Private keys through recovery](assets/security-secrets.png)
 
@@ -120,31 +120,37 @@ MFA uses a separate encryption key. Never put private backups or real setup QR c
 
 **Purpose:** Keep typed data separate from database commands.
 
-**Status:** implemented but unverified.
+**Status:** verified.
 
-**Current baseline:** ORM values are bound; maintenance queries use controlled schema names.
+**Current implementation:** ORM predicates bind data; dynamic sorting and maintenance identifiers use fixed allowlists.
 
-**Acceptance and limit:** Expand malicious and ordinary-input tests across registers and imports.
+**Evidence:** Malicious login/register strings, literal apostrophes and invalid sorting tests; source query inventory.
+
+**Remaining work and limit:** No independent penetration test; future raw SQL needs the same review.
 
 ### I02 - Cross-site scripting (XSS)
 
 **Purpose:** Stop saved text from becoming a browser script.
 
-**Status:** implemented but unverified.
+**Status:** verified.
 
-**Current baseline:** React escapes text; PDF previews are images; CSP blocks inline scripts.
+**Current implementation:** React renders user text as text; links are validated, PDF previews are raster images and a restrictive CSP blocks scripts.
 
-**Acceptance and limit:** Exercise stored payloads in names, quotations, links and explanations.
+**Evidence:** Stored names, filenames, document descriptions and quotations; explicitly mocked malicious explanation response; upload and CSP tests.
+
+**Remaining work and limit:** XSS on a trusted origin can still read memory; these cases do not prove all future views safe.
 
 ### I03 - Cross-site request forgery (CSRF)
 
 **Purpose:** Stop another website from submitting actions through a browser.
 
-**Status:** planned.
+**Status:** verified.
 
-**Current baseline:** Bearer tokens are held in memory; authentication cookies are not used.
+**Current implementation:** Every mutating API call requires X-BuildTrust-Request: 1; browser Origin and Fetch Metadata are checked before business handling. No auth cookies.
 
-**Acceptance and limit:** Add request markers, exact browser-origin checks and Fetch Metadata checks.
+**Evidence:** Missing marker, foreign origin and cross-site metadata rejection tests; valid browser and API workflows.
+
+**Remaining work and limit:** An allowed-origin script remains trusted; a stolen bearer token is not prevented by CSRF controls.
 
 ### I04 - File upload validation
 
@@ -152,29 +158,35 @@ MFA uses a separate encryption key. Never put private backups or real setup QR c
 
 **Status:** verified.
 
-**Current baseline:** Type/signature, file/body, page, expansion and worker limits already exist.
+**Current implementation:** Signatures, allowed types, body/file size, archive expansion, pages, child deadlines and private paths are bounded. Procurement remains untrusted until confirmed.
 
-**Acceptance and limit:** Extend disguised-file and private-path regression cases; no antivirus claim.
+**Evidence:** Disguised executable/PDF/JSON fixtures, parser bounds and protected preview tests.
+
+**Remaining work and limit:** No antivirus or complete malware-sandbox claim; human evidence can still be false.
 
 ### I05 - Server-side request forgery (SSRF)
 
 **Purpose:** Keep outbound connections within intended destinations.
 
-**Status:** implemented but unverified.
+**Status:** verified.
 
-**Current baseline:** Providers use fixed hosts and no redirects; Ollama is loopback-only.
+**Current implementation:** Provider requests allow exact HTTPS hosts and ports, no credentials or redirects, and ignore environment proxies. Ollama is explicitly loopback-only. Listing URLs are never fetched.
 
-**Acceptance and limit:** Require exact HTTPS origins, safe ports, no URL credentials or implicit proxies.
+**Evidence:** Disallowed schemes, hosts, ports and credentials tests; local-model normalization and mocked provider boundaries.
+
+**Remaining work and limit:** Paid/live providers and a real local model retain separate external acceptance.
 
 ### A01 - Object-level authorization
 
 **Purpose:** Check which project owns every requested record.
 
-**Status:** implemented but unverified.
+**Status:** verified.
 
-**Current baseline:** Membership and resource helpers protect assigned project records.
+**Current implementation:** Current account and project membership are checked through shared resource helpers, including child records and protected files.
 
-**Acceptance and limit:** Expand parent/child, export, attachment, archive and publisher tests.
+**Evidence:** Separate-project and anonymous API tests plus financial, archived-run and file browser workflows.
+
+**Remaining work and limit:** This is application isolation, not native SQLite RLS or protection against an unrestricted DB owner.
 
 ### A02 - Rate limiting
 
@@ -182,9 +194,11 @@ MFA uses a separate encryption key. Never put private backups or real setup QR c
 
 **Status:** verified.
 
-**Current baseline:** Persistent account/IP and operation buckets survive restarts.
+**Current implementation:** Persistent account/IP admission limits and operation budgets include MFA verification and management. Challenges allow five failed codes.
 
-**Acceptance and limit:** Include MFA challenges and factor-management operations.
+**Evidence:** Restart/limit, five-attempt, expiry and concurrent usage tests; browser clients honor Retry-After.
+
+**Remaining work and limit:** Shared local IPs may share admission limits; this is a single-process local release.
 
 ### A03 - Password hashing
 
@@ -192,19 +206,23 @@ MFA uses a separate encryption key. Never put private backups or real setup QR c
 
 **Status:** verified.
 
-**Current baseline:** Private database passwords use Argon2; hashing stays outside financial writers.
+**Current implementation:** Argon2 hashes protect private passwords. Password checks run outside ordinary financial writer locks.
 
-**Acceptance and limit:** Retain existing hashes and generic login errors.
+**Evidence:** Login, recovery and hash-preservation tests; populated-copy migration comparison.
+
+**Remaining work and limit:** Public-demo passwords are intentionally public; offline setup needs OS protection.
 
 ### A04 - Multi-factor authentication (MFA)
 
 **Purpose:** Require a password and an authenticator for privileged private users.
 
-**Status:** planned.
+**Status:** verified.
 
-**Current baseline:** Authenticator enrollment and verification are not implemented in the baseline.
+**Current implementation:** Private Admin/Finance MFA is mandatory; optional roles may enroll. TOTP factors are encrypted, challenges/codes hashed, replay rejected and recovery use atomic. Only the owner resets lost factors.
 
-**Acceptance and limit:** Require private Admin/Finance MFA; optional for other roles; public demo exempt.
+**Evidence:** Enrollment, restricted access, replay, expiry, concurrent code use, role changes, reset and MFA backup/restore tests; real browser enrollment/sign-in.
+
+**Remaining work and limit:** Local automated TOTP and browser evidence is not an independent phone/interoperability or phishing-resistance assessment. Public demo is exempt.
 
 ### A05 - Server-side permissions
 
@@ -212,9 +230,11 @@ MFA uses a separate encryption key. Never put private backups or real setup QR c
 
 **Status:** verified.
 
-**Current baseline:** The server reloads active account, role, membership and payment authority.
+**Current implementation:** Every protected request reloads current account, role, membership and session assurance; financial execution revalidates sources and approval.
 
-**Acceptance and limit:** Add current-role MFA assurance checks without weakening financial approval.
+**Evidence:** Forged/weak-assurance sessions, current-role checks and original financial/permission regression tests.
+
+**Remaining work and limit:** OS/database owner remains trusted. The copilot cannot approve or settle.
 
 ### A06 - Native row-level security (RLS)
 
@@ -222,19 +242,23 @@ MFA uses a separate encryption key. Never put private backups or real setup QR c
 
 **Status:** deferred.
 
-**Current baseline:** SQLite project filters operate in the application, not as native database RLS.
+**Current implementation:** SQLite uses server-side project predicates. Native database RLS has not been enabled.
 
-**Acceptance and limit:** A future PostgreSQL release needs its own migration, policies and acceptance.
+**Evidence:** Architecture and project-isolation tests establish the implemented boundary only.
+
+**Remaining work and limit:** Deferred: a future PostgreSQL migration needs native policies and acceptance.
 
 ### S01 - JWT signing secrets
 
 **Purpose:** Prevent forged or stale server sessions.
 
-**Status:** implemented but unverified.
+**Status:** verified.
 
-**Current baseline:** Random private signing material, fixed JWT checks and revocable sessions exist.
+**Current implementation:** Private random JWT keys must contain at least 32 UTF-8 bytes; existing strong keys are retained. Signed tokens also need an active server session and MFA assurance when applicable.
 
-**Acceptance and limit:** Validate key strength; keep strong existing keys and revoke old sessions for MFA.
+**Evidence:** Signing/session checks, old-session revocation and preserved-key migration/restore evidence.
+
+**Remaining work and limit:** An unrestricted host owner can read signing material; TLS is required before any remote deployment.
 
 ### S02 - Server-only API secrets
 
@@ -242,9 +266,11 @@ MFA uses a separate encryption key. Never put private backups or real setup QR c
 
 **Status:** verified.
 
-**Current baseline:** Backend settings, disabled paid defaults and secret scanning protect keys.
+**Current implementation:** API credentials and separate MFA encryption keys stay in protected server storage and private backups; paid dispatch is off by default.
 
-**Acceptance and limit:** Extend exclusions and backups for the separate MFA encryption key.
+**Evidence:** Current/history/bundle/archive scanning, private-path/exclusion tests and restored-factor access.
+
+**Remaining work and limit:** No genuine exposed provider key was found; unavailable provider ownership would still block a required rotation.
 
 ### S03 - No persistent browser tokens
 
@@ -252,19 +278,23 @@ MFA uses a separate encryption key. Never put private backups or real setup QR c
 
 **Status:** verified.
 
-**Current baseline:** Access tokens stay in memory; only harmless view filters use sessionStorage.
+**Current implementation:** Access tokens, restricted challenges, setup keys and recovery codes remain in memory. Only harmless view filters may persist.
 
-**Acceptance and limit:** Ensure MFA challenges, setup secrets and recovery codes also stay in memory.
+**Evidence:** Browser storage inspection after MFA enrollment and frontend session tests.
+
+**Remaining work and limit:** A page refresh requires sign-in; memory storage alone cannot defeat XSS.
 
 ### C01 - Tight CORS and trusted origins
 
 **Purpose:** Allow the intended local browser application only.
 
-**Status:** implemented but unverified.
+**Status:** verified.
 
-**Current baseline:** Same-origin API and the development proxy need no wildcard CORS.
+**Current implementation:** Cross-origin access is disabled. Trusted hosts and browser origins are explicit per launcher; forwarded headers do not define trust.
 
-**Acceptance and limit:** Add trusted-host and explicit per-launcher browser-origin enforcement.
+**Evidence:** Foreign Origin/Host/Fetch Metadata rejection; actual isolated browser, recording and proxy configuration.
+
+**Remaining work and limit:** A future hosted address needs deliberate configuration and HTTPS review.
 
 ### C02 - Webhook signatures
 
@@ -272,19 +302,23 @@ MFA uses a separate encryption key. Never put private backups or real setup QR c
 
 **Status:** not applicable.
 
-**Current baseline:** There are no incoming webhook integrations or real payment callbacks.
+**Current implementation:** No incoming webhook integration or real payment callback exists; callbacks remain disabled.
 
-**Acceptance and limit:** Keep callbacks disabled; require provider-specific verification if introduced.
+**Evidence:** Route inventory and sandbox architecture.
+
+**Remaining work and limit:** Not applicable now. Any future webhook needs provider-specific signatures and replay controls.
 
 ### C03 - Production source maps
 
 **Purpose:** Do not publish browser debug maps with the running app.
 
-**Status:** implemented but unverified.
+**Status:** verified.
 
-**Current baseline:** The current production directory contains no map files.
+**Current implementation:** Production source maps are explicitly disabled. API/static handling rejects .map requests.
 
-**Acceptance and limit:** Set the build policy explicitly and reject map requests without SPA fallback.
+**Evidence:** Built-assets check finds no map files/directives; map-request regression.
+
+**Remaining work and limit:** Public source is intentionally available under AGPL; hiding maps is not an access-control boundary.
 
 ### C04 - Logs and lockfile hygiene
 
@@ -292,9 +326,11 @@ MFA uses a separate encryption key. Never put private backups or real setup QR c
 
 **Status:** verified.
 
-**Current baseline:** Fixed-metadata logs, redacted errors and source/archive scans already exist.
+**Current implementation:** Errors are generic with request IDs; structured logs omit tokens, passwords and content. Lockfiles and nested archives are included in redacted secret scans.
 
-**Acceptance and limit:** Add MFA values and credential-bearing dependency URLs to regression checks.
+**Evidence:** Synthetic-marker log/error tests and pinned scanner output.
+
+**Remaining work and limit:** Pattern scans cannot guarantee discovery of every possible secret format.
 
 ### C05 - Dependency vulnerabilities
 
@@ -302,16 +338,18 @@ MFA uses a separate encryption key. Never put private backups or real setup QR c
 
 **Status:** verified.
 
-**Current baseline:** The recorded baseline npm and Python scans reported no known advisories.
+**Current implementation:** Reproducible locks include maintained MFA libraries with attribution. Known-advisory scans cover Python and frontend dependencies.
 
-**Acceptance and limit:** Rescan new dependencies; update affected compatible versions and retain locks.
+**Evidence:** Dated npm and pip-audit runs report no known advisories.
+
+**Remaining work and limit:** New vulnerabilities can appear; this is not a complete supply-chain or penetration assessment.
 
 ## Important distinctions
 
 - XSS means content runs as a script. CSRF means a different website tries to submit an action. They require different controls.
 - Project isolation is enforced by this application. Native database RLS remains deferred while SQLite is used.
 - Incoming webhooks stay disabled. No real payment callback or signature-verification claim is made.
-- Private Admin and Finance accounts will require MFA; the four marked public-demo accounts keep their README passwords and simple login.
+- Private Admin and Finance accounts require MFA; the four marked public-demo accounts keep their README passwords and simple login.
 - Logs and dependency lockfiles must exclude private values. A dependency scan is not an independent security assessment.
 
 Sources: [OWASP CSRF](https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html), [OWASP MFA](https://cheatsheetseries.owasp.org/cheatsheets/Multifactor_Authentication_Cheat_Sheet.html), [OWASP SSRF](https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_Request_Forgery_Prevention_Cheat_Sheet.html), [PyOTP](https://pyauth.github.io/pyotp/).

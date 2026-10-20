@@ -8,7 +8,7 @@ from functools import lru_cache
 
 
 def managed_paths(root):
-    names = {"uploads", "backups", "signing-secret", "demo-credentials.json", "public-demo-profile.json", "buildtrust.db", "buildtrust.db-wal", "buildtrust.db-shm"}
+    names = {"uploads", "backups", "signing-secret", "mfa-encryption-key", "demo-credentials.json", "public-demo-profile.json", "buildtrust.db", "buildtrust.db-wal", "buildtrust.db-shm"}
     return [p for p in Path(root).iterdir() if p.name in names]
 
 

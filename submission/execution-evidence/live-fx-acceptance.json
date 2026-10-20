@@ -1,31 +1,31 @@
 {
-  "checked_at": "2026-10-19T11:48:39.689957+00:00",
+  "checked_at": "2026-10-20T08:13:22.970780+00:00",
   "status": 201,
   "response": {
     "id": 1,
     "project_id": 1,
     "base": "USD",
     "quote": "BDT",
-    "factor": "123.27",
-    "source": "https://api.frankfurter.dev/v2/rate/usd/bdt; providers=BDI@2026-10-16,CBKKW@2026-10-19,CBM@2026-10-16,CBO@2026-10-19,CBR@2026-10-16,CBSL@2026-10-09,CBU@2026-10-17,NB@2026-10-16,NBP@2026-10-14,NBU@2026-10-19",
-    "observed_date": "2026-10-19"
+    "factor": "123.57",
+    "source": "https://api.frankfurter.dev/v2/rate/usd/bdt; providers=BDI@2026-10-19,CBKKW@2026-10-20,CBM@2026-10-19,CBO@2026-10-20,CBR@2026-10-16,CBSL@2026-10-09,CBU@2026-10-20,NB@2026-10-19,NBP@2026-10-14,NBU@2026-10-19",
+    "observed_date": "2026-10-20"
   },
-  "database": "D:\\Project\\buildtrust-ai\\data\\live-fx-923c0799\\buildtrust.db",
+  "database": "D:\\Project\\buildtrust-ai\\data\\live-fx-76ea2ebb\\buildtrust.db",
   "provider": "Frankfurter v2 free API",
   "paid_requests": false,
   "persisted": {
     "id": 1,
     "base": "USD",
     "quote": "BDT",
-    "factor": "123.27",
-    "observed_date": "2026-10-19",
-    "source": "https://api.frankfurter.dev/v2/rate/usd/bdt; providers=BDI@2026-10-16,CBKKW@2026-10-19,CBM@2026-10-16,CBO@2026-10-19,CBR@2026-10-16,CBSL@2026-10-09,CBU@2026-10-17,NB@2026-10-16,NBP@2026-10-14,NBU@2026-10-19"
+    "factor": "123.57",
+    "observed_date": "2026-10-20",
+    "source": "https://api.frankfurter.dev/v2/rate/usd/bdt; providers=BDI@2026-10-19,CBKKW@2026-10-20,CBM@2026-10-19,CBO@2026-10-20,CBR@2026-10-16,CBSL@2026-10-09,CBU@2026-10-20,NB@2026-10-19,NBP@2026-10-14,NBU@2026-10-19"
   },
   "audit_integrity": {
     "valid": true,
     "checked_events": 52,
     "failed_event_id": null,
-    "head_hash": "487af8011a0b5ad796b5445323c81dab8396f1c3761b391d44e10aae0767e5ae",
+    "head_hash": "d468131659ead2d94a366c151ccd1edf69184cc4e7049eeaab472563c193bf88",
     "limitation": "Local hash chain; an unrestricted database administrator can rewrite the complete chain."
   }
 }

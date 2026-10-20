@@ -69,6 +69,7 @@ def profile_settings(directory):
         dataforseo_login="",
         dataforseo_password="",
         ocr_enabled=False,
+        trusted_origins=['http://127.0.0.1:8003','http://localhost:8003'],
     )
 
 
@@ -134,6 +135,9 @@ def check_port(port):
 
 
 def main():
+    # Running with -m creates a __main__ module. Use the canonical factory so
+    # the server's trusted profile type has one identity in both launch paths.
+    from .public_demo import prepare_public_demo as prepare_profile
     parser = argparse.ArgumentParser(
         description="Start the public fictional demo, separate from your working app"
     )
@@ -143,7 +147,7 @@ def main():
     try:
         if not args.prepare_only:
             check_port(args.port)
-        settings, _ = prepare_public_demo()
+        settings, _ = prepare_profile()
     except (ValueError, OSError) as exc:
         parser.exit(1, f"Public demo could not start: {exc}\n")
     if args.prepare_only:
@@ -151,6 +155,7 @@ def main():
         return
     import uvicorn
     from .main import create_app
+    settings.trusted_origins=[f'http://127.0.0.1:{args.port}',f'http://localhost:{args.port}']
 
     print(f"Public fictional demo: http://127.0.0.1:{args.port}", flush=True)
     print(

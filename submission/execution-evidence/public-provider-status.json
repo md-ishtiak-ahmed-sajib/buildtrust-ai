@@ -1,0 +1,33 @@
+[
+  {
+    "id": "serpapi",
+    "source_type": "ONLINE_LISTING",
+    "enabled": false
+  },
+  {
+    "id": "dataforseo",
+    "source_type": "ONLINE_LISTING",
+    "enabled": false
+  },
+  {
+    "id": "supplier",
+    "source_type": "SUPPLIER_QUOTE",
+    "enabled": true
+  },
+  {
+    "id": "reference",
+    "source_type": "OFFICIAL_REFERENCE",
+    "enabled": true
+  },
+  {
+    "id": "history",
+    "source_type": "HISTORICAL_INTERNAL",
+    "enabled": true
+  },
+  {
+    "id": "demo",
+    "source_type": "DEMO",
+    "enabled": true,
+    "notice": "Explicit synthetic demonstration mode only"
+  }
+]

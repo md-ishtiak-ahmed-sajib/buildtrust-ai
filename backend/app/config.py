@@ -40,6 +40,8 @@ class Settings(BaseSettings):
     ocr_tessdata_dir: Path | None = None
     ocr_languages: str = "eng+ben"
     background_jobs: bool = True
+    trusted_hosts: list[str] = ['localhost','127.0.0.1','::1']
+    trusted_origins: list[str] = ['http://127.0.0.1:8000','http://localhost:8000']
     job_poll_seconds: int = Field(default=2, ge=1, le=60)
 
     def prepare(self):
@@ -61,7 +63,10 @@ class Settings(BaseSettings):
                 pass
         from .private_storage import protect_file
         protect_file(path)
-        return path.read_text(encoding="utf-8").strip()
+        value = path.read_text(encoding="utf-8").strip()
+        if len(value.encode()) < 32:
+            raise ValueError('Signing key is too short. Restore a strong private key or perform an explicit owner rotation.')
+        return value
 
 
 @lru_cache

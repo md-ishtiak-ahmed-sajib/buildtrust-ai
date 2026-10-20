@@ -4,37 +4,37 @@
 
 vite v8.3.4 building client environment for production...
 transforming...
-✓ 2232 modules transformed.
+✓ 2233 modules transformed.
 rendering chunks...
 computing gzip size...
 dist/index.html                              0.54 kB │ gzip:   0.35 kB
-dist/assets/index-DJ1HejGJ.css              45.50 kB │ gzip:  11.05 kB
-dist/assets/plus-Dj5Mhw82.js                 0.14 kB │ gzip:   0.14 kB
-dist/assets/info-DLNBMNtv.js                 0.19 kB │ gzip:   0.17 kB
-dist/assets/external-link-8Rs4vUAm.js        0.23 kB │ gzip:   0.18 kB
-dist/assets/upload-BJ82t8-D.js               0.24 kB │ gzip:   0.20 kB
-dist/assets/save-CJhC7ULP.js                 0.31 kB │ gzip:   0.21 kB
-dist/assets/shared-C8mg_WbW.js               0.33 kB │ gzip:   0.25 kB
-dist/assets/file-check-2-xGMZ5xYA.js         0.36 kB │ gzip:   0.24 kB
-dist/assets/sparkles-s6_0S97K.js             0.49 kB │ gzip:   0.29 kB
-dist/assets/fingerprint-tbt2P9Q1.js          0.59 kB │ gzip:   0.33 kB
-dist/assets/ForecastBreakdown-DRbltACr.js    1.00 kB │ gzip:   0.52 kB
-dist/assets/shared-p8Bg8Xgv.js               2.78 kB │ gzip:   1.30 kB
-dist/assets/CashFlow-BtHLKLYC.js             3.56 kB │ gzip:   1.58 kB
-dist/assets/Audit-DVfvzxUG.js                4.84 kB │ gzip:   1.84 kB
-dist/assets/Performance-C_wFJqQf.js          5.66 kB │ gzip:   2.11 kB
-dist/assets/Operations-BLxGR1vn.js           5.68 kB │ gzip:   2.18 kB
-dist/assets/Administration-DPGRqALK.js       5.76 kB │ gzip:   2.21 kB
-dist/assets/Overview-BoaKolBZ.js             6.18 kB │ gzip:   2.40 kB
-dist/assets/Documents-CMoBMFxe.js            7.77 kB │ gzip:   3.00 kB
-dist/assets/Payments-Doql8GHD.js             8.60 kB │ gzip:   2.94 kB
-dist/assets/Invoices-Dva25YFE.js             9.18 kB │ gzip:   3.33 kB
-dist/assets/Prices-BYQpr0aT.js              11.13 kB │ gzip:   3.65 kB
-dist/assets/Takeoff-ObIlhT3w.js             12.73 kB │ gzip:   4.27 kB
-dist/assets/PriceDrawer-BbZofj7d.js         18.18 kB │ gzip:   5.46 kB
-dist/assets/Estimates-To0PDWM-.js           23.70 kB │ gzip:   7.04 kB
-dist/assets/Controls-DQmBTW7i.js            40.51 kB │ gzip:  10.83 kB
-dist/assets/index-CG03Mxeh.js              377.62 kB │ gzip: 118.73 kB
-dist/assets/CashChart-B_8-YgHQ.js          385.90 kB │ gzip: 110.29 kB
+dist/assets/index-CNba3so9.css              45.90 kB │ gzip:  11.14 kB
+dist/assets/plus-BxZOes-8.js                 0.14 kB │ gzip:   0.14 kB
+dist/assets/info-Dc8g1OMs.js                 0.19 kB │ gzip:   0.17 kB
+dist/assets/external-link-CQogJnH1.js        0.23 kB │ gzip:   0.18 kB
+dist/assets/upload-JwNd9ag5.js               0.24 kB │ gzip:   0.20 kB
+dist/assets/save-Dx7JaQeJ.js                 0.31 kB │ gzip:   0.21 kB
+dist/assets/shared-DCHvcQyf.js               0.33 kB │ gzip:   0.25 kB
+dist/assets/file-check-2-V8I7UjcH.js         0.36 kB │ gzip:   0.24 kB
+dist/assets/sparkles-CS0i7I3z.js             0.49 kB │ gzip:   0.28 kB
+dist/assets/fingerprint-Bstp2al4.js          0.59 kB │ gzip:   0.33 kB
+dist/assets/ForecastBreakdown-s2wxdAXz.js    1.00 kB │ gzip:   0.52 kB
+dist/assets/shared-CJ8gb8Wv.js               2.78 kB │ gzip:   1.30 kB
+dist/assets/CashFlow-SWJ5ix3O.js             3.56 kB │ gzip:   1.58 kB
+dist/assets/Audit-CH_t5-_F.js                4.84 kB │ gzip:   1.84 kB
+dist/assets/Performance-hIDyezXP.js          5.66 kB │ gzip:   2.11 kB
+dist/assets/Operations-CS-bMQYM.js           5.68 kB │ gzip:   2.18 kB
+dist/assets/Administration-pHz_bcUQ.js       5.76 kB │ gzip:   2.21 kB
+dist/assets/Overview-BEoGSD4_.js             6.18 kB │ gzip:   2.40 kB
+dist/assets/Documents-Cq7MJEn4.js            7.77 kB │ gzip:   3.00 kB
+dist/assets/Payments-BliFx98n.js             8.60 kB │ gzip:   2.94 kB
+dist/assets/Invoices-DqQfTHAq.js             9.18 kB │ gzip:   3.33 kB
+dist/assets/Prices-CYw9oQej.js              11.13 kB │ gzip:   3.66 kB
+dist/assets/Takeoff-sPyALNAl.js             12.73 kB │ gzip:   4.27 kB
+dist/assets/PriceDrawer-D4ZYXRy9.js         18.18 kB │ gzip:   5.45 kB
+dist/assets/Estimates-CB8jNHEs.js           23.70 kB │ gzip:   7.04 kB
+dist/assets/Controls-D7lvoEHe.js            40.51 kB │ gzip:  10.83 kB
+dist/assets/index-ChK3a2M3.js              383.67 kB │ gzip: 120.19 kB
+dist/assets/CashChart-B_f-PnMF.js          385.90 kB │ gzip: 110.29 kB
 
-✓ built in 303ms
+✓ built in 302ms

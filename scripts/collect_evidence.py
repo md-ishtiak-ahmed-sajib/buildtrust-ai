@@ -11,6 +11,7 @@ import sys
 import time
 import uuid
 import httpx
+from verification_client import VerificationClient
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / ("execution-evidence-" + uuid.uuid4().hex[:8])
@@ -68,6 +69,7 @@ def main():
         "BUILDTRUST_DATA_DIR": str(runtime),
         "BUILDTRUST_DEMO_MODE": "true",
         "BUILDTRUST_LLM_PROVIDER": "none",
+        "BUILDTRUST_TRUSTED_ORIGINS": json.dumps([f"http://127.0.0.1:{args.port}"]),
     }
     seed = subprocess.run(
         [sys.executable, "-m", "app.seed"],
@@ -96,7 +98,7 @@ def main():
         stdout=log,
         stderr=log,
     )
-    client = httpx.Client(base_url=f"http://127.0.0.1:{args.port}/api/v1", timeout=30)
+    client = VerificationClient(base_url=f"http://127.0.0.1:{args.port}/api/v1", timeout=30)
     requests = []
     try:
         for _ in range(100):

@@ -1,11 +1,11 @@
 {
   "passed": true,
-  "checked_at": "2026-10-20T00:42:13.901750+00:00",
-  "archive_sha256": "b80747d0354824341d1c03fe17f86ec29cf61dddd86667b6c941364ab6c0d744",
+  "checked_at": "2026-10-20T00:52:43.035729+00:00",
+  "archive_sha256": "cc361e38684e0e0a7f6653dd236e9deca84f564c2e36c953e863cdb398b87a71",
   "fresh_windows_install": {
     "passed": true,
     "setup_command": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/setup.ps1",
-    "source_copy": "data\\clean-checkout-7061e9b4",
+    "source_copy": "data\\clean-checkout-8af1fdc1",
     "checks": [
       "locked dependency setup",
       "frontend production build",
@@ -21,7 +21,7 @@
       "1480000.00 estimate and 520000.00 forecast"
     ],
     "simulation": true,
-    "archive_sha256": "b80747d0354824341d1c03fe17f86ec29cf61dddd86667b6c941364ab6c0d744"
+    "archive_sha256": "cc361e38684e0e0a7f6653dd236e9deca84f564c2e36c953e863cdb398b87a71"
   },
   "public_demo": {
     "passed": true,

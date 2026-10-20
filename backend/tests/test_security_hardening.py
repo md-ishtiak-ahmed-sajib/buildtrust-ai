@@ -226,15 +226,22 @@ def test_native_private_permissions_on_database_secret_and_upload_directory(env)
         api=ctypes.WinDLL("advapi32",use_last_error=True);kernel=ctypes.WinDLL("kernel32")
         get=api.GetFileSecurityW;get.argtypes=[wintypes.LPCWSTR,wintypes.DWORD,ctypes.c_void_p,wintypes.DWORD,ctypes.POINTER(wintypes.DWORD)];get.restype=wintypes.BOOL
         convert=api.ConvertSecurityDescriptorToStringSecurityDescriptorW;convert.argtypes=[ctypes.c_void_p,wintypes.DWORD,wintypes.DWORD,ctypes.POINTER(ctypes.c_void_p),ctypes.c_void_p];convert.restype=wintypes.BOOL
+        parse=api.ConvertStringSecurityDescriptorToSecurityDescriptorW;parse.argtypes=[wintypes.LPCWSTR,wintypes.DWORD,ctypes.POINTER(ctypes.c_void_p),ctypes.c_void_p];parse.restype=wintypes.BOOL
         kernel.LocalFree.argtypes=[ctypes.c_void_p]
+        def principals(descriptor):
+            text=ctypes.c_void_p();assert convert(descriptor,1,4,ctypes.byref(text),None)
+            try:return set(re.findall(r";;;([^)]*)",ctypes.wstring_at(text)))
+            finally:kernel.LocalFree(text)
+        # Windows can render the same account SID as an SDDL alias (for example
+        # LA on an Administrator runner). Canonicalize both sides natively.
+        expected=ctypes.c_void_p()
+        assert parse(f"D:P(A;;FA;;;{windows_sid()})(A;;FA;;;SY)(A;;FA;;;BA)",1,ctypes.byref(expected),None)
+        try:expected_principals=principals(expected)
+        finally:kernel.LocalFree(expected)
         for path in paths:
             length=wintypes.DWORD();get(str(path),4,None,0,ctypes.byref(length));buffer=ctypes.create_string_buffer(length.value)
             assert get(str(path),4,buffer,length,ctypes.byref(length))
-            text=ctypes.c_void_p();assert convert(buffer,1,4,ctypes.byref(text),None)
-            try:
-                principals=set(re.findall(r";;;([^)]*)",ctypes.wstring_at(text)))
-                assert principals=={windows_sid(),"SY","BA"}
-            finally:kernel.LocalFree(text)
+            assert principals(buffer)==expected_principals
 
 
 def test_local_model_caller_deadline_returns_without_unbounded_workers(env,monkeypatch):

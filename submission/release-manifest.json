@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-20T00:41:14.546591+00:00",
+  "generated_at": "2026-10-20T00:50:44.039492+00:00",
   "version": "0.2.0",
   "simulation": true,
   "source_fingerprint": "e06508d9bbcb444f1f06feff600c2a25ca2f0d87a983040549620559fb8be36e",
@@ -141,7 +141,7 @@
     "backend/tests/test_performance.py": "d2e3af4dd636a2b52265c1b4471494ba9a9acf03751e62a6bfe960eb9b5d9509",
     "backend/tests/test_procurement_amendments.py": "414ae25bdd7fdac79886fa2fda89f324de56abcb1e250e96ec4837c99cbac798",
     "backend/tests/test_public_demo.py": "c96dc3b555c020579d174128db0132e556c2a3b2c8c7d223c13f56f2d762501f",
-    "backend/tests/test_security_hardening.py": "356682cc9b79ee51ebb43335e94d9f20be2c1ea23f653b9f7cbf3cc4db300261",
+    "backend/tests/test_security_hardening.py": "f800fb1fd073506269edaf048ec8ddea91838796245ad9b54f5babcb56b89d4d",
     "backend/tests/test_stabilization.py": "90cc241555042e074126167a5fbcd8ef391bf431ae254be23dee5423414cdd69",
     "backend/tests/test_supported_corrections.py": "71abb8e91313fe776c4598f78060b1c934ffab60f66e923924168ad7d9118ea6",
     "backend/tests/test_tax_credits.py": "5cca9ca209241df15af3665de2efe93908ee0be6de99ad5c8960a667509be5cd",

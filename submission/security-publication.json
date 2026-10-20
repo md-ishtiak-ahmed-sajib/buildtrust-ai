@@ -1,61 +1,13 @@
 {
   "passed": true,
-  "checked_at": "2026-10-20T12:22:57.091054+00:00",
-  "tested_source_revision": "0009a198bf9ce7583cd2c870953e21d82a584739",
-  "run_url": "https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39419213954",
+  "checked_at": "2026-10-20T12:59:14.900686+00:00",
+  "tested_source_revision": "8c3de3941f168ea81ba34b17181ba7d9fdec1739",
+  "run_url": "https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39424366511",
   "conclusion": "success",
   "platforms": [
     {
-      "platform": "linux",
-      "job_url": "https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39419213954/job/118615673578",
-      "conclusion": "success",
-      "backend_test_output": [
-        [
-          "250",
-          "1"
-        ]
-      ],
-      "optional_skips": [
-        "2026-10-20T12:06:46.5173685Z SKIPPED [1] backend/tests/test_governance_and_trades.py:218: Optional pinned OCR models are not installed; no runtime download"
-      ],
-      "frontend_tests": 10,
-      "private_browser_workflows": 20,
-      "http_scenarios": 8,
-      "secret_scan_passed": true,
-      "contract_drift_passed": true,
-      "dependency_audits_passed": true,
-      "platform_setup_passed": true,
-      "successful_steps": [
-        "Set up job",
-        "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
-        "Run astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9",
-        "Run actions/setup-node@v4",
-        "Run uv sync --project backend --frozen",
-        "Run npm --prefix frontend ci",
-        "Run uv run --project backend pytest backend/tests",
-        "Run npm --prefix frontend test",
-        "Run npm --prefix frontend run build",
-        "Run uv run --project backend python scripts/check_secrets.py",
-        "Run uv run --project backend python scripts/check_asset_budget.py",
-        "Run uv run --project backend python scripts/export_contracts.py",
-        "Run npm --prefix frontend run types:api",
-        "Run git diff --exit-code -- docs/openapi.json frontend/src/types/api.generated.ts demo/document.schema.json",
-        "Run npm --prefix frontend audit --audit-level=moderate",
-        "Run uv export --project backend --frozen --no-hashes --format requirements-txt --output-file audit-requirements.txt",
-        "Run uvx pip-audit -r audit-requirements.txt",
-        "Run npx --prefix frontend playwright install chromium --with-deps",
-        "Run uv run --project backend python scripts/verify_upgrade_browser.py",
-        "Run uv run --project backend python scripts/collect_evidence.py",
-        "Native Linux shell setup and startup",
-        "Post Run actions/setup-node@v4",
-        "Post Run astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9",
-        "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
-        "Complete job"
-      ]
-    },
-    {
       "platform": "windows",
-      "job_url": "https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39419213954/job/118615673902",
+      "job_url": "https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39424366511/job/118633037931",
       "conclusion": "success",
       "backend_test_output": [
         [
@@ -64,7 +16,7 @@
         ]
       ],
       "optional_skips": [
-        "2026-10-20T12:09:20.3390576Z SKIPPED [1] backend\\tests\\test_governance_and_trades.py:218: Optional pinned OCR models are not installed; no runtime download"
+        "2026-10-20T12:47:45.4592780Z SKIPPED [1] backend\\tests\\test_governance_and_trades.py:218: Optional pinned OCR models are not installed; no runtime download"
       ],
       "frontend_tests": 10,
       "private_browser_workflows": 20,
@@ -100,16 +52,64 @@
         "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
         "Complete job"
       ]
+    },
+    {
+      "platform": "linux",
+      "job_url": "https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39424366511/job/118633038164",
+      "conclusion": "success",
+      "backend_test_output": [
+        [
+          "250",
+          "1"
+        ]
+      ],
+      "optional_skips": [
+        "2026-10-20T12:46:34.2696877Z SKIPPED [1] backend/tests/test_governance_and_trades.py:218: Optional pinned OCR models are not installed; no runtime download"
+      ],
+      "frontend_tests": 10,
+      "private_browser_workflows": 20,
+      "http_scenarios": 8,
+      "secret_scan_passed": true,
+      "contract_drift_passed": true,
+      "dependency_audits_passed": true,
+      "platform_setup_passed": true,
+      "successful_steps": [
+        "Set up job",
+        "Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+        "Run astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9",
+        "Run actions/setup-node@v4",
+        "Run uv sync --project backend --frozen",
+        "Run npm --prefix frontend ci",
+        "Run uv run --project backend pytest backend/tests",
+        "Run npm --prefix frontend test",
+        "Run npm --prefix frontend run build",
+        "Run uv run --project backend python scripts/check_secrets.py",
+        "Run uv run --project backend python scripts/check_asset_budget.py",
+        "Run uv run --project backend python scripts/export_contracts.py",
+        "Run npm --prefix frontend run types:api",
+        "Run git diff --exit-code -- docs/openapi.json frontend/src/types/api.generated.ts demo/document.schema.json",
+        "Run npm --prefix frontend audit --audit-level=moderate",
+        "Run uv export --project backend --frozen --no-hashes --format requirements-txt --output-file audit-requirements.txt",
+        "Run uvx pip-audit -r audit-requirements.txt",
+        "Run npx --prefix frontend playwright install chromium --with-deps",
+        "Run uv run --project backend python scripts/verify_upgrade_browser.py",
+        "Run uv run --project backend python scripts/collect_evidence.py",
+        "Native Linux shell setup and startup",
+        "Post Run actions/setup-node@v4",
+        "Post Run astral-sh/setup-uv@c771a70e6277c0a99b617c7a806ffedaca235ff9",
+        "Post Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+        "Complete job"
+      ]
     }
   ],
-  "source_fingerprint": "83b2c7dcdb48373bd068f0f8819d680ce91b2d1433cc9db9d0b33b323f2bf2a3",
-  "source_archive_sha256": "9a976c5bcb9088ee889840220d33c5e64192313bb976bb0e4381f41f94bbf9c8",
+  "source_fingerprint": "7c8b818feaadbd50ad8ba66ae12f099d96de75e865501e48a1dad1a66cb8161f",
+  "source_archive_sha256": "d8b99c0c3a4bf9d9813db04758e1b572fb1467b6c2a26a5dd27a025de7637d20",
   "fresh_archive_installation_passed": true,
   "remote_source_verification": {
     "passed": true,
-    "revision": "0009a198bf9ce7583cd2c870953e21d82a584739",
+    "revision": "8c3de3941f168ea81ba34b17181ba7d9fdec1739",
     "remote_current_branch_verified": true,
-    "tracked_files_checked": 475,
+    "tracked_files_checked": 479,
     "all_remote_file_bytes_match": true,
     "planning_and_engineering_instruction_files_excluded": true
   },
@@ -120,30 +120,27 @@
     "public_demo_browser_logins": 4,
     "http_scenarios": 8,
     "audit_integrity": true,
-    "pdf_pages_visually_reviewed": 18,
+    "pdf_pages_visually_reviewed": 19,
     "presentation_slides_reviewed": 9,
     "video_seconds": 258
   },
-  "scope": "Hosted checks apply to tested_source_revision. This post-package publication receipt is excluded from the source archive and does not change application files.",
+  "scope": "Hosted checks apply to tested_source_revision. This documentation release preserves the 160 recorded application-source file hashes. Three updated PDFs and the deck state the implemented status. The post-package publication receipt is excluded from the source archive and does not change application files.",
   "deferred": [
     "Native database RLS requires PostgreSQL.",
     "Phone enrollment, live paid providers, representative documents and independent reviews remain external."
   ],
   "webhooks": "Disabled; signature verification not applicable.",
   "history_rewritten": false,
+  "documentation_refresh": {
+    "application_files_unchanged": 160,
+    "pdfs": 3,
+    "pdf_pages_reviewed": 19,
+    "deck_slides_reviewed": 9,
+    "readme_public_passwords_preserved": true
+  },
   "preceding_run": {
     "url": "https://github.com/md-ishtiak-ahmed-sajib/buildtrust-ai/actions/runs/39397631299",
     "conclusion": "failure",
     "cause": "Two SHA-256 diagram file checksums in the release manifest matched the generic API-key rule. The provenance-only checksum exception now also covers Mermaid and SVG extensions. Both platform core test suites passed in that run; later steps were skipped after the scan failed."
-  },
-  "documentation_refresh": {
-    "passed": true,
-    "scope": "Documentation and submission authoring changed; application source remains identical to the tested security revision. A matching hosted run of the documentation revision is recorded separately after publication.",
-    "application_files_verified_unchanged": 160,
-    "current_archive_sha256": "d8b99c0c3a4bf9d9813db04758e1b572fb1467b6c2a26a5dd27a025de7637d20",
-    "fresh_current_archive_installation_passed": true,
-    "current_source_fingerprint": "7c8b818feaadbd50ad8ba66ae12f099d96de75e865501e48a1dad1a66cb8161f",
-    "current_pdf_pages_reviewed": 19,
-    "current_presentation_slides_reviewed": 9
   }
 }
